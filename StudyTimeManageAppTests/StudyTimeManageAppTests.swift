@@ -26,17 +26,19 @@ class StudyTimeManageAppTests: XCTestCase {
     func testPattern1(){
         let dateModel = DateModel()
         let answer = ["日が違う","月が同じ","年が同じ","週が違う"]
-        let now  = convertStringToDate(dateString: "20220108")
-        let past = convertStringToDate(dateString: "20220110")
+        let now  = dateModel.convertStringToDate1(dateString: "2022年01月08日13時00分")
+        let past = dateModel.convertStringToDate1(dateString: "2022年01月10日19時00分")
        
-        let result = dateModel.checkDate(now: now, past: past)
+       
+       
+        let result = dateModel.checkDate(now:now , past:past )
         XCTAssertEqual(result,answer)
     }
     func testPattern2(){
         let dateModel = DateModel()
         let answer = ["日が違う","月が同じ","年が同じ","週が同じ"]
-        let now  = convertStringToDate(dateString: "20220108")
-        let past = convertStringToDate(dateString: "20220109")
+        let now  = dateModel.convertStringToDate1(dateString: "2022年01月08日12時00分")
+        let past = dateModel.convertStringToDate1(dateString: "2022年01月09日22時00分")
         
         let result = dateModel.checkDate(now: now, past: past)
         //yyyyMMdd -> 20211215
@@ -45,8 +47,8 @@ class StudyTimeManageAppTests: XCTestCase {
     func testPattern3(){
         let dateModel = DateModel()
         let answer = ["日が違う","月が違う","年が同じ","週が同じ"]
-        let now  = convertStringToDate(dateString: "20220131")
-        let past = convertStringToDate(dateString: "20220201")
+        let now  = dateModel.convertStringToDate1(dateString: "2022年01月31日11時00分")
+        let past = dateModel.convertStringToDate1(dateString: "2022年02月01日12時00分")
        
         let result = dateModel.checkDate(now: now, past: past)
         //yyyyMMdd -> 20211215
@@ -55,8 +57,8 @@ class StudyTimeManageAppTests: XCTestCase {
     func testPattern4(){
         let dateModel = DateModel()
         let answer = ["日が違う","月が違う","年が同じ","週が違う"]
-        let now  = convertStringToDate(dateString: "20220131")
-        let past = convertStringToDate(dateString: "20220210")
+        let now  = dateModel.convertStringToDate1(dateString: "2022年01月31日23時00分")
+        let past = dateModel.convertStringToDate1(dateString: "2022年02月10日11時00分")
        
         let result = dateModel.checkDate(now: now, past: past)
         //yyyyMMdd -> 20211215
@@ -65,8 +67,8 @@ class StudyTimeManageAppTests: XCTestCase {
     func testPattern5(){
         let dateModel = DateModel()
         let answer = ["日が違う","月が違う","年が違う","週が違う"]
-        let now  = convertStringToDate(dateString: "20220210")
-        let past = convertStringToDate(dateString: "20230210")
+        let now  = dateModel.convertStringToDate1(dateString: "2022年02月10日11時00分")
+        let past = dateModel.convertStringToDate1(dateString: "2023年02月10日22時00分")
        
         let result = dateModel.checkDate(now: now, past: past)
         //yyyyMMdd -> 20211215
@@ -75,8 +77,8 @@ class StudyTimeManageAppTests: XCTestCase {
     func testPattern6(){
         let dateModel = DateModel()
         let answer = ["日が違う","月が違う","年が同じ","週が違う"]
-        let now  = convertStringToDate(dateString: "20220130")
-        let past = convertStringToDate(dateString: "20220210")
+        let now  = dateModel.convertStringToDate1(dateString: "2022年01月30日22時00分")
+        let past = dateModel.convertStringToDate1(dateString: "2022年02月10日08時00分")
        
         let result = dateModel.checkDate(now: now, past: past)
         //yyyyMMdd -> 20211215
@@ -85,8 +87,8 @@ class StudyTimeManageAppTests: XCTestCase {
     func testPattern7(){
         let dateModel = DateModel()
         let answer = ["日が違う","月が同じ","年が同じ","週が違う"]
-        let now  = convertStringToDate(dateString: "20220201")
-        let past = convertStringToDate(dateString: "20220228")
+        let now  = dateModel.convertStringToDate1(dateString: "2022年02月01日08時00分")
+        let past = dateModel.convertStringToDate1(dateString: "2022年02月28日22時00分")
        
         let result = dateModel.checkDate(now: now, past: past)
         //yyyyMMdd -> 20211215
@@ -95,8 +97,8 @@ class StudyTimeManageAppTests: XCTestCase {
     func testPattern8(){
         let dateModel = DateModel()
         let answer = ["日が違う","月が同じ","年が同じ","週が違う"]
-        let now  = convertStringToDate(dateString: "20220303")
-        let past = convertStringToDate(dateString: "20220308")
+        let now  = dateModel.convertStringToDate1(dateString: "2022年03月03日08時00分")
+        let past = dateModel.convertStringToDate1(dateString: "2022年03月08日11時00分")
        
         let result = dateModel.checkDate(now: now, past: past)
         //yyyyMMdd -> 20211215
@@ -105,8 +107,8 @@ class StudyTimeManageAppTests: XCTestCase {
     func testPattern9(){
         let dateModel = DateModel()
         let answer = ["日が違う","月が違う","年が同じ","週が同じ"]
-        let now  = convertStringToDate(dateString: "20220228")
-        let past = convertStringToDate(dateString: "20220305")
+        let now  = dateModel.convertStringToDate1(dateString: "2022年02月28日21時00分")
+        let past = dateModel.convertStringToDate1(dateString: "2022年03月05日11時00分")
        
         let result = dateModel.checkDate(now: now, past: past)
         //yyyyMMdd -> 20211215
@@ -116,8 +118,9 @@ class StudyTimeManageAppTests: XCTestCase {
     func testPattern10(){
         let dateModel = DateModel()
         let answer = ["日が違う","月が違う","年が同じ","週が違う"]
-        let now  = convertStringToDate(dateString: "20220108")
-        let past = convertStringToDate(dateString: "20221225")
+       
+        let now  = dateModel.convertStringToDate1(dateString: "2022年01月08日21時00分")
+        let past = dateModel.convertStringToDate1(dateString: "2022年12月25日11時00分")
        
         let result = dateModel.checkDate(now: now, past: past)
         //yyyyMMdd -> 20211215
@@ -125,16 +128,6 @@ class StudyTimeManageAppTests: XCTestCase {
     }
     
     
-    func convertStringToDate(dateString:String) -> Date{
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyyMMdd"
-        dateFormatter.locale = Locale.current
-        dateFormatter.calendar = .current
-        
-        // 変換
-        let date = dateFormatter.date(from: dateString)
-        // 結果表示
-        return date!
-    }
+    
     
 }
