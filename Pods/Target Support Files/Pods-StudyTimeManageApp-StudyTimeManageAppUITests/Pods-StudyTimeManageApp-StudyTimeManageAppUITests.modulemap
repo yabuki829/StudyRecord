@@ -1,0 +1,6 @@
+framework module Pods_StudyTimeManageApp_StudyTimeManageAppUITests {
+  umbrella header "Pods-StudyTimeManageApp-StudyTimeManageAppUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

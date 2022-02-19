@@ -1,0 +1,108 @@
+
+/* Class = "UIBarButtonItem"; title = "FriendID"; ObjectID = "1yf-10-uJR"; */
+"1yf-10-uJR.title" = "FriendID";
+
+/* Class = "UINavigationItem"; title = "Subscription."; ObjectID = "6DX-tK-YcM"; */
+"6DX-tK-YcM.title" = "Subscription.";
+
+/* Class = "UITabBarItem"; title = "home"; ObjectID = "AgW-iZ-7Qm"; */
+"AgW-iZ-7Qm.title" = "home";
+
+/* Class = "UIBarButtonItem"; title = "10,000hours"; ObjectID = "B7b-au-85e"; */
+"B7b-au-85e.title" = "10,000hours";
+
+/* Class = "UITabBarItem"; title = "Friends."; ObjectID = "GpB-qd-9eg"; */
+"GpB-qd-9eg.title" = "Friends.";
+
+/* Class = "UILabel"; text = "12000"; ObjectID = "Icl-dh-dLr"; */
+"Icl-dh-dLr.text" = "12000";
+
+/* Class = "UINavigationItem"; title = "Profile."; ObjectID = "J9z-1Y-Ekp"; */
+"J9z-1Y-Ekp.title" = "Profile.";
+
+/* Class = "UINavigationItem"; title = "10,000hours."; ObjectID = "KC1-vZ-VFG"; */
+"KC1-vZ-VFG.title" = "10,000hours.";
+
+/* Class = "UILabel"; text = "The Goal"; ObjectID = "LBG-wK-x3g"; */
+"LBG-wK-x3g.text" = "Today's Goal";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "LHN-ee-Rca"; */
+"LHN-ee-Rca.text" = "Label";
+
+/* Class = "UILabel"; text = "12000"; ObjectID = "Os5-Mj-L8u"; */
+"Os5-Mj-L8u.text" = "12000";
+
+/* Class = "UILabel"; text = "The Small Goal"; ObjectID = "Rme-hh-5Cr"; */
+"Rme-hh-5Cr.text" = "The Small Goal";
+
+/* Class = "UITextField"; placeholder = "StudyTime"; ObjectID = "Uum-jM-xsZ"; */
+"Uum-jM-xsZ.placeholder" = "StudyTime";
+
+/* Class = "UITextField"; text = "StudyTime"; ObjectID = "Uum-jM-xsZ"; */
+"Uum-jM-xsZ.text" = "StudyTime";
+
+/* Class = "UITabBarItem"; title = "1000hours"; ObjectID = "Vas-2I-vt6"; */
+"Vas-2I-vt6.title" = "1000hours";
+
+/* Class = "UIBarButtonItem"; title = "Record"; ObjectID = "WcI-is-EBq"; */
+"WcI-is-EBq.title" = "Record";
+
+/* Class = "UIBarButtonItem"; title = "Record"; ObjectID = "XDH-YH-ouO"; */
+"XDH-YH-ouO.title" = "Record";
+
+/* Class = "UITabBarItem"; title = "MyPage"; ObjectID = "ZnB-Go-SYp"; */
+"ZnB-Go-SYp.title" = "MyPage";
+
+/* Class = "UILabel"; text = "テストテストテストテストテストテストテストテストテストテストテストテストテストテスト"; ObjectID = "b0k-bR-pZB"; */
+"b0k-bR-pZB.text" = "テストテストテストテストテストテストテストテストテストテストテストテストテストテスト";
+
+/* Class = "UINavigationItem"; title = "Record."; ObjectID = "fBN-LX-GM7"; */
+"fBN-LX-GM7.title" = "Record.";
+
+/* Class = "UILabel"; text = "Goal"; ObjectID = "gOT-ZP-NgO"; */
+"gOT-ZP-NgO.text" = "Goal";
+
+/* Class = "UITextView"; text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda."; ObjectID = "hTT-zO-pJT"; */
+"hTT-zO-pJT.text" = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.";
+
+/* Class = "UILabel"; text = "How Many Days"; ObjectID = "isQ-2d-lVq"; */
+"isQ-2d-lVq.text" = "How Many Days";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "jgY-xG-o6P"; */
+"jgY-xG-o6P.text" = "Label";
+
+/* Class = "UINavigationItem"; title = "翔"; ObjectID = "jlp-IK-sky"; */
+"jlp-IK-sky.title" = "翔";
+
+/* Class = "UIBarButtonItem"; title = "Save"; ObjectID = "mXG-tC-eEo"; */
+"mXG-tC-eEo.title" = "Save";
+
+/* Class = "UIBarButtonItem"; title = "Record"; ObjectID = "mXb-VH-svs"; */
+"mXb-VH-svs.title" = "Record";
+
+/* Class = "UIBarButtonItem"; title = "Home"; ObjectID = "pFx-KI-xqo"; */
+"pFx-KI-xqo.title" = "Home";
+
+/* Class = "UILabel"; text = "How Many Days"; ObjectID = "rwF-Tq-tOT"; */
+"rwF-Tq-tOT.text" = "How Many Days";
+
+/* Class = "UINavigationItem"; title = "Home"; ObjectID = "s5A-T2-XlG"; */
+"s5A-T2-XlG.title" = "Home";
+
+/* Class = "UITextField"; placeholder = "nick name"; ObjectID = "txi-cr-xYX"; */
+"txi-cr-xYX.placeholder" = "nick name";
+
+/* Class = "UINavigationItem"; title = "1,000hours."; ObjectID = "vjz-X3-bPF"; */
+"vjz-X3-bPF.title" = "1,000hours.";
+
+/* Class = "UIBarButtonItem"; title = "Menu"; ObjectID = "xls-v6-ifd"; */
+"xls-v6-ifd.title" = "Menu";
+
+/* Class = "UINavigationItem"; title = "Friends."; ObjectID = "xzt-Qh-wdf"; */
+"xzt-Qh-wdf.title" = "Rival.";
+
+/* Class = "UITabBarItem"; title = "10000hours"; ObjectID = "yIS-IZ-6U7"; */
+"yIS-IZ-6U7.title" = "10000hours";
+
+/* Class = "UITextField"; placeholder = "FriendID"; ObjectID = "zPP-jH-jJd"; */
+"zPP-jH-jJd.placeholder" = "FriendID";

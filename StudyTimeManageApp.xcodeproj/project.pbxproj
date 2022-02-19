@@ -3,10 +3,47 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		56B25F81B656E2283A2348C4 /* Pods_StudyTimeManageAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4887EE8516CF1EAD60EA57F /* Pods_StudyTimeManageAppTests.framework */; };
+		6147156BE7B0B7929CB0D84E /* Pods_StudyTimeManageApp_StudyTimeManageAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8235B9E5645F47E9AE83DB79 /* Pods_StudyTimeManageApp_StudyTimeManageAppUITests.framework */; };
+		7029D5682764A827007EC795 /* BarChartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7029D5672764A827007EC795 /* BarChartCell.swift */; };
+		7029D56D2764A831007EC795 /* BarChartCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7029D56C2764A831007EC795 /* BarChartCell.xib */; };
+		7029D5732764A843007EC795 /* DataViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7029D5712764A841007EC795 /* DataViewCell.swift */; };
+		7029D5742764A843007EC795 /* DataViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7029D5722764A842007EC795 /* DataViewCell.xib */; };
+		7029D57A2764A854007EC795 /* PredictCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7029D5782764A852007EC795 /* PredictCell.swift */; };
+		7029D57B2764A854007EC795 /* PredictCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7029D5792764A854007EC795 /* PredictCell.xib */; };
+		7029D5812764A85E007EC795 /* PieChartCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7029D57F2764A85C007EC795 /* PieChartCell.xib */; };
+		7029D5822764A85E007EC795 /* PieChartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7029D5802764A85E007EC795 /* PieChartCell.swift */; };
+		704A33B02797AD2D00E28C34 /* ManageTabMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704A33AF2797AD2D00E28C34 /* ManageTabMenuController.swift */; };
+		704AA7D62768D7C200A49FC3 /* Struct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704AA7D52768D7C200A49FC3 /* Struct.swift */; };
+		704AAC5C27818680001DBF6D /* Pods_StudyTimeManageApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 305C221D2734DE6E90AADD66 /* Pods_StudyTimeManageApp.framework */; };
+		704B9277277EC0F90012D321 /* PieChartViewDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704B9276277EC0F90012D321 /* PieChartViewDetailController.swift */; };
+		704B927C277EC1550012D321 /* BarChartViewDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704B927B277EC1550012D321 /* BarChartViewDetailController.swift */; };
+		704C3628278B279C0000D17D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 704C3627278B279C0000D17D /* GoogleService-Info.plist */; };
+		704ED9182768CB1B000F9F10 /* UserPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704ED9172768CB1B000F9F10 /* UserPageViewController.swift */; };
+		704ED91E2768CC5A000F9F10 /* GoalPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704ED91D2768CC5A000F9F10 /* GoalPageViewController.swift */; };
+		704ED92C2768CF38000F9F10 /* UserRecordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704ED92A2768CF38000F9F10 /* UserRecordCell.swift */; };
+		704ED92D2768CF38000F9F10 /* UserRecordCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 704ED92B2768CF38000F9F10 /* UserRecordCell.xib */; };
+		704FE6782768372600CB9A71 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704FE6772768372600CB9A71 /* MenuViewController.swift */; };
+		7051EF9A279AC733005492D6 /* TabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7051EF99279AC733005492D6 /* TabbarController.swift */; };
+		7053C1A72792CEFB009F52E7 /* Report.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7053C1A62792CEFB009F52E7 /* Report.swift */; };
+		7057C4D0276AD87000DE8214 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7057C4CF276AD87000DE8214 /* DetailViewController.swift */; };
+		70584E1427ABF86E00C08B31 /* TermViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70584E1327ABF86E00C08B31 /* TermViewController.swift */; };
+		70584E1927ABF88900C08B31 /* PrivacyPolicyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70584E1827ABF88900C08B31 /* PrivacyPolicyViewController.swift */; };
+		70584E1E27ABF8BA00C08B31 /* DeleteAcountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70584E1D27ABF8BA00C08B31 /* DeleteAcountViewController.swift */; };
+		70587585276783D600A3D237 /* RecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70587584276783D600A3D237 /* RecordViewController.swift */; };
+		7061F3AC2766081B00423AE2 /* SubscriptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7061F3AB2766081B00423AE2 /* SubscriptViewController.swift */; };
+		7061F3B12766095900423AE2 /* FriendSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7061F3B02766095900423AE2 /* FriendSearchViewController.swift */; };
+		7065E96D278D455B0053BBF2 /* DataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7065E96C278D455B0053BBF2 /* DataViewController.swift */; };
+		7065E972278D4F7F0053BBF2 /* Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7065E971278D4F7F0053BBF2 /* Formatter.swift */; };
+		70660F732769724C00120CF7 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70660F722769724C00120CF7 /* HomeViewController.swift */; };
+		70660FA12769837700120CF7 /* Menu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70660FA32769837700120CF7 /* Menu.storyboard */; };
+		7068C18D27854C7500A27642 /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7068C18C27854C7500A27642 /* Language.swift */; };
+		70692E98276D92BF007EC88B /* TextfieldViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70692E96276D92BF007EC88B /* TextfieldViewCell.swift */; };
+		70692E99276D92BF007EC88B /* TextfieldViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70692E97276D92BF007EC88B /* TextfieldViewCell.xib */; };
 		706A2A4D2761CB6B0041B993 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706A2A4C2761CB6B0041B993 /* AppDelegate.swift */; };
 		706A2A4F2761CB6B0041B993 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706A2A4E2761CB6B0041B993 /* SceneDelegate.swift */; };
 		706A2A512761CB6B0041B993 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706A2A502761CB6B0041B993 /* ViewController.swift */; };
@@ -15,6 +52,25 @@
 		706A2A592761CB6C0041B993 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 706A2A572761CB6C0041B993 /* LaunchScreen.storyboard */; };
 		706A2A642761CB6D0041B993 /* StudyTimeManageAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706A2A632761CB6D0041B993 /* StudyTimeManageAppTests.swift */; };
 		706A2A6F2761CB6D0041B993 /* StudyTimeManageAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706A2A6E2761CB6D0041B993 /* StudyTimeManageAppUITests.swift */; };
+		706A2A862761CBB40041B993 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706A2A852761CBB40041B993 /* Database.swift */; };
+		706A2A8B2761CBBA0041B993 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706A2A8A2761CBBA0041B993 /* Date.swift */; };
+		706A2A902761CBC00041B993 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706A2A8F2761CBC00041B993 /* Extension.swift */; };
+		706A2A952761CBC70041B993 /* Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706A2A942761CBC70041B993 /* Math.swift */; };
+		706A2A9A2761CBCD0041B993 /* StudyTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706A2A992761CBCD0041B993 /* StudyTime.swift */; };
+		706A2AAC2761CC200041B993 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706A2AAB2761CC200041B993 /* MainViewController.swift */; };
+		707ACA2A2772C85900A8A158 /* UserProfileViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707ACA282772C85900A8A158 /* UserProfileViewCell.swift */; };
+		707ACA2B2772C85900A8A158 /* UserProfileViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 707ACA292772C85900A8A158 /* UserProfileViewCell.xib */; };
+		709CF2282793BFEB00C0C61F /* DetailViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709CF2262793BFEB00C0C61F /* DetailViewCell.swift */; };
+		709CF2292793BFEB00C0C61F /* DetailViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 709CF2272793BFEB00C0C61F /* DetailViewCell.xib */; };
+		709F7F602771D93800C07A04 /* FriendStudyTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709F7F5F2771D93800C07A04 /* FriendStudyTimeViewController.swift */; };
+		70A2AC3227AA221600FB0550 /* barchart.json in Resources */ = {isa = PBXBuildFile; fileRef = 70A2AC3127AA221600FB0550 /* barchart.json */; };
+		70A2AC3727AA221E00FB0550 /* boy.json in Resources */ = {isa = PBXBuildFile; fileRef = 70A2AC3627AA221D00FB0550 /* boy.json */; };
+		70AFD5D3276D752E004DB307 /* CommnentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AFD5D1276D752E004DB307 /* CommnentCell.swift */; };
+		70AFD5D4276D752E004DB307 /* CommnentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70AFD5D2276D752E004DB307 /* CommnentCell.xib */; };
+		70B03CF42793F769007E560B /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B03CF32793F769007E560B /* SplashViewController.swift */; };
+		70B03CF92793FCAB007E560B /* watch.json in Resources */ = {isa = PBXBuildFile; fileRef = 70B03CF82793FCAB007E560B /* watch.json */; };
+		70B3F977279E58BD0001DA4E /* AdTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B3F975279E58BD0001DA4E /* AdTableViewCell.swift */; };
+		70B3F978279E58BD0001DA4E /* AdTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70B3F976279E58BD0001DA4E /* AdTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +91,43 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		305C221D2734DE6E90AADD66 /* Pods_StudyTimeManageApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StudyTimeManageApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		36D82F5E5900AF0A06B57FDB /* Pods-StudyTimeManageAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StudyTimeManageAppTests.debug.xcconfig"; path = "Target Support Files/Pods-StudyTimeManageAppTests/Pods-StudyTimeManageAppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		7029D5672764A827007EC795 /* BarChartCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarChartCell.swift; sourceTree = "<group>"; };
+		7029D56C2764A831007EC795 /* BarChartCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BarChartCell.xib; sourceTree = "<group>"; };
+		7029D5712764A841007EC795 /* DataViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataViewCell.swift; sourceTree = "<group>"; };
+		7029D5722764A842007EC795 /* DataViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DataViewCell.xib; sourceTree = "<group>"; };
+		7029D5782764A852007EC795 /* PredictCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PredictCell.swift; sourceTree = "<group>"; };
+		7029D5792764A854007EC795 /* PredictCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PredictCell.xib; sourceTree = "<group>"; };
+		7029D57F2764A85C007EC795 /* PieChartCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PieChartCell.xib; sourceTree = "<group>"; };
+		7029D5802764A85E007EC795 /* PieChartCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PieChartCell.swift; sourceTree = "<group>"; };
+		704A33AF2797AD2D00E28C34 /* ManageTabMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageTabMenuController.swift; sourceTree = "<group>"; };
+		704AA7D52768D7C200A49FC3 /* Struct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Struct.swift; sourceTree = "<group>"; };
+		704B9276277EC0F90012D321 /* PieChartViewDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChartViewDetailController.swift; sourceTree = "<group>"; };
+		704B927B277EC1550012D321 /* BarChartViewDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarChartViewDetailController.swift; sourceTree = "<group>"; };
+		704C3627278B279C0000D17D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		704ED9172768CB1B000F9F10 /* UserPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserPageViewController.swift; path = "../New Group/UserPageViewController.swift"; sourceTree = "<group>"; wrapsLines = 0; };
+		704ED91D2768CC5A000F9F10 /* GoalPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalPageViewController.swift; sourceTree = "<group>"; };
+		704ED92A2768CF38000F9F10 /* UserRecordCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRecordCell.swift; sourceTree = "<group>"; };
+		704ED92B2768CF38000F9F10 /* UserRecordCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserRecordCell.xib; sourceTree = "<group>"; };
+		704FE6772768372600CB9A71 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		7051EF99279AC733005492D6 /* TabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarController.swift; sourceTree = "<group>"; };
+		7053C1A62792CEFB009F52E7 /* Report.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Report.swift; sourceTree = "<group>"; };
+		7057C4CF276AD87000DE8214 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		705832AE2790202600E01B87 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
+		70584E1327ABF86E00C08B31 /* TermViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermViewController.swift; sourceTree = "<group>"; };
+		70584E1827ABF88900C08B31 /* PrivacyPolicyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyViewController.swift; sourceTree = "<group>"; };
+		70584E1D27ABF8BA00C08B31 /* DeleteAcountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteAcountViewController.swift; sourceTree = "<group>"; };
+		70587584276783D600A3D237 /* RecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordViewController.swift; sourceTree = "<group>"; };
+		7061F3AB2766081B00423AE2 /* SubscriptViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptViewController.swift; sourceTree = "<group>"; };
+		7061F3B02766095900423AE2 /* FriendSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendSearchViewController.swift; sourceTree = "<group>"; };
+		7065E96C278D455B0053BBF2 /* DataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataViewController.swift; sourceTree = "<group>"; };
+		7065E971278D4F7F0053BBF2 /* Formatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatter.swift; sourceTree = "<group>"; };
+		70660F722769724C00120CF7 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		70660FA22769837700120CF7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Menu.storyboard; sourceTree = "<group>"; };
+		7068C18C27854C7500A27642 /* Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
+		70692E96276D92BF007EC88B /* TextfieldViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextfieldViewCell.swift; sourceTree = "<group>"; };
+		70692E97276D92BF007EC88B /* TextfieldViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextfieldViewCell.xib; sourceTree = "<group>"; };
 		706A2A492761CB6B0041B993 /* StudyTimeManageApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StudyTimeManageApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		706A2A4C2761CB6B0041B993 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		706A2A4E2761CB6B0041B993 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +142,32 @@
 		706A2A6A2761CB6D0041B993 /* StudyTimeManageAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StudyTimeManageAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		706A2A6E2761CB6D0041B993 /* StudyTimeManageAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyTimeManageAppUITests.swift; sourceTree = "<group>"; };
 		706A2A702761CB6D0041B993 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		706A2A852761CBB40041B993 /* Database.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
+		706A2A8A2761CBBA0041B993 /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		706A2A8F2761CBC00041B993 /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		706A2A942761CBC70041B993 /* Math.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Math.swift; sourceTree = "<group>"; };
+		706A2A992761CBCD0041B993 /* StudyTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudyTime.swift; sourceTree = "<group>"; };
+		706A2AAB2761CC200041B993 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		707ACA282772C85900A8A158 /* UserProfileViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileViewCell.swift; sourceTree = "<group>"; };
+		707ACA292772C85900A8A158 /* UserProfileViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserProfileViewCell.xib; sourceTree = "<group>"; };
+		709CF2262793BFEB00C0C61F /* DetailViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewCell.swift; sourceTree = "<group>"; };
+		709CF2272793BFEB00C0C61F /* DetailViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewCell.xib; sourceTree = "<group>"; };
+		709F7F5F2771D93800C07A04 /* FriendStudyTimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendStudyTimeViewController.swift; sourceTree = "<group>"; };
+		70A2AC3127AA221600FB0550 /* barchart.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = barchart.json; sourceTree = "<group>"; };
+		70A2AC3627AA221D00FB0550 /* boy.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = boy.json; sourceTree = "<group>"; };
+		70AFD5D1276D752E004DB307 /* CommnentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommnentCell.swift; sourceTree = "<group>"; };
+		70AFD5D2276D752E004DB307 /* CommnentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommnentCell.xib; sourceTree = "<group>"; };
+		70B03CF32793F769007E560B /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		70B03CF82793FCAB007E560B /* watch.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = watch.json; sourceTree = "<group>"; };
+		70B3F975279E58BD0001DA4E /* AdTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdTableViewCell.swift; sourceTree = "<group>"; };
+		70B3F976279E58BD0001DA4E /* AdTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AdTableViewCell.xib; sourceTree = "<group>"; };
+		7AFD33897AB6795E3108DA30 /* Pods-StudyTimeManageApp-StudyTimeManageAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StudyTimeManageApp-StudyTimeManageAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-StudyTimeManageApp-StudyTimeManageAppUITests/Pods-StudyTimeManageApp-StudyTimeManageAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		8235B9E5645F47E9AE83DB79 /* Pods_StudyTimeManageApp_StudyTimeManageAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StudyTimeManageApp_StudyTimeManageAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		873CBCAEE84E310A08B35C22 /* Pods-StudyTimeManageApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StudyTimeManageApp.release.xcconfig"; path = "Target Support Files/Pods-StudyTimeManageApp/Pods-StudyTimeManageApp.release.xcconfig"; sourceTree = "<group>"; };
+		88889BAD14EE476FB2CED8AC /* Pods-StudyTimeManageApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StudyTimeManageApp.debug.xcconfig"; path = "Target Support Files/Pods-StudyTimeManageApp/Pods-StudyTimeManageApp.debug.xcconfig"; sourceTree = "<group>"; };
+		B4B4514C164F2BFF02F32275 /* Pods-StudyTimeManageAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StudyTimeManageAppTests.release.xcconfig"; path = "Target Support Files/Pods-StudyTimeManageAppTests/Pods-StudyTimeManageAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		C4887EE8516CF1EAD60EA57F /* Pods_StudyTimeManageAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StudyTimeManageAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D18D04FD996350B91F6DFB47 /* Pods-StudyTimeManageApp-StudyTimeManageAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StudyTimeManageApp-StudyTimeManageAppUITests.release.xcconfig"; path = "Target Support Files/Pods-StudyTimeManageApp-StudyTimeManageAppUITests/Pods-StudyTimeManageApp-StudyTimeManageAppUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +175,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				704AAC5C27818680001DBF6D /* Pods_StudyTimeManageApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +183,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				56B25F81B656E2283A2348C4 /* Pods_StudyTimeManageAppTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,12 +191,118 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6147156BE7B0B7929CB0D84E /* Pods_StudyTimeManageApp_StudyTimeManageAppUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1A3A7D4E07F555E5ABE4005D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				88889BAD14EE476FB2CED8AC /* Pods-StudyTimeManageApp.debug.xcconfig */,
+				873CBCAEE84E310A08B35C22 /* Pods-StudyTimeManageApp.release.xcconfig */,
+				7AFD33897AB6795E3108DA30 /* Pods-StudyTimeManageApp-StudyTimeManageAppUITests.debug.xcconfig */,
+				D18D04FD996350B91F6DFB47 /* Pods-StudyTimeManageApp-StudyTimeManageAppUITests.release.xcconfig */,
+				36D82F5E5900AF0A06B57FDB /* Pods-StudyTimeManageAppTests.debug.xcconfig */,
+				B4B4514C164F2BFF02F32275 /* Pods-StudyTimeManageAppTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		7029D55D2764A7AD007EC795 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				7029D5672764A827007EC795 /* BarChartCell.swift */,
+				7029D56C2764A831007EC795 /* BarChartCell.xib */,
+				7029D5712764A841007EC795 /* DataViewCell.swift */,
+				7029D5722764A842007EC795 /* DataViewCell.xib */,
+				7029D5782764A852007EC795 /* PredictCell.swift */,
+				7029D5792764A854007EC795 /* PredictCell.xib */,
+				7029D5802764A85E007EC795 /* PieChartCell.swift */,
+				7029D57F2764A85C007EC795 /* PieChartCell.xib */,
+				704ED92A2768CF38000F9F10 /* UserRecordCell.swift */,
+				704ED92B2768CF38000F9F10 /* UserRecordCell.xib */,
+				70AFD5D1276D752E004DB307 /* CommnentCell.swift */,
+				70AFD5D2276D752E004DB307 /* CommnentCell.xib */,
+				70692E96276D92BF007EC88B /* TextfieldViewCell.swift */,
+				70692E97276D92BF007EC88B /* TextfieldViewCell.xib */,
+				707ACA282772C85900A8A158 /* UserProfileViewCell.swift */,
+				707ACA292772C85900A8A158 /* UserProfileViewCell.xib */,
+				709CF2262793BFEB00C0C61F /* DetailViewCell.swift */,
+				709CF2272793BFEB00C0C61F /* DetailViewCell.xib */,
+				70B3F975279E58BD0001DA4E /* AdTableViewCell.swift */,
+				70B3F976279E58BD0001DA4E /* AdTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		704B9272277EC08C0012D321 /* DataView */ = {
+			isa = PBXGroup;
+			children = (
+				706A2AAB2761CC200041B993 /* MainViewController.swift */,
+				704B9276277EC0F90012D321 /* PieChartViewDetailController.swift */,
+				704B927B277EC1550012D321 /* BarChartViewDetailController.swift */,
+				7065E96C278D455B0053BBF2 /* DataViewController.swift */,
+			);
+			path = DataView;
+			sourceTree = "<group>";
+		};
+		704ED91C2768CBE4000F9F10 /* UserPage */ = {
+			isa = PBXGroup;
+			children = (
+				704ED9172768CB1B000F9F10 /* UserPageViewController.swift */,
+				704ED91D2768CC5A000F9F10 /* GoalPageViewController.swift */,
+			);
+			path = UserPage;
+			sourceTree = "<group>";
+		};
+		704FE66E2768368400CB9A71 /* StoryBoard */ = {
+			isa = PBXGroup;
+			children = (
+				706A2A522761CB6B0041B993 /* Main.storyboard */,
+				70660FA32769837700120CF7 /* Menu.storyboard */,
+			);
+			path = StoryBoard;
+			sourceTree = "<group>";
+		};
+		704FE67F27683DF000CB9A71 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				704B9272277EC08C0012D321 /* DataView */,
+				709F7F5B2771CE1A00C07A04 /* Friend */,
+				70660F712769720F00120CF7 /* Home */,
+				704ED91C2768CBE4000F9F10 /* UserPage */,
+				7061F3AB2766081B00423AE2 /* SubscriptViewController.swift */,
+				70587584276783D600A3D237 /* RecordViewController.swift */,
+				7051EF99279AC733005492D6 /* TabbarController.swift */,
+				70B03CF32793F769007E560B /* SplashViewController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		704FE68027683E0900CB9A71 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				704FE6772768372600CB9A71 /* MenuViewController.swift */,
+				70584E1327ABF86E00C08B31 /* TermViewController.swift */,
+				70584E1827ABF88900C08B31 /* PrivacyPolicyViewController.swift */,
+				70584E1D27ABF8BA00C08B31 /* DeleteAcountViewController.swift */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
+		70660F712769720F00120CF7 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				70660F722769724C00120CF7 /* HomeViewController.swift */,
+				7057C4CF276AD87000DE8214 /* DetailViewController.swift */,
+				704A33AF2797AD2D00E28C34 /* ManageTabMenuController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
 		706A2A402761CB6B0041B993 = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +310,8 @@
 				706A2A622761CB6D0041B993 /* StudyTimeManageAppTests */,
 				706A2A6D2761CB6D0041B993 /* StudyTimeManageAppUITests */,
 				706A2A4A2761CB6B0041B993 /* Products */,
+				1A3A7D4E07F555E5ABE4005D /* Pods */,
+				A2AA816F11E927CD8CE47C84 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,13 +328,18 @@
 		706A2A4B2761CB6B0041B993 /* StudyTimeManageApp */ = {
 			isa = PBXGroup;
 			children = (
+				704FE66E2768368400CB9A71 /* StoryBoard */,
+				7029D55D2764A7AD007EC795 /* Cell */,
+				706A2A842761CB8A0041B993 /* Controller */,
+				706A2A7F2761CB770041B993 /* Model */,
+				709CF29B2793EE7900C0C61F /* JSON */,
 				706A2A4C2761CB6B0041B993 /* AppDelegate.swift */,
 				706A2A4E2761CB6B0041B993 /* SceneDelegate.swift */,
 				706A2A502761CB6B0041B993 /* ViewController.swift */,
-				706A2A522761CB6B0041B993 /* Main.storyboard */,
 				706A2A552761CB6C0041B993 /* Assets.xcassets */,
 				706A2A572761CB6C0041B993 /* LaunchScreen.storyboard */,
 				706A2A5A2761CB6C0041B993 /* Info.plist */,
+				704C3627278B279C0000D17D /* GoogleService-Info.plist */,
 			);
 			path = StudyTimeManageApp;
 			sourceTree = "<group>";
@@ -128,6 +362,60 @@
 			path = StudyTimeManageAppUITests;
 			sourceTree = "<group>";
 		};
+		706A2A7F2761CB770041B993 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				706A2A852761CBB40041B993 /* Database.swift */,
+				704AA7D52768D7C200A49FC3 /* Struct.swift */,
+				706A2A8A2761CBBA0041B993 /* Date.swift */,
+				706A2A992761CBCD0041B993 /* StudyTime.swift */,
+				706A2A942761CBC70041B993 /* Math.swift */,
+				706A2A8F2761CBC00041B993 /* Extension.swift */,
+				7068C18C27854C7500A27642 /* Language.swift */,
+				7065E971278D4F7F0053BBF2 /* Formatter.swift */,
+				7053C1A62792CEFB009F52E7 /* Report.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		706A2A842761CB8A0041B993 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				704FE68027683E0900CB9A71 /* Menu */,
+				704FE67F27683DF000CB9A71 /* Main */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		709CF29B2793EE7900C0C61F /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				70B03CF82793FCAB007E560B /* watch.json */,
+				70A2AC3627AA221D00FB0550 /* boy.json */,
+				70A2AC3127AA221600FB0550 /* barchart.json */,
+			);
+			path = JSON;
+			sourceTree = "<group>";
+		};
+		709F7F5B2771CE1A00C07A04 /* Friend */ = {
+			isa = PBXGroup;
+			children = (
+				7061F3B02766095900423AE2 /* FriendSearchViewController.swift */,
+				709F7F5F2771D93800C07A04 /* FriendStudyTimeViewController.swift */,
+			);
+			path = Friend;
+			sourceTree = "<group>";
+		};
+		A2AA816F11E927CD8CE47C84 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				305C221D2734DE6E90AADD66 /* Pods_StudyTimeManageApp.framework */,
+				8235B9E5645F47E9AE83DB79 /* Pods_StudyTimeManageApp_StudyTimeManageAppUITests.framework */,
+				C4887EE8516CF1EAD60EA57F /* Pods_StudyTimeManageAppTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,9 +423,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 706A2A732761CB6D0041B993 /* Build configuration list for PBXNativeTarget "StudyTimeManageApp" */;
 			buildPhases = (
+				EE1846274B256CC136B5C389 /* [CP] Check Pods Manifest.lock */,
 				706A2A452761CB6B0041B993 /* Sources */,
 				706A2A462761CB6B0041B993 /* Frameworks */,
 				706A2A472761CB6B0041B993 /* Resources */,
+				71121E89E676E1F7E5E83479 /* [CP] Embed Pods Frameworks */,
+				9FD23650884064CF1C20511C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -152,6 +443,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 706A2A762761CB6D0041B993 /* Build configuration list for PBXNativeTarget "StudyTimeManageAppTests" */;
 			buildPhases = (
+				8B68957AB7B8EE2500EF8969 /* [CP] Check Pods Manifest.lock */,
 				706A2A5B2761CB6D0041B993 /* Sources */,
 				706A2A5C2761CB6D0041B993 /* Frameworks */,
 				706A2A5D2761CB6D0041B993 /* Resources */,
@@ -170,9 +462,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 706A2A792761CB6D0041B993 /* Build configuration list for PBXNativeTarget "StudyTimeManageAppUITests" */;
 			buildPhases = (
+				D0C0CC16E5C2C255F045A970 /* [CP] Check Pods Manifest.lock */,
 				706A2A662761CB6D0041B993 /* Sources */,
 				706A2A672761CB6D0041B993 /* Frameworks */,
 				706A2A682761CB6D0041B993 /* Resources */,
+				875CF026A2719986173B265A /* [CP] Embed Pods Frameworks */,
+				A2BD6045AB6A26D06E103B01 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -213,6 +508,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ja,
 			);
 			mainGroup = 706A2A402761CB6B0041B993;
 			productRefGroup = 706A2A4A2761CB6B0041B993 /* Products */;
@@ -231,8 +527,23 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				704C3628278B279C0000D17D /* GoogleService-Info.plist in Resources */,
+				709CF2292793BFEB00C0C61F /* DetailViewCell.xib in Resources */,
+				70A2AC3727AA221E00FB0550 /* boy.json in Resources */,
+				70A2AC3227AA221600FB0550 /* barchart.json in Resources */,
 				706A2A592761CB6C0041B993 /* LaunchScreen.storyboard in Resources */,
+				70B03CF92793FCAB007E560B /* watch.json in Resources */,
+				7029D5812764A85E007EC795 /* PieChartCell.xib in Resources */,
+				70AFD5D4276D752E004DB307 /* CommnentCell.xib in Resources */,
 				706A2A562761CB6C0041B993 /* Assets.xcassets in Resources */,
+				70B3F978279E58BD0001DA4E /* AdTableViewCell.xib in Resources */,
+				7029D57B2764A854007EC795 /* PredictCell.xib in Resources */,
+				70692E99276D92BF007EC88B /* TextfieldViewCell.xib in Resources */,
+				704ED92D2768CF38000F9F10 /* UserRecordCell.xib in Resources */,
+				707ACA2B2772C85900A8A158 /* UserProfileViewCell.xib in Resources */,
+				70660FA12769837700120CF7 /* Menu.storyboard in Resources */,
+				7029D56D2764A831007EC795 /* BarChartCell.xib in Resources */,
+				7029D5742764A843007EC795 /* DataViewCell.xib in Resources */,
 				706A2A542761CB6B0041B993 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -253,14 +564,189 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		71121E89E676E1F7E5E83479 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-StudyTimeManageApp/Pods-StudyTimeManageApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-StudyTimeManageApp/Pods-StudyTimeManageApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-StudyTimeManageApp/Pods-StudyTimeManageApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		875CF026A2719986173B265A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-StudyTimeManageApp-StudyTimeManageAppUITests/Pods-StudyTimeManageApp-StudyTimeManageAppUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-StudyTimeManageApp-StudyTimeManageAppUITests/Pods-StudyTimeManageApp-StudyTimeManageAppUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-StudyTimeManageApp-StudyTimeManageAppUITests/Pods-StudyTimeManageApp-StudyTimeManageAppUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8B68957AB7B8EE2500EF8969 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-StudyTimeManageAppTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9FD23650884064CF1C20511C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-StudyTimeManageApp/Pods-StudyTimeManageApp-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-StudyTimeManageApp/Pods-StudyTimeManageApp-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-StudyTimeManageApp/Pods-StudyTimeManageApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A2BD6045AB6A26D06E103B01 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-StudyTimeManageApp-StudyTimeManageAppUITests/Pods-StudyTimeManageApp-StudyTimeManageAppUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-StudyTimeManageApp-StudyTimeManageAppUITests/Pods-StudyTimeManageApp-StudyTimeManageAppUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-StudyTimeManageApp-StudyTimeManageAppUITests/Pods-StudyTimeManageApp-StudyTimeManageAppUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D0C0CC16E5C2C255F045A970 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-StudyTimeManageApp-StudyTimeManageAppUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EE1846274B256CC136B5C389 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-StudyTimeManageApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		706A2A452761CB6B0041B993 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7065E972278D4F7F0053BBF2 /* Formatter.swift in Sources */,
+				70584E1E27ABF8BA00C08B31 /* DeleteAcountViewController.swift in Sources */,
 				706A2A512761CB6B0041B993 /* ViewController.swift in Sources */,
+				709CF2282793BFEB00C0C61F /* DetailViewCell.swift in Sources */,
+				70B03CF42793F769007E560B /* SplashViewController.swift in Sources */,
+				706A2A8B2761CBBA0041B993 /* Date.swift in Sources */,
+				70AFD5D3276D752E004DB307 /* CommnentCell.swift in Sources */,
+				7057C4D0276AD87000DE8214 /* DetailViewController.swift in Sources */,
+				704B927C277EC1550012D321 /* BarChartViewDetailController.swift in Sources */,
+				704ED9182768CB1B000F9F10 /* UserPageViewController.swift in Sources */,
+				70B3F977279E58BD0001DA4E /* AdTableViewCell.swift in Sources */,
+				7029D5732764A843007EC795 /* DataViewCell.swift in Sources */,
+				706A2A9A2761CBCD0041B993 /* StudyTime.swift in Sources */,
+				70584E1427ABF86E00C08B31 /* TermViewController.swift in Sources */,
+				7029D57A2764A854007EC795 /* PredictCell.swift in Sources */,
+				7061F3B12766095900423AE2 /* FriendSearchViewController.swift in Sources */,
+				704ED92C2768CF38000F9F10 /* UserRecordCell.swift in Sources */,
+				70692E98276D92BF007EC88B /* TextfieldViewCell.swift in Sources */,
+				7065E96D278D455B0053BBF2 /* DataViewController.swift in Sources */,
+				7051EF9A279AC733005492D6 /* TabbarController.swift in Sources */,
 				706A2A4D2761CB6B0041B993 /* AppDelegate.swift in Sources */,
+				704B9277277EC0F90012D321 /* PieChartViewDetailController.swift in Sources */,
+				706A2A952761CBC70041B993 /* Math.swift in Sources */,
+				7053C1A72792CEFB009F52E7 /* Report.swift in Sources */,
+				709F7F602771D93800C07A04 /* FriendStudyTimeViewController.swift in Sources */,
+				7029D5822764A85E007EC795 /* PieChartCell.swift in Sources */,
+				70660F732769724C00120CF7 /* HomeViewController.swift in Sources */,
+				704ED91E2768CC5A000F9F10 /* GoalPageViewController.swift in Sources */,
+				70584E1927ABF88900C08B31 /* PrivacyPolicyViewController.swift in Sources */,
+				70587585276783D600A3D237 /* RecordViewController.swift in Sources */,
+				706A2A902761CBC00041B993 /* Extension.swift in Sources */,
+				706A2AAC2761CC200041B993 /* MainViewController.swift in Sources */,
+				7068C18D27854C7500A27642 /* Language.swift in Sources */,
+				704FE6782768372600CB9A71 /* MenuViewController.swift in Sources */,
+				7061F3AC2766081B00423AE2 /* SubscriptViewController.swift in Sources */,
+				707ACA2A2772C85900A8A158 /* UserProfileViewCell.swift in Sources */,
+				704AA7D62768D7C200A49FC3 /* Struct.swift in Sources */,
+				706A2A862761CBB40041B993 /* Database.swift in Sources */,
 				706A2A4F2761CB6B0041B993 /* SceneDelegate.swift in Sources */,
+				7029D5682764A827007EC795 /* BarChartCell.swift in Sources */,
+				704A33B02797AD2D00E28C34 /* ManageTabMenuController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,10 +782,19 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		70660FA32769837700120CF7 /* Menu.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				70660FA22769837700120CF7 /* Base */,
+			);
+			name = Menu.storyboard;
+			sourceTree = "<group>";
+		};
 		706A2A522761CB6B0041B993 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				706A2A532761CB6B0041B993 /* Base */,
+				705832AE2790202600E01B87 /* ja */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -319,6 +814,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -380,6 +876,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -433,12 +930,14 @@
 		};
 		706A2A742761CB6D0041B993 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 88889BAD14EE476FB2CED8AC /* Pods-StudyTimeManageApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YA5HXFT63V;
 				INFOPLIST_FILE = StudyTimeManageApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -446,18 +945,20 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.sho.StudyTimeManageApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		706A2A752761CB6D0041B993 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 873CBCAEE84E310A08B35C22 /* Pods-StudyTimeManageApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YA5HXFT63V;
 				INFOPLIST_FILE = StudyTimeManageApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -465,12 +966,13 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.sho.StudyTimeManageApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
 		706A2A772761CB6D0041B993 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 36D82F5E5900AF0A06B57FDB /* Pods-StudyTimeManageAppTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -493,6 +995,7 @@
 		};
 		706A2A782761CB6D0041B993 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B4B4514C164F2BFF02F32275 /* Pods-StudyTimeManageAppTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -515,6 +1018,7 @@
 		};
 		706A2A7A2761CB6D0041B993 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7AFD33897AB6795E3108DA30 /* Pods-StudyTimeManageApp-StudyTimeManageAppUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -535,6 +1039,7 @@
 		};
 		706A2A7B2761CB6D0041B993 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D18D04FD996350B91F6DFB47 /* Pods-StudyTimeManageApp-StudyTimeManageAppUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -563,7 +1068,7 @@
 				706A2A722761CB6D0041B993 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		706A2A732761CB6D0041B993 /* Build configuration list for PBXNativeTarget "StudyTimeManageApp" */ = {
 			isa = XCConfigurationList;
@@ -572,7 +1077,7 @@
 				706A2A752761CB6D0041B993 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		706A2A762761CB6D0041B993 /* Build configuration list for PBXNativeTarget "StudyTimeManageAppTests" */ = {
 			isa = XCConfigurationList;
@@ -581,7 +1086,7 @@
 				706A2A782761CB6D0041B993 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		706A2A792761CB6D0041B993 /* Build configuration list for PBXNativeTarget "StudyTimeManageAppUITests" */ = {
 			isa = XCConfigurationList;
@@ -590,7 +1095,7 @@
 				706A2A7B2761CB6D0041B993 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 	};

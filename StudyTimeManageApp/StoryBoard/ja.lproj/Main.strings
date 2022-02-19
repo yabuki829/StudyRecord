@@ -1,0 +1,108 @@
+
+/* Class = "UINavigationItem"; title = "Study Record."; ObjectID = "1KC-Zu-Bb3"; */
+"1KC-Zu-Bb3.title" = "勉強記録";
+
+/* Class = "UIBarButtonItem"; title = "FriendID"; ObjectID = "1yf-10-uJR"; */
+"1yf-10-uJR.title" = "FriendID";
+
+/* Class = "UILabel"; text = "Subtitle"; ObjectID = "5n5-Vq-nrM"; */
+"5n5-Vq-nrM.text" = "Subtitle";
+
+/* Class = "UITabBarItem"; title = "home"; ObjectID = "AgW-iZ-7Qm"; */
+"AgW-iZ-7Qm.title" = "Home";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "EGs-h2-TKX"; */
+"EGs-h2-TKX.text" = "タイトル";
+
+/* Class = "UIBarButtonItem"; title = "Edit"; ObjectID = "ETg-0p-TLn"; */
+"ETg-0p-TLn.title" = "編集する";
+
+/* Class = "UITabBarItem"; title = "Rival"; ObjectID = "GpB-qd-9eg"; */
+"GpB-qd-9eg.title" = "Rival";
+
+/* Class = "UIBarButtonItem"; title = "delete"; ObjectID = "HLq-4d-6tv"; */
+"HLq-4d-6tv.title" = "削除する";
+
+/* Class = "UILabel"; text = "12000"; ObjectID = "Icl-dh-dLr"; */
+"Icl-dh-dLr.text" = "12000";
+
+/* Class = "UINavigationItem"; title = "Profile."; ObjectID = "J9z-1Y-Ekp"; */
+"J9z-1Y-Ekp.title" = "Profile.";
+
+/* Class = "UINavigationItem"; title = "10,000hours."; ObjectID = "KC1-vZ-VFG"; */
+"KC1-vZ-VFG.title" = "10,000hours.";
+
+/* Class = "UILabel"; text = "Today's Goal"; ObjectID = "LBG-wK-x3g"; */
+"LBG-wK-x3g.text" = "Today's Goal";
+
+/* Class = "UIButton"; normalTitle = "<  "; ObjectID = "RXU-1q-1vq"; */
+"RXU-1q-1vq.normalTitle" = "<  ";
+
+/* Class = "UIButton"; normalTitle = "  >"; ObjectID = "TNn-Np-FPV"; */
+"TNn-Np-FPV.normalTitle" = "  >";
+
+/* Class = "UITextField"; placeholder = "StudyTime"; ObjectID = "Uum-jM-xsZ"; */
+"Uum-jM-xsZ.placeholder" = "勉強時間";
+
+/* Class = "UITextField"; text = "StudyTime"; ObjectID = "Uum-jM-xsZ"; */
+"Uum-jM-xsZ.text" = "勉強時間";
+
+/* Class = "UIBarButtonItem"; title = "Record"; ObjectID = "WcI-is-EBq"; */
+"WcI-is-EBq.title" = "記録する";
+
+/* Class = "UIBarButtonItem"; title = "Record"; ObjectID = "XDH-YH-ouO"; */
+"XDH-YH-ouO.title" = "記録";
+
+/* Class = "UILabel"; text = "The Goal"; ObjectID = "YSe-Bu-aTb"; */
+"YSe-Bu-aTb.text" = "The Goal";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Zj4-91-Mar"; */
+"Zj4-91-Mar.text" = "Label";
+
+/* Class = "UITabBarItem"; title = "MyPage"; ObjectID = "ZnB-Go-SYp"; */
+"ZnB-Go-SYp.title" = "MyPage";
+
+/* Class = "UINavigationItem"; title = "Record."; ObjectID = "fBN-LX-GM7"; */
+"fBN-LX-GM7.title" = "Record.";
+
+/* Class = "UILabel"; text = "How Many Days"; ObjectID = "isQ-2d-lVq"; */
+"isQ-2d-lVq.text" = "あと何日？";
+
+/* Class = "UINavigationItem"; title = "翔"; ObjectID = "jlp-IK-sky"; */
+"jlp-IK-sky.title" = "翔";
+
+/* Class = "UIButton"; normalTitle = "Search"; ObjectID = "lhW-DQ-k1b"; */
+"lhW-DQ-k1b.normalTitle" = "探す";
+
+/* Class = "UINavigationItem"; title = "Data"; ObjectID = "m4K-v8-ot0"; */
+"m4K-v8-ot0.title" = "Data";
+
+/* Class = "UIBarButtonItem"; title = "Save"; ObjectID = "mXG-tC-eEo"; */
+"mXG-tC-eEo.title" = "保存する";
+
+/* Class = "UIBarButtonItem"; title = "　　"; ObjectID = "qJE-f6-3oc"; */
+"qJE-f6-3oc.title" = "　　";
+
+/* Class = "UINavigationItem"; title = "Home"; ObjectID = "s5A-T2-XlG"; */
+"s5A-T2-XlG.title" = "Home";
+
+/* Class = "UINavigationItem"; title = "Rival Data"; ObjectID = "sni-eA-DfG"; */
+"sni-eA-DfG.title" = "Rival Data";
+
+/* Class = "UITextField"; placeholder = "nick name"; ObjectID = "txi-cr-xYX"; */
+"txi-cr-xYX.placeholder" = "nick name";
+
+/* Class = "UIBarButtonItem"; title = "Menu"; ObjectID = "xls-v6-ifd"; */
+"xls-v6-ifd.title" = "Menu";
+
+/* Class = "UINavigationItem"; title = "Rival."; ObjectID = "xzt-Qh-wdf"; */
+"xzt-Qh-wdf.title" = "Rival.";
+
+/* Class = "UINavigationItem"; title = "10,000hours"; ObjectID = "y0L-SK-tHz"; */
+"y0L-SK-tHz.title" = "10,000hours";
+
+/* Class = "UITabBarItem"; title = "10000hours"; ObjectID = "yIS-IZ-6U7"; */
+"yIS-IZ-6U7.title" = "10000hours";
+
+/* Class = "UINavigationItem"; title = "Bar Charts."; ObjectID = "zHQ-in-PFo"; */
+"zHQ-in-PFo.title" = "Bar Charts.";

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="109" id="KGk-i7-Jjw" customClass="UserProfileViewCell" customModule="StudyTimeManageApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="109"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="109"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="T8z-EQ-mDd">
+                        <rect key="frame" x="10" y="19.5" width="70" height="70"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="70" id="fyf-XH-cCR"/>
+                            <constraint firstAttribute="height" constant="70" id="mfy-eG-f00"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="goal" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lPe-MF-NjV">
+                        <rect key="frame" x="90" y="67" width="219" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vPC-If-CBh">
+                        <rect key="frame" x="90" y="38" width="225" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="lPe-MF-NjV" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" constant="5" id="2TV-80-4cz"/>
+                    <constraint firstItem="vPC-If-CBh" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="Mex-mI-xHO"/>
+                    <constraint firstItem="T8z-EQ-mDd" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="RKp-DK-hJ7"/>
+                    <constraint firstItem="lPe-MF-NjV" firstAttribute="top" secondItem="vPC-If-CBh" secondAttribute="bottom" constant="10" id="RL6-lY-Ybe"/>
+                    <constraint firstItem="vPC-If-CBh" firstAttribute="leading" secondItem="T8z-EQ-mDd" secondAttribute="trailing" constant="10" id="XNw-Kr-Wpi"/>
+                    <constraint firstItem="T8z-EQ-mDd" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="aYI-hv-FIR"/>
+                    <constraint firstAttribute="trailing" secondItem="vPC-If-CBh" secondAttribute="trailing" constant="5" id="eno-WV-mTG"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="lPe-MF-NjV" secondAttribute="bottom" constant="10" id="k1X-dV-G4i"/>
+                    <constraint firstItem="lPe-MF-NjV" firstAttribute="leading" secondItem="T8z-EQ-mDd" secondAttribute="trailing" constant="10" id="wDx-5d-Uod"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="goalLabel" destination="lPe-MF-NjV" id="4yf-rg-zo9"/>
+                <outlet property="profileImage" destination="T8z-EQ-mDd" id="Bpz-Ig-5zx"/>
+                <outlet property="usernameLabel" destination="vPC-If-CBh" id="oO9-IY-e8C"/>
+            </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="70.647321428571431"/>
+        </tableViewCell>
+    </objects>
+</document>

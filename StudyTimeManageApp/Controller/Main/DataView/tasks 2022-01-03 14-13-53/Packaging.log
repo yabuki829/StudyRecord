@@ -1,0 +1,255 @@
+2022-01-03 05:13:49 +0000  Initial pipeline context: <IDEDistributionProcessingPipelineContext: 0x7ff8d7487460; archive(resolved)='<IDEArchive: 0x7ff8d70b52c0>', distributionTask(resolved)='2', distributionDestination(resolved)='1', distributionMethod(resolved)='<IDEDistributionMethodiOSAppStoreDistribution: 0x7ff8d56d7950>', team(resolved)='<IDEProvisioningDisambiguatableBasicTeam: 0x7ff8d4f7d9b0; teamID='YA5HXFT63V', teamName='shodai yabuki', teamType='Individual', username='syodai0829@ezweb.ne.jp', isFreeProvisioningTeam='0'>'>
+	Chain (12, self inclusive):
+	<IDEDistributionProcessingPipelineContext: 0x7ff8d7487460; archive = '<IDEArchive: 0x7ff8d70b52c0>', distributionMethod='<IDEDistributionMethodiOSAppStoreDistribution: 0x7ff8d56d7950>', team='<IDEProvisioningDisambiguatableBasicTeam: 0x7ff8d4f7d9b0; teamID='YA5HXFT63V', teamName='shodai yabuki', teamType='Individual', username='syodai0829@ezweb.ne.jp', isFreeProvisioningTeam='0'>'>
+	<IDEDistributionProcessingPipelineContext: 0x7ff8d7483e90; archive = '<IDEArchive: 0x7ff8d70b52c0>', distributionMethod='<IDEDistributionMethodiOSAppStoreDistribution: 0x7ff8d56d7950>', team='<IDEProvisioningDisambiguatableBasicTeam: 0x7ff8d4f7d9b0; teamID='YA5HXFT63V', teamName='shodai yabuki', teamType='Individual', username='syodai0829@ezweb.ne.jp', isFreeProvisioningTeam='0'>'>
+	<IDEDistributionContext: 0x7ff8d6712ed0; archive = '<IDEArchive: 0x7ff8d70b52c0>', distributionMethod='<IDEDistributionMethodiOSAppStoreDistribution: 0x7ff8d56d7950>', team='<IDEProvisioningDisambiguatableBasicTeam: 0x7ff8d4f7d9b0; teamID='YA5HXFT63V', teamName='shodai yabuki', teamType='Individual', username='syodai0829@ezweb.ne.jp', isFreeProvisioningTeam='0'>'>
+	<IDEDistributionContext: 0x7ff8d664db30; archive = '<IDEArchive: 0x7ff8d70b52c0>', distributionMethod='<IDEDistributionMethodiOSAppStoreDistribution: 0x7ff8d56d7950>', team='<IDEProvisioningDisambiguatableBasicTeam: 0x7ff8d4f7d9b0; teamID='YA5HXFT63V', teamName='shodai yabuki', teamType='Individual', username='syodai0829@ezweb.ne.jp', isFreeProvisioningTeam='0'>'>
+	<IDEDistributionContext: 0x7ff8d74327f0; archive = '<IDEArchive: 0x7ff8d70b52c0>', distributionMethod='<IDEDistributionMethodiOSAppStoreDistribution: 0x7ff8d56d7950>', team='<IDEProvisioningDisambiguatableBasicTeam: 0x7ff8d4f7d9b0; teamID='YA5HXFT63V', teamName='shodai yabuki', teamType='Individual', username='syodai0829@ezweb.ne.jp', isFreeProvisioningTeam='0'>'>
+	<IDEDistributionContext: 0x7ff8d67478d0; archive = '<IDEArchive: 0x7ff8d70b52c0>', distributionMethod='<IDEDistributionMethodiOSAppStoreDistribution: 0x7ff8d56d7950>', team='<IDEProvisioningDisambiguatableBasicTeam: 0x7ff8d4f7d9b0; teamID='YA5HXFT63V', teamName='shodai yabuki', teamType='Individual', username='syodai0829@ezweb.ne.jp', isFreeProvisioningTeam='0'>'>
+	<IDEDistributionContext: 0x7ff8d7c8cbd0; archive = '<IDEArchive: 0x7ff8d70b52c0>', distributionMethod='<IDEDistributionMethodiOSAppStoreDistribution: 0x7ff8d56d7950>', team='<IDEProvisioningDisambiguatableBasicTeam: 0x7ff8d4f7d9b0; teamID='YA5HXFT63V', teamName='shodai yabuki', teamType='Individual', username='syodai0829@ezweb.ne.jp', isFreeProvisioningTeam='0'>'>
+	<IDEDistributionContext: 0x7ff8d7cddea0; archive = '<IDEArchive: 0x7ff8d70b52c0>', distributionMethod='<IDEDistributionMethodiOSAppStoreDistribution: 0x7ff8d56d7950>', team='<IDEProvisioningDisambiguatableBasicTeam: 0x7ff8d4f7d9b0; teamID='YA5HXFT63V', teamName='shodai yabuki', teamType='Individual', username='syodai0829@ezweb.ne.jp', isFreeProvisioningTeam='0'>'>
+	<IDEDistributionContext: 0x7ff8d2d6b930; archive = '<IDEArchive: 0x7ff8d70b52c0>', distributionMethod='<IDEDistributionMethodiOSAppStoreDistribution: 0x7ff8d56d7950>', team='<IDEProvisioningDisambiguatableBasicTeam: 0x7ff8d4f7d9b0; teamID='YA5HXFT63V', teamName='shodai yabuki', teamType='Individual', username='syodai0829@ezweb.ne.jp', isFreeProvisioningTeam='0'>'>
+	<IDEDistributionContext: 0x7ff8d2f8b540; archive = '<IDEArchive: 0x7ff8d70b52c0>', distributionMethod='<IDEDistributionMethodiOSAppStoreDistribution: 0x7ff8d56d7950>', team='(null)'>
+	<IDEDistributionContext: 0x7ff8d2e4cfa0; archive = '<IDEArchive: 0x7ff8d70b52c0>', distributionMethod='<IDEDistributionMethodiOSAppStoreDistribution: 0x7ff8d56d7950>', team='(null)'>
+	<IDEDistributionContext: 0x7ff8d7c75470; archive = '<IDEArchive: 0x7ff8d70b52c0>', distributionMethod='(null)', team='(null)'>
+</IDEDistributionProcessingPipelineContext: 0x7ff8d7487460>
+2022-01-03 05:13:49 +0000  Processing step: IDEDistributionCreateDestRootStep
+2022-01-03 05:13:49 +0000  Processing step: IDEDistributionCopyItemStep
+2022-01-03 05:13:49 +0000  Running /usr/bin/ditto '-V' '/Users/yabukishodai/Library/Developer/Xcode/Archives/2022-01-03/tasks 2022-01-03 14.04.xcarchive/Products/Applications/tasks.app' '/var/folders/wk/pvcp1s4n24566xb6j6sg5dxr0000gn/T/XcodeDistPipeline.~~~Nd6m2g/Root/Payload/tasks.app'
+2022-01-03 05:13:49 +0000  >>> Copying /Users/yabukishodai/Library/Developer/Xcode/Archives/2022-01-03/tasks 2022-01-03 14.04.xcarchive/Products/Applications/tasks.app 
+2022-01-03 05:13:49 +0000  copying file ./_CodeSignature/CodeResources ... 
+2022-01-03 05:13:49 +0000  8633 bytes for ./_CodeSignature/CodeResources
+2022-01-03 05:13:49 +0000  copying file ./tasks ... 
+2022-01-03 05:13:49 +0000  5909008 bytes for ./tasks
+2022-01-03 05:13:49 +0000  copying file ./NendAdResource.bundle/NADFullBoardViewController.nib ... 
+2022-01-03 05:13:49 +0000  13732 bytes for ./NendAdResource.bundle/NADFullBoardViewController.nib
+copying file ./NendAdResource.bundle/mraid.js ... 
+2022-01-03 05:13:49 +0000  23288 bytes for ./NendAdResource.bundle/mraid.js
+2022-01-03 05:13:49 +0000  copying file ./NendAdResource.bundle/Assets.car ... 
+2022-01-03 05:13:49 +0000  278831 bytes for ./NendAdResource.bundle/Assets.car
+copying file ./NendAdResource.bundle/Info.plist ... 
+2022-01-03 05:13:49 +0000  848 bytes for ./NendAdResource.bundle/Info.plist
+2022-01-03 05:13:49 +0000  copying file ./GoogleService-Info.plist ... 
+2022-01-03 05:13:49 +0000  648 bytes for ./GoogleService-Info.plist
+2022-01-03 05:13:49 +0000  copying file ./Base.lproj/Main.storyboardc/UINavigationController-vvN-L4-b2S.nib ... 
+2022-01-03 05:13:49 +0000  2179 bytes for ./Base.lproj/Main.storyboardc/UINavigationController-vvN-L4-b2S.nib
+copying file ./Base.lproj/Main.storyboardc/LsD-1k-fYF-view-l3b-Xu-U2E.nib ... 
+2022-01-03 05:13:49 +0000  3515 bytes for ./Base.lproj/Main.storyboardc/LsD-1k-fYF-view-l3b-Xu-U2E.nib
+copying file ./Base.lproj/Main.storyboardc/Info.plist ... 
+2022-01-03 05:13:49 +0000  276 bytes for ./Base.lproj/Main.storyboardc/Info.plist
+2022-01-03 05:13:49 +0000  copying file ./Base.lproj/LaunchScreen.storyboardc/01J-lp-oVM-view-Ze5-6b-2t3.nib ... 
+2022-01-03 05:13:49 +0000  1197 bytes for ./Base.lproj/LaunchScreen.storyboardc/01J-lp-oVM-view-Ze5-6b-2t3.nib
+copying file ./Base.lproj/LaunchScreen.storyboardc/UIViewController-01J-lp-oVM.nib ... 
+2022-01-03 05:13:49 +0000  896 bytes for ./Base.lproj/LaunchScreen.storyboardc/UIViewController-01J-lp-oVM.nib
+copying file ./Base.lproj/LaunchScreen.storyboardc/Info.plist ... 
+2022-01-03 05:13:49 +0000  258 bytes for ./Base.lproj/LaunchScreen.storyboardc/Info.plist
+2022-01-03 05:13:49 +0000  copying file ./Assets.car ... 
+2022-01-03 05:13:49 +0000  431215 bytes for ./Assets.car
+2022-01-03 05:13:49 +0000  copying file ./PageTab.storyboardc/todo.nib ... 
+2022-01-03 05:13:49 +0000  1088 bytes for ./PageTab.storyboardc/todo.nib
+2022-01-03 05:13:49 +0000  copying file ./PageTab.storyboardc/9fh-Qh-ZJH-view-NxB-YZ-YpS.nib ... 
+2022-01-03 05:13:49 +0000  9362 bytes for ./PageTab.storyboardc/9fh-Qh-ZJH-view-NxB-YZ-YpS.nib
+copying file ./PageTab.storyboardc/4VI-vV-bNW-view-Bs8-aS-MTJ.nib ... 
+2022-01-03 05:13:49 +0000  7363 bytes for ./PageTab.storyboardc/4VI-vV-bNW-view-Bs8-aS-MTJ.nib
+copying file ./PageTab.storyboardc/schedule.nib ... 
+2022-01-03 05:13:49 +0000  1096 bytes for ./PageTab.storyboardc/schedule.nib
+copying file ./PageTab.storyboardc/Info.plist ... 
+2022-01-03 05:13:49 +0000  151 bytes for ./PageTab.storyboardc/Info.plist
+2022-01-03 05:13:49 +0000  copying file ./Frameworks/XLPagerTabStrip.framework/_CodeSignature/CodeResources ... 
+2022-01-03 05:13:49 +0000  2854 bytes for ./Frameworks/XLPagerTabStrip.framework/_CodeSignature/CodeResources
+2022-01-03 05:13:49 +0000  copying file ./Frameworks/XLPagerTabStrip.framework/XLPagerTabStrip.bundle/ButtonCell.nib/runtime.nib ... 
+2022-01-03 05:13:49 +0000  3772 bytes for ./Frameworks/XLPagerTabStrip.framework/XLPagerTabStrip.bundle/ButtonCell.nib/runtime.nib
+copying file ./Frameworks/XLPagerTabStrip.framework/XLPagerTabStrip.bundle/ButtonCell.nib/objects-12.3+.nib ... 
+2022-01-03 05:13:49 +0000  3981 bytes for ./Frameworks/XLPagerTabStrip.framework/XLPagerTabStrip.bundle/ButtonCell.nib/objects-12.3+.nib
+2022-01-03 05:13:49 +0000  copying file ./Frameworks/XLPagerTabStrip.framework/XLPagerTabStrip.bundle/Info.plist ... 
+2022-01-03 05:13:49 +0000  728 bytes for ./Frameworks/XLPagerTabStrip.framework/XLPagerTabStrip.bundle/Info.plist
+2022-01-03 05:13:49 +0000  copying file ./Frameworks/XLPagerTabStrip.framework/XLPagerTabStrip ... 
+2022-01-03 05:13:49 +0000  2067792 bytes for ./Frameworks/XLPagerTabStrip.framework/XLPagerTabStrip
+copying file ./Frameworks/XLPagerTabStrip.framework/Info.plist ... 
+2022-01-03 05:13:49 +0000  753 bytes for ./Frameworks/XLPagerTabStrip.framework/Info.plist
+2022-01-03 05:13:49 +0000  copying file ./embedded.mobileprovision ... 
+2022-01-03 05:13:49 +0000  14239 bytes for ./embedded.mobileprovision
+2022-01-03 05:13:49 +0000  copying file ./Info.plist ... 
+2022-01-03 05:13:50 +0000  1945 bytes for ./Info.plist
+copying file ./PkgInfo ... 
+2022-01-03 05:13:50 +0000  8 bytes for ./PkgInfo
+2022-01-03 05:13:50 +0000  /usr/bin/ditto exited with 0
+2022-01-03 05:13:50 +0000  Processing step: IDEDistributionEmbedProfileStep
+2022-01-03 05:13:50 +0000  Skipping profile for item: <IDEDistributionItem: 0x7ff8d4ed54f0; bundleID='org.cocoapods.XLPagerTabStrip', path='<DVTFilePath:0x7ff8d7091760:'/Users/yabukishodai/Library/Developer/Xcode/Archives/2022-01-03/tasks 2022-01-03 14.04.xcarchive/Products/Applications/tasks.app/Frameworks/XLPagerTabStrip.framework'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0x7ff8d3a39d00; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0x7ff8d72710b0; name='Apple Development: shodai yabuki (A6K56LCA9K)', hash='687577233BD2B503E052A0EA7325509700DF5515', serialNumber='<DVTSigningCertificateSerialNumber: 0x7ff8d52903d0>', certificateKinds='(
+    "1.2.840.113635.100.6.1.12",
+    "1.2.840.113635.100.6.1.2"
+), issueDate='2021-12-07 01:57:57 +0000''>', entitlements='(null)', teamID='YA5HXFT63V', identifier='org.cocoapods.XLPagerTabStrip', executablePath='<DVTFilePath:0x7ff8d71f7bd0:'/Users/yabukishodai/Library/Developer/Xcode/Archives/2022-01-03/tasks 2022-01-03 14.04.xcarchive/Products/Applications/tasks.app/Frameworks/XLPagerTabStrip.framework/XLPagerTabStrip'>', hardenedRuntime='0'>'>
+2022-01-03 05:13:50 +0000  Processing step: IDEDistributionInfoPlistStep
+2022-01-03 05:13:50 +0000  Skipping step: IDEDistributionInfoPlistStep because it said so
+2022-01-03 05:13:50 +0000  Skipping step: IDEDistributionInfoPlistStep because it said so
+2022-01-03 05:13:50 +0000  Processing step: IDEDistributionItemRemovalStep
+2022-01-03 05:13:50 +0000  Processing step: IDEDistributionAppThinningPlistStep
+2022-01-03 05:13:50 +0000  Skipping step: IDEDistributionAppThinningPlistStep because it said so
+2022-01-03 05:13:50 +0000  Processing step: IDEDistributionCompileBitcodeStep
+2022-01-03 05:13:50 +0000  Skipping step: IDEDistributionCompileBitcodeStep because it said so
+2022-01-03 05:13:50 +0000  Processing step: IDEDistributionCodeSlimmingStep
+2022-01-03 05:13:50 +0000  Running /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/bitcode_strip '/var/folders/wk/pvcp1s4n24566xb6j6sg5dxr0000gn/T/XcodeDistPipeline.~~~Nd6m2g/Root/Payload/tasks.app/Frameworks/XLPagerTabStrip.framework/XLPagerTabStrip' '-l' '-o' '/var/folders/wk/pvcp1s4n24566xb6j6sg5dxr0000gn/T/XcodeDistPipeline.~~~Nd6m2g/Root/Payload/tasks.app/Frameworks/XLPagerTabStrip.framework/XLPagerTabStrip'
+2022-01-03 05:13:50 +0000  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/bitcode_strip exited with 0
+2022-01-03 05:13:50 +0000  Running /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/bitcode_strip '/var/folders/wk/pvcp1s4n24566xb6j6sg5dxr0000gn/T/XcodeDistPipeline.~~~Nd6m2g/Root/Payload/tasks.app/tasks' '-l' '-o' '/var/folders/wk/pvcp1s4n24566xb6j6sg5dxr0000gn/T/XcodeDistPipeline.~~~Nd6m2g/Root/Payload/tasks.app/tasks'
+2022-01-03 05:13:50 +0000  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/bitcode_strip exited with 0
+2022-01-03 05:13:50 +0000  Processing step: IDEDistributionCopyBCSymbolMapsStep
+2022-01-03 05:13:50 +0000  Running /usr/bin/ditto '-V' '/Users/yabukishodai/Library/Developer/Xcode/Archives/2022-01-03/tasks 2022-01-03 14.04.xcarchive/BCSymbolMaps/824D7A2E-80E1-3260-AC85-53624D906947.bcsymbolmap' '/var/folders/wk/pvcp1s4n24566xb6j6sg5dxr0000gn/T/XcodeDistPipeline.~~~Nd6m2g/Root/BCSymbolMaps/824D7A2E-80E1-3260-AC85-53624D906947.bcsymbolmap'
+2022-01-03 05:13:50 +0000  >>> Copying /Users/yabukishodai/Library/Developer/Xcode/Archives/2022-01-03/tasks 2022-01-03 14.04.xcarchive/BCSymbolMaps/824D7A2E-80E1-3260-AC85-53624D906947.bcsymbolmap 
+2022-01-03 05:13:50 +0000  copying file ./824D7A2E-80E1-3260-AC85-53624D906947.bcsymbolmap ... 
+2022-01-03 05:13:50 +0000  153889 bytes for ./824D7A2E-80E1-3260-AC85-53624D906947.bcsymbolmap
+2022-01-03 05:13:50 +0000  /usr/bin/ditto exited with 0
+2022-01-03 05:13:50 +0000  Running /usr/bin/ditto '-V' '/Users/yabukishodai/Library/Developer/Xcode/Archives/2022-01-03/tasks 2022-01-03 14.04.xcarchive/BCSymbolMaps/7D24BA4F-7102-3977-A45C-DB73A2830697.bcsymbolmap' '/var/folders/wk/pvcp1s4n24566xb6j6sg5dxr0000gn/T/XcodeDistPipeline.~~~Nd6m2g/Root/BCSymbolMaps/7D24BA4F-7102-3977-A45C-DB73A2830697.bcsymbolmap'
+2022-01-03 05:13:50 +0000  >>> Copying /Users/yabukishodai/Library/Developer/Xcode/Archives/2022-01-03/tasks 2022-01-03 14.04.xcarchive/BCSymbolMaps/7D24BA4F-7102-3977-A45C-DB73A2830697.bcsymbolmap 
+2022-01-03 05:13:50 +0000  copying file ./7D24BA4F-7102-3977-A45C-DB73A2830697.bcsymbolmap ... 
+2022-01-03 05:13:50 +0000  274167 bytes for ./7D24BA4F-7102-3977-A45C-DB73A2830697.bcsymbolmap
+2022-01-03 05:13:50 +0000  /usr/bin/ditto exited with 0
+2022-01-03 05:13:50 +0000  Processing step: IDEDistributionSymbolsStep
+2022-01-03 05:13:50 +0000  Excluding symbols for XLPagerTabStrip.framework
+2022-01-03 05:13:50 +0000  Excluding symbols for tasks.app
+2022-01-03 05:13:50 +0000  Processing step: IDEDistributionCopyAppleProvidedContentStep
+2022-01-03 05:13:50 +0000  Processing step: IDEDistributionAppThinningStep
+2022-01-03 05:13:50 +0000  Skipping step: IDEDistributionAppThinningStep because it said so
+2022-01-03 05:13:50 +0000  Processing step: IDEDistributionArchThinningStep
+2022-01-03 05:13:50 +0000  Running /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/lipo '/var/folders/wk/pvcp1s4n24566xb6j6sg5dxr0000gn/T/XcodeDistPipeline.~~~Nd6m2g/Root/Payload/tasks.app/Frameworks/XLPagerTabStrip.framework/XLPagerTabStrip' '-verify_arch' 'arm64e'
+2022-01-03 05:13:50 +0000  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/lipo exited with 1
+2022-01-03 05:13:50 +0000  Skipping architecture thinning for item "XLPagerTabStrip" because arch "arm64e" wasn't found
+2022-01-03 05:13:50 +0000  Running /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/lipo '/var/folders/wk/pvcp1s4n24566xb6j6sg5dxr0000gn/T/XcodeDistPipeline.~~~Nd6m2g/Root/Payload/tasks.app/tasks' '-verify_arch' 'arm64e'
+2022-01-03 05:13:50 +0000  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/lipo exited with 1
+2022-01-03 05:13:50 +0000  Skipping architecture thinning for item "tasks" because arch "arm64e" wasn't found
+2022-01-03 05:13:50 +0000  Processing step: IDEDistributionODRStep
+2022-01-03 05:13:50 +0000  Processing step: IDEDistributionStripXattrsStep
+2022-01-03 05:13:50 +0000  Skipping stripping extended attributes of item: <IDEDistributionItem: 0x7ff8d4ed54f0; bundleID='org.cocoapods.XLPagerTabStrip', path='<DVTFilePath:0x7ff8d7091760:'/Users/yabukishodai/Library/Developer/Xcode/Archives/2022-01-03/tasks 2022-01-03 14.04.xcarchive/Products/Applications/tasks.app/Frameworks/XLPagerTabStrip.framework'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0x7ff8d3a39d00; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0x7ff8d74661c0; name='Apple Development: shodai yabuki (A6K56LCA9K)', hash='687577233BD2B503E052A0EA7325509700DF5515', serialNumber='<DVTSigningCertificateSerialNumber: 0x7ff8d743adf0>', certificateKinds='(
+    "1.2.840.113635.100.6.1.12",
+    "1.2.840.113635.100.6.1.2"
+), issueDate='2021-12-07 01:57:57 +0000''>', entitlements='(null)', teamID='YA5HXFT63V', identifier='org.cocoapods.XLPagerTabStrip', executablePath='<DVTFilePath:0x7ff8d71f7bd0:'/Users/yabukishodai/Library/Developer/Xcode/Archives/2022-01-03/tasks 2022-01-03 14.04.xcarchive/Products/Applications/tasks.app/Frameworks/XLPagerTabStrip.framework/XLPagerTabStrip'>', hardenedRuntime='0'>'>
+2022-01-03 05:13:50 +0000  Running /usr/bin/xattr '-crs' '/var/folders/wk/pvcp1s4n24566xb6j6sg5dxr0000gn/T/XcodeDistPipeline.~~~Nd6m2g/Root/Payload/tasks.app'
+2022-01-03 05:13:50 +0000  /usr/bin/xattr exited with 0
+2022-01-03 05:13:50 +0000  Processing step: IDEDistributionCodesignStep
+2022-01-03 05:13:50 +0000  Entitlements for <IDEDistributionItem: 0x7ff8d4ed54f0; bundleID='org.cocoapods.XLPagerTabStrip', path='<DVTFilePath:0x7ff8d7091760:'/Users/yabukishodai/Library/Developer/Xcode/Archives/2022-01-03/tasks 2022-01-03 14.04.xcarchive/Products/Applications/tasks.app/Frameworks/XLPagerTabStrip.framework'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0x7ff8d3a39d00; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0x7ff8d7c81330; name='Apple Development: shodai yabuki (A6K56LCA9K)', hash='687577233BD2B503E052A0EA7325509700DF5515', serialNumber='<DVTSigningCertificateSerialNumber: 0x7ff8d4efb860>', certificateKinds='(
+    "1.2.840.113635.100.6.1.12",
+    "1.2.840.113635.100.6.1.2"
+), issueDate='2021-12-07 01:57:57 +0000''>', entitlements='(null)', teamID='YA5HXFT63V', identifier='org.cocoapods.XLPagerTabStrip', executablePath='<DVTFilePath:0x7ff8d71f7bd0:'/Users/yabukishodai/Library/Developer/Xcode/Archives/2022-01-03/tasks 2022-01-03 14.04.xcarchive/Products/Applications/tasks.app/Frameworks/XLPagerTabStrip.framework/XLPagerTabStrip'>', hardenedRuntime='0'>'>: {
+}
+2022-01-03 05:13:50 +0000  Entitlements for <IDEDistributionItem: 0x7ff8d4ed54f0; bundleID='org.cocoapods.XLPagerTabStrip', path='<DVTFilePath:0x7ff8d7091760:'/Users/yabukishodai/Library/Developer/Xcode/Archives/2022-01-03/tasks 2022-01-03 14.04.xcarchive/Products/Applications/tasks.app/Frameworks/XLPagerTabStrip.framework'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0x7ff8d3a39d00; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0x7ff8d7cd7340; name='Apple Development: shodai yabuki (A6K56LCA9K)', hash='687577233BD2B503E052A0EA7325509700DF5515', serialNumber='<DVTSigningCertificateSerialNumber: 0x7ff8d4ed1850>', certificateKinds='(
+    "1.2.840.113635.100.6.1.12",
+    "1.2.840.113635.100.6.1.2"
+), issueDate='2021-12-07 01:57:57 +0000''>', entitlements='(null)', teamID='YA5HXFT63V', identifier='org.cocoapods.XLPagerTabStrip', executablePath='<DVTFilePath:0x7ff8d71f7bd0:'/Users/yabukishodai/Library/Developer/Xcode/Archives/2022-01-03/tasks 2022-01-03 14.04.xcarchive/Products/Applications/tasks.app/Frameworks/XLPagerTabStrip.framework/XLPagerTabStrip'>', hardenedRuntime='0'>'> are: {
+}
+2022-01-03 05:13:50 +0000  Writing entitlements for <IDEDistributionItem: 0x7ff8d4ed54f0; bundleID='org.cocoapods.XLPagerTabStrip', path='<DVTFilePath:0x7ff8d7091760:'/Users/yabukishodai/Library/Developer/Xcode/Archives/2022-01-03/tasks 2022-01-03 14.04.xcarchive/Products/Applications/tasks.app/Frameworks/XLPagerTabStrip.framework'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0x7ff8d3a39d00; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0x7ff8d7c33510; name='Apple Development: shodai yabuki (A6K56LCA9K)', hash='687577233BD2B503E052A0EA7325509700DF5515', serialNumber='<DVTSigningCertificateSerialNumber: 0x7ff8d4efea30>', certificateKinds='(
+    "1.2.840.113635.100.6.1.12",
+    "1.2.840.113635.100.6.1.2"
+), issueDate='2021-12-07 01:57:57 +0000''>', entitlements='(null)', teamID='YA5HXFT63V', identifier='org.cocoapods.XLPagerTabStrip', executablePath='<DVTFilePath:0x7ff8d71f7bd0:'/Users/yabukishodai/Library/Developer/Xcode/Archives/2022-01-03/tasks 2022-01-03 14.04.xcarchive/Products/Applications/tasks.app/Frameworks/XLPagerTabStrip.framework/XLPagerTabStrip'>', hardenedRuntime='0'>'> to: /var/folders/wk/pvcp1s4n24566xb6j6sg5dxr0000gn/T/XcodeDistPipeline.~~~Nd6m2g/entitlements~~~YOe1SR
+2022-01-03 05:13:50 +0000  Running /usr/bin/codesign '-vvv' '--force' '--sign' '1EFC5867241C7B5E48031E105DBD542FCBFA7368' '--entitlements' '/var/folders/wk/pvcp1s4n24566xb6j6sg5dxr0000gn/T/XcodeDistPipeline.~~~Nd6m2g/entitlements~~~YOe1SR' '--preserve-metadata=identifier,flags,runtime' '/var/folders/wk/pvcp1s4n24566xb6j6sg5dxr0000gn/T/XcodeDistPipeline.~~~Nd6m2g/Root/Payload/tasks.app/Frameworks/XLPagerTabStrip.framework'
+2022-01-03 05:13:50 +0000  /var/folders/wk/pvcp1s4n24566xb6j6sg5dxr0000gn/T/XcodeDistPipeline.~~~Nd6m2g/Root/Payload/tasks.app/Frameworks/XLPagerTabStrip.framework: signed bundle with Mach-O universal (arm64) [org.cocoapods.XLPagerTabStrip]
+2022-01-03 05:13:50 +0000  /usr/bin/codesign exited with 0
+2022-01-03 05:13:50 +0000  Entitlements for <IDEDistributionItem: 0x7ff8d6647190; bundleID='com.sho.tasks', path='<DVTFilePath:0x7ff8d70880d0:'/Users/yabukishodai/Library/Developer/Xcode/Archives/2022-01-03/tasks 2022-01-03 14.04.xcarchive/Products/Applications/tasks.app'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0x7ff8d6050350; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0x7ff8d7c873e0; name='Apple Development: shodai yabuki (A6K56LCA9K)', hash='687577233BD2B503E052A0EA7325509700DF5515', serialNumber='<DVTSigningCertificateSerialNumber: 0x7ff8d4e36510>', certificateKinds='(
+    "1.2.840.113635.100.6.1.12",
+    "1.2.840.113635.100.6.1.2"
+), issueDate='2021-12-07 01:57:57 +0000''>', entitlements='{
+    "application-identifier" = "YA5HXFT63V.com.sho.tasks";
+    "com.apple.developer.team-identifier" = YA5HXFT63V;
+    "get-task-allow" = 1;
+}', teamID='YA5HXFT63V', identifier='com.sho.tasks', executablePath='<DVTFilePath:0x7ff8d56e29c0:'/Users/yabukishodai/Library/Developer/Xcode/Archives/2022-01-03/tasks 2022-01-03 14.04.xcarchive/Products/Applications/tasks.app/tasks'>', hardenedRuntime='0'>'>: {
+    "application-identifier" = "YA5HXFT63V.com.sho.tasks";
+    "beta-reports-active" = 1;
+    "com.apple.developer.team-identifier" = YA5HXFT63V;
+    "get-task-allow" = 0;
+}
+2022-01-03 05:13:50 +0000  Entitlements for <IDEDistributionItem: 0x7ff8d6647190; bundleID='com.sho.tasks', path='<DVTFilePath:0x7ff8d70880d0:'/Users/yabukishodai/Library/Developer/Xcode/Archives/2022-01-03/tasks 2022-01-03 14.04.xcarchive/Products/Applications/tasks.app'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0x7ff8d6050350; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0x7ff8d2e9a480; name='Apple Development: shodai yabuki (A6K56LCA9K)', hash='687577233BD2B503E052A0EA7325509700DF5515', serialNumber='<DVTSigningCertificateSerialNumber: 0x7ff8d524cb90>', certificateKinds='(
+    "1.2.840.113635.100.6.1.12",
+    "1.2.840.113635.100.6.1.2"
+), issueDate='2021-12-07 01:57:57 +0000''>', entitlements='{
+    "application-identifier" = "YA5HXFT63V.com.sho.tasks";
+    "com.apple.developer.team-identifier" = YA5HXFT63V;
+    "get-task-allow" = 1;
+}', teamID='YA5HXFT63V', identifier='com.sho.tasks', executablePath='<DVTFilePath:0x7ff8d56e29c0:'/Users/yabukishodai/Library/Developer/Xcode/Archives/2022-01-03/tasks 2022-01-03 14.04.xcarchive/Products/Applications/tasks.app/tasks'>', hardenedRuntime='0'>'> are: {
+    "application-identifier" = "YA5HXFT63V.com.sho.tasks";
+    "beta-reports-active" = 1;
+    "com.apple.developer.team-identifier" = YA5HXFT63V;
+    "get-task-allow" = 0;
+}
+2022-01-03 05:13:50 +0000  Writing entitlements for <IDEDistributionItem: 0x7ff8d6647190; bundleID='com.sho.tasks', path='<DVTFilePath:0x7ff8d70880d0:'/Users/yabukishodai/Library/Developer/Xcode/Archives/2022-01-03/tasks 2022-01-03 14.04.xcarchive/Products/Applications/tasks.app'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0x7ff8d6050350; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0x7ff8d66395f0; name='Apple Development: shodai yabuki (A6K56LCA9K)', hash='687577233BD2B503E052A0EA7325509700DF5515', serialNumber='<DVTSigningCertificateSerialNumber: 0x7ff8d6347020>', certificateKinds='(
+    "1.2.840.113635.100.6.1.12",
+    "1.2.840.113635.100.6.1.2"
+), issueDate='2021-12-07 01:57:57 +0000''>', entitlements='{
+    "application-identifier" = "YA5HXFT63V.com.sho.tasks";
+    "com.apple.developer.team-identifier" = YA5HXFT63V;
+    "get-task-allow" = 1;
+}', teamID='YA5HXFT63V', identifier='com.sho.tasks', executablePath='<DVTFilePath:0x7ff8d56e29c0:'/Users/yabukishodai/Library/Developer/Xcode/Archives/2022-01-03/tasks 2022-01-03 14.04.xcarchive/Products/Applications/tasks.app/tasks'>', hardenedRuntime='0'>'> to: /var/folders/wk/pvcp1s4n24566xb6j6sg5dxr0000gn/T/XcodeDistPipeline.~~~Nd6m2g/entitlements~~~Io00xb
+2022-01-03 05:13:50 +0000  Running /usr/bin/codesign '-vvv' '--force' '--sign' '1EFC5867241C7B5E48031E105DBD542FCBFA7368' '--entitlements' '/var/folders/wk/pvcp1s4n24566xb6j6sg5dxr0000gn/T/XcodeDistPipeline.~~~Nd6m2g/entitlements~~~Io00xb' '--preserve-metadata=identifier,flags,runtime' '/var/folders/wk/pvcp1s4n24566xb6j6sg5dxr0000gn/T/XcodeDistPipeline.~~~Nd6m2g/Root/Payload/tasks.app'
+2022-01-03 05:13:50 +0000  /var/folders/wk/pvcp1s4n24566xb6j6sg5dxr0000gn/T/XcodeDistPipeline.~~~Nd6m2g/Root/Payload/tasks.app: signed app bundle with Mach-O thin (arm64) [com.sho.tasks]
+2022-01-03 05:13:50 +0000  /usr/bin/codesign exited with 0
+2022-01-03 05:13:50 +0000  Processing step: IDEDistributionZipODRItemStep
+2022-01-03 05:13:50 +0000  Skipping step: IDEDistributionZipODRItemStep because it said so
+2022-01-03 05:13:50 +0000  Skipping step: IDEDistributionZipODRItemStep because it said so
+2022-01-03 05:13:50 +0000  Processing step: IDEDistributionCreateIPAStep
+2022-01-03 05:13:50 +0000  Running /usr/bin/ditto '-V' '-c' '-k' '--norsrc' '/var/folders/wk/pvcp1s4n24566xb6j6sg5dxr0000gn/T/XcodeDistPipeline.~~~Nd6m2g/Root' '/var/folders/wk/pvcp1s4n24566xb6j6sg5dxr0000gn/T/XcodeDistPipeline.~~~Nd6m2g/Packages/tasks.ipa'
+2022-01-03 05:13:50 +0000  >>> Copying /var/folders/wk/pvcp1s4n24566xb6j6sg5dxr0000gn/T/XcodeDistPipeline.~~~Nd6m2g/Root 
+2022-01-03 05:13:50 +0000  copying file ./BCSymbolMaps/824D7A2E-80E1-3260-AC85-53624D906947.bcsymbolmap ... 
+2022-01-03 05:13:50 +0000  153889 bytes for ./BCSymbolMaps/824D7A2E-80E1-3260-AC85-53624D906947.bcsymbolmap
+copying file ./BCSymbolMaps/7D24BA4F-7102-3977-A45C-DB73A2830697.bcsymbolmap ... 
+2022-01-03 05:13:50 +0000  274167 bytes for ./BCSymbolMaps/7D24BA4F-7102-3977-A45C-DB73A2830697.bcsymbolmap
+2022-01-03 05:13:50 +0000  copying file ./Payload/tasks.app/_CodeSignature/CodeResources ... 
+2022-01-03 05:13:50 +0000  8633 bytes for ./Payload/tasks.app/_CodeSignature/CodeResources
+2022-01-03 05:13:50 +0000  copying file ./Payload/tasks.app/tasks ... 
+2022-01-03 05:13:51 +0000  5016992 bytes for ./Payload/tasks.app/tasks
+2022-01-03 05:13:51 +0000  copying file ./Payload/tasks.app/NendAdResource.bundle/NADFullBoardViewController.nib ... 
+2022-01-03 05:13:51 +0000  13732 bytes for ./Payload/tasks.app/NendAdResource.bundle/NADFullBoardViewController.nib
+copying file ./Payload/tasks.app/NendAdResource.bundle/mraid.js ... 
+2022-01-03 05:13:51 +0000  23288 bytes for ./Payload/tasks.app/NendAdResource.bundle/mraid.js
+copying file ./Payload/tasks.app/NendAdResource.bundle/Assets.car ... 
+2022-01-03 05:13:51 +0000  278831 bytes for ./Payload/tasks.app/NendAdResource.bundle/Assets.car
+copying file ./Payload/tasks.app/NendAdResource.bundle/Info.plist ... 
+2022-01-03 05:13:51 +0000  848 bytes for ./Payload/tasks.app/NendAdResource.bundle/Info.plist
+copying file ./Payload/tasks.app/GoogleService-Info.plist ... 
+2022-01-03 05:13:51 +0000  648 bytes for ./Payload/tasks.app/GoogleService-Info.plist
+copying file ./Payload/tasks.app/Base.lproj/Main.storyboardc/UINavigationController-vvN-L4-b2S.nib ... 
+2022-01-03 05:13:51 +0000  2179 bytes for ./Payload/tasks.app/Base.lproj/Main.storyboardc/UINavigationController-vvN-L4-b2S.nib
+2022-01-03 05:13:51 +0000  copying file ./Payload/tasks.app/Base.lproj/Main.storyboardc/LsD-1k-fYF-view-l3b-Xu-U2E.nib ... 
+2022-01-03 05:13:51 +0000  3515 bytes for ./Payload/tasks.app/Base.lproj/Main.storyboardc/LsD-1k-fYF-view-l3b-Xu-U2E.nib
+copying file ./Payload/tasks.app/Base.lproj/Main.storyboardc/Info.plist ... 
+2022-01-03 05:13:51 +0000  276 bytes for ./Payload/tasks.app/Base.lproj/Main.storyboardc/Info.plist
+copying file ./Payload/tasks.app/Base.lproj/LaunchScreen.storyboardc/01J-lp-oVM-view-Ze5-6b-2t3.nib ... 
+2022-01-03 05:13:51 +0000  1197 bytes for ./Payload/tasks.app/Base.lproj/LaunchScreen.storyboardc/01J-lp-oVM-view-Ze5-6b-2t3.nib
+copying file ./Payload/tasks.app/Base.lproj/LaunchScreen.storyboardc/UIViewController-01J-lp-oVM.nib ... 
+2022-01-03 05:13:51 +0000  896 bytes for ./Payload/tasks.app/Base.lproj/LaunchScreen.storyboardc/UIViewController-01J-lp-oVM.nib
+copying file ./Payload/tasks.app/Base.lproj/LaunchScreen.storyboardc/Info.plist ... 
+258 bytes for ./Payload/tasks.app/Base.lproj/LaunchScreen.storyboardc/Info.plist
+2022-01-03 05:13:51 +0000  copying file ./Payload/tasks.app/Assets.car ... 
+2022-01-03 05:13:51 +0000  431215 bytes for ./Payload/tasks.app/Assets.car
+2022-01-03 05:13:51 +0000  copying file ./Payload/tasks.app/PageTab.storyboardc/todo.nib ... 
+1088 bytes for ./Payload/tasks.app/PageTab.storyboardc/todo.nib
+copying file ./Payload/tasks.app/PageTab.storyboardc/9fh-Qh-ZJH-view-NxB-YZ-YpS.nib ... 
+2022-01-03 05:13:51 +0000  9362 bytes for ./Payload/tasks.app/PageTab.storyboardc/9fh-Qh-ZJH-view-NxB-YZ-YpS.nib
+copying file ./Payload/tasks.app/PageTab.storyboardc/4VI-vV-bNW-view-Bs8-aS-MTJ.nib ... 
+2022-01-03 05:13:51 +0000  7363 bytes for ./Payload/tasks.app/PageTab.storyboardc/4VI-vV-bNW-view-Bs8-aS-MTJ.nib
+copying file ./Payload/tasks.app/PageTab.storyboardc/schedule.nib ... 
+2022-01-03 05:13:51 +0000  1096 bytes for ./Payload/tasks.app/PageTab.storyboardc/schedule.nib
+copying file ./Payload/tasks.app/PageTab.storyboardc/Info.plist ... 
+2022-01-03 05:13:51 +0000  151 bytes for ./Payload/tasks.app/PageTab.storyboardc/Info.plist
+2022-01-03 05:13:51 +0000  copying file ./Payload/tasks.app/Frameworks/XLPagerTabStrip.framework/_CodeSignature/CodeResources ... 
+2022-01-03 05:13:51 +0000  2854 bytes for ./Payload/tasks.app/Frameworks/XLPagerTabStrip.framework/_CodeSignature/CodeResources
+2022-01-03 05:13:51 +0000  copying file ./Payload/tasks.app/Frameworks/XLPagerTabStrip.framework/XLPagerTabStrip.bundle/ButtonCell.nib/runtime.nib ... 
+2022-01-03 05:13:51 +0000  3772 bytes for ./Payload/tasks.app/Frameworks/XLPagerTabStrip.framework/XLPagerTabStrip.bundle/ButtonCell.nib/runtime.nib
+2022-01-03 05:13:51 +0000  copying file ./Payload/tasks.app/Frameworks/XLPagerTabStrip.framework/XLPagerTabStrip.bundle/ButtonCell.nib/objects-12.3+.nib ... 
+2022-01-03 05:13:51 +0000  3981 bytes for ./Payload/tasks.app/Frameworks/XLPagerTabStrip.framework/XLPagerTabStrip.bundle/ButtonCell.nib/objects-12.3+.nib
+2022-01-03 05:13:51 +0000  copying file ./Payload/tasks.app/Frameworks/XLPagerTabStrip.framework/XLPagerTabStrip.bundle/Info.plist ... 
+2022-01-03 05:13:51 +0000  728 bytes for ./Payload/tasks.app/Frameworks/XLPagerTabStrip.framework/XLPagerTabStrip.bundle/Info.plist
+2022-01-03 05:13:51 +0000  copying file ./Payload/tasks.app/Frameworks/XLPagerTabStrip.framework/XLPagerTabStrip ... 
+2022-01-03 05:13:51 +0000  1407936 bytes for ./Payload/tasks.app/Frameworks/XLPagerTabStrip.framework/XLPagerTabStrip
+copying file ./Payload/tasks.app/Frameworks/XLPagerTabStrip.framework/Info.plist ... 
+2022-01-03 05:13:51 +0000  753 bytes for ./Payload/tasks.app/Frameworks/XLPagerTabStrip.framework/Info.plist
+copying file ./Payload/tasks.app/embedded.mobileprovision ... 
+2022-01-03 05:13:51 +0000  14103 bytes for ./Payload/tasks.app/embedded.mobileprovision
+copying file ./Payload/tasks.app/Info.plist ... 
+2022-01-03 05:13:51 +0000  1945 bytes for ./Payload/tasks.app/Info.plist
+copying file ./Payload/tasks.app/PkgInfo ... 
+2022-01-03 05:13:51 +0000  8 bytes for ./Payload/tasks.app/PkgInfo
+2022-01-03 05:13:51 +0000  /usr/bin/ditto exited with 0
+2022-01-03 05:13:51 +0000  Processing step: IDEDistributionAppStoreInformationStep
+2022-01-03 05:13:51 +0000  Skipping step: IDEDistributionAppStoreInformationStep because it said so
+2022-01-03 05:13:51 +0000  Processing step: IDEDistributionGenerateProcessedDistributionItems
+2022-01-03 05:13:51 +0000  IDEDistributionItem init <DVTFilePath:0x7ff8d727ab30:'/var/folders/wk/pvcp1s4n24566xb6j6sg5dxr0000gn/T/XcodeDistPipeline.~~~Nd6m2g/Root/Payload/tasks.app/Frameworks/XLPagerTabStrip.framework'>
+2022-01-03 05:13:51 +0000  IDEDistributionItem init <DVTFilePath:0x7ff8d71d28c0:'/var/folders/wk/pvcp1s4n24566xb6j6sg5dxr0000gn/T/XcodeDistPipeline.~~~Nd6m2g/Root/Payload/tasks.app'>
+2022-01-03 05:13:51 +0000  Processing step: IDEDistributionCreateManifestStep
+2022-01-03 05:13:51 +0000  Skipping step: IDEDistributionCreateManifestStep because it said so
