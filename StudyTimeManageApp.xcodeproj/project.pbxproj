@@ -29,13 +29,11 @@
 		704ED92D2768CF38000F9F10 /* UserRecordCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 704ED92B2768CF38000F9F10 /* UserRecordCell.xib */; };
 		704FE6782768372600CB9A71 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704FE6772768372600CB9A71 /* MenuViewController.swift */; };
 		7051EF9A279AC733005492D6 /* TabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7051EF99279AC733005492D6 /* TabbarController.swift */; };
-		7053C1A72792CEFB009F52E7 /* Report.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7053C1A62792CEFB009F52E7 /* Report.swift */; };
 		7057C4D0276AD87000DE8214 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7057C4CF276AD87000DE8214 /* DetailViewController.swift */; };
 		70584E1427ABF86E00C08B31 /* TermViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70584E1327ABF86E00C08B31 /* TermViewController.swift */; };
 		70584E1927ABF88900C08B31 /* PrivacyPolicyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70584E1827ABF88900C08B31 /* PrivacyPolicyViewController.swift */; };
 		70584E1E27ABF8BA00C08B31 /* DeleteAcountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70584E1D27ABF8BA00C08B31 /* DeleteAcountViewController.swift */; };
 		70587585276783D600A3D237 /* RecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70587584276783D600A3D237 /* RecordViewController.swift */; };
-		7061F3AC2766081B00423AE2 /* SubscriptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7061F3AB2766081B00423AE2 /* SubscriptViewController.swift */; };
 		7061F3B12766095900423AE2 /* FriendSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7061F3B02766095900423AE2 /* FriendSearchViewController.swift */; };
 		7065E96D278D455B0053BBF2 /* DataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7065E96C278D455B0053BBF2 /* DataViewController.swift */; };
 		7065E972278D4F7F0053BBF2 /* Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7065E971278D4F7F0053BBF2 /* Formatter.swift */; };
@@ -112,14 +110,12 @@
 		704ED92B2768CF38000F9F10 /* UserRecordCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserRecordCell.xib; sourceTree = "<group>"; };
 		704FE6772768372600CB9A71 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		7051EF99279AC733005492D6 /* TabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarController.swift; sourceTree = "<group>"; };
-		7053C1A62792CEFB009F52E7 /* Report.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Report.swift; sourceTree = "<group>"; };
 		7057C4CF276AD87000DE8214 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		705832AE2790202600E01B87 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
 		70584E1327ABF86E00C08B31 /* TermViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermViewController.swift; sourceTree = "<group>"; };
 		70584E1827ABF88900C08B31 /* PrivacyPolicyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyViewController.swift; sourceTree = "<group>"; };
 		70584E1D27ABF8BA00C08B31 /* DeleteAcountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteAcountViewController.swift; sourceTree = "<group>"; };
 		70587584276783D600A3D237 /* RecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordViewController.swift; sourceTree = "<group>"; };
-		7061F3AB2766081B00423AE2 /* SubscriptViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptViewController.swift; sourceTree = "<group>"; };
 		7061F3B02766095900423AE2 /* FriendSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendSearchViewController.swift; sourceTree = "<group>"; };
 		7065E96C278D455B0053BBF2 /* DataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataViewController.swift; sourceTree = "<group>"; };
 		7065E971278D4F7F0053BBF2 /* Formatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatter.swift; sourceTree = "<group>"; };
@@ -274,7 +270,6 @@
 				709F7F5B2771CE1A00C07A04 /* Friend */,
 				70660F712769720F00120CF7 /* Home */,
 				704ED91C2768CBE4000F9F10 /* UserPage */,
-				7061F3AB2766081B00423AE2 /* SubscriptViewController.swift */,
 				70587584276783D600A3D237 /* RecordViewController.swift */,
 				7051EF99279AC733005492D6 /* TabbarController.swift */,
 				70B03CF32793F769007E560B /* SplashViewController.swift */,
@@ -373,7 +368,6 @@
 				706A2A8F2761CBC00041B993 /* Extension.swift */,
 				7068C18C27854C7500A27642 /* Language.swift */,
 				7065E971278D4F7F0053BBF2 /* Formatter.swift */,
-				7053C1A62792CEFB009F52E7 /* Report.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -729,7 +723,6 @@
 				706A2A4D2761CB6B0041B993 /* AppDelegate.swift in Sources */,
 				704B9277277EC0F90012D321 /* PieChartViewDetailController.swift in Sources */,
 				706A2A952761CBC70041B993 /* Math.swift in Sources */,
-				7053C1A72792CEFB009F52E7 /* Report.swift in Sources */,
 				709F7F602771D93800C07A04 /* FriendStudyTimeViewController.swift in Sources */,
 				7029D5822764A85E007EC795 /* PieChartCell.swift in Sources */,
 				70660F732769724C00120CF7 /* HomeViewController.swift in Sources */,
@@ -740,7 +733,6 @@
 				706A2AAC2761CC200041B993 /* MainViewController.swift in Sources */,
 				7068C18D27854C7500A27642 /* Language.swift in Sources */,
 				704FE6782768372600CB9A71 /* MenuViewController.swift in Sources */,
-				7061F3AC2766081B00423AE2 /* SubscriptViewController.swift in Sources */,
 				707ACA2A2772C85900A8A158 /* UserProfileViewCell.swift in Sources */,
 				704AA7D62768D7C200A49FC3 /* Struct.swift in Sources */,
 				706A2A862761CBB40041B993 /* Database.swift in Sources */,

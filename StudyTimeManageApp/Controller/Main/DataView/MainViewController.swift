@@ -63,7 +63,7 @@ class MainViewController: UIViewController, UITextFieldDelegate{
         settingUntil()
         
         
-        //        勉強時間の取得
+        //勉強時間の取得
         dayStudyTime = studytime.getDay()
         monthStudyTime = studytime.getMonth()
         totalStudyTime = studytime.getTotal()

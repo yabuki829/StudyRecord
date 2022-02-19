@@ -156,20 +156,6 @@ class DateModel{
         return str
     }
   
-    
-    //投稿の時間表示に使用している
-//    func convertDateToStringType2(date:Date) -> [String]{
-//
-//        let dateFormatter = DateFormatter()
-//        dateFormatter.dateFormat = "MM/dd"
-//
-//        dateFormatter.calendar = .current
-//        let str = dateFormatter.string(from: date)
-//
-//        let arr:[String] = str.components(separatedBy: "/")
-//
-//        return arr
-//    }
     //投稿の時間表示に使用している & テスト用
     func convertStringToDate1(dateString:String) -> Date{
         
@@ -184,12 +170,9 @@ class DateModel{
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat =  "yyyy年MM月dd日"
         dateFormatter.locale = Locale.current
-//        dateFormatter.calendar = Calendar(identifier: .gregorian)
         dateFormatter.calendar = .current
 
-        // 変換
         let date = dateFormatter.date(from: dateString)
-        // 結果表示
         return date!
     }
     func getWeekDay(date:Date) -> Int{
@@ -197,6 +180,7 @@ class DateModel{
         let component = (calendar as NSCalendar).components([   NSCalendar.Unit.weekday], from: date)
         return convert(weekInt: component.weekday!)
     }
+    
     func convert(weekInt:Int) -> Int{
 //        月曜日までの距離を返す
         switch weekInt {

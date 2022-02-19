@@ -61,7 +61,6 @@ class Database{
         //月曜日から何日離れているか.
         
         let i = studyClass.getWeekDay(date: postDate)
-        print()
         let startDate = Calendar.current.date(byAdding: .day, value: -i, to: postDate)!
         let endDate = Calendar.current.date(byAdding: .day, value: 6, to: startDate)!
         let date = DateModel().convertDateToString(date: startDate, format: "yyyy年MM月dd日")
@@ -80,11 +79,7 @@ class Database{
             array.append(data.month[i])
             
         }
-        print("ここです")
-        print("保存します。")
-        print(array)
         let year = dateModel.convertDateToString(date: data.year, format: "yyyy年" )
-        print(year,"年")
         
         database.collection("Users").document(userid as! String).collection("MonthStudyTime").document(year).setData(
             ["year":postDate,"month":array]
@@ -150,14 +145,17 @@ class Database{
             
         }
     }
+    
     func deleteComment(postID:String,commentID:String){
         database.collection("Comments").document(postID).collection("Comment").document(commentID).delete()
     }
+    
     func deletePost(userid:String,postid:String){
         database.collection("Records").document(postid).delete()
         database.collection("Users").document(userid).collection("Record").document(postid).delete()
       
     }
+    
     //reportedID 通報された人のid
     func report(report:String,reportedID:String,postID:String,comment:String){
         let userid = UserDefaults.standard.object(forKey: "userid")
@@ -166,21 +164,17 @@ class Database{
             ["report":report,"reporterID":userid as Any,"reportedID":reportedID,"comment":comment,"postID":postID]
         )
     }
+    
     func reportUser(report:String,reportedID:String,postID:String,memo:String,username:String){
         let userid = UserDefaults.standard.object(forKey: "userid")
         database.collection("Reports").document(postID).collection("user").document(userid as! String).setData(
             ["report":report,"reporterID":userid as Any,"reportedID":reportedID,"postID":postID,"memo":memo,"username":username]
         )
     }
+    
     func deleteAcount(){
-        print("------------------------------")
-        print("アカウントを削除します")
-        
         let userid = UserDefaults.standard.object(forKey: "userid")
-
-//
         database.collection("Users").document(userid as! String).delete()
-        
         let appDomain = Bundle.main.bundleIdentifier
         UserDefaults.standard.removePersistentDomain(forName: appDomain!)
     }

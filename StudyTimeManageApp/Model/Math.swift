@@ -14,7 +14,3 @@ struct sexagesimal{
     let hour:Int
     let minutes:Int
 }
-class Math{
-//    10進数を60進数に転換する
-    func convertTo60(){}
-}
