@@ -69,6 +69,9 @@
 		70B03CF92793FCAB007E560B /* watch.json in Resources */ = {isa = PBXBuildFile; fileRef = 70B03CF82793FCAB007E560B /* watch.json */; };
 		70B3F977279E58BD0001DA4E /* AdTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B3F975279E58BD0001DA4E /* AdTableViewCell.swift */; };
 		70B3F978279E58BD0001DA4E /* AdTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70B3F976279E58BD0001DA4E /* AdTableViewCell.xib */; };
+		70FA384D27C1EEEB0080ABC1 /* SelectLicenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FA384C27C1EEEB0080ABC1 /* SelectLicenseViewController.swift */; };
+		70FA385227C1F7ED0080ABC1 /* License.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FA385127C1F7ED0080ABC1 /* License.swift */; };
+		70FA385D27C1FCCA0080ABC1 /* ShowLicenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FA385C27C1FCCA0080ABC1 /* ShowLicenseViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -157,6 +160,9 @@
 		70B03CF82793FCAB007E560B /* watch.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = watch.json; sourceTree = "<group>"; };
 		70B3F975279E58BD0001DA4E /* AdTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdTableViewCell.swift; sourceTree = "<group>"; };
 		70B3F976279E58BD0001DA4E /* AdTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AdTableViewCell.xib; sourceTree = "<group>"; };
+		70FA384C27C1EEEB0080ABC1 /* SelectLicenseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectLicenseViewController.swift; sourceTree = "<group>"; };
+		70FA385127C1F7ED0080ABC1 /* License.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = License.swift; sourceTree = "<group>"; };
+		70FA385C27C1FCCA0080ABC1 /* ShowLicenseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowLicenseViewController.swift; sourceTree = "<group>"; };
 		7AFD33897AB6795E3108DA30 /* Pods-StudyTimeManageApp-StudyTimeManageAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StudyTimeManageApp-StudyTimeManageAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-StudyTimeManageApp-StudyTimeManageAppUITests/Pods-StudyTimeManageApp-StudyTimeManageAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		8235B9E5645F47E9AE83DB79 /* Pods_StudyTimeManageApp_StudyTimeManageAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StudyTimeManageApp_StudyTimeManageAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		873CBCAEE84E310A08B35C22 /* Pods-StudyTimeManageApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StudyTimeManageApp.release.xcconfig"; path = "Target Support Files/Pods-StudyTimeManageApp/Pods-StudyTimeManageApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -284,6 +290,8 @@
 				70584E1327ABF86E00C08B31 /* TermViewController.swift */,
 				70584E1827ABF88900C08B31 /* PrivacyPolicyViewController.swift */,
 				70584E1D27ABF8BA00C08B31 /* DeleteAcountViewController.swift */,
+				70FA384C27C1EEEB0080ABC1 /* SelectLicenseViewController.swift */,
+				70FA385C27C1FCCA0080ABC1 /* ShowLicenseViewController.swift */,
 			);
 			path = Menu;
 			sourceTree = "<group>";
@@ -368,6 +376,7 @@
 				706A2A8F2761CBC00041B993 /* Extension.swift */,
 				7068C18C27854C7500A27642 /* Language.swift */,
 				7065E971278D4F7F0053BBF2 /* Formatter.swift */,
+				70FA385127C1F7ED0080ABC1 /* License.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -700,11 +709,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70FA385227C1F7ED0080ABC1 /* License.swift in Sources */,
 				7065E972278D4F7F0053BBF2 /* Formatter.swift in Sources */,
 				70584E1E27ABF8BA00C08B31 /* DeleteAcountViewController.swift in Sources */,
 				706A2A512761CB6B0041B993 /* ViewController.swift in Sources */,
 				709CF2282793BFEB00C0C61F /* DetailViewCell.swift in Sources */,
 				70B03CF42793F769007E560B /* SplashViewController.swift in Sources */,
+				70FA384D27C1EEEB0080ABC1 /* SelectLicenseViewController.swift in Sources */,
 				706A2A8B2761CBBA0041B993 /* Date.swift in Sources */,
 				70AFD5D3276D752E004DB307 /* CommnentCell.swift in Sources */,
 				7057C4D0276AD87000DE8214 /* DetailViewController.swift in Sources */,
@@ -727,6 +738,7 @@
 				7029D5822764A85E007EC795 /* PieChartCell.swift in Sources */,
 				70660F732769724C00120CF7 /* HomeViewController.swift in Sources */,
 				704ED91E2768CC5A000F9F10 /* GoalPageViewController.swift in Sources */,
+				70FA385D27C1FCCA0080ABC1 /* ShowLicenseViewController.swift in Sources */,
 				70584E1927ABF88900C08B31 /* PrivacyPolicyViewController.swift in Sources */,
 				70587585276783D600A3D237 /* RecordViewController.swift in Sources */,
 				706A2A902761CBC00041B993 /* Extension.swift in Sources */,

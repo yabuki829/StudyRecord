@@ -68,3 +68,8 @@ struct Monthly:Codable {
     var year:Date
     var month:[Double]
 }
+
+struct License{
+    let name:String
+    let body:String
+}
