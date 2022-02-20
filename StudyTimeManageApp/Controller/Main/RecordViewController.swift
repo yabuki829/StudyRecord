@@ -26,7 +26,8 @@ class RecordViewController: UIViewController {
     var local = String()
     var category = String()
     
-    var categoeyJapanese = ["資格取得","受験勉強","趣 味","スキルアップ","法律/政治系","経済/経営/商学系","社会/メディア系","外国語系","文学/人文学/心理学系","教育/福祉系","芸術系","教養系","理/工学系","医学/歯科学/薬学系"]
+//    var categoeyJapanese = ["資格取得","受験勉強","趣 味","スキルアップ","法律/政治系","経済/経営/商学系","社会/メディア系","外国語系","文学/人文学/心理学系","教育/福祉系","芸術系","教養系","理/工学系","医学/歯科学/薬学系"]
+    var categoeyJapanese = ["スキルアップ","受験勉強","資格取得","趣 味",]
     var categoryEnglish = [""]
     
     override func viewDidLoad() {

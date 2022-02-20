@@ -38,39 +38,15 @@ class ManageTabMenuController: ButtonBarPagerTabStripViewController {
         let BVC   = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "mainHome") as! HomeViewController
         let CVC   = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "mainHome") as! HomeViewController
         let DVC   = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "mainHome") as! HomeViewController
-        let EVC   = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "mainHome") as! HomeViewController
-        let FVC   = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "mainHome") as! HomeViewController
-        let GVC   = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "mainHome") as! HomeViewController
-        let HVC   = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "mainHome") as! HomeViewController
-        let IVC   = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "mainHome") as! HomeViewController
-        let JVC   = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "mainHome") as! HomeViewController
-        let KVC   = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "mainHome") as! HomeViewController
-        let LVC   = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "mainHome") as! HomeViewController
-        let MVC   = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "mainHome") as! HomeViewController
-        let NVC   = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "mainHome") as! HomeViewController
 
         newVC.itemInfo = "新 着"
-        AVC.itemInfo = "受験勉強"
-        BVC.itemInfo = "資格取得 "
-        CVC.itemInfo = "スキルアップ"
+        AVC.itemInfo = "スキルアップ"
+        BVC.itemInfo = "受験勉強"
+        CVC.itemInfo = "資格取得"
         DVC.itemInfo = "趣 味"
-        EVC.itemInfo = "法律/政治系"
-        FVC.itemInfo = "経済/経営/商学系"
-        GVC.itemInfo = "社会/メディア系"
-        HVC.itemInfo = "外国語系"
-        IVC.itemInfo = "文学/人文学/心理学系"
-        JVC.itemInfo = "教育/福祉系"
-        KVC.itemInfo = "芸術系"
-        LVC.itemInfo = "教養系"
-        MVC.itemInfo = "理/工学系"
-        NVC.itemInfo =  "医学/歯科学/薬学系"
+       
         
-        
-        
-        
-        
-        
-        let childViewControllers:[UIViewController] = [newVC, AVC,BVC,CVC,DVC,EVC,FVC,GVC,HVC,IVC,JVC,KVC,LVC,MVC,NVC]
+        let childViewControllers:[UIViewController] = [newVC, AVC,BVC,CVC,DVC]
         return childViewControllers
     }
 }
