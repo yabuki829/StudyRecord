@@ -23,7 +23,6 @@
 		704B9277277EC0F90012D321 /* PieChartViewDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704B9276277EC0F90012D321 /* PieChartViewDetailController.swift */; };
 		704B927C277EC1550012D321 /* BarChartViewDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704B927B277EC1550012D321 /* BarChartViewDetailController.swift */; };
 		704C3628278B279C0000D17D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 704C3627278B279C0000D17D /* GoogleService-Info.plist */; };
-		704ED9182768CB1B000F9F10 /* UserPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704ED9172768CB1B000F9F10 /* UserPageViewController.swift */; };
 		704ED91E2768CC5A000F9F10 /* GoalPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704ED91D2768CC5A000F9F10 /* GoalPageViewController.swift */; };
 		704ED92C2768CF38000F9F10 /* UserRecordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704ED92A2768CF38000F9F10 /* UserRecordCell.swift */; };
 		704ED92D2768CF38000F9F10 /* UserRecordCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 704ED92B2768CF38000F9F10 /* UserRecordCell.xib */; };
@@ -44,7 +43,6 @@
 		70692E99276D92BF007EC88B /* TextfieldViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70692E97276D92BF007EC88B /* TextfieldViewCell.xib */; };
 		706A2A4D2761CB6B0041B993 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706A2A4C2761CB6B0041B993 /* AppDelegate.swift */; };
 		706A2A4F2761CB6B0041B993 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706A2A4E2761CB6B0041B993 /* SceneDelegate.swift */; };
-		706A2A512761CB6B0041B993 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706A2A502761CB6B0041B993 /* ViewController.swift */; };
 		706A2A542761CB6B0041B993 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 706A2A522761CB6B0041B993 /* Main.storyboard */; };
 		706A2A562761CB6C0041B993 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 706A2A552761CB6C0041B993 /* Assets.xcassets */; };
 		706A2A592761CB6C0041B993 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 706A2A572761CB6C0041B993 /* LaunchScreen.storyboard */; };
@@ -72,6 +70,7 @@
 		70FA384D27C1EEEB0080ABC1 /* SelectLicenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FA384C27C1EEEB0080ABC1 /* SelectLicenseViewController.swift */; };
 		70FA385227C1F7ED0080ABC1 /* License.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FA385127C1F7ED0080ABC1 /* License.swift */; };
 		70FA385D27C1FCCA0080ABC1 /* ShowLicenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FA385C27C1FCCA0080ABC1 /* ShowLicenseViewController.swift */; };
+		70FA386B27C209EC0080ABC1 /* UserPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FA386A27C209EC0080ABC1 /* UserPageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,7 +106,6 @@
 		704B9276277EC0F90012D321 /* PieChartViewDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChartViewDetailController.swift; sourceTree = "<group>"; };
 		704B927B277EC1550012D321 /* BarChartViewDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarChartViewDetailController.swift; sourceTree = "<group>"; };
 		704C3627278B279C0000D17D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		704ED9172768CB1B000F9F10 /* UserPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserPageViewController.swift; path = "../New Group/UserPageViewController.swift"; sourceTree = "<group>"; wrapsLines = 0; };
 		704ED91D2768CC5A000F9F10 /* GoalPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalPageViewController.swift; sourceTree = "<group>"; };
 		704ED92A2768CF38000F9F10 /* UserRecordCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRecordCell.swift; sourceTree = "<group>"; };
 		704ED92B2768CF38000F9F10 /* UserRecordCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserRecordCell.xib; sourceTree = "<group>"; };
@@ -130,7 +128,6 @@
 		706A2A492761CB6B0041B993 /* StudyTimeManageApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StudyTimeManageApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		706A2A4C2761CB6B0041B993 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		706A2A4E2761CB6B0041B993 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		706A2A502761CB6B0041B993 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		706A2A532761CB6B0041B993 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		706A2A552761CB6C0041B993 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		706A2A582761CB6C0041B993 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -163,6 +160,7 @@
 		70FA384C27C1EEEB0080ABC1 /* SelectLicenseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectLicenseViewController.swift; sourceTree = "<group>"; };
 		70FA385127C1F7ED0080ABC1 /* License.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = License.swift; sourceTree = "<group>"; };
 		70FA385C27C1FCCA0080ABC1 /* ShowLicenseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowLicenseViewController.swift; sourceTree = "<group>"; };
+		70FA386A27C209EC0080ABC1 /* UserPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserPageViewController.swift; sourceTree = "<group>"; };
 		7AFD33897AB6795E3108DA30 /* Pods-StudyTimeManageApp-StudyTimeManageAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StudyTimeManageApp-StudyTimeManageAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-StudyTimeManageApp-StudyTimeManageAppUITests/Pods-StudyTimeManageApp-StudyTimeManageAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		8235B9E5645F47E9AE83DB79 /* Pods_StudyTimeManageApp_StudyTimeManageAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StudyTimeManageApp_StudyTimeManageAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		873CBCAEE84E310A08B35C22 /* Pods-StudyTimeManageApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StudyTimeManageApp.release.xcconfig"; path = "Target Support Files/Pods-StudyTimeManageApp/Pods-StudyTimeManageApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -254,7 +252,7 @@
 		704ED91C2768CBE4000F9F10 /* UserPage */ = {
 			isa = PBXGroup;
 			children = (
-				704ED9172768CB1B000F9F10 /* UserPageViewController.swift */,
+				70FA386A27C209EC0080ABC1 /* UserPageViewController.swift */,
 				704ED91D2768CC5A000F9F10 /* GoalPageViewController.swift */,
 			);
 			path = UserPage;
@@ -338,7 +336,6 @@
 				709CF29B2793EE7900C0C61F /* JSON */,
 				706A2A4C2761CB6B0041B993 /* AppDelegate.swift */,
 				706A2A4E2761CB6B0041B993 /* SceneDelegate.swift */,
-				706A2A502761CB6B0041B993 /* ViewController.swift */,
 				706A2A552761CB6C0041B993 /* Assets.xcassets */,
 				706A2A572761CB6C0041B993 /* LaunchScreen.storyboard */,
 				706A2A5A2761CB6C0041B993 /* Info.plist */,
@@ -712,15 +709,14 @@
 				70FA385227C1F7ED0080ABC1 /* License.swift in Sources */,
 				7065E972278D4F7F0053BBF2 /* Formatter.swift in Sources */,
 				70584E1E27ABF8BA00C08B31 /* DeleteAcountViewController.swift in Sources */,
-				706A2A512761CB6B0041B993 /* ViewController.swift in Sources */,
 				709CF2282793BFEB00C0C61F /* DetailViewCell.swift in Sources */,
 				70B03CF42793F769007E560B /* SplashViewController.swift in Sources */,
+				70FA386B27C209EC0080ABC1 /* UserPageViewController.swift in Sources */,
 				70FA384D27C1EEEB0080ABC1 /* SelectLicenseViewController.swift in Sources */,
 				706A2A8B2761CBBA0041B993 /* Date.swift in Sources */,
 				70AFD5D3276D752E004DB307 /* CommnentCell.swift in Sources */,
 				7057C4D0276AD87000DE8214 /* DetailViewController.swift in Sources */,
 				704B927C277EC1550012D321 /* BarChartViewDetailController.swift in Sources */,
-				704ED9182768CB1B000F9F10 /* UserPageViewController.swift in Sources */,
 				70B3F977279E58BD0001DA4E /* AdTableViewCell.swift in Sources */,
 				7029D5732764A843007EC795 /* DataViewCell.swift in Sources */,
 				706A2A9A2761CBCD0041B993 /* StudyTime.swift in Sources */,
