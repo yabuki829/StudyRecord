@@ -40,6 +40,65 @@
             </objects>
             <point key="canvasLocation" x="4484" y="-1017"/>
         </scene>
+        <!--ブロックしているアカウント-->
+        <scene sceneID="YRq-Jh-HpP">
+            <objects>
+                <viewController storyboardIdentifier="blockuser" id="FS3-zU-Ed0" customClass="BlockUserViewController" customModule="StudyTimeManageApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xbu-KK-aTS">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kDi-ex-Dzv">
+                                <rect key="frame" x="0.0" y="56" width="414" height="703"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="APn-V3-Chq" detailTextLabel="znc-nN-GLW" style="IBUITableViewCellStyleSubtitle" id="g5w-mF-eef">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="55.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="g5w-mF-eef" id="Vjv-Ew-8n0">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="55.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="APn-V3-Chq">
+                                                    <rect key="frame" x="20" y="10" width="33" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="znc-nN-GLW">
+                                                    <rect key="frame" x="20" y="31.5" width="44" height="14.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="518-pu-BSN"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="kDi-ex-Dzv" firstAttribute="leading" secondItem="518-pu-BSN" secondAttribute="leading" id="0Fd-7c-jL7"/>
+                            <constraint firstItem="kDi-ex-Dzv" firstAttribute="top" secondItem="518-pu-BSN" secondAttribute="top" id="DHj-UW-zKc"/>
+                            <constraint firstItem="kDi-ex-Dzv" firstAttribute="trailing" secondItem="518-pu-BSN" secondAttribute="trailing" id="Whn-Mj-h4N"/>
+                            <constraint firstItem="kDi-ex-Dzv" firstAttribute="bottom" secondItem="518-pu-BSN" secondAttribute="bottom" id="exx-eZ-A4y"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="ブロックしているアカウント" id="D2g-sn-o9M">
+                        <barButtonItem key="backBarButtonItem" title="戻る" id="Chi-WW-nWA"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="kDi-ex-Dzv" id="KOS-fi-oM3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Sl0-mo-KSZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5747.826086956522" y="-1784.5982142857142"/>
+        </scene>
         <!--Study Record.-->
         <scene sceneID="N7r-zj-Eif">
             <objects>
@@ -187,7 +246,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="10,000hours." id="KC1-vZ-VFG">
                         <barButtonItem key="backBarButtonItem" title="　　" id="qJE-f6-3oc"/>
-                        <barButtonItem key="leftBarButtonItem" title="Menu" id="xls-v6-ifd">
+                        <barButtonItem key="leftBarButtonItem" image="text.justify" catalog="system" id="xls-v6-ifd">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <action selector="tapMenu:" destination="BYZ-38-t0r" id="9CB-ec-FXM"/>
@@ -927,11 +986,18 @@
                             <constraint firstItem="olT-ey-xwa" firstAttribute="top" secondItem="efW-O4-jW1" secondAttribute="bottom" id="tAw-4e-bEH"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Home" id="Zrj-RT-nmV"/>
+                    <navigationItem key="navigationItem" title="Home" id="Zrj-RT-nmV">
+                        <barButtonItem key="rightBarButtonItem" image="text.justify" catalog="system" id="pWr-Ct-ewu">
+                            <connections>
+                                <action selector="tapMenuButton:" destination="9PY-y8-QsV" id="Hdj-uK-Kh4"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="buttonBarView" destination="efW-O4-jW1" id="tJj-Rd-aEM"/>
                         <outlet property="containerView" destination="olT-ey-xwa" id="qAO-LT-jGT"/>
                         <segue destination="g9S-oV-FtC" kind="show" id="xDJ-Yx-DIp"/>
+                        <segue destination="FS3-zU-Ed0" kind="show" id="jy2-9d-Ftx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xZY-yE-0vK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1682,6 +1748,7 @@ mjKaN5o/mkKaR5pPAAAAAAAAAgEAAAAAAAAAjwAAAAAAAAAAAAAAAAAAmlI
         <image name="person.fill" catalog="system" width="128" height="120"/>
         <image name="star" catalog="system" width="128" height="116"/>
         <image name="stopwatch" catalog="system" width="121" height="128"/>
+        <image name="text.justify" catalog="system" width="128" height="100"/>
         <image name="timer" catalog="system" width="128" height="121"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

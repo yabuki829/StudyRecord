@@ -73,3 +73,8 @@ struct License{
     let name:String
     let body:String
 }
+
+struct blockUser:Codable{
+    let username:String
+    let userid:String
+}

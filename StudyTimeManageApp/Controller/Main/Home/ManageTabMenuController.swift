@@ -49,4 +49,8 @@ class ManageTabMenuController: ButtonBarPagerTabStripViewController {
         let childViewControllers:[UIViewController] = [newVC, AVC,BVC,CVC,DVC]
         return childViewControllers
     }
+    @IBAction func tapMenuButton(_ sender: Any) {
+        let next = self.storyboard?.instantiateViewController(withIdentifier: "blockuser") as! BlockUserViewController
+        self.navigationController?.pushViewController(next, animated: true)
+    }
 }

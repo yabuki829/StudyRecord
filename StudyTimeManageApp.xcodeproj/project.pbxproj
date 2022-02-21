@@ -28,6 +28,7 @@
 		704ED92D2768CF38000F9F10 /* UserRecordCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 704ED92B2768CF38000F9F10 /* UserRecordCell.xib */; };
 		704FE6782768372600CB9A71 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704FE6772768372600CB9A71 /* MenuViewController.swift */; };
 		7051EF9A279AC733005492D6 /* TabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7051EF99279AC733005492D6 /* TabbarController.swift */; };
+		7055BA8D27C37F5000696BF7 /* BlockUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7055BA8C27C37F5000696BF7 /* BlockUserViewController.swift */; };
 		7057C4D0276AD87000DE8214 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7057C4CF276AD87000DE8214 /* DetailViewController.swift */; };
 		70584E1427ABF86E00C08B31 /* TermViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70584E1327ABF86E00C08B31 /* TermViewController.swift */; };
 		70584E1927ABF88900C08B31 /* PrivacyPolicyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70584E1827ABF88900C08B31 /* PrivacyPolicyViewController.swift */; };
@@ -111,6 +112,7 @@
 		704ED92B2768CF38000F9F10 /* UserRecordCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserRecordCell.xib; sourceTree = "<group>"; };
 		704FE6772768372600CB9A71 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		7051EF99279AC733005492D6 /* TabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarController.swift; sourceTree = "<group>"; };
+		7055BA8C27C37F5000696BF7 /* BlockUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockUserViewController.swift; sourceTree = "<group>"; };
 		7057C4CF276AD87000DE8214 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		705832AE2790202600E01B87 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
 		70584E1327ABF86E00C08B31 /* TermViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermViewController.swift; sourceTree = "<group>"; };
@@ -300,6 +302,7 @@
 				70660F722769724C00120CF7 /* HomeViewController.swift */,
 				7057C4CF276AD87000DE8214 /* DetailViewController.swift */,
 				704A33AF2797AD2D00E28C34 /* ManageTabMenuController.swift */,
+				7055BA8C27C37F5000696BF7 /* BlockUserViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -719,6 +722,7 @@
 				704B927C277EC1550012D321 /* BarChartViewDetailController.swift in Sources */,
 				70B3F977279E58BD0001DA4E /* AdTableViewCell.swift in Sources */,
 				7029D5732764A843007EC795 /* DataViewCell.swift in Sources */,
+				7055BA8D27C37F5000696BF7 /* BlockUserViewController.swift in Sources */,
 				706A2A9A2761CBCD0041B993 /* StudyTime.swift in Sources */,
 				70584E1427ABF86E00C08B31 /* TermViewController.swift in Sources */,
 				7029D57A2764A854007EC795 /* PredictCell.swift in Sources */,

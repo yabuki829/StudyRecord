@@ -312,6 +312,13 @@ class studyTimeClass{
     func deleteTotalData(){
         userDefaults.removeObject(forKey: "total")
     }
+    
+    func getBlockUser() -> [blockUser]{
+        if let a :[blockUser] = userDefaults.codable(forKey: "blockuser")  {
+            return a
+        }
+        return [blockUser]()
+    }
 }
 
 

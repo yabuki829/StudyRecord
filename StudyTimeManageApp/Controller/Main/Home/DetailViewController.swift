@@ -61,7 +61,7 @@ class DetailViewController: UIViewController {
     @IBAction func deletePost(_ sender: Any) {
        
         if isReportButton == true{
-            userReportAlert()
+           selectAlertofPost()
         }
         else{
             
@@ -122,7 +122,6 @@ extension DetailViewController:UITableViewDelegate,UITableViewDataSource,tableVi
         else{
           
             let cell = tableView.dequeueReusableCell(withIdentifier: "CommnentCell", for: indexPath) as! CommnentCell
-            
            
                 cell.setCell(username:  self.commentArray[indexPath.row - 2].username,
                              comment:  self.commentArray[indexPath.row - 2].comment,
@@ -156,10 +155,10 @@ extension DetailViewController:UITableViewDelegate,UITableViewDataSource,tableVi
         
         if indexPath.row > 1{
             if userid == commentArray[indexPath.row - 2].userid{
-                deleteAlert(postID: commentArray[indexPath.row - 2].postid, commentID: commentArray[indexPath.row - 2].commentid)
+                deleteCommentAlert(postID: commentArray[indexPath.row - 2].postid, commentID: commentArray[indexPath.row - 2].commentid)
         
             }else{
-                alertReport(commment: commentArray[indexPath.row - 2].comment, postID: commentArray[indexPath.row - 2].postid, commentID: commentArray[indexPath.row - 2].commentid, reporterid: commentArray[indexPath.row - 2].userid)
+                selectAlertofComment(commment: commentArray[indexPath.row - 2].comment, postID: commentArray[indexPath.row - 2].postid, commentID: commentArray[indexPath.row - 2].commentid, reportedid: commentArray[indexPath.row - 2].userid, username: commentArray[indexPath.row - 2].username)
             }
         }
        
@@ -167,6 +166,7 @@ extension DetailViewController:UITableViewDelegate,UITableViewDataSource,tableVi
         
        
     }
+
     func postDeleteAlert(){
         let alert = UIAlertController(title: "投稿を削除しますか?", message: "", preferredStyle: .alert)
         let selectAction = UIAlertAction(title: "Delete", style: .default, handler: { [self] _  in
@@ -179,9 +179,9 @@ extension DetailViewController:UITableViewDelegate,UITableViewDataSource,tableVi
         alert.addAction(cancelAction)
         present(alert, animated: true)
     }
-    func deleteAlert(postID:String,commentID:String){
+    func deleteCommentAlert(postID:String,commentID:String){
         
-        let alert = UIAlertController(title: "削除しますか?", message: "", preferredStyle: .alert)
+        let alert = UIAlertController(title: "削除しますか?", message: "", preferredStyle: .actionSheet)
         let selectAction = UIAlertAction(title: "Delete", style: .default, handler: { _ in
             
             self.database.deleteComment(postID: postID,commentID: commentID)
@@ -191,6 +191,58 @@ extension DetailViewController:UITableViewDelegate,UITableViewDataSource,tableVi
         alert.addAction(selectAction)
         alert.addAction(cancelAction)
         present(alert, animated: true)
+    }
+    func selectAlertofComment(commment:String,postID:String,commentID:String,reportedid:String,username:String){
+        let alert = UIAlertController(title: "", message: "", preferredStyle: .alert)
+        let blockAction = UIAlertAction(title: "\(username) さんをブロックする", style: .default, handler: { _ in
+            self.blockAlert(userid: reportedid, username: username)
+        })
+        let reportAction = UIAlertAction(title: "\(username) さんを通報する", style: .default, handler: { _ in
+            self.alertCommentReport(commment: commment, postID: postID, commentID: commentID, reportedid: reportedid)
+        })
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        alert.addAction(blockAction)
+        alert.addAction(reportAction)
+        alert.addAction(cancelAction)
+        present(alert, animated: true)
+    }
+    func selectAlertofPost(){
+        let alert = UIAlertController(title: "", message: "", preferredStyle: .actionSheet)
+        let blockAction = UIAlertAction(title: "\(record.username) さんをブロックする", style: .default, handler: { [self] _ in
+            blockAlert(userid: record.userid, username: record.username)
+        })
+        let reportAction = UIAlertAction(title: "\(record.username) さんを通報する", style: .default, handler: { [self] _ in
+            userReportAlert()
+        })
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        alert.addAction(blockAction)
+        alert.addAction(reportAction)
+        alert.addAction(cancelAction)
+        present(alert, animated: true)
+    }
+    //ブロック
+    func blockAlert(userid:String,username:String){
+        let alert = UIAlertController(title: "\(username)さんをブロック", message: "\(username)さんはあなたにメッセージを送信することができなくなります。", preferredStyle: .alert)
+
+        let OKAction = UIAlertAction(title: "ブロック", style: .default, handler: { _ in
+            var blockuser = self.studyTime.getBlockUser()
+            print(blockuser)
+            
+            blockuser.append(blockUser(username: username, userid: userid))
+            UserDefaults.standard.setCodable(blockuser, forKey: "blockuser")
+            if self.record.userid == userid{
+                self.navigationController?.popViewController(animated: true)
+            }
+            else{
+                self.getCommnet()
+            }
+          
+        })
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        alert.addAction(OKAction)
+        alert.addAction(cancelAction)
+        present(alert, animated: true)
+       
     }
     
     func userReportAlert(){
@@ -239,14 +291,14 @@ extension DetailViewController:UITableViewDelegate,UITableViewDataSource,tableVi
         // UIAlertを発動する.
         present(myAlert, animated: true, completion: nil)
     }
-    func alertReport(commment:String,postID:String,commentID:String,reporterid:String){
+    func alertCommentReport(commment:String,postID:String,commentID:String,reportedid:String){
             
             let myAlert: UIAlertController = UIAlertController(title: "Report", message: "通報内容を選択してください", preferredStyle: .alert)
             
          
             let alertA = UIAlertAction(title: "嫌がらせ/差別/誹謗中傷", style: .default) { [self] action in
                 let report = "嫌がらせ・差別・誹謗中傷"
-                database.report(report: report, reportedID: reporterid, postID:postID, comment: commment)
+                database.report(report: report, reportedID: reportedid, postID:postID, comment: commment)
                 OKAlert(title: "Thanks for Reports.", message: "報告が完了しました")
             
               
@@ -255,20 +307,20 @@ extension DetailViewController:UITableViewDelegate,UITableViewDataSource,tableVi
 
             let alertC = UIAlertAction(title: "内容が事実と著しく異なる", style: .default) { [self] action in
                 let report = "内容が著しく事実と異なる"
-                database.report(report: report, reportedID: reporterid, postID:postID, comment: commment)
+                database.report(report: report, reportedID: reportedid, postID:postID, comment: commment)
                 OKAlert(title: "Thanks for Reports.", message: "報告が完了しました")
                 print(report)
             }
             let alertD = UIAlertAction(title: "性的表現/わいせつな表現", style: .default) { [self] action in
                
                 let report = "性的表現"
-                database.report(report:report, reportedID: reporterid, postID:postID, comment: commment)
+                database.report(report:report, reportedID: reportedid, postID:postID, comment: commment)
                 OKAlert(title: "Thanks for Reports.", message: "報告が完了しました")
             }
             let alertE = UIAlertAction(title: "その他不適切", style: .default) { [self] action in
                 
                 let report = "不適切な投稿"
-                database.report(report:report, reportedID: reporterid, postID:postID, comment: commment)
+                database.report(report:report, reportedID: reportedid, postID:postID, comment: commment)
                 OKAlert(title: "Thanks for Reports.", message: "報告が完了しました")
             }
             let cancelAlert = UIAlertAction(title: "キャンセル", style: .cancel) { action in
@@ -345,10 +397,18 @@ extension DetailViewController{
                        let timestamp = data["date"]{
                         
                         let date:Date = (timestamp as AnyObject).dateValue()
-                        let newData = Comment(username: username as! String, image: image as! String, userid: userid as! String, commentid: commentid as! String, postid: postid as! String, comment: comment as! String, date: date)
-                        
-                        
-                        self.commentArray.append(newData)
+                        let blockuserArray = self.studyTime.getBlockUser()
+                        var isFlag = true
+                        for i in 0..<blockuserArray.count{
+                            if userid as! String == blockuserArray[i].userid{
+                                isFlag = false
+                                break
+                            }
+                        }
+                        if isFlag{
+                            let newData = Comment(username: username as! String, image: image as! String, userid: userid as! String, commentid: commentid as! String, postid: postid as! String, comment: comment as! String, date: date)
+                            self.commentArray.append(newData)
+                        }
                     }
                     else{
                         print("間違いがあります")

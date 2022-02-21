@@ -70,6 +70,8 @@ class HomeViewController: UIViewController,IndicatorInfoProvider {
         return itemInfo
     }
 
+
+    
     
 }
 
@@ -440,10 +442,22 @@ extension HomeViewController{
                        let image     = data["image"],
                        let category  = data["category"]{
                         let date:Date = (timestamp as AnyObject).dateValue()
-                        let newDate = Record(image: image as! String, username: username as! String, postid: postid as! String, userid: userID  as! String, studyTime: studyTime  as! Double, comment: comment  as! String, date: date, category: category as! String)
-                            
-                            recordArray.append(newDate)
                         
+                        let study = studyTimeClass()
+                        let blockuserArray = study.getBlockUser()
+                        var isFlag = true
+                        for i in 0..<blockuserArray.count{
+                            if userID as! String == blockuserArray[i].userid{
+                                isFlag = false
+                                break
+                            }
+                        }
+                        if isFlag{
+                            let newDate = Record(image: image as! String, username: username as! String, postid: postid as! String, userid: userID  as! String, studyTime: studyTime  as! Double, comment: comment as! String, date: date, category: category as! String)
+                                
+                                recordArray.append(newDate)
+                        }
+                       
                     }
                     else{
                         print("新着エラー")
@@ -481,9 +495,22 @@ extension HomeViewController{
                        let image     = data["image"],
                        let category  = data["category"]{
                         let date:Date = (timestamp as AnyObject).dateValue()
-                        let newDate = Record(image: image as! String, username: username as! String, postid: postid as! String, userid: userID  as! String, studyTime: studyTime  as! Double, comment: comment as! String, date: date, category: category as! String)
-                            
-                            recordArray.append(newDate)
+                        
+                        let study = studyTimeClass()
+                        let blockuserArray = study.getBlockUser()
+                        var isFlag = true
+                        for i in 0..<blockuserArray.count{
+                            if userID as! String == blockuserArray[i].userid{
+                                isFlag = false
+                                break
+                            }
+                        }
+                        if isFlag{
+                            let newDate = Record(image: image as! String, username: username as! String, postid: postid as! String, userid: userID  as! String, studyTime: studyTime  as! Double, comment: comment as! String, date: date, category: category as! String)
+                                
+                                recordArray.append(newDate)
+                        }
+                       
                         
                     }
                     else{
