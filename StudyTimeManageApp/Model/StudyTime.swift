@@ -4,10 +4,6 @@
 //
 //  Created by Yabuki Shodai on 2021/12/01.
 //
-
-
-//userDefaltsに保存する内容はここに書いてる
-// profile や　勉強時間など
 import Foundation
 import Kronos
 
@@ -51,93 +47,6 @@ class studyTimeClass{
         weekStruct(day: "Thu", studyTime: 0.0),
         weekStruct(day: "Sun", studyTime: 0.0),
     ]
-    
-    func save(studyTime:Double,comment:String,category:String){
-        //一日の勉強時間　 一ヶ月の勉強時間　今までの勉強時間
-        print("saveします")
-        let day = UserDefaults.standard.object(forKey: "day") as? Double ?? 0.0
-        let month:Double = UserDefaults.standard.object(forKey: "month")  as? Double ?? 0.0
-        let total:Double = UserDefaults.standard.object(forKey: "total")  as? Double ?? 0.0
-        getWeekStudy()
-       
-        
-        userDefaults.setValue(studyTime + day, forKey: "day")
-        userDefaults.setValue(studyTime + month , forKey: "month")
-        userDefaults.setValue(studyTime + total , forKey: "total")
-        
-        
-//        weekに勉強時間を割り当てる
-        let weekday = getWeekDay(date: Date())
-        week[weekday].studyTime = week[weekday].studyTime + studyTime
-        
-        saveWeekDay(weekday: weekday, studyTime:studyTime)
-        //weekをローカルに保存
-        saveWeekStudy()
-        
-        //月間の勉強時間を保存する
-        Clock.sync(from: "ntp.nict.jp")
-        print("ここだよ-------------------------")
-    
-        print(Date())
-        let postDate = Clock.now  ?? Date()
-        print(postDate)
-        saveMonthlyStudyTime(studytime: month, month: getMonthDay(date: postDate))
-        //今までの月毎の累計勉強時間
-        saveMonthlyTotalStudyTime(studytime: studyTime, month: getMonthDay(date: postDate))
-        //データベースに保存
-        database.postData(today: studyTime + day, month: studyTime + month, total: studyTime + total)
-        database.postRecord(todayStudyTime: studyTime, comment: comment, image:  getProfileImage(), category: category, postDate: postDate)
-        database.saveMonthlyStudyTime(postDate: postDate)
-        database.saveWeekStudyTime(postDate: postDate)
-    }
-    
-    func saveWeekDay(weekday:Int,studyTime:Double){
-        if let data:[weekStruct] = userDefaults.codable(forKey: "weekDay"){
-            weekDayStudy = data
-            weekDayStudy[weekday].studyTime += studyTime
-            UserDefaults.standard.setCodable(weekDayStudy, forKey: "weekDay")
-        }
-        else{
-            weekDayStudy[weekday].studyTime = studyTime
-            UserDefaults.standard.setCodable(weekDayStudy, forKey: "weekDay")
-        }
-    }
-    func getWeekDayStudy() -> [weekStruct]{
-        if let data:[weekStruct] = userDefaults.codable(forKey: "weekDay"){
-            
-            print(data)
-            weekDayStudy = data
-            return weekDayStudy
-        }
-        return weekDayStudy
-    }
-    
-    func getMonthlyStudyTime() -> Monthly{
-        if let data:Monthly = userDefaults.codable(forKey: "monthly"){
-            return data
-        }
-        
-        return Monthly(year: Date() ,month: [0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,])
-    }
-    func saveMonthlyStudyTime(studytime:Double,month:Int){
-        var monthlyData = getMonthlyStudyTime()
-        
-        monthlyData.month[month - 1] = studytime
-        userDefaults.setCodable(monthlyData, forKey: "monthly")
-    }
-    
-    func getMonthlyTotalStudyTime() -> [Double]{
-        if let a = userDefaults.array(forKey: "totalMonthly"){
-            return  a as! [Double]
-        }
-        return [0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,]
-    }
-    
-    func saveMonthlyTotalStudyTime(studytime:Double,month:Int){
-        var a  = getMonthlyTotalStudyTime()
-        a[month - 1] += studytime
-        userDefaults.setValue(a, forKey: "totalMonthly")
-    }
     func getWeekDay(date:Date) -> Int{
         let calendar = Calendar.current
         //取得する要素を選択する　日と曜日を選択している
@@ -178,15 +87,58 @@ class studyTimeClass{
     }
 
     
-    //間違えて入力した勉強時間を削除する
+    func save(studyTime:Double,comment:String,category:String){
+        //一日の勉強時間　 一ヶ月の勉強時間　今までの勉強時間
+        print("saveします",studyTime)
+        
+        let day = UserDefaults.standard.object(forKey: "day") as? Double ?? 0.0
+        let month:Double = UserDefaults.standard.object(forKey: "month")  as? Double ?? 0.0
+        let total:Double = UserDefaults.standard.object(forKey: "total")  as? Double ?? 0.0
+        getWeekStudy()
+       
+        
+        userDefaults.setValue(studyTime + day, forKey: "day")
+        userDefaults.setValue(studyTime + month , forKey: "month")
+        userDefaults.setValue(studyTime + total , forKey: "total")
+        
+        
+//        weekに勉強時間を割り当てる
+        let weekday = getWeekDay(date: Date())
+        week[weekday].studyTime = week[weekday].studyTime + studyTime
+        
+        saveWeekDay(weekday: weekday, studyTime:studyTime)
+        //weekをローカルに保存
+        saveWeekStudy()
+        
+        //月間の勉強時間を保存する
+        Clock.sync(from: "ntp.nict.jp")
+    
+        let postDate = Clock.now  ?? Date()
+        let monthint = getMonthDay(date: postDate)
+        saveMonthlyStudyTime(studytime:studyTime, month:monthint )
+        //今までの月毎の累計勉強時間
+        saveMonthlyTotalStudyTime(studytime: studyTime, month: monthint)
+
+        
+        database.postData(today: studyTime + day, month: studyTime + month, total: studyTime + total)
+        database.postRecord(todayStudyTime: studyTime, comment: comment, image:  getProfileImage(), category: category, postDate: postDate)
+        //データベースに保存
+        database.saveMonthlyStudyTime(postDate: postDate)
+        
+    }
+    
     func deleteStudyTime(deleteTime:Double){
         //一日の勉強時間　 一ヶ月の勉強時間　今までの勉強時間
         let day = UserDefaults.standard.object(forKey: "day") as? Double ?? 0.0
         let month:Double = UserDefaults.standard.object(forKey: "month")  as? Double ?? 0.0
         let total:Double = UserDefaults.standard.object(forKey: "total")  as? Double ?? 0.0
-        database.postData(today: day, month: month, total: total)
-        if day - deleteTime >= 0.0{
         
+        deleteMonthlyStudyTime(studytime: deleteTime, month: getMonthDay(date: Date()))
+        deleteMonthlyTotalStudyTime(studytime: deleteTime, month: getMonthDay(date: Date()))
+        database.saveMonthlyStudyTime(postDate: Date())
+        database.postData(today: day, month: month, total: total)
+        deleteWeekDayStudyTime(weekday: getWeekDay(date: Date()), studyTime: deleteTime)
+        if day - deleteTime >= 0.0{
             userDefaults.setValue(day - deleteTime, forKey: "day")
             userDefaults.setValue(month - deleteTime, forKey: "month")
             userDefaults.setValue(total - deleteTime, forKey: "total")
@@ -229,6 +181,85 @@ class studyTimeClass{
            
         }
     }
+//累計の曜日ごとの勉強時間ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+    func saveWeekDay(weekday:Int,studyTime:Double){
+        if let data:[weekStruct] = userDefaults.codable(forKey: "weekDay"){
+            weekDayStudy = data
+            weekDayStudy[weekday].studyTime += studyTime
+            UserDefaults.standard.setCodable(weekDayStudy, forKey: "weekDay")
+        }
+        else{
+            weekDayStudy[weekday].studyTime = studyTime
+            UserDefaults.standard.setCodable(weekDayStudy, forKey: "weekDay")
+        }
+    }
+    func getWeekDayStudy() -> [weekStruct]{
+        
+        if let data:[weekStruct] = userDefaults.codable(forKey: "weekDay"){
+            
+            print(data)
+            weekDayStudy = data
+            return weekDayStudy
+        }
+        return weekDayStudy
+    }
+    
+    func deleteWeekDayStudyTime(weekday:Int,studyTime:Double){
+        if let data:[weekStruct] = userDefaults.codable(forKey: "weekDay"){
+            weekDayStudy = data
+            weekDayStudy[weekday].studyTime -= studyTime
+            UserDefaults.standard.setCodable(weekDayStudy, forKey: "weekDay")
+        }
+    }
+    
+    
+//--------------------------------------------------------------------------------
+    func getMonthlyStudyTime() -> Monthly{
+        if let data:Monthly = userDefaults.codable(forKey: "monthly"){
+            return data
+        }
+        else{
+            print("BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB")
+            return Monthly(year: Date() ,month: [0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,])
+        }
+    }
+    func saveMonthlyStudyTime(studytime:Double,month:Int){
+        var monthlyData = getMonthlyStudyTime()
+        
+        monthlyData.month[month - 1] =  monthlyData.month[month - 1] + studytime
+        print("保存しました",month,studytime,monthlyData.month[month - 1])
+        userDefaults.setCodable(monthlyData, forKey: "monthly")
+    }
+  
+    func deleteMonthlyStudyTime(studytime:Double,month:Int){
+        var a = getMonthlyStudyTime()
+        
+        a.month[month - 1] -= studytime
+        userDefaults.setCodable(a, forKey: "monthly")
+        
+    }
+//--------------------------------------------------------------------------------
+
+    func deleteMonthlyTotalStudyTime(studytime:Double,month:Int) {
+        var a = getMonthlyTotalStudyTime()
+        a[month - 1] -= studytime
+        userDefaults.setValue(a, forKey: "totalMonthly")
+    }
+    func getMonthlyTotalStudyTime() -> [Double]{
+        if let a = userDefaults.array(forKey: "totalMonthly"){
+            return  a as! [Double]
+        }
+        return [0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,]
+    }
+    func saveMonthlyTotalStudyTime(studytime:Double,month:Int){
+        var a  = getMonthlyTotalStudyTime()
+        a[month - 1] += studytime
+        userDefaults.setValue(a, forKey: "totalMonthly")
+      
+        
+    }
+    
+   
     
     func saveWeekStudy(){
         UserDefaults.standard.setCodable(week, forKey: "week")

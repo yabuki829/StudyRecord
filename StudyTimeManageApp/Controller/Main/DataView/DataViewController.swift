@@ -22,8 +22,9 @@ class DataViewController: UIViewController {
     var local = String()
     var isFinish:Bool = false{
         didSet{
-            print("ここだよ")
+            print("取得完了")
             print(MonthStudyData)
+            
             tableView.reloadData()
         }
     }

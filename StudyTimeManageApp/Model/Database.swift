@@ -70,19 +70,17 @@ class Database{
         )
     }
     func saveMonthlyStudyTime(postDate:Date){
+        print("セーブしました.===========================")
         let studyClass = studyTimeClass()
         let data = studyClass.getMonthlyStudyTime()
-        var array = [Double]()
+        
         let userid = UserDefaults.standard.object(forKey: "userid")
-        for i in 0..<data.month.count {
-            
-            array.append(data.month[i])
-            
-        }
+        print(data.month)
+        
         let year = dateModel.convertDateToString(date: data.year, format: "yyyy年" )
         
         database.collection("Users").document(userid as! String).collection("MonthStudyTime").document(year).setData(
-            ["year":postDate,"month":array]
+            ["year":postDate,"month":data.month]
         )
     }
   

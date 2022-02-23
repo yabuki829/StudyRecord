@@ -75,30 +75,43 @@ extension UserPageViewController:UITableViewDelegate,UITableViewDataSource,table
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return recordArray.count + 1
+        return recordArray.count + 1 + recordArray.count / 10
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if indexPath.row == 0{
             let cell = tableView.dequeueReusableCell(withIdentifier: "UserProfileViewCell", for: indexPath) as! UserProfileViewCell
-            
             cell.setSell(image: profileData.image, username: profileData.username, goal:profileData.goal )
             return cell
         }
         else{
-            let cell = tableView.dequeueReusableCell(withIdentifier: "UserRecordCell", for: indexPath) as! UserRecordCell
-            cell.memoLabel.text = nil
             
-            cell.setHomeCell(userid: userid,
-                             username: profileData.username,
-                             studyTime: recordArray[indexPath.row - 1].studyTime,
-                             comment: recordArray[indexPath.row - 1].comment,
-                             date: recordArray[indexPath.row - 1].date,
-                             postid: recordArray[indexPath.row - 1].postID,
-                             image: profileData.image)
-            cell.delegate = self
-            return cell
+            if indexPath.row % 11 == 0 && indexPath.row != 1{
+               
+                let cell = tableView.dequeueReusableCell(withIdentifier: "AdTableViewCell", for: indexPath) as! AdTableViewCell
+                
+                return cell
+            }
+            else{
+                let adcount = indexPath.row / 11 + 1
+                let cell = tableView.dequeueReusableCell(withIdentifier: "UserRecordCell", for: indexPath) as! UserRecordCell
+                cell.memoLabel.text = nil
+                
+                cell.setHomeCell(userid: userid,
+                                 username: profileData.username,
+                                 studyTime: recordArray[indexPath.row - adcount].studyTime,
+                                 comment: recordArray[indexPath.row - adcount].comment,
+                                 date: recordArray[indexPath.row - adcount].date,
+                                 postid: recordArray[indexPath.row - adcount].postID,
+                                 image: profileData.image)
+                cell.delegate = self
+                return cell
+            }
+            
+            
+            
+          
         }
     }
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -116,30 +129,44 @@ extension UserPageViewController:UITableViewDelegate,UITableViewDataSource,table
         let UserProfileViewCell = UINib(nibName: "UserProfileViewCell", bundle: nil)
         tableView.register(UserProfileViewCell, forCellReuseIdentifier: "UserProfileViewCell")
         
+        let AdTableViewCell = UINib(nibName: "AdTableViewCell", bundle: nil )
+        tableView.register(AdTableViewCell, forCellReuseIdentifier: "AdTableViewCell")
+        
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-  
-            return UITableView.automaticDimension
+        if indexPath.row % 11 == 0 && indexPath.row != 0{
+          return 120
+        }
+    
+        return UITableView.automaticDimension
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-      
+        tableView.deselectRow(at: indexPath, animated: true)
         if indexPath.row > 0{
             
+            
+            if indexPath.row % 11 == 0{
+               print("広告です")
+            }
+            else{
+                let adCount = indexPath.row / 11
+                print("詳細画面に遷移する")
+                
+                tableView.deselectRow(at: indexPath, animated: true)
+                print(indexPath.row)
+                let next = self.storyboard?.instantiateViewController(withIdentifier: "detail") as! DetailViewController
+                next.record = Record(image: profileData.image, username: profileData.username,
+                                     postid: recordArray[indexPath.row - adCount].postID,
+                                     userid: userid,
+                                     studyTime: recordArray[indexPath.row - adCount].studyTime,
+                                     comment: recordArray[indexPath.row - adCount].comment,
+                                     date: recordArray[indexPath.row - adCount].date,
+                                     category: recordArray[indexPath.row - adCount].category)
+                
+                self.navigationController?.pushViewController(next, animated: true)
+            }
             //詳細画面に遷移する
-            print("詳細画面に遷移する")
             
-            tableView.deselectRow(at: indexPath, animated: true)
-            print("詳細画面に遷移します")
-            let next = self.storyboard?.instantiateViewController(withIdentifier: "detail") as! DetailViewController
-            next.record = Record(image: profileData.image, username: profileData.username,
-                                 postid: recordArray[indexPath.row - 1].postID,
-                                 userid: userid,
-                                 studyTime: recordArray[indexPath.row - 1].studyTime,
-                                 comment: recordArray[indexPath.row - 1 ].comment,
-                                 date: recordArray[indexPath.row - 1].date,
-                                 category: recordArray[indexPath.row - 1].category)
-            
-            self.navigationController?.pushViewController(next, animated: true)
         }
     }
     

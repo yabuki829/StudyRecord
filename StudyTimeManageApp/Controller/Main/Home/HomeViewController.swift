@@ -17,7 +17,7 @@ class HomeViewController: UIViewController,IndicatorInfoProvider {
     let refreshControl = UIRefreshControl()
     let database = Firestore.firestore()
     var recordArray:[Record] = []
-    var adCount = 0
+   
     
     var isFinish:Bool = false {
         didSet{
@@ -55,8 +55,8 @@ class HomeViewController: UIViewController,IndicatorInfoProvider {
         }
     }
     @objc func refresh(sender: UIRefreshControl) {
-            // ここが引っ張られるたびに呼び出される
-            // 通信終了後、endRefreshingを実行することでロードインジケーター（くるくる）が終了
+        // ここが引っ張られるたびに呼び出される
+        // 通信終了後、endRefreshingを実行することでロードインジケーター（くるくる）が終了
         if itemInfo.title == "新 着"{
             getRecord()
         }
@@ -69,10 +69,6 @@ class HomeViewController: UIViewController,IndicatorInfoProvider {
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
         return itemInfo
     }
-
-
-    
-    
 }
 
 
@@ -102,218 +98,32 @@ extension HomeViewController:UITableViewDelegate,UITableViewDataSource,tableView
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.row == 11 || indexPath.row == 22 || indexPath.row == 33 || indexPath.row == 44 || indexPath.row == 55 || indexPath.row == 66 || indexPath.row == 77 || indexPath.row == 88 || indexPath.row == 99 || indexPath.row == 110 {
-            //広告の表示
+        
+        
+        if indexPath.row % 11 == 0 && indexPath.row != 0{
             let cell = tableView.dequeueReusableCell(withIdentifier: "AdTableViewCell", for: indexPath) as! AdTableViewCell
             
             return cell
         }
         else{
-            if indexPath.row / 11  == 0{
-                adCount = 0
-                let cell = tableView.dequeueReusableCell(withIdentifier: "UserRecordCell", for: indexPath) as! UserRecordCell
-                cell.memoLabel.text = nil
-                cell.textLabel?.text = nil
-                cell.profileImage.image = nil
-                cell.dateLabel.text = nil
-                    cell.setHomeCell(userid:   self.recordArray[indexPath.row].userid,
-                                     username: self.recordArray[indexPath.row].username,
-                                     studyTime:self.recordArray[indexPath.row].studyTime,
-                                     comment:  self.recordArray[indexPath.row].comment,
-                                     date:     self.recordArray[indexPath.row].date,
-                                     postid:   self.recordArray[indexPath.row].postid,
-                                     image:    self.recordArray[indexPath.row].image)
-                
-              
-                return cell
-                //レコードの表示
-            }
-            else if indexPath.row / 11 == 1{
-                adCount = 1
-                print("投稿")
-                print(adCount)
-                let cell = tableView.dequeueReusableCell(withIdentifier: "UserRecordCell", for: indexPath) as! UserRecordCell
-                cell.memoLabel.text = nil
-                cell.textLabel?.text = nil
-                cell.profileImage.image = nil
-                cell.dateLabel.text = nil
-                    cell.setHomeCell(userid:   self.recordArray[indexPath.row - adCount].userid,
-                                     username: self.recordArray[indexPath.row - adCount].username,
-                                     studyTime:self.recordArray[indexPath.row - adCount].studyTime,
-                                     comment:  self.recordArray[indexPath.row - adCount].comment,
-                                     date:     self.recordArray[indexPath.row - adCount].date,
-                                     postid:   self.recordArray[indexPath.row - adCount].postid,
-                                     image:    self.recordArray[indexPath.row - adCount].image)
-                
-              
-                return cell
-            }
-            else if indexPath.row / 11 == 2{
-                adCount = 2
-                let cell = tableView.dequeueReusableCell(withIdentifier: "UserRecordCell", for: indexPath) as! UserRecordCell
-                cell.memoLabel.text = nil
-                cell.textLabel?.text = nil
-                cell.profileImage.image = nil
-                cell.dateLabel.text = nil
-                    cell.setHomeCell(userid:   self.recordArray[indexPath.row - adCount].userid,
-                                     username: self.recordArray[indexPath.row - adCount].username,
-                                     studyTime:self.recordArray[indexPath.row - adCount].studyTime,
-                                     comment:  self.recordArray[indexPath.row - adCount].comment,
-                                     date:     self.recordArray[indexPath.row - adCount].date,
-                                     postid:   self.recordArray[indexPath.row - adCount].postid,
-                                     image:    self.recordArray[indexPath.row - adCount].image)
-                
-              
-                return cell
-            }
-            else if indexPath.row / 11 == 3{
-                adCount = 3
-                let cell = tableView.dequeueReusableCell(withIdentifier: "UserRecordCell", for: indexPath) as! UserRecordCell
-                cell.memoLabel.text = nil
-                cell.textLabel?.text = nil
-                cell.profileImage.image = nil
-                cell.dateLabel.text = nil
-                    cell.setHomeCell(userid:   self.recordArray[indexPath.row - adCount].userid,
-                                     username: self.recordArray[indexPath.row - adCount].username,
-                                     studyTime:self.recordArray[indexPath.row - adCount].studyTime,
-                                     comment:  self.recordArray[indexPath.row - adCount].comment,
-                                     date:     self.recordArray[indexPath.row - adCount].date,
-                                     postid:   self.recordArray[indexPath.row - adCount].postid,
-                                     image:    self.recordArray[indexPath.row - adCount].image)
-                
-              
-                return cell
-            }
-            else if indexPath.row / 11 == 4{
-                adCount = 4
-                let cell = tableView.dequeueReusableCell(withIdentifier: "UserRecordCell", for: indexPath) as! UserRecordCell
-                cell.memoLabel.text = nil
-                cell.textLabel?.text = nil
-                cell.profileImage.image = nil
-                cell.dateLabel.text = nil
-                    cell.setHomeCell(userid:   self.recordArray[indexPath.row - adCount].userid,
-                                     username: self.recordArray[indexPath.row - adCount].username,
-                                     studyTime:self.recordArray[indexPath.row - adCount].studyTime,
-                                     comment:  self.recordArray[indexPath.row - adCount].comment,
-                                     date:     self.recordArray[indexPath.row - adCount].date,
-                                     postid:   self.recordArray[indexPath.row - adCount].postid,
-                                     image:    self.recordArray[indexPath.row - adCount].image)
-                
-              
-                return cell
-            }
-            else if indexPath.row / 11 == 5{
-                adCount = 5
-                let cell = tableView.dequeueReusableCell(withIdentifier: "UserRecordCell", for: indexPath) as! UserRecordCell
-                cell.memoLabel.text = nil
-                cell.textLabel?.text = nil
-                cell.profileImage.image = nil
-                cell.dateLabel.text = nil
-                    cell.setHomeCell(userid:   self.recordArray[indexPath.row - adCount].userid,
-                                     username: self.recordArray[indexPath.row - adCount].username,
-                                     studyTime:self.recordArray[indexPath.row - adCount].studyTime,
-                                     comment:  self.recordArray[indexPath.row - adCount].comment,
-                                     date:     self.recordArray[indexPath.row - adCount].date,
-                                     postid:   self.recordArray[indexPath.row - adCount].postid,
-                                     image:    self.recordArray[indexPath.row - adCount].image)
-                
-              
-                return cell
-            }
-            else if indexPath.row / 11 == 6{
-                adCount = 6
-                let cell = tableView.dequeueReusableCell(withIdentifier: "UserRecordCell", for: indexPath) as! UserRecordCell
-                cell.memoLabel.text = nil
-                cell.textLabel?.text = nil
-                cell.profileImage.image = nil
-                cell.dateLabel.text = nil
-                    cell.setHomeCell(userid:   self.recordArray[indexPath.row - adCount].userid,
-                                     username: self.recordArray[indexPath.row - adCount].username,
-                                     studyTime:self.recordArray[indexPath.row - adCount].studyTime,
-                                     comment:  self.recordArray[indexPath.row - adCount].comment,
-                                     date:     self.recordArray[indexPath.row - adCount].date,
-                                     postid:   self.recordArray[indexPath.row - adCount].postid,
-                                     image:    self.recordArray[indexPath.row - adCount].image)
-                
-              
-                return cell
-            }
-            else if indexPath.row / 11 == 7{
-                adCount = 7
-                let cell = tableView.dequeueReusableCell(withIdentifier: "UserRecordCell", for: indexPath) as! UserRecordCell
-                cell.memoLabel.text = nil
-                cell.textLabel?.text = nil
-                cell.profileImage.image = nil
-                cell.dateLabel.text = nil
-                    cell.setHomeCell(userid:   self.recordArray[indexPath.row - adCount].userid,
-                                     username: self.recordArray[indexPath.row - adCount].username,
-                                     studyTime:self.recordArray[indexPath.row - adCount].studyTime,
-                                     comment:  self.recordArray[indexPath.row - adCount].comment,
-                                     date:     self.recordArray[indexPath.row - adCount].date,
-                                     postid:   self.recordArray[indexPath.row - adCount].postid,
-                                     image:    self.recordArray[indexPath.row - adCount].image)
-                
-              
-                return cell
-            }
-            else if indexPath.row / 11 == 8{
-                adCount = 8
-                let cell = tableView.dequeueReusableCell(withIdentifier: "UserRecordCell", for: indexPath) as! UserRecordCell
-                cell.memoLabel.text = nil
-                cell.textLabel?.text = nil
-                cell.profileImage.image = nil
-                cell.dateLabel.text = nil
-                    cell.setHomeCell(userid:   self.recordArray[indexPath.row - adCount].userid,
-                                     username: self.recordArray[indexPath.row - adCount].username,
-                                     studyTime:self.recordArray[indexPath.row - adCount].studyTime,
-                                     comment:  self.recordArray[indexPath.row - adCount].comment,
-                                     date:     self.recordArray[indexPath.row - adCount].date,
-                                     postid:   self.recordArray[indexPath.row - adCount].postid,
-                                     image:    self.recordArray[indexPath.row - adCount].image)
-                
-              
-                return cell
-            }
-            else if indexPath.row / 11 == 9{
-                adCount = 9
-                let cell = tableView.dequeueReusableCell(withIdentifier: "UserRecordCell", for: indexPath) as! UserRecordCell
-                cell.memoLabel.text = nil
-                cell.textLabel?.text = nil
-                cell.profileImage.image = nil
-                cell.dateLabel.text = nil
-                    cell.setHomeCell(userid:   self.recordArray[indexPath.row - adCount].userid,
-                                     username: self.recordArray[indexPath.row - adCount].username,
-                                     studyTime:self.recordArray[indexPath.row - adCount].studyTime,
-                                     comment:  self.recordArray[indexPath.row - adCount].comment,
-                                     date:     self.recordArray[indexPath.row - adCount].date,
-                                     postid:   self.recordArray[indexPath.row - adCount].postid,
-                                     image:    self.recordArray[indexPath.row - adCount].image)
-                
-              
-                return cell
-            }
-            else if indexPath.row / 11 == 10{
-                adCount = 10
-                let cell = tableView.dequeueReusableCell(withIdentifier: "UserRecordCell", for: indexPath) as! UserRecordCell
-                cell.memoLabel.text = nil
-                cell.textLabel?.text = nil
-                cell.profileImage.image = nil
-                cell.dateLabel.text = nil
-                    cell.setHomeCell(userid:   self.recordArray[indexPath.row - adCount].userid,
-                                     username: self.recordArray[indexPath.row - adCount].username,
-                                     studyTime:self.recordArray[indexPath.row - adCount].studyTime,
-                                     comment:  self.recordArray[indexPath.row - adCount].comment,
-                                     date:     self.recordArray[indexPath.row - adCount].date,
-                                     postid:   self.recordArray[indexPath.row - adCount].postid,
-                                     image:    self.recordArray[indexPath.row - adCount].image)
-                
-              
-                return cell
-            }
-            else{
-                let cell = tableView.dequeueReusableCell(withIdentifier: "UserRecordCell", for: indexPath) as! UserRecordCell
-                return cell
-            }
+            let adCount = Int(indexPath.row / 11)
+            let cell = tableView.dequeueReusableCell(withIdentifier: "UserRecordCell", for: indexPath) as! UserRecordCell
+            cell.memoLabel.text = nil
+            cell.textLabel?.text = nil
+            cell.profileImage.image = nil
+            cell.dateLabel.text = nil
+            cell.setHomeCell(userid:   self.recordArray[indexPath.row - adCount].userid,
+                             username: self.recordArray[indexPath.row - adCount].username,
+                             studyTime:self.recordArray[indexPath.row - adCount].studyTime,
+                             comment:  self.recordArray[indexPath.row - adCount].comment,
+                             date:     self.recordArray[indexPath.row - adCount].date,
+                             postid:   self.recordArray[indexPath.row - adCount].postid,
+                             image:    self.recordArray[indexPath.row - adCount].image)
+            
+            
+            return cell
+            
+            
         }
         
         
@@ -333,79 +143,32 @@ extension HomeViewController:UITableViewDelegate,UITableViewDataSource,tableView
         
     }
     func tableView(_ tableView: UITableView,heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableView.automaticDimension
+        if indexPath.row % 11 == 0 && indexPath.row != 0{
+            return 120
+        }
+        else{
+            return UITableView.automaticDimension
+        }
+        
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let next = self.storyboard?.instantiateViewController(withIdentifier: "detail") as! DetailViewController
+       
         tableView.deselectRow(at: indexPath, animated: true)
       
        
-        if     indexPath.row == 11 || indexPath.row == 22
-            || indexPath.row == 33 || indexPath.row == 44
-            || indexPath.row == 55 || indexPath.row == 66
-            || indexPath.row == 77 || indexPath.row == 88
-            || indexPath.row == 99 || indexPath.row == 110{
-            
+        if indexPath.row % 11 == 0 && indexPath.row != 0{
+          
             print("広告です")
+            print(indexPath.row)
         }
         else{
-            if indexPath.row / 11  == 0 {
-                print(indexPath.row,"が選択されましたA")
-                next.record = recordArray[indexPath.row - 0]
-                self.navigationController?.pushViewController(next, animated: true)
-            }
-            else if indexPath.row / 11  == 1 {
-                print(indexPath.row,"が選択されましたB")
-                next.record = recordArray[indexPath.row - 1]
-                self.navigationController?.pushViewController(next, animated: true)
-            }
-            else if indexPath.row / 11  == 2 {
-                print(indexPath.row,"が選択されましたC")
-                next.record = recordArray[indexPath.row - 2]
-                self.navigationController?.pushViewController(next, animated: true)
-            }
-            else if indexPath.row / 11  == 3 {
-                next.record = recordArray[indexPath.row - 3]
-                self.navigationController?.pushViewController(next, animated: true)
-            }
-            else if indexPath.row / 11  == 4 {
-                next.record = recordArray[indexPath.row - 4]
-                self.navigationController?.pushViewController(next, animated: true)
-            }
-            else if indexPath.row / 11  == 5 {
-                next.record = recordArray[indexPath.row - 5]
-                self.navigationController?.pushViewController(next, animated: true)
-            }
-            else if indexPath.row / 11  == 6 {
-                next.record = recordArray[indexPath.row - 6]
-                self.navigationController?.pushViewController(next, animated: true)
-            }
-            else if indexPath.row / 11  == 7 {
-                next.record = recordArray[indexPath.row - 7]
-                self.navigationController?.pushViewController(next, animated: true)
-            }
-            else if indexPath.row / 11  == 8 {
-                next.record = recordArray[indexPath.row - 8]
-                self.navigationController?.pushViewController(next, animated: true)
-            }
-            else if indexPath.row / 11  == 9 {
-                next.record = recordArray[indexPath.row - 9]
-                self.navigationController?.pushViewController(next, animated: true)
-            }
-            else if indexPath.row / 11  == 10 {
-                next.record = recordArray[indexPath.row - 10]
-                self.navigationController?.pushViewController(next, animated: true)
-            }
+            let next = self.storyboard?.instantiateViewController(withIdentifier: "detail") as! DetailViewController
+            let adCount = Int(indexPath.row / 11)
+            print(indexPath.row,"が選択されましたA")
+            next.record = recordArray[indexPath.row - adCount]
+            self.navigationController?.pushViewController(next, animated: true)
         }
-
-        
-        
-       
-       
-            
-       
-        
         
         
     }
@@ -477,7 +240,7 @@ extension HomeViewController{
         print(category)
         print("-------------")
         self.recordArray = []
-        database.collection("Records").whereField("category", isEqualTo: category).limit(to: 40).getDocuments{[self] (querySnapshot, err) in
+        database.collection("Records").whereField("category", isEqualTo: category).limit(to: 25).getDocuments{[self] (querySnapshot, err) in
             self.recordArray = []
             if let err = err {
                 print(err)
@@ -525,3 +288,8 @@ extension HomeViewController{
     }
 }
 
+
+
+//ca-app-pub-9515239279115600~5575856198
+
+//ca-app-pub-9515239279115600/2695553740

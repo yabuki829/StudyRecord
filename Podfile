@@ -12,6 +12,7 @@ target 'StudyTimeManageApp' do
   pod 'SideMenu'
   pod 'PKHUD'
   pod 'IQKeyboardManagerSwift'
+  pod 'Google-Mobile-Ads-SDK'
   pod 'NendSDK_iOS'
   pod 'XLPagerTabStrip'
   pod 'lottie-ios'

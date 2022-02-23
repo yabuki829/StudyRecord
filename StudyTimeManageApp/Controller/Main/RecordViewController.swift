@@ -6,10 +6,10 @@
 //
 
 import UIKit
-import NendAd
-
+import GoogleMobileAds
 class RecordViewController: UIViewController {
     
+    @IBOutlet weak var bannerView: GADBannerView!
     @IBOutlet weak var textView: PlaceTextView!
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var categoryTextField: UITextField!
@@ -21,17 +21,15 @@ class RecordViewController: UIViewController {
     var studyTime = Double()
     var hours = 0
     var minutes = 0
-    let apiKey = "55572bc50eee8e3f1035d92b4d6ced34f62d99c5"
-    let spotID = "1050201"
     var local = String()
     var category = String()
-    
-//    var categoeyJapanese = ["資格取得","受験勉強","趣 味","スキルアップ","法律/政治系","経済/経営/商学系","社会/メディア系","外国語系","文学/人文学/心理学系","教育/福祉系","芸術系","教養系","理/工学系","医学/歯科学/薬学系"]
+    //ca-app-pub-9515239279115600/9215702391
     var categoeyJapanese = ["スキルアップ","受験勉強","資格取得","趣 味",]
-    var categoryEnglish = [""]
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setAd()
         setStatusBarBackgroundColor(.link)
         textView.layer.cornerRadius = 10
         textView.layer.borderColor = UIColor.black.cgColor
@@ -61,7 +59,11 @@ class RecordViewController: UIViewController {
        
         
     }
-    
+    func setAd(){
+        bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+        bannerView.rootViewController = self
+        bannerView.load(GADRequest())
+    }
     func settingTextField(){
         pickerView.delegate = self
         pickerView.dataSource = self
@@ -144,7 +146,7 @@ extension RecordViewController:UIPickerViewDelegate,UIPickerViewDataSource{
                 return categoeyJapanese[row]
             }
             else{
-                return categoryEnglish[row]
+                return categoeyJapanese[row]
             }
         }else{
             if component == 0 {
@@ -168,7 +170,7 @@ extension RecordViewController:UIPickerViewDelegate,UIPickerViewDataSource{
                 category = categoeyJapanese[row]
             }
             else{
-                categoryTextField.text = categoryEnglish[row]
+                categoryTextField.text = categoeyJapanese[row]
                 category = categoeyJapanese[row]
             }
         }

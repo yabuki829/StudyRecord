@@ -8,7 +8,7 @@
 import UIKit
 import Firebase
 import IQKeyboardManagerSwift
-import NendAd
+import GoogleMobileAds
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -20,19 +20,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
        
         FirebaseApp.configure()
-        IQKeyboardManager.shared.enable = true
+        GADMobileAds.sharedInstance().start(completionHandler: nil)
         IQKeyboardManager.shared.keyboardDistanceFromTextField = 10
         IQKeyboardManager.shared.shouldResignOnTouchOutside = true
-        IQKeyboardManager.shared.enableAutoToolbar = false
-        NADInterstitial.sharedInstance().loadAd(withSpotID: 213208, apiKey: "308c2499c75c4a192f03c02b2fcebd16dcb45cc9")
-        if UserDefaults.standard.object(forKey: "userid") != nil{
-            print("呼ばれてます")
-            self.window = UIWindow(frame: UIScreen.main.bounds)
-                  // ViewControllerをインスタンス化、windowのrootに設定する
-            self.window!.rootViewController = TabbarController()
-                  // 表示する
-            self.window!.makeKeyAndVisible()
-        }
+        IQKeyboardManager.shared.enableAutoToolbar = true
+//       
         return true
     }
 

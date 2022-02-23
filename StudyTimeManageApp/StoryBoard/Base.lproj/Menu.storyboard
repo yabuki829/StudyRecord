@@ -217,7 +217,7 @@
         <!--Terms of Service-->
         <scene sceneID="RJx-0T-1gi">
             <objects>
-                <viewController id="hRu-Sf-o5u" customClass="TermViewController" customModule="StudyTimeManageApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="term" id="hRu-Sf-o5u" customClass="TermViewController" customModule="StudyTimeManageApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iAW-fG-mvk">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -246,7 +246,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VbC-aU-O2u" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1769.5652173913045" y="756.69642857142856"/>
+            <point key="canvasLocation" x="1770" y="873"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="T9G-cB-8Rc">

@@ -60,8 +60,8 @@ class SplashViewController: UIViewController {
         loginButton.frame = CGRect(x: posX, y: posY, width: bWidth, height: bHeight)
         loginButton.backgroundColor = .darkGray
         loginButton.tintColor = .white
-        loginButton.setTitle("Login", for: .normal)
-        loginButton.setTitleColor(UIColor.systemGreen, for: .normal)
+        loginButton.setTitle("始める", for: .normal)
+        loginButton.setTitleColor(UIColor.white, for: .normal)
         loginButton.layer.masksToBounds = true
 
         loginButton.layer.cornerRadius = 10
@@ -82,14 +82,29 @@ class SplashViewController: UIViewController {
         self.view.addSubview(termButton)
     }
     @objc internal func onClickTerm(sender:UIButton){
-        print("利用規約")
+        let anotherStoryboard:UIStoryboard = UIStoryboard(name: "Menu", bundle: nil)
+         
+        //生成するViewControllerを指定
+        let VC = anotherStoryboard.instantiateViewController(withIdentifier: "term")
+        //表示
+        self.present(VC, animated: true, completion: nil)
     }
     @objc internal func onClickLogin(sender: UIButton) {
-       print("login")
-      
+        alert()
+    }
+    func alert(){
+        let alert = UIAlertController(title: "利用規約確認しましたか？", message: "", preferredStyle: .alert)
+        let selectAction = UIAlertAction(title: "確認しました", style: .default, handler: { _ in
             let database = Database()
             database.registerUser()
-            performSegue(withIdentifier: "home", sender: nil)
-        
+            self.performSegue(withIdentifier: "home", sender: nil)
+           
+        })
+        let cancelAction = UIAlertAction(title: "キャンセル", style: .cancel, handler: nil)
+
+        alert.addAction(selectAction)
+        alert.addAction(cancelAction)
+
+        present(alert, animated: true)
     }
 }

@@ -5,6 +5,12 @@
 //  Created by Yabuki Shodai on 2022/01/24.
 //
 
+//
+//  AdTableViewCell.swift
+//  StudyTimeManageApp
+//
+//  Created by Yabuki Shodai on 2022/01/24.
+//
 import UIKit
 import NendAd
 class AdTableViewCell: UITableViewCell, NADViewDelegate {
@@ -23,10 +29,12 @@ class AdTableViewCell: UITableViewCell, NADViewDelegate {
     }
     func addAD(){
         //本番広告
-//        nadView.setNendID(1051277, apiKey: "7e404556384d43c010a245f5a311c34ee9c9da44")
+//        nadView.setNendID(1053038, apiKey: "fc3b84fd192213cd497ee5edfb5459e3597ff2b7")
         //テスト広告
-        nadView.setNendID(70998, apiKey: "25eb32adddc4f7311c3ec7b28eac3b72bbca5656")
-        
+        nadView.setNendID(70996, apiKey: "eb5ca11fa8e46315c2df1b8e283149049e8d235e")
+           
+      
+            
         nadView.delegate = self
         nadView.load()
     }

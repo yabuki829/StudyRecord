@@ -131,13 +131,5 @@ class BarChartCell: UITableViewCell {
         
         dataSet.valueFormatter = ValueFormatter(of: rawData)
       
-        //平均線
-//        let avg = rawData.reduce(0) { return $0 + Int($1) } / rawData.count
-//        let limitLine = ChartLimitLine(limit: Double(avg))
-//        limitLine.lineColor = .darkGray
-//
-//        limitLine.lineDashLengths = [10]
-//        barChartView.leftAxis.addLimitLine(limitLine)
-        
     }
 }

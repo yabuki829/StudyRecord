@@ -8,17 +8,12 @@
 import UIKit
 import Charts
 import SideMenu
-import NendAd
+import GoogleMobileAds
 
 class MainViewController: UIViewController, UITextFieldDelegate{
     
     @IBOutlet weak var tableView: UITableView!
-    private let rewardedVideo = NADRewardedVideo(spotID: 802555, apiKey: "ca80ed7018734d16787dbda24c9edd26c84c15b8")
-    private let interstitialVideo = NADInterstitialVideo(spotID: 802557, apiKey: "b6a97b05dd088b67f68fe6f155fb3091f302b48b")
-    //動画広告
-    var apiKey = "36b8baae060df21dfa7cdb915082fecc31adf45a"
-    var spotID = 1050200
-    
+    private var interstitial: GADInterstitialAd?
     var menu: SideMenuNavigationController?
     
     let studytime = studyTimeClass()
@@ -55,20 +50,20 @@ class MainViewController: UIViewController, UITextFieldDelegate{
             let now = Date()
             UserDefaults.standard.setValue(now, forKey: "lastTime")
         }
-        setAd()
+        setAD()
         settingTableView()
         settingSideMenu()
         getTodayGoal()
         //後何日の設定
         settingUntil()
-        
-        
+
+
         //勉強時間の取得
         dayStudyTime = studytime.getDay()
         monthStudyTime = studytime.getMonth()
         totalStudyTime = studytime.getTotal()
         
-        
+        print("mainの終わり-------------------------------")
         
     }
     
@@ -273,14 +268,25 @@ extension MainViewController :UITableViewDelegate,UITableViewDataSource,tableVie
         else if indexPath.row == cellOrder.BarChart{
             let next = self.storyboard?.instantiateViewController(withIdentifier: "bardetail") as! BarChartViewDetailController
             //動画広告を入れる
-            showInterstitialAd()
+            if interstitial != nil {
+                interstitial!.present(fromRootViewController: self)
+            } else {
+              print("Ad wasn't ready")
+            }
             self.navigationController?.pushViewController(next, animated: true)
         }
         else if indexPath.row == cellOrder.goal{
             goalAlert()
         }
+        
         else if indexPath.row == cellOrder.Data{
-            showRewardAd()
+            //動画広告を入れる
+            if interstitial != nil {
+                interstitial!.present(fromRootViewController: self)
+            } else {
+              print("Ad wasn't ready")
+            }
+            
             let next = self.storyboard?.instantiateViewController(withIdentifier: "data") as! DataViewController
             self.navigationController?.pushViewController(next, animated: true)
         }
@@ -392,7 +398,7 @@ extension MainViewController :UITableViewDelegate,UITableViewDataSource,tableVie
             return 80
         }
         else if indexPath.row == cellOrder.goal{
-            return UITableView.automaticDimension
+            return  80
         }
         else if indexPath.row == cellOrder.BarChart {
             return 200
@@ -499,47 +505,36 @@ extension MainViewController:UIPickerViewDataSource,UIPickerViewDelegate{
 
 }
 
-extension MainViewController:NADViewDelegate, NADInterstitialVideoDelegate, NADRewardedVideoDelegate{
-    func nadRewardVideoAd(_ nadRewardedVideoAd: NADRewardedVideo!, didReward reward: NADReward!) {
-        print("呼ばれました")
+
+
+
+
+extension MainViewController :GADFullScreenContentDelegate{
+    func setAD(){
+        let request = GADRequest()
+        GADInterstitialAd.load(withAdUnitID:"ca-app-pub-3940256099942544/4411468910",
+                                    request: request,
+                          completionHandler: { [self] ad, error in
+                            if let error = error {
+                              print("Failed to load interstitial ad with error: \(error.localizedDescription)")
+                              return
+                            }
+                            interstitial = ad
+                            interstitial?.fullScreenContentDelegate = self
+                          }
+        )
     }
-    func nadInterstitialVideoAdDidReceiveAd(_ nadInterstitialVideoAd: NADInterstitialVideo!) {
-        //動画広告
-        print("受信完了")
-    }
-    
-    
-    //エラー
-    func nadInterstitialVideoAd(_ nadInterstitialVideoAd: NADInterstitialVideo!, didFailToLoadWithError error: Error!) {
-        //動画広告
-        print("エラーです")
-    }
-    
-    //表示がされない
-    func nadInterstitialVideoAdDidFailed(toPlay nadInterstitialVideoAd: NADInterstitialVideo!) {
-        //動画広告
-        print("表示がされない")
-    }
-    func showInterstitialAd(){
-        if self.interstitialVideo.isReady {
-            self.interstitialVideo.showAd(from: self)
-        }
-    }
-    func showRewardAd(){
-        if self.rewardedVideo.isReady {
-            self.rewardedVideo.showAd(from: self)
-        }
-    }
-    func setAd(){
-        self.rewardedVideo.userId = "user id"
-        self.rewardedVideo.delegate = self
-        self.rewardedVideo.loadAd()
-        
-        self.interstitialVideo.userId = "user id"
-        self.interstitialVideo.isMuteStartPlaying = false
-        self.interstitialVideo.delegate = self
-        self.interstitialVideo.addFallbackFullboard(withSpotID: 485504, apiKey: "30fda4b3386e793a14b27bedb4dcd29f03d638e5")
-        self.interstitialVideo.loadAd()
-    }
-    
+    func ad(_ ad: GADFullScreenPresentingAd, didFailToPresentFullScreenContentWithError error: Error) {
+        print("AAAAAAAAAAAAaAd did fail to present full screen content.")
+      }
+
+      /// Tells the delegate that the ad presented full screen content.
+      func adDidPresentFullScreenContent(_ ad: GADFullScreenPresentingAd) {
+        print("BBBBBBBBBBBBBBAd did present full screen content.")
+      }
+
+      /// Tells the delegate that the ad dismissed full screen content.
+      func adDidDismissFullScreenContent(_ ad: GADFullScreenPresentingAd) {
+        print("CCCCCCCCCCCCCCAd did dismiss full screen content.")
+      }
 }
