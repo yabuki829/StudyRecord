@@ -18,6 +18,7 @@ struct StudyTime {
 
 
 class Database{
+    static let shered = Database()
     let database = Firestore.firestore()
     var studyTime = StudyTime(day: 0.0, month: 0.0, total: 0.0)
     var dateModel = DateModel()
@@ -49,25 +50,6 @@ class Database{
             ["isGood":true]
         )
            
-    }
-    func saveWeekStudyTime(postDate:Date){
-        let studyClass = studyTimeClass()
-        studyClass.getWeekStudy()
-        let week = studyClass.week
-        var array = [Double]()
-        for i in 0..<week.count{
-            array.append(week[i].studyTime)
-        }
-        //月曜日から何日離れているか.
-        
-        let i = studyClass.getWeekDay(date: postDate)
-        let startDate = Calendar.current.date(byAdding: .day, value: -i, to: postDate)!
-        let endDate = Calendar.current.date(byAdding: .day, value: 6, to: startDate)!
-        let date = DateModel().convertDateToString(date: startDate, format: "yyyy年MM月dd日")
-        let userid = UserDefaults.standard.object(forKey: "userid")
-        database.collection("Users").document(userid as! String).collection("StudyTime").document(date).setData(
-            ["week":array,"start":startDate,"last":endDate]
-        )
     }
     func saveMonthlyStudyTime(postDate:Date){
         print("セーブしました.===========================")
@@ -170,10 +152,32 @@ class Database{
         )
     }
     
-    func deleteAcount(){
+
+    func deleteStudyData(){
         let userid = UserDefaults.standard.object(forKey: "userid")
-        database.collection("Users").document(userid as! String).delete()
-        let appDomain = Bundle.main.bundleIdentifier
-        UserDefaults.standard.removePersistentDomain(forName: appDomain!)
+        Firestore.firestore().collection("Users").document(userid! as! String).collection("MonthlyStudyTine").getDocuments { (snapshot, error) in
+            if let error = error{
+                print("エラー",error)
+                return
+            }
+         
+            for document in snapshot!.documents{
+                document.reference.delete()
+            }
+            
+        }
+        Firestore.firestore().collection("Users").document(userid! as! String).collection("StudyTime").getDocuments { (snapshot, error) in
+            if let error = error{
+                print("エラー",error)
+                return
+            }
+            
+            for document in snapshot!.documents{
+                document.reference.delete()
+            }
+            
+        }
+        
     }
+    
 }

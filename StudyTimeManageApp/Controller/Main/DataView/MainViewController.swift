@@ -37,6 +37,7 @@ class MainViewController: UIViewController, UITextFieldDelegate{
         super.viewDidLoad()
         date.delegate = self
         local  = language.getlocation()
+        navigationController?.navigationBar.prefersLargeTitles = false
         
        
         //日付が変更されたか確認
@@ -104,7 +105,7 @@ func settingSideMenu(){
     
         menu = SideMenuNavigationController(rootViewController:Menu)
         menu!.leftSide = true
-        menu!.setNavigationBarHidden(true, animated: false)
+//        menu!.setNavigationBarHidden(true, animated: false)
         
         SideMenuManager.default.leftMenuNavigationController = menu!
     }
@@ -512,7 +513,7 @@ extension MainViewController:UIPickerViewDataSource,UIPickerViewDelegate{
 extension MainViewController :GADFullScreenContentDelegate{
     func setAD(){
         let request = GADRequest()
-        GADInterstitialAd.load(withAdUnitID:"ca-app-pub-3940256099942544/4411468910",
+        GADInterstitialAd.load(withAdUnitID:"ca-app-pub-9515239279115600/1839473935",
                                     request: request,
                           completionHandler: { [self] ad, error in
                             if let error = error {
@@ -529,7 +530,7 @@ extension MainViewController :GADFullScreenContentDelegate{
       }
 
       /// Tells the delegate that the ad presented full screen content.
-      func adDidPresentFullScreenContent(_ ad: GADFullScreenPresentingAd) {
+    func adWillPresentFullScreenContent(_ ad: GADFullScreenPresentingAd) {
         print("BBBBBBBBBBBBBBAd did present full screen content.")
       }
 

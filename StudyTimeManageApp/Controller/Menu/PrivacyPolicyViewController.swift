@@ -11,7 +11,9 @@ class PrivacyPolicyViewController: UIViewController {
 
     @IBOutlet weak var textView: UITextView!
     override func viewDidLoad() {
+        
         super.viewDidLoad()
+//        navigationController?.setNavigationBarHidden(false, animated: false)
         self.navigationController?.navigationBar.prefersLargeTitles = false
         // Do any additional setup after loading the view.
         setting()

@@ -60,7 +60,9 @@ class RecordViewController: UIViewController {
         
     }
     func setAd(){
-        bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+        let unitID = "ca-app-pub-9515239279115600/9215702391"
+        let testAd = "ca-app-pub-3940256099942544/2934735716"
+        bannerView.adUnitID = unitID
         bannerView.rootViewController = self
         bannerView.load(GADRequest())
     }

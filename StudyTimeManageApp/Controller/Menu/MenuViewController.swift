@@ -10,11 +10,11 @@ import UIKit
 class MenuViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
-    var items = ["Menu","勉強データの削除","利用規約","プライバシーポリシー","使用しているイラスト","お問い合わせ","License"]
+    var items = ["Menu","勉強データの削除","利用規約","プライバシーポリシー","使用しているイラスト","お問い合わせ"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+        
         tableView.delegate = self
         tableView.dataSource = self
         tableView.backgroundColor = .black
@@ -41,15 +41,19 @@ extension MenuViewController: UITableViewDelegate,UITableViewDataSource{
         if indexPath.row == 1{
             //データの削除
 //           studyTimeDeleteAlert()
+
             performSegue(withIdentifier: "acount", sender: nil)
         }
         else if indexPath.row == 2{
             //利用規約の表示
-            performSegue(withIdentifier: "termsofservice", sender: nil)
+            let url = URL(string: "https://studyrecordjp.herokuapp.com/next.html")
+            UIApplication.shared.open(url!)
         }
         else if indexPath.row == 3{
             //プライバシーポリシー
-            performSegue(withIdentifier: "privacypolicy", sender: nil)
+            
+            let url = URL(string: "https://studyrecordjp.herokuapp.com/index.html")
+            UIApplication.shared.open(url!)
         }
         else if indexPath.row == 4{
             let url = URL(string: "https://www.linustock.com/")
@@ -65,9 +69,4 @@ extension MenuViewController: UITableViewDelegate,UITableViewDataSource{
         
     }
     
-}
-
-
-extension MenuViewController{
-   
 }

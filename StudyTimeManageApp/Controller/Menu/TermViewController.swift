@@ -12,6 +12,7 @@ class TermViewController: UIViewController {
     @IBOutlet weak var textView: UITextView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.navigationController?.navigationBar.prefersLargeTitles = false
         // Do any additional setup after loading the view.
        

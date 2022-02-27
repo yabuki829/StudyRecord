@@ -54,7 +54,7 @@ class GoalPageViewController: UIViewController,UITextViewDelegate {
         }
         else{
             
-            if textField.text!.count > 20 || textView.text.count > 120{
+            if textField.text!.count > 20 || textView.text.count > 150{
                 return
             }
             let goalModel = studyTimeClass()
@@ -73,7 +73,7 @@ class GoalPageViewController: UIViewController,UITextViewDelegate {
         collectionView.layer.borderColor = UIColor.darkGray.cgColor
         profileImage.layer.borderWidth = 1
         profileImage.layer.borderColor = UIColor.darkGray.cgColor
-        profileImage.layer.cornerRadius = 50
+        profileImage.layer.cornerRadius = 40
         profileImage.clipsToBounds = true
     }
     func textViewDidChange(_ textView: UITextView) {
@@ -81,6 +81,14 @@ class GoalPageViewController: UIViewController,UITextViewDelegate {
             self.textView.placeHolder = "Goal.. Less than 120 characters "
         }
     }
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange,
+                           replacementText text: String) -> Bool {
+           if text == "\n" {
+               textView.resignFirstResponder() //キーボードを閉じる
+               return false
+           }
+           return true
+       }
     
 }
 

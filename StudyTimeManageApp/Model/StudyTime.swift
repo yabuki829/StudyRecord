@@ -119,7 +119,6 @@ class studyTimeClass{
         //今までの月毎の累計勉強時間
         saveMonthlyTotalStudyTime(studytime: studyTime, month: monthint)
 
-        
         database.postData(today: studyTime + day, month: studyTime + month, total: studyTime + total)
         database.postRecord(todayStudyTime: studyTime, comment: comment, image:  getProfileImage(), category: category, postDate: postDate)
         //データベースに保存

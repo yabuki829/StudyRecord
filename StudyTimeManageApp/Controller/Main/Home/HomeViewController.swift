@@ -92,13 +92,13 @@ extension HomeViewController:UITableViewDelegate,UITableViewDataSource,tableView
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-       
-        return recordArray.count + recordArray.count / 10
+        print(recordArray.count + (recordArray.count / 10))
+        return recordArray.count + (recordArray.count / 10) - 1
                 
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
+        print(indexPath.row)
         
         if indexPath.row % 11 == 0 && indexPath.row != 0{
             let cell = tableView.dequeueReusableCell(withIdentifier: "AdTableViewCell", for: indexPath) as! AdTableViewCell
@@ -106,6 +106,7 @@ extension HomeViewController:UITableViewDelegate,UITableViewDataSource,tableView
             return cell
         }
         else{
+            
             let adCount = Int(indexPath.row / 11)
             let cell = tableView.dequeueReusableCell(withIdentifier: "UserRecordCell", for: indexPath) as! UserRecordCell
             cell.memoLabel.text = nil

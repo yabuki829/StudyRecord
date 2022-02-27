@@ -8,6 +8,7 @@
 import UIKit
 import PKHUD
 import FirebaseFirestore
+import IQKeyboardManagerSwift
 
 class UserPageViewController: UIViewController {
 
@@ -30,8 +31,8 @@ class UserPageViewController: UIViewController {
         if userid.isEmpty {
             
             let id = UserDefaults.standard.object(forKey: "userid")
+            print(id)
             userid = id as! String
-            print(userid)
             navigationItem.title = "Profile."
             profileData = Profile(username:profileModel.getUserName() , goal: profileModel.getGoal(), image: profileModel.getProfileImage(), userid: userid)
             
@@ -45,15 +46,13 @@ class UserPageViewController: UIViewController {
         }
         settingTableView()
        
-        settingTableView()
-        
+        IQKeyboardManager.shared.enable = true 
         tableView.layer.borderColor = UIColor.systemGray3.cgColor
         tableView.layer.cornerRadius = 1
         tableView.layer.borderWidth = 1
     }
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.barTintColor = .white
-        print("呼ばれてます1")
         getData(userid:userid)
         profileData = Profile(username:profileModel.getUserName() , goal: profileModel.getGoal(), image: profileModel.getProfileImage(), userid: userid)
         tableView.reloadData()
@@ -71,7 +70,6 @@ extension UserPageViewController:UITableViewDelegate,UITableViewDataSource,table
     
     func updateTableView() {
         tableView.reloadData()
-        print("Reload")
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -150,10 +148,10 @@ extension UserPageViewController:UITableViewDelegate,UITableViewDataSource,table
             }
             else{
                 let adCount = indexPath.row / 11
-                print("詳細画面に遷移する")
+               
                 
                 tableView.deselectRow(at: indexPath, animated: true)
-                print(indexPath.row)
+               
                 let next = self.storyboard?.instantiateViewController(withIdentifier: "detail") as! DetailViewController
                 next.record = Record(image: profileData.image, username: profileData.username,
                                      postid: recordArray[indexPath.row - adCount].postID,
@@ -177,7 +175,6 @@ extension UserPageViewController{
     
     func getData(userid:String){
         HUD.flash(.progress, delay: 2)
-        print(userid)
         database.collection("Users").document(userid).collection("Record").order(by:"date", descending: true).getDocuments{[self] (querySnapshot, err) in
             
             self.recordArray = []
@@ -188,7 +185,6 @@ extension UserPageViewController{
                 for document in querySnapshot!.documents {
                     
                     let data = document.data()
-                    print("ここまでOK2")
                     if let studyTime = data["studytime"],
                        let comment   = data["comment"],
                        let postID    = data["postID"],
@@ -207,7 +203,6 @@ extension UserPageViewController{
                     
                 
                 }
-                print(recordArray)
                 tableView.reloadData()
             }
         }

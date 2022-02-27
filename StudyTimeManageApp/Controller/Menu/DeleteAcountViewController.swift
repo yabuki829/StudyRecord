@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class DeleteAcountViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
    
@@ -15,6 +16,7 @@ class DeleteAcountViewController: UIViewController, UITableViewDelegate, UITable
     var item = ["勉強時間を削除","アカウントを削除"]
     override func viewDidLoad() {
         super.viewDidLoad()
+      
         tableView.delegate = self
         tableView.dataSource = self
         // Do any additional setup after loading the view.
@@ -39,8 +41,8 @@ class DeleteAcountViewController: UIViewController, UITableViewDelegate, UITable
     }
     func acountDeleteAlert(){
         //アカウントを削除しますがよろしいですか？
-        let alert = UIAlertController(title: "削除", message: "アカウントを削除する", preferredStyle: .alert)
-        let selectAction = UIAlertAction(title: "削除", style: .default, handler: { _ in
+        let alert = UIAlertController(title: "削除", message: "アカウントを削除する", preferredStyle: .actionSheet)
+        let selectAction = UIAlertAction(title: "削除", style: .destructive, handler: { _ in
             self.moreAlert(type: "A")
         })
         let cancelAction = UIAlertAction(title: "キャンセル", style: .cancel, handler: nil)
@@ -52,8 +54,8 @@ class DeleteAcountViewController: UIViewController, UITableViewDelegate, UITable
     }
     func studyTimeDeleteAlert(){
         //今までの勉強時間の削除をしますがよろしいですか？
-            let alert = UIAlertController(title: "削除", message: "今までの勉強時間を削除する", preferredStyle: .alert)
-            let selectAction = UIAlertAction(title: "削除", style: .default, handler: { _ in
+        let alert = UIAlertController(title: "削除", message: "Total,Manth,Todayの勉強時間を削除する", preferredStyle: .actionSheet)
+        let selectAction = UIAlertAction(title: "削除", style: .destructive, handler: { _ in
                 self.moreAlert(type: "B")
                
             })
@@ -84,26 +86,29 @@ class DeleteAcountViewController: UIViewController, UITableViewDelegate, UITable
         present(alert, animated: true)
     }
     func acountDelete(){
-        let database = Database()
-        database.deleteAcount()
+       
         
-        let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let secondViewController = storyboard.instantiateViewController(withIdentifier: "login") as! SplashViewController
-        secondViewController.modalPresentationStyle = .fullScreen
-        self.present(secondViewController, animated: true, completion: nil)
-        
+        AuthManager.shered.deleteAllUserData()
+        DispatchQueue.main.async {
+            let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let secondViewController = storyboard.instantiateViewController(withIdentifier: "splash")
+            secondViewController.modalPresentationStyle = .fullScreen
+            self.present(secondViewController, animated: true, completion: nil)
+        }
     }
     func studyTimeDelete(){
         let studyTime = studyTimeClass()
         //勉強時間/ day, month, total , week を削除
+        
         studyTime.deleteWeekData()
         studyTime.deleteDayData()
         studyTime.deleteMonthData()
         studyTime.deleteTotalData()
-        let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let secondViewController = storyboard.instantiateViewController(withIdentifier: "home") as! TabbarController
-        self.present(secondViewController, animated: true, completion: nil)
-        
+        DispatchQueue.main.async {
+            let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let secondViewController = storyboard.instantiateViewController(withIdentifier: "home") as! TabbarController
+            self.present(secondViewController, animated: true, completion: nil)
+        }
     }
     
 

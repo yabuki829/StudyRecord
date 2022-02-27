@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
        
         FirebaseApp.configure()
         GADMobileAds.sharedInstance().start(completionHandler: nil)
-        IQKeyboardManager.shared.keyboardDistanceFromTextField = 10
+        IQKeyboardManager.shared.keyboardDistanceFromTextField = 100
         IQKeyboardManager.shared.shouldResignOnTouchOutside = true
         IQKeyboardManager.shared.enableAutoToolbar = true
 //       

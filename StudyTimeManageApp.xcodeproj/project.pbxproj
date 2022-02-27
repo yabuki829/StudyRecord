@@ -23,11 +23,14 @@
 		704B9277277EC0F90012D321 /* PieChartViewDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704B9276277EC0F90012D321 /* PieChartViewDetailController.swift */; };
 		704B927C277EC1550012D321 /* BarChartViewDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704B927B277EC1550012D321 /* BarChartViewDetailController.swift */; };
 		704C3628278B279C0000D17D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 704C3627278B279C0000D17D /* GoogleService-Info.plist */; };
+		704DE2CC27C90C3D008123E0 /* SMSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704DE2CB27C90C3D008123E0 /* SMSViewController.swift */; };
 		704ED91E2768CC5A000F9F10 /* GoalPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704ED91D2768CC5A000F9F10 /* GoalPageViewController.swift */; };
 		704ED92C2768CF38000F9F10 /* UserRecordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704ED92A2768CF38000F9F10 /* UserRecordCell.swift */; };
 		704ED92D2768CF38000F9F10 /* UserRecordCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 704ED92B2768CF38000F9F10 /* UserRecordCell.xib */; };
 		704FE6782768372600CB9A71 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704FE6772768372600CB9A71 /* MenuViewController.swift */; };
 		7051EF9A279AC733005492D6 /* TabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7051EF99279AC733005492D6 /* TabbarController.swift */; };
+		7053E4B027C8D14F00E6504A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7053E4AF27C8D14E00E6504A /* LoginViewController.swift */; };
+		7053E4B827C8D39200E6504A /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7053E4B727C8D39200E6504A /* AuthManager.swift */; };
 		7055BA8D27C37F5000696BF7 /* BlockUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7055BA8C27C37F5000696BF7 /* BlockUserViewController.swift */; };
 		7057C4D0276AD87000DE8214 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7057C4CF276AD87000DE8214 /* DetailViewController.swift */; };
 		70584E1427ABF86E00C08B31 /* TermViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70584E1327ABF86E00C08B31 /* TermViewController.swift */; };
@@ -61,11 +64,9 @@
 		709CF2292793BFEB00C0C61F /* DetailViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 709CF2272793BFEB00C0C61F /* DetailViewCell.xib */; };
 		709F7F602771D93800C07A04 /* FriendStudyTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709F7F5F2771D93800C07A04 /* FriendStudyTimeViewController.swift */; };
 		70A2AC3227AA221600FB0550 /* barchart.json in Resources */ = {isa = PBXBuildFile; fileRef = 70A2AC3127AA221600FB0550 /* barchart.json */; };
-		70A2AC3727AA221E00FB0550 /* boy.json in Resources */ = {isa = PBXBuildFile; fileRef = 70A2AC3627AA221D00FB0550 /* boy.json */; };
 		70AFD5D3276D752E004DB307 /* CommnentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AFD5D1276D752E004DB307 /* CommnentCell.swift */; };
 		70AFD5D4276D752E004DB307 /* CommnentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70AFD5D2276D752E004DB307 /* CommnentCell.xib */; };
 		70B03CF42793F769007E560B /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B03CF32793F769007E560B /* SplashViewController.swift */; };
-		70B03CF92793FCAB007E560B /* watch.json in Resources */ = {isa = PBXBuildFile; fileRef = 70B03CF82793FCAB007E560B /* watch.json */; };
 		70B3F977279E58BD0001DA4E /* AdTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B3F975279E58BD0001DA4E /* AdTableViewCell.swift */; };
 		70B3F978279E58BD0001DA4E /* AdTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70B3F976279E58BD0001DA4E /* AdTableViewCell.xib */; };
 		70FA384D27C1EEEB0080ABC1 /* SelectLicenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FA384C27C1EEEB0080ABC1 /* SelectLicenseViewController.swift */; };
@@ -107,11 +108,14 @@
 		704B9276277EC0F90012D321 /* PieChartViewDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChartViewDetailController.swift; sourceTree = "<group>"; };
 		704B927B277EC1550012D321 /* BarChartViewDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarChartViewDetailController.swift; sourceTree = "<group>"; };
 		704C3627278B279C0000D17D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		704DE2CB27C90C3D008123E0 /* SMSViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMSViewController.swift; sourceTree = "<group>"; };
 		704ED91D2768CC5A000F9F10 /* GoalPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalPageViewController.swift; sourceTree = "<group>"; };
 		704ED92A2768CF38000F9F10 /* UserRecordCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRecordCell.swift; sourceTree = "<group>"; };
 		704ED92B2768CF38000F9F10 /* UserRecordCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserRecordCell.xib; sourceTree = "<group>"; };
 		704FE6772768372600CB9A71 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		7051EF99279AC733005492D6 /* TabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarController.swift; sourceTree = "<group>"; };
+		7053E4AF27C8D14E00E6504A /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		7053E4B727C8D39200E6504A /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		7055BA8C27C37F5000696BF7 /* BlockUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockUserViewController.swift; sourceTree = "<group>"; };
 		7057C4CF276AD87000DE8214 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		705832AE2790202600E01B87 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
@@ -152,11 +156,9 @@
 		709CF2272793BFEB00C0C61F /* DetailViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewCell.xib; sourceTree = "<group>"; };
 		709F7F5F2771D93800C07A04 /* FriendStudyTimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendStudyTimeViewController.swift; sourceTree = "<group>"; };
 		70A2AC3127AA221600FB0550 /* barchart.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = barchart.json; sourceTree = "<group>"; };
-		70A2AC3627AA221D00FB0550 /* boy.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = boy.json; sourceTree = "<group>"; };
 		70AFD5D1276D752E004DB307 /* CommnentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommnentCell.swift; sourceTree = "<group>"; };
 		70AFD5D2276D752E004DB307 /* CommnentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommnentCell.xib; sourceTree = "<group>"; };
 		70B03CF32793F769007E560B /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
-		70B03CF82793FCAB007E560B /* watch.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = watch.json; sourceTree = "<group>"; };
 		70B3F975279E58BD0001DA4E /* AdTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdTableViewCell.swift; sourceTree = "<group>"; };
 		70B3F976279E58BD0001DA4E /* AdTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AdTableViewCell.xib; sourceTree = "<group>"; };
 		70FA384C27C1EEEB0080ABC1 /* SelectLicenseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectLicenseViewController.swift; sourceTree = "<group>"; };
@@ -251,6 +253,16 @@
 			path = DataView;
 			sourceTree = "<group>";
 		};
+		704DE2C727C8E544008123E0 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				70B03CF32793F769007E560B /* SplashViewController.swift */,
+				7053E4AF27C8D14E00E6504A /* LoginViewController.swift */,
+				704DE2CB27C90C3D008123E0 /* SMSViewController.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
 		704ED91C2768CBE4000F9F10 /* UserPage */ = {
 			isa = PBXGroup;
 			children = (
@@ -272,13 +284,13 @@
 		704FE67F27683DF000CB9A71 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				704DE2C727C8E544008123E0 /* Auth */,
 				704B9272277EC08C0012D321 /* DataView */,
 				709F7F5B2771CE1A00C07A04 /* Friend */,
 				70660F712769720F00120CF7 /* Home */,
 				704ED91C2768CBE4000F9F10 /* UserPage */,
 				70587584276783D600A3D237 /* RecordViewController.swift */,
 				7051EF99279AC733005492D6 /* TabbarController.swift */,
-				70B03CF32793F769007E560B /* SplashViewController.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -377,6 +389,7 @@
 				7068C18C27854C7500A27642 /* Language.swift */,
 				7065E971278D4F7F0053BBF2 /* Formatter.swift */,
 				70FA385127C1F7ED0080ABC1 /* License.swift */,
+				7053E4B727C8D39200E6504A /* AuthManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -393,8 +406,6 @@
 		709CF29B2793EE7900C0C61F /* JSON */ = {
 			isa = PBXGroup;
 			children = (
-				70B03CF82793FCAB007E560B /* watch.json */,
-				70A2AC3627AA221D00FB0550 /* boy.json */,
 				70A2AC3127AA221600FB0550 /* barchart.json */,
 			);
 			path = JSON;
@@ -532,10 +543,8 @@
 			files = (
 				704C3628278B279C0000D17D /* GoogleService-Info.plist in Resources */,
 				709CF2292793BFEB00C0C61F /* DetailViewCell.xib in Resources */,
-				70A2AC3727AA221E00FB0550 /* boy.json in Resources */,
 				70A2AC3227AA221600FB0550 /* barchart.json in Resources */,
 				706A2A592761CB6C0041B993 /* LaunchScreen.storyboard in Resources */,
-				70B03CF92793FCAB007E560B /* watch.json in Resources */,
 				7029D5812764A85E007EC795 /* PieChartCell.xib in Resources */,
 				70AFD5D4276D752E004DB307 /* CommnentCell.xib in Resources */,
 				706A2A562761CB6C0041B993 /* Assets.xcassets in Resources */,
@@ -732,6 +741,7 @@
 				7065E96D278D455B0053BBF2 /* DataViewController.swift in Sources */,
 				7051EF9A279AC733005492D6 /* TabbarController.swift in Sources */,
 				706A2A4D2761CB6B0041B993 /* AppDelegate.swift in Sources */,
+				704DE2CC27C90C3D008123E0 /* SMSViewController.swift in Sources */,
 				704B9277277EC0F90012D321 /* PieChartViewDetailController.swift in Sources */,
 				706A2A952761CBC70041B993 /* Math.swift in Sources */,
 				709F7F602771D93800C07A04 /* FriendStudyTimeViewController.swift in Sources */,
@@ -743,12 +753,14 @@
 				70587585276783D600A3D237 /* RecordViewController.swift in Sources */,
 				706A2A902761CBC00041B993 /* Extension.swift in Sources */,
 				706A2AAC2761CC200041B993 /* MainViewController.swift in Sources */,
+				7053E4B027C8D14F00E6504A /* LoginViewController.swift in Sources */,
 				7068C18D27854C7500A27642 /* Language.swift in Sources */,
 				704FE6782768372600CB9A71 /* MenuViewController.swift in Sources */,
 				707ACA2A2772C85900A8A158 /* UserProfileViewCell.swift in Sources */,
 				704AA7D62768D7C200A49FC3 /* Struct.swift in Sources */,
 				706A2A862761CBB40041B993 /* Database.swift in Sources */,
 				706A2A4F2761CB6B0041B993 /* SceneDelegate.swift in Sources */,
+				7053E4B827C8D39200E6504A /* AuthManager.swift in Sources */,
 				7029D5682764A827007EC795 /* BarChartCell.swift in Sources */,
 				704A33B02797AD2D00E28C34 /* ManageTabMenuController.swift in Sources */,
 			);

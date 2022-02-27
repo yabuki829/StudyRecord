@@ -7,6 +7,7 @@
 
 import UIKit
 import Lottie
+import FirebaseAuth
 
 class SplashViewController: UIViewController {
    
@@ -16,15 +17,20 @@ class SplashViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
-        if UserDefaults.standard.object(forKey: "userid") == nil{
+//
+        if Auth.auth().currentUser == nil || UserDefaults.standard.object(forKey: "userid") == nil {
+            navigationController?.navigationBar.prefersLargeTitles = true
+            navigationController?.setNavigationBarHidden(false, animated: false)
+            setNavBarColor()
             addAnimationView()
             setLoginButtonAndTermButton()
+            
         }
        
     }
     override func viewDidAppear(_ animated: Bool) {
-        if UserDefaults.standard.object(forKey: "userid") != nil{
+        if Auth.auth().currentUser != nil  && UserDefaults.standard.object(forKey: "userid") != nil {
+            
             print("Homeに遷移します")
             performSegue(withIdentifier: "home", sender: nil)
         }
@@ -34,7 +40,7 @@ class SplashViewController: UIViewController {
     func addAnimationView() {
 
             //アニメーションファイルの指定
-            animationView = AnimationView(name:  "boy")
+            animationView = AnimationView(name:  "barchart")
 
             //アニメーションの位置指定（画面中央）
             animationView.frame = CGRect(x: 0, y: -20, width: self.view.bounds.width, height: self.view.bounds.height)
@@ -58,9 +64,9 @@ class SplashViewController: UIViewController {
         let posY: CGFloat = self.view.frame.height/2 + bHeight * 2
         
         loginButton.frame = CGRect(x: posX, y: posY, width: bWidth, height: bHeight)
-        loginButton.backgroundColor = .darkGray
+        loginButton.backgroundColor = .link
         loginButton.tintColor = .white
-        loginButton.setTitle("始める", for: .normal)
+        loginButton.setTitle("電話番号でログイン", for: .normal)
         loginButton.setTitleColor(UIColor.white, for: .normal)
         loginButton.layer.masksToBounds = true
 
@@ -82,29 +88,26 @@ class SplashViewController: UIViewController {
         self.view.addSubview(termButton)
     }
     @objc internal func onClickTerm(sender:UIButton){
-        let anotherStoryboard:UIStoryboard = UIStoryboard(name: "Menu", bundle: nil)
-         
-        //生成するViewControllerを指定
-        let VC = anotherStoryboard.instantiateViewController(withIdentifier: "term")
-        //表示
-        self.present(VC, animated: true, completion: nil)
+        let url = URL(string: "https://studyrecordjp.herokuapp.com/next.html")
+        UIApplication.shared.open(url!)
     }
     @objc internal func onClickLogin(sender: UIButton) {
-        alert()
+         
+        let next = self.storyboard?.instantiateViewController(withIdentifier: "phoneLogin") as! LoginViewController
+        self.navigationController?.pushViewController(next, animated: true)
     }
-    func alert(){
-        let alert = UIAlertController(title: "利用規約確認しましたか？", message: "", preferredStyle: .alert)
-        let selectAction = UIAlertAction(title: "確認しました", style: .default, handler: { _ in
-            let database = Database()
-            database.registerUser()
-            self.performSegue(withIdentifier: "home", sender: nil)
-           
-        })
-        let cancelAction = UIAlertAction(title: "キャンセル", style: .cancel, handler: nil)
-
-        alert.addAction(selectAction)
-        alert.addAction(cancelAction)
-
-        present(alert, animated: true)
+    func setNavBarColor(){
+        setStatusBarBackgroundColor(.link)
+        self.navigationController?.navigationBar.barTintColor = .link
+        self.navigationController?.navigationBar.largeTitleTextAttributes =  [
+            // 文字の色
+                .foregroundColor: UIColor.white
+            ]
+        // ナビゲーションバーのテキストを変更する
+        self.navigationController?.navigationBar.titleTextAttributes = [
+        // 文字の色
+            .foregroundColor: UIColor.white
+        ]
     }
+    
 }

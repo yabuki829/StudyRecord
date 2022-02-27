@@ -14,6 +14,7 @@ class SelectLicenseViewController: UIViewController,UITableViewDelegate,UITableV
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.setNavigationBarHidden(false, animated: false)
         tableView.delegate = self
         tableView.dataSource = self
         // Do any additional setup after loading the view.
@@ -31,7 +32,7 @@ class SelectLicenseViewController: UIViewController,UITableViewDelegate,UITableV
         let next = self.storyboard?.instantiateViewController(withIdentifier: "showLicense") as! ShowLicenseViewController
         next.i = indexPath.row
         self.navigationController?.pushViewController(next, animated: true)
-    
+        
         
     }
     

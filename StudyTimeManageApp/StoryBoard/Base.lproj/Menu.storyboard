@@ -43,10 +43,10 @@
                     <navigationItem key="navigationItem" id="PnJ-N7-oWK"/>
                     <connections>
                         <outlet property="tableView" destination="gdr-18-Kxf" id="2aU-iM-qsD"/>
-                        <segue destination="69d-GM-q1e" kind="show" identifier="acount" id="YNu-en-ljg"/>
-                        <segue destination="hRu-Sf-o5u" kind="show" identifier="termsofservice" id="x0O-li-T8a"/>
-                        <segue destination="YQ3-Od-Ecb" kind="show" identifier="privacypolicy" id="cCC-BI-NHM"/>
-                        <segue destination="BjM-2R-g4E" kind="show" identifier="license" id="1bM-TZ-gWG"/>
+                        <segue destination="69d-GM-q1e" kind="presentation" identifier="acount" modalPresentationStyle="pageSheet" id="YNu-en-ljg"/>
+                        <segue destination="hRu-Sf-o5u" kind="presentation" identifier="termsofservice" modalPresentationStyle="pageSheet" id="x0O-li-T8a"/>
+                        <segue destination="YQ3-Od-Ecb" kind="presentation" identifier="privacypolicy" modalPresentationStyle="pageSheet" id="cCC-BI-NHM"/>
+                        <segue destination="BjM-2R-g4E" kind="presentation" identifier="license" modalPresentationStyle="pageSheet" id="1bM-TZ-gWG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="znC-4a-LdH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -56,13 +56,13 @@
         <!--データの削除-->
         <scene sceneID="t7h-QL-RPV">
             <objects>
-                <viewController id="69d-GM-q1e" customClass="DeleteAcountViewController" customModule="StudyTimeManageApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="acount" id="69d-GM-q1e" customClass="DeleteAcountViewController" customModule="StudyTimeManageApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Xxe-8i-eHk">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kXu-k6-Lil">
-                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="cell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="77" id="goa-aY-6zO">
@@ -99,11 +99,11 @@
             <objects>
                 <viewController id="BjM-2R-g4E" customClass="SelectLicenseViewController" customModule="StudyTimeManageApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UyA-lE-CMT">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Uax-8s-Cu1">
-                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" textLabel="pHf-fN-JXy" style="IBUITableViewCellStyleDefault" id="1IP-L5-jn3">
@@ -138,7 +138,7 @@
                     <navigationItem key="navigationItem" title="License" id="z8x-Za-9ER"/>
                     <connections>
                         <outlet property="tableView" destination="Uax-8s-Cu1" id="xYE-aI-tTQ"/>
-                        <segue destination="f7l-cJ-vEN" kind="show" id="LfK-0D-RCE"/>
+                        <segue destination="f7l-cJ-vEN" kind="show" identifier="showLicense" id="LfK-0D-RCE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QZ8-DJ-w0S" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -150,11 +150,11 @@
             <objects>
                 <viewController storyboardIdentifier="showLicense" id="f7l-cJ-vEN" customClass="ShowLicenseViewController" customModule="StudyTimeManageApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bfs-87-Qx7">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TMc-ic-qZC">
-                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -177,18 +177,18 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9vL-u4-1Ed" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4976.811594202899" y="67.633928571428569"/>
+            <point key="canvasLocation" x="5083" y="45"/>
         </scene>
         <!--Privacy Policy-->
         <scene sceneID="E8G-Dq-T7d">
             <objects>
-                <viewController id="YQ3-Od-Ecb" customClass="PrivacyPolicyViewController" customModule="StudyTimeManageApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="privacypolicy" id="YQ3-Od-Ecb" customClass="PrivacyPolicyViewController" customModule="StudyTimeManageApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="I0B-XO-DWx">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="3oa-Qy-Ctn">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="3oa-Qy-Ctn">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" systemColor="labelColor"/>
@@ -212,18 +212,18 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KNW-9I-72p" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2540.579710144928" y="756.69642857142856"/>
+            <point key="canvasLocation" x="2599" y="873"/>
         </scene>
         <!--Terms of Service-->
         <scene sceneID="RJx-0T-1gi">
             <objects>
-                <viewController storyboardIdentifier="term" id="hRu-Sf-o5u" customClass="TermViewController" customModule="StudyTimeManageApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="termsofservice" id="hRu-Sf-o5u" customClass="TermViewController" customModule="StudyTimeManageApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iAW-fG-mvk">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="e2M-BE-9W4">
-                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -247,27 +247,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VbC-aU-O2u" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1770" y="873"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="T9G-cB-8Rc">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="UCv-BP-wgU" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ILd-JI-7TJ">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="9Zn-WR-aTe" kind="relationship" relationship="rootViewController" id="qb8-2y-cfR"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="6Hr-Yz-qiu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-126.08695652173914" y="71.651785714285708"/>
         </scene>
     </scenes>
     <resources>

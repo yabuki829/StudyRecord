@@ -13,7 +13,7 @@ class TabbarController: UITabBarController {
         super.viewDidLoad()
 //        UITabBar.appearance().tintColor = UIColor.link
         // Do any additional setup after loading the view.
-        
+        navigationController?.setNavigationBarHidden(true, animated: false)
     }
     
     override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
