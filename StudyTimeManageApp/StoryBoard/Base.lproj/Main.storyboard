@@ -262,6 +262,7 @@
                         <outlet property="tableView" destination="Ynz-hi-Qtg" id="dxw-Rr-vbc"/>
                         <segue destination="PHk-bj-Bhg" kind="show" identifier="barChart" id="YOa-ON-F8k"/>
                         <segue destination="kWa-Qc-OSk" kind="show" id="cCK-CQ-F9e"/>
+                        <segue destination="a0Q-4v-wmK" kind="show" id="xFO-ca-l1m"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -271,34 +272,80 @@
         <!--10,000hours-->
         <scene sceneID="LJK-U4-ZmN">
             <objects>
-                <viewController storyboardIdentifier="piedetail" id="a0Q-4v-wmK" customClass="PieChartViewDetailController" customModule="StudyTimeManageApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="piedetail" modalPresentationStyle="overCurrentContext" id="a0Q-4v-wmK" customClass="PieChartViewDetailController" customModule="StudyTimeManageApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="M83-ew-SWO">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5uJ-4G-4Ng" customClass="PieChartView" customModule="Charts">
-                                <rect key="frame" x="0.0" y="144" width="414" height="608"/>
+                                <rect key="frame" x="0.0" y="188" width="414" height="520"/>
                                 <color key="backgroundColor" systemColor="labelColor"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Nz-sj-mUw">
+                                <rect key="frame" x="0.0" y="88" width="414" height="40"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="fQA-Gv-s8p">
+                                        <rect key="frame" x="20" y="3" width="374" height="34"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="目標時間(ex) 10000" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7xh-Zt-Nkn">
+                                                <rect key="frame" x="0.0" y="0.0" width="314" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i59-Li-7wz">
+                                                <rect key="frame" x="322" y="0.0" width="52" height="34"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="13"/>
+                                                <state key="normal" title="変更する">
+                                                    <color key="titleColor" systemColor="linkColor"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="setGoalTime:" destination="a0Q-4v-wmK" eventType="touchUpInside" id="Dhv-D9-ngL"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                <constraints>
+                                    <constraint firstItem="fQA-Gv-s8p" firstAttribute="top" secondItem="6Nz-sj-mUw" secondAttribute="top" constant="3" id="4mG-CC-diH"/>
+                                    <constraint firstAttribute="height" constant="40" id="NUB-Zy-jik"/>
+                                    <constraint firstAttribute="bottom" secondItem="fQA-Gv-s8p" secondAttribute="bottom" constant="3" id="YY0-aV-fdh"/>
+                                    <constraint firstItem="fQA-Gv-s8p" firstAttribute="leading" secondItem="6Nz-sj-mUw" secondAttribute="leading" constant="20" id="kew-eG-VtU"/>
+                                    <constraint firstAttribute="trailing" secondItem="fQA-Gv-s8p" secondAttribute="trailing" constant="20" id="xbD-w6-wUT"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="xcQ-1b-Ekq"/>
-                        <color key="backgroundColor" systemColor="linkColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="5uJ-4G-4Ng" firstAttribute="top" secondItem="xcQ-1b-Ekq" secondAttribute="top" constant="100" id="Nbu-fQ-Ofh"/>
+                            <constraint firstItem="6Nz-sj-mUw" firstAttribute="leading" secondItem="xcQ-1b-Ekq" secondAttribute="leading" id="WIg-pT-TO0"/>
                             <constraint firstItem="5uJ-4G-4Ng" firstAttribute="centerX" secondItem="M83-ew-SWO" secondAttribute="centerX" id="XGM-U2-hv2"/>
                             <constraint firstItem="5uJ-4G-4Ng" firstAttribute="trailing" secondItem="xcQ-1b-Ekq" secondAttribute="trailing" id="YIK-oK-P32"/>
                             <constraint firstItem="5uJ-4G-4Ng" firstAttribute="centerY" secondItem="M83-ew-SWO" secondAttribute="centerY" id="erR-cd-1Sd"/>
+                            <constraint firstItem="6Nz-sj-mUw" firstAttribute="top" secondItem="xcQ-1b-Ekq" secondAttribute="top" id="gme-dP-xu7"/>
                             <constraint firstItem="5uJ-4G-4Ng" firstAttribute="leading" secondItem="xcQ-1b-Ekq" secondAttribute="leading" id="wf8-SD-JK0"/>
+                            <constraint firstItem="6Nz-sj-mUw" firstAttribute="trailing" secondItem="xcQ-1b-Ekq" secondAttribute="trailing" id="xSL-H1-o6Z"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="10,000hours" id="y0L-SK-tHz"/>
+                    <navigationItem key="navigationItem" title="10,000hours" id="y0L-SK-tHz">
+                        <barButtonItem key="rightBarButtonItem" image="text.justify" catalog="system" id="70H-u3-0qD">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="openMenu:" destination="a0Q-4v-wmK" id="D9I-MM-ish"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="pieChartView" destination="5uJ-4G-4Ng" id="c1n-ir-HQ7"/>
+                        <outlet property="textField" destination="7xh-Zt-Nkn" id="NVW-PN-5rN"/>
+                        <outlet property="textFieldView" destination="6Nz-sj-mUw" id="Zrs-ss-aRI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mhi-I0-rFA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3975" y="-135"/>
+            <point key="canvasLocation" x="3973.913043478261" y="-135.26785714285714"/>
         </scene>
         <!--Data-->
         <scene sceneID="HG6-51-86H">
@@ -329,7 +376,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eXp-XT-qMd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5183" y="3"/>
+            <point key="canvasLocation" x="5355" y="0.0"/>
         </scene>
         <!--Record.-->
         <scene sceneID="Xwo-aE-rxF">

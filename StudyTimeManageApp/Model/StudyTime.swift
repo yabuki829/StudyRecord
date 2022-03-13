@@ -259,9 +259,16 @@ class studyTimeClass{
       
         
     }
-    
-   
-    
+    //円グラフの目標勉強時間
+    func seveGoalTime(time:Int){
+        userDefaults.setValue(time, forKey: "goalTime")
+    }
+    func getGoalTime() -> Int {
+        if  let goalTime = UserDefaults.standard.object(forKey:"goalTime"){
+            return goalTime as! Int
+        }
+        return 10000
+    }
     func saveWeekStudy(){
         UserDefaults.standard.setCodable(week, forKey: "week")
     }

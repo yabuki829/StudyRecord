@@ -301,7 +301,7 @@ extension MainViewController :UITableViewDelegate,UITableViewDataSource,tableVie
         if indexPath.row == cellOrder.pieChart {
             let cell = tableView.dequeueReusableCell(withIdentifier: "PieChartCell", for: indexPath) as! PieChartCell
             cell.delegate = self
-            cell.setCell(total: totalStudyTime, time: 10000)
+            cell.setCell(total: totalStudyTime, time: studytime.getGoalTime())
             return cell
         }
         else if indexPath.row == cellOrder.Data {
