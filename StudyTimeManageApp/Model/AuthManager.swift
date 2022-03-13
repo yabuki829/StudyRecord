@@ -34,6 +34,8 @@ class AuthManager{
                 compleation(false)
                 return
             }
+            let initialDate = Date()
+            UserDefaults.standard.setValue(initialDate, forKey: "initialdate")
             UserDefaults.standard.set(Auth.auth().currentUser?.uid, forKey: "userid")
             Database.shered.postGoal(goal: "Goal", username: "No Name", image: "かえる")
             compleation(true)
@@ -41,9 +43,9 @@ class AuthManager{
     }
     
     func deleteAllUserData(){
-        let userid = Auth.auth().currentUser?.uid
+        let userid = Auth.auth().currentUser?.uid //
         
-        Firestore.firestore().collection("Users").document(userid!).collection("MonthlyStudyTime").getDocuments { (snapshot, error) in
+        Firestore.firestore().collection("Users").document(userid!).collection("MonthStudyTime").getDocuments { (snapshot, error) in
             if let error = error{
                 print("エラー",error)
                 return

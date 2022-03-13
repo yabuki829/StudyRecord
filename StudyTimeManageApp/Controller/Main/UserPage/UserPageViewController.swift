@@ -154,16 +154,15 @@ extension UserPageViewController:UITableViewDelegate,UITableViewDataSource,table
                
                 let next = self.storyboard?.instantiateViewController(withIdentifier: "detail") as! DetailViewController
                 next.record = Record(image: profileData.image, username: profileData.username,
-                                     postid: recordArray[indexPath.row - adCount].postID,
+                                     postid: recordArray[indexPath.row - adCount - 1].postID,
                                      userid: userid,
-                                     studyTime: recordArray[indexPath.row - adCount].studyTime,
-                                     comment: recordArray[indexPath.row - adCount].comment,
-                                     date: recordArray[indexPath.row - adCount].date,
-                                     category: recordArray[indexPath.row - adCount].category)
+                                     studyTime: recordArray[indexPath.row - adCount - 1].studyTime,
+                                     comment: recordArray[indexPath.row - adCount - 1].comment,
+                                     date: recordArray[indexPath.row - adCount  - 1].date,
+                                     category: recordArray[indexPath.row - adCount - 1].category)
                 
                 self.navigationController?.pushViewController(next, animated: true)
             }
-            //詳細画面に遷移する
             
         }
     }

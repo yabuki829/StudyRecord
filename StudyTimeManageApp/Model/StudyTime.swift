@@ -112,16 +112,17 @@ class studyTimeClass{
         
         //月間の勉強時間を保存する
         Clock.sync(from: "ntp.nict.jp")
-    
         let postDate = Clock.now  ?? Date()
         let monthint = getMonthDay(date: postDate)
         saveMonthlyStudyTime(studytime:studyTime, month:monthint )
+        
         //今までの月毎の累計勉強時間
         saveMonthlyTotalStudyTime(studytime: studyTime, month: monthint)
-
+        //勉強時間を保存
         database.postData(today: studyTime + day, month: studyTime + month, total: studyTime + total)
+        //投稿を保存
         database.postRecord(todayStudyTime: studyTime, comment: comment, image:  getProfileImage(), category: category, postDate: postDate)
-        //データベースに保存
+        //月毎の勉強時間を保存
         database.saveMonthlyStudyTime(postDate: postDate)
         
     }
@@ -137,6 +138,7 @@ class studyTimeClass{
         database.saveMonthlyStudyTime(postDate: Date())
         database.postData(today: day, month: month, total: total)
         deleteWeekDayStudyTime(weekday: getWeekDay(date: Date()), studyTime: deleteTime)
+        
         if day - deleteTime >= 0.0{
             userDefaults.setValue(day - deleteTime, forKey: "day")
             userDefaults.setValue(month - deleteTime, forKey: "month")

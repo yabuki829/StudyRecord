@@ -22,23 +22,7 @@ class Database{
     let database = Firestore.firestore()
     var studyTime = StudyTime(day: 0.0, month: 0.0, total: 0.0)
     var dateModel = DateModel()
-    func registerUser(){
-        Auth.auth().signInAnonymously { [self] (authResult, error) in
-            if error != nil{
-                return
-            }
-            let userID = Auth.auth().currentUser!.uid
-            print(userID)
-            let initialDate = Date()
-            database.collection("Users").document(userID).setData(
-                ["username":"No Name","goal":"Goal","image":"かえる","userid":userID]
-            )
-            UserDefaults.standard.setValue(userID, forKey: "userid")
-            UserDefaults.standard.setValue(initialDate, forKey: "initialdate")
-        }
-        
-    }
-    
+   
     func postGoal(goal:String,username:String,image:String){
         let userID = Auth.auth().currentUser!.uid
         database.collection("Users").document(userID).setData(
@@ -150,34 +134,6 @@ class Database{
         database.collection("Reports").document(postID).collection("user").document(userid as! String).setData(
             ["report":report,"reporterID":userid as Any,"reportedID":reportedID,"postID":postID,"memo":memo,"username":username]
         )
-    }
-    
-
-    func deleteStudyData(){
-        let userid = UserDefaults.standard.object(forKey: "userid")
-        Firestore.firestore().collection("Users").document(userid! as! String).collection("MonthlyStudyTine").getDocuments { (snapshot, error) in
-            if let error = error{
-                print("エラー",error)
-                return
-            }
-         
-            for document in snapshot!.documents{
-                document.reference.delete()
-            }
-            
-        }
-        Firestore.firestore().collection("Users").document(userid! as! String).collection("StudyTime").getDocuments { (snapshot, error) in
-            if let error = error{
-                print("エラー",error)
-                return
-            }
-            
-            for document in snapshot!.documents{
-                document.reference.delete()
-            }
-            
-        }
-        
     }
     
 }

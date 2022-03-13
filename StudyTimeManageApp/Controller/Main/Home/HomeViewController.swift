@@ -289,8 +289,3 @@ extension HomeViewController{
     }
 }
 
-
-
-//ca-app-pub-9515239279115600~5575856198
-
-//ca-app-pub-9515239279115600/2695553740
