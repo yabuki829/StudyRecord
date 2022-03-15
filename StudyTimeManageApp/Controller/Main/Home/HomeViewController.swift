@@ -16,13 +16,15 @@ class HomeViewController: UIViewController,IndicatorInfoProvider {
     @IBOutlet weak var tableView: UITableView!
     let refreshControl = UIRefreshControl()
     let database = Firestore.firestore()
+    
+    //TODO- recordArrayをカテゴリーの数だけ作成する
     var recordArray:[Record] = []
    
     
     var isFinish:Bool = false {
         didSet{
             print("取得完了")
-            PKHUD.sharedHUD.hide(afterDelay: 0)
+            PKHUD.sharedHUD.hide()
             tableView.reloadData()
         }
     }
@@ -36,9 +38,8 @@ class HomeViewController: UIViewController,IndicatorInfoProvider {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        
         settingTableView()
+        setNavBarBackgroundColor()
         tableView.refreshControl = refreshControl
         refreshControl.addTarget(self, action: #selector(HomeViewController.refresh(sender:)), for: .valueChanged)
         // Do any additional setup after loading the view.
@@ -64,6 +65,16 @@ class HomeViewController: UIViewController,IndicatorInfoProvider {
             getRecordFilteringCategory()
         }
         refreshControl.endRefreshing()
+    }
+    func setNavBarBackgroundColor(){
+        setStatusBarBackgroundColor(.green)
+        self.navigationController?.navigationBar.barTintColor = .green
+        self.navigationController?.navigationBar.tintColor = .link
+        // ナビゲーションバーのテキストを変更する
+        self.navigationController?.navigationBar.titleTextAttributes = [
+        // 文字の色
+            .foregroundColor: UIColor.black
+        ]
     }
     //必須
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
@@ -236,12 +247,8 @@ extension HomeViewController{
     func getRecordFilteringCategory(){
         let database = Firestore.firestore()
         let category = String(itemInfo.title!)
-        print("-------------")
-        print("カテゴリー")
-        print(category)
-        print("-------------")
         self.recordArray = []
-        database.collection("Records").whereField("category", isEqualTo: category).limit(to: 25).getDocuments{[self] (querySnapshot, err) in
+        database.collection("Records").whereField("category", isEqualTo: category).limit(to: 50).getDocuments{[self] (querySnapshot, err) in
             self.recordArray = []
             if let err = err {
                 print(err)

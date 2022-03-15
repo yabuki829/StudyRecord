@@ -13,6 +13,7 @@ class PredictCell: UITableViewCell {
     @IBOutlet weak var predictCountLabel: UILabel!
     var elapsedDays = Int()
     let language = LanguageClass()
+    let study    = studyTimeClass()
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -29,7 +30,7 @@ class PredictCell: UITableViewCell {
             print("ここだよ　〜〜")
             print(initialDate)
             initialDate = a as! Date
-            timeRemand(date:initialDate)
+            study.getHowManyDays(date:initialDate)
         }
         else{
             elapsedDays = 1
@@ -37,8 +38,8 @@ class PredictCell: UITableViewCell {
         //　平均 = 総勉強時間　/ アプリを初回起動した日から今日までの経過日数
         if studyTime == 0 {
         
-            predictCountLabel.text = "10000"
-            predictLabel.text = "roughly what time "
+            predictCountLabel.text = String(study.getGoalTime())
+            predictLabel.text = String("約\(study.getGoalTime())日で達成")
             predictLabel.textAlignment = .center
         }
         else{
@@ -48,13 +49,13 @@ class PredictCell: UITableViewCell {
                 average = 1
             }
             //  (10000 - 総勉強時間) / 平均勉強時間　= 10000時間達成するまでかかる日数
-            let predictTime = Double(10000 - studyTime) / average
+            let predictTime = Double(study.getGoalTime() - studyTime) / average
             predictCountLabel.text = "\(Int(predictTime))"
             let local = language.getlocation()
             
             if local == "ja"{
                 if predictTime == 0{
-                    predictLabel.text = "10,000時間達成 !!"
+                    predictLabel.text = "\(study.getGoalTime())時間達成 !!"
                 }
                 else{
                     predictLabel.text = "約 \(Int(predictTime))日で達成できます"
@@ -63,7 +64,7 @@ class PredictCell: UITableViewCell {
             }
             else{
                 if predictTime == 0{
-                    predictLabel.text = "Achieved 10,000 hours"
+                    predictLabel.text = "Achieved \(study.getGoalTime()) hours"
                 }
                 else{
                     predictLabel.text =   "Can be achieved in \(Int(predictTime)) days "
@@ -76,11 +77,5 @@ class PredictCell: UITableViewCell {
        
     }
     
-    func timeRemand(date:Date){
-        let currentDate = Date()
-        elapsedDays = Calendar.current.dateComponents([.day], from:date , to: currentDate).day!
-        if elapsedDays == 0{
-            elapsedDays = 1
-        }
-    }
+   
 }

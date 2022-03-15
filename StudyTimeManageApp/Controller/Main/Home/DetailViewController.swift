@@ -15,17 +15,16 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var deleteOrReportbutton: UIBarButtonItem!
     @IBOutlet weak var tableView: UITableView!
     var record = Record(image: String(), username: String(), postid: String(), userid: String(), studyTime: Double(), comment: String(), date: Date(), category: String())
+    
     let database = Database()
     let studyTime = studyTimeClass()
+    var userid = String()
+    
     var commentArray = [Comment]()
-    var userName = String()
-    var profileImage = String()
     var isGood = Bool()
     var goodCount = Int()
-    var isReportButton = false
-    var userNameArray = [String]()
-    var profileImageArray = [String]()
-    var userid = String()
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,13 +32,10 @@ class DetailViewController: UIViewController {
         settingTableView()
         
         userid = UserDefaults.standard.object(forKey: "userid") as! String
-        
-        if record.userid != userid{
-            isReportButton = true
-        }
        
         getCommnet()
-        getGood(postid: record.postid)
+        //自分がGoodを押しているかを確認
+        checkisGood(postid: record.postid)
         getGoodCount(postid: record.postid)
       
     }
@@ -47,7 +43,7 @@ class DetailViewController: UIViewController {
         setNavBarBackgroundColor()
     }
     func setNavBarBackgroundColor(){
-        setStatusBarBackgroundColor(.systemGreen)
+        setStatusBarBackgroundColor(.green)
         self.navigationController?.navigationBar.barTintColor = .green
         self.navigationController?.navigationBar.tintColor = .link
         // ナビゲーションバーのテキストを変更する
@@ -59,13 +55,12 @@ class DetailViewController: UIViewController {
 
 
     @IBAction func deletePost(_ sender: Any) {
-       
-        if isReportButton == true{
-           selectAlertofPost()
+        if record.userid == userid {
+            postDeleteAlert()
+           
         }
         else{
-            
-            postDeleteAlert()
+            selectAlertofPost()
         }
         
     }
@@ -419,7 +414,7 @@ extension DetailViewController{
             }
         }
     }
-    func getGood(postid:String){
+    func checkisGood(postid:String){
         let database = Firestore.firestore()
         let userid = UserDefaults.standard.object(forKey: "userid")
         database.collection("Good").document(postid).collection("good").document(userid! as! String).getDocument { (snapShot, error) in

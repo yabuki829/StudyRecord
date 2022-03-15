@@ -19,7 +19,7 @@ struct weekStruct :Codable{
     var studyTime:Double
 }
 
-
+//あと何日機能
 struct  howDays:Codable {
     let date: Date
     let title: String
@@ -357,6 +357,15 @@ class studyTimeClass{
             return a
         }
         return [blockUser]()
+    }
+    
+    func getHowManyDays(date:Date) -> Int{
+        let currentDate = Date()
+        var elapsedDays = Calendar.current.dateComponents([.day], from:date , to: currentDate).day!
+        if elapsedDays == 0{
+            elapsedDays = 1
+        }
+        return elapsedDays
     }
 }
 

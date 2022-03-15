@@ -135,5 +135,10 @@ class Database{
             ["report":report,"reporterID":userid as Any,"reportedID":reportedID,"postID":postID,"memo":memo,"username":username]
         )
     }
-    
+    func postFriendID(id:String){
+        let userid = UserDefaults.standard.object(forKey: "userid")
+        database.collection("UserID").document(id).setData(
+            ["userID":userid]
+        )
+    }
 }

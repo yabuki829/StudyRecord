@@ -27,6 +27,8 @@
 		704ED91E2768CC5A000F9F10 /* GoalPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704ED91D2768CC5A000F9F10 /* GoalPageViewController.swift */; };
 		704ED92C2768CF38000F9F10 /* UserRecordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704ED92A2768CF38000F9F10 /* UserRecordCell.swift */; };
 		704ED92D2768CF38000F9F10 /* UserRecordCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 704ED92B2768CF38000F9F10 /* UserRecordCell.xib */; };
+		704F4FA727E0B38600A19C50 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704F4FA627E0B38600A19C50 /* User.swift */; };
+		704F4FAC27E0B6FD00A19C50 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704F4FAB27E0B6FD00A19C50 /* Alert.swift */; };
 		704FE6782768372600CB9A71 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704FE6772768372600CB9A71 /* MenuViewController.swift */; };
 		7051EF9A279AC733005492D6 /* TabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7051EF99279AC733005492D6 /* TabbarController.swift */; };
 		7053E4B027C8D14F00E6504A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7053E4AF27C8D14E00E6504A /* LoginViewController.swift */; };
@@ -112,6 +114,8 @@
 		704ED91D2768CC5A000F9F10 /* GoalPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalPageViewController.swift; sourceTree = "<group>"; };
 		704ED92A2768CF38000F9F10 /* UserRecordCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRecordCell.swift; sourceTree = "<group>"; };
 		704ED92B2768CF38000F9F10 /* UserRecordCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserRecordCell.xib; sourceTree = "<group>"; };
+		704F4FA627E0B38600A19C50 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		704F4FAB27E0B6FD00A19C50 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		704FE6772768372600CB9A71 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		7051EF99279AC733005492D6 /* TabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarController.swift; sourceTree = "<group>"; };
 		7053E4AF27C8D14E00E6504A /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -380,8 +384,8 @@
 		706A2A7F2761CB770041B993 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				706A2A852761CBB40041B993 /* Database.swift */,
 				704AA7D52768D7C200A49FC3 /* Struct.swift */,
+				706A2A852761CBB40041B993 /* Database.swift */,
 				706A2A8A2761CBBA0041B993 /* Date.swift */,
 				706A2A992761CBCD0041B993 /* StudyTime.swift */,
 				706A2A942761CBC70041B993 /* Math.swift */,
@@ -390,6 +394,8 @@
 				7065E971278D4F7F0053BBF2 /* Formatter.swift */,
 				70FA385127C1F7ED0080ABC1 /* License.swift */,
 				7053E4B727C8D39200E6504A /* AuthManager.swift */,
+				704F4FA627E0B38600A19C50 /* User.swift */,
+				704F4FAB27E0B6FD00A19C50 /* Alert.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -722,6 +728,7 @@
 				7065E972278D4F7F0053BBF2 /* Formatter.swift in Sources */,
 				70584E1E27ABF8BA00C08B31 /* DeleteAcountViewController.swift in Sources */,
 				709CF2282793BFEB00C0C61F /* DetailViewCell.swift in Sources */,
+				704F4FAC27E0B6FD00A19C50 /* Alert.swift in Sources */,
 				70B03CF42793F769007E560B /* SplashViewController.swift in Sources */,
 				70FA386B27C209EC0080ABC1 /* UserPageViewController.swift in Sources */,
 				70FA384D27C1EEEB0080ABC1 /* SelectLicenseViewController.swift in Sources */,
@@ -740,6 +747,7 @@
 				70692E98276D92BF007EC88B /* TextfieldViewCell.swift in Sources */,
 				7065E96D278D455B0053BBF2 /* DataViewController.swift in Sources */,
 				7051EF9A279AC733005492D6 /* TabbarController.swift in Sources */,
+				704F4FA727E0B38600A19C50 /* User.swift in Sources */,
 				706A2A4D2761CB6B0041B993 /* AppDelegate.swift in Sources */,
 				704DE2CC27C90C3D008123E0 /* SMSViewController.swift in Sources */,
 				704B9277277EC0F90012D321 /* PieChartViewDetailController.swift in Sources */,

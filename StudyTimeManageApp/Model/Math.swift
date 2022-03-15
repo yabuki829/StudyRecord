@@ -14,3 +14,16 @@ struct sexagesimal{
     let hour:Int
     let minutes:Int
 }
+class Math{
+    func generator(_ length: Int) -> String {
+        let string = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+        var randomString = ""
+        for _ in 0 ..< length {
+            randomString += String(string.randomElement()!)
+        }
+        return randomString
+    }
+
+
+
+}

@@ -17,7 +17,6 @@ class BlockUserViewController: UIViewController, UITableViewDelegate, UITableVie
         tableView.dataSource = self
         let studyTime = studyTimeClass()
         blockArray = studyTime.getBlockUser()
-        
         // Do any additional setup after loading the view.
     }
     

@@ -68,7 +68,7 @@ class LoginViewController: UIViewController ,UITextFieldDelegate{
         print("次へ")
         let number = "+81" + textField.text!.dropFirst()
         print(number)
-        if textField.text?.count == 11{
+        if textField.text?.count == 11 {
             
             AuthManager.shered.startAuth(phoneNumber: number ) {  result in
                 if result == false{

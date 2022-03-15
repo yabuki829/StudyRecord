@@ -39,9 +39,6 @@ extension MenuViewController: UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         if indexPath.row == 1{
-            //データの削除
-//           studyTimeDeleteAlert()
-
             performSegue(withIdentifier: "acount", sender: nil)
         }
         else if indexPath.row == 2{

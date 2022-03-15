@@ -12,23 +12,20 @@ import FirebaseAuth
 class FriendSearchViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var textField: UITextField!
+
+    @IBOutlet weak var searchField: UISearchBar!
     let language = LanguageClass()
+    let alert = Alert()
     var local = String()
     var profileArray = [Profile]()
-    var  friendID = String()
+    var friendID:String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setStatusBarBackgroundColor(.systemRed)
         settingTableView()
-        local = language.getlocation()
-        if local == "ja"{
-            textField.placeholder = "知り合いにfriendIDを教えてもらいましょう"
-        }
-        else{
-            textField.placeholder = "Ask an acquaintance to tell you your friend ID."
-        }
+        searchField.delegate = self
+        searchField.backgroundColor = .red
         
         // Do any additional setup after loading the view.
     }
@@ -41,47 +38,38 @@ class FriendSearchViewController: UIViewController {
     }
    
     @IBAction func getFriendID(_ sender: Any) {
-        //アラートで自分のfriendIDを表示する
-        alert()
-    }
-    @IBAction func search(_ sender: Any) {
-        if textField.text?.isEmpty == false{
-            searchFriend(id: textField.text!)
-        }
-        else{
-        // 無効な値です invald Value 綴りあってるかわからん
-        }
+        present(alert.showFriendID(), animated: true)
     }
     func settingTableView(){
         tableView.delegate = self
         tableView.dataSource = self
-      
+        
         tableView.rowHeight = UITableView.automaticDimension
         
         let UserProfileViewCell = UINib(nibName: "UserProfileViewCell", bundle: nil)
         tableView.register(UserProfileViewCell, forCellReuseIdentifier: "UserProfileViewCell")
         
     }
-    func alert(){
-        let id = UserDefaults.standard.object(forKey: "userid")
-        let alert = UIAlertController(title: "your FriendID" , message:id as? String, preferredStyle: .alert)
-      
-  
-        let selectAction = UIAlertAction(title: "Copy", style: .default, handler: { _ in
-            let pasteboard = UIPasteboard.general
-            pasteboard.string = id as? String
-
-              let generator = UISelectionFeedbackGenerator()
-              generator.prepare()
-              generator.selectionChanged()
-           
-        })
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-
-        alert.addAction(selectAction)
-        alert.addAction(cancelAction)
-    
-        present(alert, animated: true)
+    func searchFriendID(id:String){
+        let database = Firestore.firestore()
+        print(id,"が入ってます")
+        database.collection("UserID").document(id).getDocument{ (querySnapshot, err) in
+            self.friendID = ""
+            if let err = err {
+                print("エラーです")
+                print(err)
+                
+                return
+            } else {
+                let data = querySnapshot!.data()
+                if let ID = data!["userID"]{
+                    print("FriendIDが見つかりました")
+                    self.friendID = ID as! String
+                }
+               
+            }
+            self.searchFriend(id:self.friendID)
+        }
     }
 
     func searchFriend(id:String){
@@ -99,10 +87,6 @@ class FriendSearchViewController: UIViewController {
                    let userid = data!["userid"]{
                     let newData = Profile(username: username as! String, goal: goal as! String, image: image as! String, userid:userid as! String )
                     self.profileArray.append(newData)
-                    self.friendID = id
-                    if self.friendID.isEmpty {
-                        print("相手のprofileが登録されていません")
-                    }
                 }
                 self.tableView.reloadData()
             }
@@ -131,5 +115,20 @@ extension FriendSearchViewController: UITableViewDelegate,UITableViewDataSource{
         next.friendData = profileArray[indexPath.row]
         self.navigationController?.pushViewController(next, animated: true)
     }
+
+}
+
+extension FriendSearchViewController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+            view.endEditing(true)
+        
+        if searchBar.text!.count > 20{
+            print("探します")
+            print(searchBar.text!)
+            print(searchBar.text!.count)
+                searchFriendID(id: searchBar.text!)
+            }
+       }
+
 
 }

@@ -19,7 +19,7 @@ class UserPageViewController: UIViewController {
     let database = Firestore.firestore()
     var recordArray:[userRecord] = [] {
         didSet{
-            PKHUD.sharedHUD.hide(afterDelay: 0)
+            PKHUD.sharedHUD.hide()
         }
     }
     var userName = String()
@@ -31,7 +31,6 @@ class UserPageViewController: UIViewController {
         if userid.isEmpty {
             
             let id = UserDefaults.standard.object(forKey: "userid")
-            print(id)
             userid = id as! String
             navigationItem.title = "Profile."
             profileData = Profile(username:profileModel.getUserName() , goal: profileModel.getGoal(), image: profileModel.getProfileImage(), userid: userid)
@@ -173,7 +172,7 @@ extension UserPageViewController:UITableViewDelegate,UITableViewDataSource,table
 extension UserPageViewController{
     
     func getData(userid:String){
-        HUD.flash(.progress, delay: 2)
+        HUD.flash(.progress, delay: 5)
         database.collection("Users").document(userid).collection("Record").order(by:"date", descending: true).getDocuments{[self] (querySnapshot, err) in
             
             self.recordArray = []

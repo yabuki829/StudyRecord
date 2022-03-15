@@ -35,9 +35,13 @@ class AuthManager{
                 return
             }
             let initialDate = Date()
+            let math = Math()
+            let friendID = math.generator(30)
+            UserDefaults.standard.setValue(friendID, forKey: "friendid")
             UserDefaults.standard.setValue(initialDate, forKey: "initialdate")
             UserDefaults.standard.set(Auth.auth().currentUser?.uid, forKey: "userid")
             Database.shered.postGoal(goal: "Goal", username: "No Name", image: "かえる")
+            Database.shered.postFriendID(id: friendID)
             compleation(true)
         }
     }
@@ -99,6 +103,7 @@ class AuthManager{
         let user = Auth.auth().currentUser
 
         user?.delete { error in
+            
           if let error = error {
             // An error happened.
             print("アカウント削除に失敗しました")

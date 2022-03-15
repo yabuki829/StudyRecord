@@ -86,9 +86,8 @@ class DeleteAcountViewController: UIViewController, UITableViewDelegate, UITable
         present(alert, animated: true)
     }
     func acountDelete(){
-       
-        
         AuthManager.shered.deleteAllUserData()
+        
         DispatchQueue.main.async {
             let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
             let secondViewController = storyboard.instantiateViewController(withIdentifier: "splash")

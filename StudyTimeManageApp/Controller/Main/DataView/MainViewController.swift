@@ -15,28 +15,26 @@ class MainViewController: UIViewController, UITextFieldDelegate{
     @IBOutlet weak var tableView: UITableView!
     private var interstitial: GADInterstitialAd?
     var menu: SideMenuNavigationController?
-    
+
     let studytime = studyTimeClass()
     let language = LanguageClass()
     let date = DateModel()
+    let user = UserModel()
     
+    
+//    あと何日の残り日数
     var elapsedDays = Int()
     var titleString = String()
+    
     var goalString = String()
-    var studyTime = Double()
+    var selectStudyTime = Double()
     var time = Time(hour: 0, minutes: 0)
-    var dayStudyTime = Double()
-    var monthStudyTime = Double()
-    var totalStudyTime = Double()
-    var weekDayInt = Int()
     var rawData: [Double] = [0,0,0,0,0,0,0]
-    var local = String()
     var cellOrder = CellOrder(pieChart: 0, Data: 1, goal: 2, BarChart: 3, until: 4, predict: 5)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         date.delegate = self
-        local  = language.getlocation()
         navigationController?.navigationBar.prefersLargeTitles = false
         
        
@@ -54,17 +52,10 @@ class MainViewController: UIViewController, UITextFieldDelegate{
         setAD()
         settingTableView()
         settingSideMenu()
-        getTodayGoal()
         //後何日の設定
         settingUntil()
 
 
-        //勉強時間の取得
-        dayStudyTime = studytime.getDay()
-        monthStudyTime = studytime.getMonth()
-        totalStudyTime = studytime.getTotal()
-        
-        print("mainの終わり-------------------------------")
         
     }
     
@@ -72,10 +63,7 @@ class MainViewController: UIViewController, UITextFieldDelegate{
         self.navigationController?.navigationBar.prefersLargeTitles = false
         setNavBarBackgroundColor()
         barChartDataAssign()
-        dayStudyTime = studytime.getDay()
-        monthStudyTime = studytime.getMonth()
-        totalStudyTime = studytime.getTotal()
-        if totalStudyTime >= 10000 {
+        if studytime.getTotal() >= 10000 {
             self.navigationItem.title = "Expert."
         }
         tableView.reloadData()
@@ -93,20 +81,17 @@ class MainViewController: UIViewController, UITextFieldDelegate{
 
     func settingUntil(){
         let userDefalts = UserDefaults.standard
+        
         if let until:howDays = userDefalts.codable(forKey: "until"){
-            let untilArray = until
-            timeRemand(date: until.date)
-            titleString = untilArray.title
+            getHowManyDays(date: until.date)
+            titleString = until.title
         }
     }
-func settingSideMenu(){
-    let storyboard: UIStoryboard = UIStoryboard(name: "Menu", bundle: nil)
-    let Menu: UIViewController = storyboard.instantiateViewController(withIdentifier: "Menu")
-    
+    func settingSideMenu(){
+        let storyboard: UIStoryboard = UIStoryboard(name: "Menu", bundle: nil)
+        let Menu: UIViewController = storyboard.instantiateViewController(withIdentifier: "Menu")
         menu = SideMenuNavigationController(rootViewController:Menu)
         menu!.leftSide = true
-//        menu!.setNavigationBarHidden(true, animated: false)
-        
         SideMenuManager.default.leftMenuNavigationController = menu!
     }
     @IBAction func tapMenu(_ sender: Any) {
@@ -123,9 +108,7 @@ func settingSideMenu(){
     func barChartDataAssign(){
         let a = studyTimeClass()
         a.getWeekStudy()
-       
-        print("データを割り当てます")
-        print(a.week)
+        
         for i in 0..<rawData.count{
             rawData[i] = a.week[i].studyTime
         }
@@ -134,28 +117,36 @@ func settingSideMenu(){
     }
     
     func alert(){
+        //-TODO Alert内のdatepickerのUIを　https://qiita.com/ryosuke_tamura/items/6a672ab50b7d8237798a　のようにする
         var alertTextField: UITextField?
-        if local == "ja"{
+        
+        if language.getlocation() == "ja"{
             let alert = UIAlertController(title: "あと何日？", message: "\n\n\n", preferredStyle: .alert)
+            let howdays = user.getHowMany()
             alert.addTextField { (textField) in
                 alertTextField = textField
+                alertTextField?.text = howdays.title
                 textField.placeholder = "タイトル"
             }
             let datePicker = UIDatePicker()
             datePicker.datePickerMode = .date
             datePicker.preferredDatePickerStyle = .compact
+         
+//            datePicker.setDate(howdays.date, animated: false)
             print(datePicker.bounds.size.width)
-            datePicker.frame = CGRect(x: datePicker.bounds.size.width / 2.2, y: 5, width: 100, height: 150)
+            datePicker.date = howdays.date
+           
+            datePicker.frame = CGRect(x: datePicker.bounds.size.width / 2.2, y: 5, width: 200, height: 150)
           
             alert.view.addSubview(datePicker)
            
             
             let selectAction = UIAlertAction(title: "OK", style: .default, handler: { _ in
                 self.titleString = alertTextField!.text!
-                self.timeRemand(date: datePicker.date)
+                self.getHowManyDays(date: datePicker.date)
                 let untilArray = howDays(date: datePicker.date, title: self.titleString)
                 UserDefaults.standard.setCodable(untilArray, forKey: "until")
-                print(self.titleString)
+                self.tableView.reloadData()
                
             })
             let cancelAction = UIAlertAction(title: "キャンセル", style: .cancel, handler: nil)
@@ -169,17 +160,19 @@ func settingSideMenu(){
             let alert = UIAlertController(title: "How many days", message: "\n\n\n", preferredStyle: .alert)
             alert.addTextField { (textField) in
                 alertTextField = textField
+                alertTextField?.text = self.goalString
                 textField.placeholder = "Title"
             }
+            
             let datePicker = UIDatePicker()
             datePicker.datePickerMode = .date
-            datePicker.frame = CGRect(x: datePicker.bounds.size.width / 2.2, y: 5, width: 100, height: 150) 
-            
+//            datePicker
+            datePicker.frame = CGRect(x: datePicker.bounds.size.width / 2.2, y: 5, width: 100, height: 150)
             alert.view.addSubview(datePicker)
 
             let selectAction = UIAlertAction(title: "OK", style: .default, handler: { _ in
                 self.titleString = alertTextField!.text!
-                self.timeRemand(date: datePicker.date)
+                self.getHowManyDays(date: datePicker.date)
                 let untilArray = howDays(date: datePicker.date, title: self.titleString)
                 UserDefaults.standard.setCodable(untilArray, forKey: "until")
                 print(self.titleString)
@@ -193,12 +186,13 @@ func settingSideMenu(){
             present(alert, animated: true)
             
         }
+    
  
        
     }
     func goalAlert(){
         var alertTextField: UITextField?
-        if local == "ja"{
+        if language.getlocation() == "ja"{
             let alert = UIAlertController(title: "今日の目標", message: "", preferredStyle: .alert)
             alert.addTextField { (textField) in
                 alertTextField = textField
@@ -242,11 +236,7 @@ func settingSideMenu(){
             
         }
     }
-    func getTodayGoal(){
-        if let a = UserDefaults.standard.object(forKey: "todayGoal"){
-            goalString = a as! String
-        }
-    }
+    
 
 }
 
@@ -258,12 +248,11 @@ extension MainViewController :UITableViewDelegate,UITableViewDataSource,tableVie
         tableView.deselectRow(at: indexPath, animated: true)
        
         if indexPath.row == cellOrder.until{
-          
             alert()
         }
         else if indexPath.row == cellOrder.pieChart{
             let next = self.storyboard?.instantiateViewController(withIdentifier: "piedetail") as! PieChartViewDetailController
-            next.totalStudyTime = totalStudyTime
+            next.totalStudyTime = studytime.getTotal()
             self.navigationController?.pushViewController(next, animated: true)
         }
         else if indexPath.row == cellOrder.BarChart{
@@ -301,20 +290,20 @@ extension MainViewController :UITableViewDelegate,UITableViewDataSource,tableVie
         if indexPath.row == cellOrder.pieChart {
             let cell = tableView.dequeueReusableCell(withIdentifier: "PieChartCell", for: indexPath) as! PieChartCell
             cell.delegate = self
-            cell.setCell(total: totalStudyTime, time: studytime.getGoalTime())
+            cell.setCell(total: studytime.getTotal(), time: studytime.getGoalTime())
             return cell
         }
         else if indexPath.row == cellOrder.Data {
             let cell = tableView.dequeueReusableCell(withIdentifier: "DataViewCell", for: indexPath) as!DataViewCell
-            cell.setCell(day: dayStudyTime, month: monthStudyTime, total: totalStudyTime, color: "link")
+            cell.setCell(day: studytime.getDay(), month: studytime.getMonth(), total: studytime.getTotal(), color: "link")
             return cell
           
         }
         else if indexPath.row == cellOrder.goal {
             let cell = tableView.dequeueReusableCell(withIdentifier: "goalCell", for: indexPath)
             let goalLabel = cell.viewWithTag(1) as! UILabel
-            goalLabel.text = goalString
-            print()
+            goalLabel.text = user.getTodayGoal()
+
             return cell
            
         }
@@ -332,7 +321,7 @@ extension MainViewController :UITableViewDelegate,UITableViewDataSource,tableVie
                 let dayLeft = cell.viewWithTag(3) as! UILabel
                 countLabel.text = String(elapsedDays)
                
-                if local == "ja"{
+                if language.getlocation() == "ja"{
                     if elapsedDays == 0 {
                         titleLabel.text = ""
                         dayLeft.text = ""
@@ -381,7 +370,7 @@ extension MainViewController :UITableViewDelegate,UITableViewDataSource,tableVie
         }
         else if indexPath.row == cellOrder.predict{
             let cell = tableView.dequeueReusableCell(withIdentifier: "PredictCell", for: indexPath) as! PredictCell
-            cell.setPredict(studyTime:Int(totalStudyTime))
+            cell.setPredict(studyTime:Int(studytime.getTotal()))
             return cell
         }
         else {
@@ -412,21 +401,16 @@ extension MainViewController :UITableViewDelegate,UITableViewDataSource,tableVie
         }
     }
 
-    //残り日数
-    func timeRemand(date:Date){
-    
+    func getHowManyDays(date:Date){
         elapsedDays = Calendar.current.dateComponents([.day], from: Date(), to: date).day!
+        tableView.reloadData()
         if elapsedDays == 0{
             UserDefaults.standard.removeObject(forKey: "until")
         }
-        tableView.reloadData()
+      
     }
     func updateTableView() {
-        print("リロード")
         barChartDataAssign()
-        dayStudyTime = studytime.getDay()
-        monthStudyTime = studytime.getMonth()
-        totalStudyTime = studytime.getTotal()
         tableView.reloadData()
     }
     func settingTableView(){
@@ -435,7 +419,6 @@ extension MainViewController :UITableViewDelegate,UITableViewDataSource,tableVie
         tableView.rowHeight = UITableView.automaticDimension
         let BarChartCell = UINib(nibName: "BarChartCell", bundle: nil )
         tableView.register(BarChartCell, forCellReuseIdentifier: "BarChartCell")
-        
         
         let PieChartCell = UINib(nibName: "PieChartCell", bundle: nil )
         tableView.register(PieChartCell, forCellReuseIdentifier: "PieChartCell")
@@ -450,61 +433,9 @@ extension MainViewController :UITableViewDelegate,UITableViewDataSource,tableVie
     func tapLike(isLike: Bool, index: Int, count: Int) {}
     func sendtoProfile(userid: String, username: String) {}
     func move() {}
-    
-    
 
 }
 
-//X軸を曜日にするために使っている。youbi
-
-
-extension MainViewController:UIPickerViewDataSource,UIPickerViewDelegate{
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 2
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        if component == 0 {
-            return hoursList.count
-        }
-        else if component == 1{
-            return minutesList.count
-        }
-        else{
-            return 0
-        }
-    }
-    func pickerView(_ pickerView: UIPickerView,
-                    titleForRow row: Int,
-                    forComponent component: Int) -> String? {
-        if component == 0 {
-            return String(hoursList[row])
-        }
-        else if component == 1{
-            return String(minutesList[row])
-        }
-        else{
-            return ""
-        }
-    }
-    
-    func pickerView(_ pickerView: UIPickerView,
-                    didSelectRow row: Int,
-                    inComponent component: Int) {
-        
-        if component == 0{
-            time.hour = row
-        }
-        else if component == 1{
-            time.minutes = row
-        }
-        
-        let numFloor = ceil(Double(minutesList[time.minutes]) / 60 * 1000)/1000
-        studyTime = Double(hoursList[time.hour]) + numFloor
-    }
-
-
-}
 
 
 

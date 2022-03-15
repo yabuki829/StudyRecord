@@ -584,7 +584,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tVg-Zn-5Mo">
-                                <rect key="frame" x="0.0" y="142" width="414" height="671"/>
+                                <rect key="frame" x="0.0" y="144" width="414" height="669"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" textLabel="EGs-h2-TKX" detailTextLabel="5n5-Vq-nrM" imageView="3nX-dI-ZUV" rowHeight="117" style="IBUITableViewCellStyleSubtitle" id="rL1-Rr-Ca5">
@@ -617,37 +617,25 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zPP-jH-jJd">
-                                <rect key="frame" x="20" y="98" width="319" height="34"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="V85-zE-coa">
+                                <rect key="frame" x="0.0" y="88" width="414" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lhW-DQ-k1b">
-                                <rect key="frame" x="344" y="96" width="50" height="38"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="50" id="mhV-x1-gIe"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <state key="normal" title="Search">
-                                    <color key="titleColor" systemColor="linkColor"/>
-                                </state>
-                                <connections>
-                                    <action selector="search:" destination="xmc-BK-r4d" eventType="touchUpInside" id="bCU-Pe-Sez"/>
-                                </connections>
+                            </searchBar>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q1A-UP-b4s">
+                                <rect key="frame" x="394" y="95" width="0.0" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ffy-V8-rYn"/>
                         <color key="backgroundColor" systemColor="systemGray6Color"/>
                         <constraints>
-                            <constraint firstItem="tVg-Zn-5Mo" firstAttribute="top" secondItem="lhW-DQ-k1b" secondAttribute="bottom" constant="8" id="01J-rR-NWL"/>
+                            <constraint firstItem="V85-zE-coa" firstAttribute="top" secondItem="ffy-V8-rYn" secondAttribute="top" id="2bG-My-NPC"/>
                             <constraint firstItem="tVg-Zn-5Mo" firstAttribute="trailing" secondItem="ffy-V8-rYn" secondAttribute="trailing" id="4LY-CO-q9b"/>
-                            <constraint firstItem="zPP-jH-jJd" firstAttribute="leading" secondItem="ffy-V8-rYn" secondAttribute="leading" constant="20" id="Ems-2q-You"/>
-                            <constraint firstItem="lhW-DQ-k1b" firstAttribute="leading" secondItem="zPP-jH-jJd" secondAttribute="trailing" constant="5" id="FgN-xI-eHa"/>
-                            <constraint firstItem="zPP-jH-jJd" firstAttribute="top" secondItem="ffy-V8-rYn" secondAttribute="top" constant="10" id="Vpd-AL-snX"/>
-                            <constraint firstItem="tVg-Zn-5Mo" firstAttribute="top" secondItem="zPP-jH-jJd" secondAttribute="bottom" constant="10" id="dMf-v6-3k1"/>
-                            <constraint firstItem="lhW-DQ-k1b" firstAttribute="top" secondItem="ffy-V8-rYn" secondAttribute="top" constant="8" id="dWa-ni-Awo"/>
+                            <constraint firstItem="tVg-Zn-5Mo" firstAttribute="top" secondItem="V85-zE-coa" secondAttribute="bottom" id="Zid-pv-TfX"/>
+                            <constraint firstItem="V85-zE-coa" firstAttribute="trailing" secondItem="ffy-V8-rYn" secondAttribute="trailing" id="cNd-GP-tup"/>
+                            <constraint firstItem="V85-zE-coa" firstAttribute="leading" secondItem="ffy-V8-rYn" secondAttribute="leading" id="ePB-Dg-equ"/>
                             <constraint firstItem="tVg-Zn-5Mo" firstAttribute="leading" secondItem="ffy-V8-rYn" secondAttribute="leading" id="g5H-xK-XWw"/>
-                            <constraint firstItem="ffy-V8-rYn" firstAttribute="trailing" secondItem="lhW-DQ-k1b" secondAttribute="trailing" constant="20" id="ivg-Ar-5bV"/>
                             <constraint firstItem="tVg-Zn-5Mo" firstAttribute="bottom" secondItem="ffy-V8-rYn" secondAttribute="bottom" id="yWM-6J-qxH"/>
                         </constraints>
                     </view>
@@ -660,8 +648,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="searchField" destination="V85-zE-coa" id="gPC-Xf-EEh"/>
                         <outlet property="tableView" destination="tVg-Zn-5Mo" id="ZIM-vw-SCF"/>
-                        <outlet property="textField" destination="zPP-jH-jJd" id="WAI-Jg-lfA"/>
                         <segue destination="JCk-J2-c8a" kind="show" identifier="friendStudy" id="Rfd-hL-IW4"/>
                     </connections>
                 </viewController>
