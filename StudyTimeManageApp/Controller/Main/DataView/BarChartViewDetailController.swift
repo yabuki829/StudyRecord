@@ -23,11 +23,13 @@ class BarChartViewDetailController: UIViewController {
     var zDay = String()
     var weekDataArray = [studyWeekData]()
     var path = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         getData()
         nextButton.isHidden = true
         backButton.isHidden = true
+        
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [self] in
             print("---------------------")
             print(weekDataArray.count)

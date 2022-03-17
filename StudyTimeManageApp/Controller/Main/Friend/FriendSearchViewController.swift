@@ -12,8 +12,8 @@ import FirebaseAuth
 class FriendSearchViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
-
     @IBOutlet weak var searchField: UISearchBar!
+    
     let language = LanguageClass()
     let alert = Alert()
     var local = String()

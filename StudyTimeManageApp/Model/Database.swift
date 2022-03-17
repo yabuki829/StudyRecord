@@ -29,11 +29,31 @@ class Database{
             ["username":username,"goal":goal,"image":image,"userid":userID]
         )
     }
+    
     func tapGood(postID:String){
         database.collection("Good").document(postID).collection("good").document(Auth.auth().currentUser!.uid).setData(
             ["isGood":true]
         )
-           
+    }
+    
+    func saveWeekStudyTime(postDate:Date){
+        let studyClass = studyTimeClass()
+        studyClass.getWeekStudy()
+        let week = studyClass.week
+        var array = [Double]()
+        for i in 0..<week.count{
+            array.append(week[i].studyTime)
+        }
+        //月曜日から何日離れているか.
+        
+        let i = studyClass.getWeekDay(date: postDate)
+        let startDate = Calendar.current.date(byAdding: .day, value: -i, to: postDate)!
+        let endDate = Calendar.current.date(byAdding: .day, value: 6, to: startDate)!
+        let date = DateModel().convertDateToString(date: startDate, format: "yyyy年MM月dd日")
+        let userid = UserDefaults.standard.object(forKey: "userid")
+        database.collection("Users").document(userid as! String).collection("StudyTime").document(date).setData(
+            ["week":array,"start":startDate,"last":endDate]
+        )
     }
     func saveMonthlyStudyTime(postDate:Date){
         print("セーブしました.===========================")
@@ -72,7 +92,7 @@ class Database{
         )
         
         
-//        profilepageの個人記録表示
+//       個人記録の投稿
         database.collection("Users").document(userid as! String).collection("Record").document(postID).setData(
             ["postID":postID,"studytime":todayStudyTime,"date":Timestamp(date: postDate),"comment":comment,"category":category]
         )
@@ -89,25 +109,6 @@ class Database{
         database.collection("Comments").document(postID).collection("Comment").document(commentID).setData(
             ["username":username,"image":image,"postid":postID,"userid":userid as Any ,"commentid":commentID,"comment":comment,"date":Timestamp(date: Date())]
         )
-    }
-    
-    
-    func getStudyTimeData(){
-        database.collection("Users").document(Auth.auth().currentUser!.uid).collection("Total").document("Time").getDocument{ [self] (querySnapshot, err) in
-            if let err = err {
-                print("エラー\(err)")
-            } else {
-                let data = querySnapshot!.data()
-                if let day = data!["today"],
-                   let month = data!["month"],  
-                   let total = data!["total"]{
-                    
-                    studyTime = StudyTime(day:day as! Double, month: month as! Double, total: total as! Double)
-                    
-                }
-            }
-            
-        }
     }
     
     func deleteComment(postID:String,commentID:String){

@@ -27,15 +27,15 @@ class PredictCell: UITableViewCell {
     func setPredict(studyTime:Int){
         var initialDate = Date()
         if let a = UserDefaults.standard.object(forKey: "initialdate"){
-            print("ここだよ　〜〜")
-            print(initialDate)
             initialDate = a as! Date
-            study.getHowManyDays(date:initialDate)
+            //最初にアカウントを作成して何日経過したのかを確認する
+            elapsedDays = study.getHowManyDays(date:initialDate)
         }
         else{
             elapsedDays = 1
         }
         //　平均 = 総勉強時間　/ アプリを初回起動した日から今日までの経過日数
+        
         if studyTime == 0 {
         
             predictCountLabel.text = String(study.getGoalTime())

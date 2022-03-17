@@ -38,6 +38,7 @@ class studyTimeClass{
         weekStruct(day: "Thu", studyTime: 0.0),
         weekStruct(day: "Sun", studyTime: 0.0),
     ]
+    //週ごとの累計勉強時間に使用している
     var weekDayStudy = [
         weekStruct(day: "Mon", studyTime: 0.0),
         weekStruct(day: "Tue", studyTime: 0.0),
@@ -118,17 +119,20 @@ class studyTimeClass{
         
         //今までの月毎の累計勉強時間
         saveMonthlyTotalStudyTime(studytime: studyTime, month: monthint)
-        //勉強時間を保存
+        //勉強時間を保存 total month day
         database.postData(today: studyTime + day, month: studyTime + month, total: studyTime + total)
         //投稿を保存
         database.postRecord(todayStudyTime: studyTime, comment: comment, image:  getProfileImage(), category: category, postDate: postDate)
         //月毎の勉強時間を保存
         database.saveMonthlyStudyTime(postDate: postDate)
+        //月曜日から日曜日までの一日ごとの勉強時間を保存
+        database.saveWeekStudyTime(postDate: postDate)
         
     }
     
     func deleteStudyTime(deleteTime:Double){
         //一日の勉強時間　 一ヶ月の勉強時間　今までの勉強時間
+        //月毎の勉強時間は削除しない
         let day = UserDefaults.standard.object(forKey: "day") as? Double ?? 0.0
         let month:Double = UserDefaults.standard.object(forKey: "month")  as? Double ?? 0.0
         let total:Double = UserDefaults.standard.object(forKey: "total")  as? Double ?? 0.0
@@ -143,33 +147,39 @@ class studyTimeClass{
             userDefaults.setValue(day - deleteTime, forKey: "day")
             userDefaults.setValue(month - deleteTime, forKey: "month")
             userDefaults.setValue(total - deleteTime, forKey: "total")
-            print(getWeekDayInt())
             switch getWeekDayInt() {
-            case 1:
-                week[6].studyTime = day - deleteTime
-            case 2:
-                week[0].studyTime = day - deleteTime
-            case 3:
-                week[1].studyTime = day - deleteTime
-            case 4:
-                week[2].studyTime = day - deleteTime
-            case 5:
-                week[3].studyTime = day - deleteTime
-            case 6:
-                week[4].studyTime = day - deleteTime
-            case 7:
-                week[5].studyTime = day - deleteTime
-            case 8:
-                week[6].studyTime = day - deleteTime
-            default:
-                print("エラー")
-            }
+                case 1:
+                    guard week[6].studyTime == 0  else { return }
+                    week[6].studyTime = day - deleteTime
+                case 2:
+                    guard week[0].studyTime == 0  else { return }
+                    week[0].studyTime = day - deleteTime
+                case 3:
+                    guard week[1].studyTime == 0  else { return }
+                    week[1].studyTime = day - deleteTime
+                case 4:
+                    guard week[2].studyTime == 0  else { return }
+                    week[2].studyTime = day - deleteTime
+                case 5:
+                    guard week[3].studyTime == 0  else { return }
+                    week[3].studyTime = day - deleteTime
+                case 6:
+                    guard week[4].studyTime == 0  else { return }
+                    week[4].studyTime = day - deleteTime
+                case 7:
+                    guard week[5].studyTime == 0  else { return }
+                    week[5].studyTime = day - deleteTime
+                case 8:
+                    guard week[6].studyTime == 0  else { return }
+                    week[6].studyTime = day - deleteTime
+                default:
+                    print("エラー")
+                }
             userDefaults.setCodable(week, forKey: "week")
         }
         else{
            
             if month - deleteTime >= 0.0{
-              
                 userDefaults.setValue(month - deleteTime, forKey: "month")
                 userDefaults.setValue(total - deleteTime, forKey: "total")
             }
@@ -208,6 +218,7 @@ class studyTimeClass{
     func deleteWeekDayStudyTime(weekday:Int,studyTime:Double){
         if let data:[weekStruct] = userDefaults.codable(forKey: "weekDay"){
             weekDayStudy = data
+            guard weekDayStudy[weekday].studyTime == 0  else { return }
             weekDayStudy[weekday].studyTime -= studyTime
             UserDefaults.standard.setCodable(weekDayStudy, forKey: "weekDay")
         }
@@ -220,7 +231,6 @@ class studyTimeClass{
             return data
         }
         else{
-            print("BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB")
             return Monthly(year: Date() ,month: [0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,])
         }
     }
@@ -362,6 +372,7 @@ class studyTimeClass{
     func getHowManyDays(date:Date) -> Int{
         let currentDate = Date()
         var elapsedDays = Calendar.current.dateComponents([.day], from:date , to: currentDate).day!
+        print(elapsedDays,"日経過しています")
         if elapsedDays == 0{
             elapsedDays = 1
         }

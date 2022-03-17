@@ -13,6 +13,7 @@ class AuthManager{
     static let shered = AuthManager()
     private let auth = Auth.auth()
     private var verificationId: String?
+    
     public func startAuth(phoneNumber:String,compleation:@escaping (Bool) -> Void){
         PhoneAuthProvider.provider().verifyPhoneNumber( phoneNumber, uiDelegate: nil) { (verificationId, error) in
             guard let verificationId = verificationId,error == nil else{
@@ -23,6 +24,7 @@ class AuthManager{
             compleation(true)
         }
     }
+    
     public func vertifycode(smCode: String,compleation:@escaping (Bool) -> Void){
         guard  let vetificationId = verificationId else {
             return
@@ -44,6 +46,22 @@ class AuthManager{
             Database.shered.postFriendID(id: friendID)
             compleation(true)
         }
+    }
+    func logout() -> UIViewController{
+            let auth = Auth.auth()
+        
+            do {
+                try auth.signOut()
+            }
+            catch let signOutError as NSError {
+                print("SignOutに失敗しました")
+                
+            }
+        let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let VC = storyboard.instantiateViewController(withIdentifier: "splash")
+        VC.modalPresentationStyle = .fullScreen
+       return VC
+      
     }
     
     func deleteAllUserData(){
@@ -99,11 +117,8 @@ class AuthManager{
         Firestore.firestore().collection("Users").document(userid!).delete()
         let appDomain = Bundle.main.bundleIdentifier
         UserDefaults.standard.removePersistentDomain(forName: appDomain!)
-        
         let user = Auth.auth().currentUser
-
         user?.delete { error in
-            
           if let error = error {
             // An error happened.
             print("アカウント削除に失敗しました")

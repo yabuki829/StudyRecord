@@ -33,7 +33,7 @@
 "KC1-vZ-VFG.title" = "10,000hours.";
 
 /* Class = "UILabel"; text = "Today's Goal"; ObjectID = "LBG-wK-x3g"; */
-"LBG-wK-x3g.text" = "Today's Goal";
+"LBG-wK-x3g.text" = "目標";
 
 /* Class = "UIButton"; normalTitle = "<  "; ObjectID = "RXU-1q-1vq"; */
 "RXU-1q-1vq.normalTitle" = "<  ";
@@ -81,7 +81,7 @@
 "mXG-tC-eEo.title" = "保存する";
 
 /* Class = "UIBarButtonItem"; title = "　　"; ObjectID = "qJE-f6-3oc"; */
-"qJE-f6-3oc.title" = "　　";
+"qJE-f6-3oc.title" = "";
 
 /* Class = "UINavigationItem"; title = "Home"; ObjectID = "s5A-T2-XlG"; */
 "s5A-T2-XlG.title" = "Home";

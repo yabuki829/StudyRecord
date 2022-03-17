@@ -136,7 +136,7 @@ class MainViewController: UIViewController, UITextFieldDelegate{
             print(datePicker.bounds.size.width)
             datePicker.date = howdays.date
            
-            datePicker.frame = CGRect(x: datePicker.bounds.size.width / 2.2, y: 5, width: 200, height: 150)
+            datePicker.frame = CGRect(x:datePicker.bounds.size.width / 2.2 , y: 5, width:110 , height:  150)
           
             alert.view.addSubview(datePicker)
            
@@ -166,8 +166,9 @@ class MainViewController: UIViewController, UITextFieldDelegate{
             
             let datePicker = UIDatePicker()
             datePicker.datePickerMode = .date
-//            datePicker
-            datePicker.frame = CGRect(x: datePicker.bounds.size.width / 2.2, y: 5, width: 100, height: 150)
+            datePicker.frame = CGRect(x: 0, y: 15, width: 270, height: 200)
+            datePicker.calendar = .current
+            
             alert.view.addSubview(datePicker)
 
             let selectAction = UIAlertAction(title: "OK", style: .default, handler: { _ in

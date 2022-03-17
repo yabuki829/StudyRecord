@@ -6,12 +6,12 @@
 //
 
 
-//表示するだけのAlertを集めてる
+//ViewControllerをきれいにするために表示するだけのAlertを集めてる
+
 import Foundation
 import UIKit
 
 class Alert{
-
     func showFriendID() -> UIAlertController{
         
         let id = UserDefaults.standard.object(forKey: "friendid")
@@ -32,6 +32,9 @@ class Alert{
         alert.addAction(cancelAction)
         return alert
     
+    }
+    func Error(){
+        
     }
     
     
