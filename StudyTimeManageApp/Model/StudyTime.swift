@@ -192,7 +192,7 @@ class studyTimeClass{
            
         }
     }
-//累計の曜日ごとの勉強時間ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+//曜日ごとの累計勉強時間ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
     func saveWeekDay(weekday:Int,studyTime:Double){
         if let data:[weekStruct] = userDefaults.codable(forKey: "weekDay"){
             weekDayStudy = data
@@ -218,7 +218,8 @@ class studyTimeClass{
     func deleteWeekDayStudyTime(weekday:Int,studyTime:Double){
         if let data:[weekStruct] = userDefaults.codable(forKey: "weekDay"){
             weekDayStudy = data
-            guard weekDayStudy[weekday].studyTime == 0  else { return }
+            guard weekDayStudy[weekday].studyTime - studyTime >= 0  else { return }
+            print("消します")
             weekDayStudy[weekday].studyTime -= studyTime
             UserDefaults.standard.setCodable(weekDayStudy, forKey: "weekDay")
         }

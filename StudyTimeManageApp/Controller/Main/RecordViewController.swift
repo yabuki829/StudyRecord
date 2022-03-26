@@ -24,7 +24,7 @@ class RecordViewController: UIViewController {
     var local = String()
     var category = String()
     //ca-app-pub-9515239279115600/9215702391
-    var categoeyJapanese = ["スキルアップ","受験勉強","資格取得","趣 味",]
+    var categoeyJapanese = ["選択してください","スキルアップ","受験勉強","資格取得","趣 味",]
    
     
     override func viewDidLoad() {
@@ -48,11 +48,13 @@ class RecordViewController: UIViewController {
 
     @IBAction func record(_ sender: Any) {
         
-        print(studyTime)
         if studyTime == 0.0 {
             return
         }
         else{
+            if category == "選択してください"{
+                category = ""
+            }
             StudyTime.save(studyTime: studyTime,comment: textView.text, category: category)
             navigationController?.popViewController(animated: true)
         }
@@ -144,12 +146,9 @@ extension RecordViewController:UIPickerViewDelegate,UIPickerViewDataSource{
                     forComponent component: Int) -> String? {
         
         if pickerView == categryPickerView{
-            if local == "ja"{
+       
                 return categoeyJapanese[row]
-            }
-            else{
-                return categoeyJapanese[row]
-            }
+            
         }else{
             if component == 0 {
                 return String(hoursList[row])
@@ -167,14 +166,9 @@ extension RecordViewController:UIPickerViewDelegate,UIPickerViewDataSource{
                     didSelectRow row: Int,
                     inComponent component: Int) {
         if pickerView == categryPickerView{
-            if local == "ja"{
-                categoryTextField.text = categoeyJapanese[row]
-                category = categoeyJapanese[row]
-            }
-            else{
-                categoryTextField.text = categoeyJapanese[row]
-                category = categoeyJapanese[row]
-            }
+            categoryTextField.text = categoeyJapanese[row]
+            category = categoeyJapanese[row]
+        
         }
         else{
             if component == 0{

@@ -22,14 +22,14 @@ class FriendSearchViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setStatusBarBackgroundColor(.systemRed)
+        
         settingTableView()
         searchField.delegate = self
-        searchField.backgroundColor = .red
         
         // Do any additional setup after loading the view.
     }
     override func viewWillAppear(_ animated: Bool) {
+        setNavBarBackgroundColor()
             if let a:[Profile] = UserDefaults.standard.codable(forKey: "friend"){
                 profileArray = a 
                 tableView.reloadData()
@@ -39,6 +39,16 @@ class FriendSearchViewController: UIViewController {
    
     @IBAction func getFriendID(_ sender: Any) {
         present(alert.showFriendID(), animated: true)
+    }
+    func setNavBarBackgroundColor(){
+        setStatusBarBackgroundColor(.systemRed)
+        self.navigationController?.navigationBar.barTintColor = .systemRed
+        self.navigationController?.navigationBar.tintColor = .white
+        // ナビゲーションバーのテキストを変更する
+        self.navigationController?.navigationBar.titleTextAttributes = [
+        // 文字の色
+            .foregroundColor: UIColor.white
+        ]
     }
     func settingTableView(){
         tableView.delegate = self
@@ -121,13 +131,17 @@ extension FriendSearchViewController: UITableViewDelegate,UITableViewDataSource{
 extension FriendSearchViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
             view.endEditing(true)
-        
-        if searchBar.text!.count > 20{
+        profileArray.removeAll()
+        if searchBar.text!.count == 30{
             print("探します")
             print(searchBar.text!)
             print(searchBar.text!.count)
                 searchFriendID(id: searchBar.text!)
-            }
+        }
+        else{
+            let alert = Alert()
+            present(alert.errorFriendID(), animated: true)
+        }
        }
 
 

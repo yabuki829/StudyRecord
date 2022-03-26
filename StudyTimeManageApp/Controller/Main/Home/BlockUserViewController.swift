@@ -17,7 +17,18 @@ class BlockUserViewController: UIViewController, UITableViewDelegate, UITableVie
         tableView.dataSource = self
         let studyTime = studyTimeClass()
         blockArray = studyTime.getBlockUser()
+        setNavBarBackgroundColor()
         // Do any additional setup after loading the view.
+    }
+    func setNavBarBackgroundColor(){
+        setStatusBarBackgroundColor(.green)
+        self.navigationController?.navigationBar.barTintColor = .green
+        self.navigationController?.navigationBar.tintColor = .link
+        // ナビゲーションバーのテキストを変更する
+        self.navigationController?.navigationBar.titleTextAttributes = [
+        // 文字の色
+            .foregroundColor: UIColor.black
+        ]
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

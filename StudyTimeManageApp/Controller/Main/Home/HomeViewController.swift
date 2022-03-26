@@ -14,16 +14,16 @@ class HomeViewController: UIViewController,IndicatorInfoProvider {
 
     var itemInfo: IndicatorInfo = "Home"
     @IBOutlet weak var tableView: UITableView!
-    let refreshControl = UIRefreshControl()
     let database = Firestore.firestore()
     
     //TODO- recordArrayをカテゴリーの数だけ作成する
     var recordArray:[Record] = []
-   
     
+    var adCount:Int?
     var isFinish:Bool = false {
         didSet{
             print("取得完了")
+            print(recordArray)
             PKHUD.sharedHUD.hide()
             tableView.reloadData()
         }
@@ -40,8 +40,7 @@ class HomeViewController: UIViewController,IndicatorInfoProvider {
         
         settingTableView()
         setNavBarBackgroundColor()
-        tableView.refreshControl = refreshControl
-        refreshControl.addTarget(self, action: #selector(HomeViewController.refresh(sender:)), for: .valueChanged)
+     
         // Do any additional setup after loading the view.
     }
     
@@ -55,17 +54,7 @@ class HomeViewController: UIViewController,IndicatorInfoProvider {
             getRecordFilteringCategory()
         }
     }
-    @objc func refresh(sender: UIRefreshControl) {
-        // ここが引っ張られるたびに呼び出される
-        // 通信終了後、endRefreshingを実行することでロードインジケーター（くるくる）が終了
-        if itemInfo.title == "新 着"{
-            getRecord()
-        }
-        else{
-            getRecordFilteringCategory()
-        }
-        refreshControl.endRefreshing()
-    }
+ 
     func setNavBarBackgroundColor(){
         setStatusBarBackgroundColor(.green)
         self.navigationController?.navigationBar.barTintColor = .green
@@ -103,14 +92,13 @@ extension HomeViewController:UITableViewDelegate,UITableViewDataSource,tableView
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print(recordArray.count + (recordArray.count / 10))
-        return recordArray.count + (recordArray.count / 10) - 1
+      
+        return recordArray.count + (recordArray.count / 10)
                 
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        print(indexPath.row)
-        
+        print(indexPath.row,"番目")
         if indexPath.row % 11 == 0 && indexPath.row != 0{
             let cell = tableView.dequeueReusableCell(withIdentifier: "AdTableViewCell", for: indexPath) as! AdTableViewCell
             
@@ -118,19 +106,20 @@ extension HomeViewController:UITableViewDelegate,UITableViewDataSource,tableView
         }
         else{
             
-            let adCount = Int(indexPath.row / 11)
+            adCount = Int(indexPath.row / 11)
             let cell = tableView.dequeueReusableCell(withIdentifier: "UserRecordCell", for: indexPath) as! UserRecordCell
             cell.memoLabel.text = nil
             cell.textLabel?.text = nil
             cell.profileImage.image = nil
             cell.dateLabel.text = nil
-            cell.setHomeCell(userid:   self.recordArray[indexPath.row - adCount].userid,
-                             username: self.recordArray[indexPath.row - adCount].username,
-                             studyTime:self.recordArray[indexPath.row - adCount].studyTime,
-                             comment:  self.recordArray[indexPath.row - adCount].comment,
-                             date:     self.recordArray[indexPath.row - adCount].date,
-                             postid:   self.recordArray[indexPath.row - adCount].postid,
-                             image:    self.recordArray[indexPath.row - adCount].image)
+            
+            cell.setHomeCell(userid:   self.recordArray[indexPath.row - adCount!].userid,
+                             username: self.recordArray[indexPath.row - adCount!].username,
+                             studyTime:self.recordArray[indexPath.row - adCount!].studyTime,
+                             comment:  self.recordArray[indexPath.row - adCount!].comment,
+                             date:     self.recordArray[indexPath.row - adCount!].date,
+                             postid:   self.recordArray[indexPath.row - adCount!].postid,
+                             image:    self.recordArray[indexPath.row - adCount!].image)
             
             
             return cell
@@ -200,7 +189,7 @@ extension HomeViewController{
         }
         print("取得します")
         database.collection("Records").order(by:"date", descending: true).limit(to: 50).getDocuments{[self] (querySnapshot, err) in
-            self.recordArray = []
+            recordArray.removeAll()
             if err != nil {
                 return
             } else {
@@ -247,9 +236,9 @@ extension HomeViewController{
     func getRecordFilteringCategory(){
         let database = Firestore.firestore()
         let category = String(itemInfo.title!)
-        self.recordArray = []
-        database.collection("Records").whereField("category", isEqualTo: category).limit(to: 50).getDocuments{[self] (querySnapshot, err) in
-            self.recordArray = []
+        recordArray.removeAll()
+        database.collection("Records").whereField("category", isEqualTo: category).order(by:"date", descending: true).limit(to: 50).getDocuments{[self] (querySnapshot, err) in
+            
             if let err = err {
                 print(err)
                 return
@@ -280,6 +269,7 @@ extension HomeViewController{
                             let newDate = Record(image: image as! String, username: username as! String, postid: postid as! String, userid: userID  as! String, studyTime: studyTime  as! Double, comment: comment as! String, date: date, category: category as! String)
                                 
                                 recordArray.append(newDate)
+                            
                         }
                        
                         
@@ -287,7 +277,6 @@ extension HomeViewController{
                     else{
                         print("カテゴリーエラー")
                     }
-                    
                     
                 }
                 self.isFinish = true

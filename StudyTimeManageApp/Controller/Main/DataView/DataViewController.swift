@@ -22,7 +22,6 @@ class DataViewController: UIViewController {
     var local = String()
     var isFinish:Bool = false{
         didSet{
-            print("取得完了")
             print(MonthStudyData)
             
             tableView.reloadData()
@@ -170,7 +169,7 @@ extension DataViewController{
             self.isFinish = true
         }
     }
-    //曜日ごとの合計勉強時間
+    //曜日ごとの累計勉強時間
     func getWeekDayStudyTime(){
         weekdayStudyTimeData = studyTime.getWeekDayStudy()
         weekdayStudyTimeArray = []

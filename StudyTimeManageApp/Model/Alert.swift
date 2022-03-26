@@ -33,8 +33,17 @@ class Alert{
         return alert
     
     }
-    func Error(){
-        
+    func errorFriendID() -> UIAlertController{
+        let alert = UIAlertController(title: "適切なFriendIDを入力してください" , message:"", preferredStyle: .alert)
+
+        let selectAction = UIAlertAction(title: "OK", style: .default, handler: { _ in
+            let pasteboard = UIPasteboard.general
+          
+           
+        })
+      
+        alert.addAction(selectAction)
+        return alert
     }
     
     

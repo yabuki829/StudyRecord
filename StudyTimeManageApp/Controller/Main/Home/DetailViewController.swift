@@ -30,9 +30,7 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         settingTableView()
-        
         userid = UserDefaults.standard.object(forKey: "userid") as! String
-       
         getCommnet()
         //自分がGoodを押しているかを確認
         checkisGood(postid: record.postid)

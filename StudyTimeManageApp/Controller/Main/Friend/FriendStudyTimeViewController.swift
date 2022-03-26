@@ -25,15 +25,28 @@ class FriendStudyTimeViewController: UIViewController {
         super.viewDidLoad()
         settingTableView()
         followFrinendArray = getFriend()
+        setNavBarBackgroundColor()
         isFollow()
         getTotal()
         getData(userid: friendData.userid)
         // Do any additional setup after loading the view.
     }
-   
+    override func viewWillAppear(_ animated: Bool) {
+        setNavBarBackgroundColor()
+    }
     @IBAction func like(_ sender: Any) {
         isLike = !isLike
         follow()
+    }
+    func setNavBarBackgroundColor(){
+        setStatusBarBackgroundColor(.systemRed)
+        self.navigationController?.navigationBar.barTintColor = .systemRed
+        self.navigationController?.navigationBar.tintColor = .white
+        // ナビゲーションバーのテキストを変更する
+        self.navigationController?.navigationBar.titleTextAttributes = [
+        // 文字の色
+            .foregroundColor: UIColor.white
+        ]
     }
     func follow(){
         if isLike {

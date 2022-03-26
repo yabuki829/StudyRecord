@@ -132,7 +132,7 @@ class Database{
     
     func reportUser(report:String,reportedID:String,postID:String,memo:String,username:String){
         let userid = UserDefaults.standard.object(forKey: "userid")
-        database.collection("Reports").document(postID).collection("user").document(userid as! String).setData(
+        database.collection("Reports").document(postID).collection("user").document().setData(
             ["report":report,"reporterID":userid as Any,"reportedID":reportedID,"postID":postID,"memo":memo,"username":username]
         )
     }
