@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		56B25F81B656E2283A2348C4 /* Pods_StudyTimeManageAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4887EE8516CF1EAD60EA57F /* Pods_StudyTimeManageAppTests.framework */; };
 		6147156BE7B0B7929CB0D84E /* Pods_StudyTimeManageApp_StudyTimeManageAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8235B9E5645F47E9AE83DB79 /* Pods_StudyTimeManageApp_StudyTimeManageAppUITests.framework */; };
-		7029D5682764A827007EC795 /* BarChartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7029D5672764A827007EC795 /* BarChartCell.swift */; };
 		7029D56D2764A831007EC795 /* BarChartCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7029D56C2764A831007EC795 /* BarChartCell.xib */; };
 		7029D5732764A843007EC795 /* DataViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7029D5712764A841007EC795 /* DataViewCell.swift */; };
 		7029D5742764A843007EC795 /* DataViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7029D5722764A842007EC795 /* DataViewCell.xib */; };
@@ -23,6 +22,9 @@
 		704B9277277EC0F90012D321 /* PieChartViewDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704B9276277EC0F90012D321 /* PieChartViewDetailController.swift */; };
 		704B927C277EC1550012D321 /* BarChartViewDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704B927B277EC1550012D321 /* BarChartViewDetailController.swift */; };
 		704C3628278B279C0000D17D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 704C3627278B279C0000D17D /* GoogleService-Info.plist */; };
+		704D7B8727EED4700076A1BA /* BarChartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704D7B8627EED4700076A1BA /* BarChartCell.swift */; };
+		704D7B9027EEDE520076A1BA /* RecordViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704D7B8E27EEDE520076A1BA /* RecordViewCell.swift */; };
+		704D7B9127EEDE520076A1BA /* RecordViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 704D7B8F27EEDE520076A1BA /* RecordViewCell.xib */; };
 		704DE2CC27C90C3D008123E0 /* SMSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704DE2CB27C90C3D008123E0 /* SMSViewController.swift */; };
 		704ED91E2768CC5A000F9F10 /* GoalPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704ED91D2768CC5A000F9F10 /* GoalPageViewController.swift */; };
 		704ED92C2768CF38000F9F10 /* UserRecordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704ED92A2768CF38000F9F10 /* UserRecordCell.swift */; };
@@ -97,7 +99,6 @@
 /* Begin PBXFileReference section */
 		305C221D2734DE6E90AADD66 /* Pods_StudyTimeManageApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StudyTimeManageApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		36D82F5E5900AF0A06B57FDB /* Pods-StudyTimeManageAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StudyTimeManageAppTests.debug.xcconfig"; path = "Target Support Files/Pods-StudyTimeManageAppTests/Pods-StudyTimeManageAppTests.debug.xcconfig"; sourceTree = "<group>"; };
-		7029D5672764A827007EC795 /* BarChartCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarChartCell.swift; sourceTree = "<group>"; };
 		7029D56C2764A831007EC795 /* BarChartCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BarChartCell.xib; sourceTree = "<group>"; };
 		7029D5712764A841007EC795 /* DataViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataViewCell.swift; sourceTree = "<group>"; };
 		7029D5722764A842007EC795 /* DataViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DataViewCell.xib; sourceTree = "<group>"; };
@@ -110,6 +111,9 @@
 		704B9276277EC0F90012D321 /* PieChartViewDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChartViewDetailController.swift; sourceTree = "<group>"; };
 		704B927B277EC1550012D321 /* BarChartViewDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarChartViewDetailController.swift; sourceTree = "<group>"; };
 		704C3627278B279C0000D17D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		704D7B8627EED4700076A1BA /* BarChartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarChartCell.swift; sourceTree = "<group>"; };
+		704D7B8E27EEDE520076A1BA /* RecordViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordViewCell.swift; sourceTree = "<group>"; };
+		704D7B8F27EEDE520076A1BA /* RecordViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecordViewCell.xib; sourceTree = "<group>"; };
 		704DE2CB27C90C3D008123E0 /* SMSViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMSViewController.swift; sourceTree = "<group>"; };
 		704ED91D2768CC5A000F9F10 /* GoalPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalPageViewController.swift; sourceTree = "<group>"; };
 		704ED92A2768CF38000F9F10 /* UserRecordCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRecordCell.swift; sourceTree = "<group>"; };
@@ -222,7 +226,7 @@
 		7029D55D2764A7AD007EC795 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				7029D5672764A827007EC795 /* BarChartCell.swift */,
+				704D7B8627EED4700076A1BA /* BarChartCell.swift */,
 				7029D56C2764A831007EC795 /* BarChartCell.xib */,
 				7029D5712764A841007EC795 /* DataViewCell.swift */,
 				7029D5722764A842007EC795 /* DataViewCell.xib */,
@@ -242,6 +246,8 @@
 				709CF2272793BFEB00C0C61F /* DetailViewCell.xib */,
 				70B3F975279E58BD0001DA4E /* AdTableViewCell.swift */,
 				70B3F976279E58BD0001DA4E /* AdTableViewCell.xib */,
+				704D7B8E27EEDE520076A1BA /* RecordViewCell.swift */,
+				704D7B8F27EEDE520076A1BA /* RecordViewCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -557,6 +563,7 @@
 				70B3F978279E58BD0001DA4E /* AdTableViewCell.xib in Resources */,
 				7029D57B2764A854007EC795 /* PredictCell.xib in Resources */,
 				70692E99276D92BF007EC88B /* TextfieldViewCell.xib in Resources */,
+				704D7B9127EEDE520076A1BA /* RecordViewCell.xib in Resources */,
 				704ED92D2768CF38000F9F10 /* UserRecordCell.xib in Resources */,
 				707ACA2B2772C85900A8A158 /* UserProfileViewCell.xib in Resources */,
 				70660FA12769837700120CF7 /* Menu.storyboard in Resources */,
@@ -726,8 +733,10 @@
 			files = (
 				70FA385227C1F7ED0080ABC1 /* License.swift in Sources */,
 				7065E972278D4F7F0053BBF2 /* Formatter.swift in Sources */,
+				704D7B9027EEDE520076A1BA /* RecordViewCell.swift in Sources */,
 				70584E1E27ABF8BA00C08B31 /* DeleteAcountViewController.swift in Sources */,
 				709CF2282793BFEB00C0C61F /* DetailViewCell.swift in Sources */,
+				704D7B8727EED4700076A1BA /* BarChartCell.swift in Sources */,
 				704F4FAC27E0B6FD00A19C50 /* Alert.swift in Sources */,
 				70B03CF42793F769007E560B /* SplashViewController.swift in Sources */,
 				70FA386B27C209EC0080ABC1 /* UserPageViewController.swift in Sources */,
@@ -769,7 +778,6 @@
 				706A2A862761CBB40041B993 /* Database.swift in Sources */,
 				706A2A4F2761CB6B0041B993 /* SceneDelegate.swift in Sources */,
 				7053E4B827C8D39200E6504A /* AuthManager.swift in Sources */,
-				7029D5682764A827007EC795 /* BarChartCell.swift in Sources */,
 				704A33B02797AD2D00E28C34 /* ManageTabMenuController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -961,7 +969,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YA5HXFT63V;
 				INFOPLIST_FILE = StudyTimeManageApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -982,7 +990,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YA5HXFT63V;
 				INFOPLIST_FILE = StudyTimeManageApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

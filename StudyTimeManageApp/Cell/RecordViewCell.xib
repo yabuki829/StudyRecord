@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RecordViewCell" rowHeight="324" id="Eki-Bg-3ec" customClass="RecordViewCell" customModule="StudyTimeManageApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="324"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Eki-Bg-3ec" id="GC1-VN-sKv">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="324"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="ipH-FX-fpp">
+                        <rect key="frame" x="20" y="21" width="374" height="30"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wEp-W1-M0u">
+                                <rect key="frame" x="0.0" y="-1.5" width="30" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="jvH-IP-Uoy"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="stopwatch" catalog="system"/>
+                            </button>
+                            <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="勉強時間" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="D0n-C3-AbF">
+                                <rect key="frame" x="35" y="0.0" width="339" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="VLq-HW-PiP"/>
+                        </constraints>
+                    </stackView>
+                    <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Ojz-Ei-Gz5">
+                        <rect key="frame" x="20" y="61" width="374" height="30"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="otj-uR-Not">
+                                <rect key="frame" x="0.0" y="0.5" width="30" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="aqo-xi-x7d"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="pencil.circle" catalog="system"/>
+                            </button>
+                            <textField opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="カテゴリ" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qRj-1z-MBl">
+                                <rect key="frame" x="35" y="0.0" width="339" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="Mf0-Et-Evl"/>
+                        </constraints>
+                    </stackView>
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" tag="3" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="qoE-G9-CL4" customClass="PlaceTextView" customModule="StudyTimeManageApp" customModuleProvider="target">
+                        <rect key="frame" x="20" y="111" width="374" height="202"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="textColor" systemColor="labelColor"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                    </textView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Ojz-Ei-Gz5" firstAttribute="leading" secondItem="GC1-VN-sKv" secondAttribute="leadingMargin" id="Axr-VM-mlO"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="ipH-FX-fpp" secondAttribute="trailing" id="Ob5-od-bxi"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="Ojz-Ei-Gz5" secondAttribute="trailing" id="Rpg-1S-Lct"/>
+                    <constraint firstItem="qoE-G9-CL4" firstAttribute="bottom" secondItem="GC1-VN-sKv" secondAttribute="bottomMargin" id="TDq-jI-z0h"/>
+                    <constraint firstItem="ipH-FX-fpp" firstAttribute="top" secondItem="GC1-VN-sKv" secondAttribute="topMargin" constant="10" id="a7l-50-8Jo"/>
+                    <constraint firstItem="qoE-G9-CL4" firstAttribute="trailing" secondItem="GC1-VN-sKv" secondAttribute="trailingMargin" id="aYM-bs-Pgb"/>
+                    <constraint firstItem="Ojz-Ei-Gz5" firstAttribute="top" secondItem="ipH-FX-fpp" secondAttribute="bottom" constant="10" id="iPE-1H-axa"/>
+                    <constraint firstItem="qoE-G9-CL4" firstAttribute="top" secondItem="Ojz-Ei-Gz5" secondAttribute="bottom" constant="20" id="lWZ-Se-uUu"/>
+                    <constraint firstItem="ipH-FX-fpp" firstAttribute="leading" secondItem="GC1-VN-sKv" secondAttribute="leadingMargin" id="uGI-L0-4ZL"/>
+                    <constraint firstItem="qoE-G9-CL4" firstAttribute="leading" secondItem="GC1-VN-sKv" secondAttribute="leadingMargin" id="xUv-Dc-2Ak"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="StudyTimeStackView" destination="ipH-FX-fpp" id="gkL-4w-axI"/>
+                <outlet property="categoryStackView" destination="Ojz-Ei-Gz5" id="wKE-eW-958"/>
+                <outlet property="categoryTextField" destination="qRj-1z-MBl" id="Vym-HR-8M6"/>
+                <outlet property="studyTimeTextField" destination="D0n-C3-AbF" id="MPO-Ou-Hzr"/>
+                <outlet property="textView" destination="qoE-G9-CL4" id="8Em-MZ-wCT"/>
+            </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="-99.107142857142847"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="pencil.circle" catalog="system" width="128" height="121"/>
+        <image name="stopwatch" catalog="system" width="121" height="128"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

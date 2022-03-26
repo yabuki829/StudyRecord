@@ -1,10 +1,9 @@
 //
 //  BarChartCell.swift
-//  10000hours
+//  StudyTimeManageApp
 //
-//  Created by Yabuki Shodai on 2021/12/04.
+//  Created by Yabuki Shodai on 2022/03/26.
 //
-
 import UIKit
 import Charts
 class BarChartCell: UITableViewCell {

@@ -36,13 +36,25 @@ class Alert{
     func errorFriendID() -> UIAlertController{
         let alert = UIAlertController(title: "適切なFriendIDを入力してください" , message:"", preferredStyle: .alert)
 
-        let selectAction = UIAlertAction(title: "OK", style: .default, handler: { _ in
-            let pasteboard = UIPasteboard.general
-          
-           
-        })
+        let ok = UIAlertAction(title: "OK", style: .default)
       
-        alert.addAction(selectAction)
+        alert.addAction(ok)
+        return alert
+    }
+    func enterStudyTime() -> UIAlertController {
+        let alert = UIAlertController(title: "勉強時間を入力してください" , message:"", preferredStyle: .alert)
+
+        let ok = UIAlertAction(title: "OK", style: .default)
+      
+        alert.addAction(ok)
+        return alert
+    }
+    
+    func enterCategory() -> UIAlertController{
+        let alert = UIAlertController(title: "カテゴリを選択してください" , message:"", preferredStyle: .alert)
+        let ok = UIAlertAction(title: "OK", style: .default)
+      
+        alert.addAction(ok)
         return alert
     }
     

@@ -386,80 +386,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="7fK-Gz-J38">
-                                <rect key="frame" x="10" y="108" width="394" height="30"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NNT-i6-fUi">
-                                        <rect key="frame" x="0.0" y="-1.5" width="30" height="31"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="12Z-Sn-Ifd"/>
-                                            <constraint firstAttribute="width" constant="30" id="ANc-MH-hxT"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <state key="normal" backgroundImage="stopwatch" catalog="system"/>
-                                        <connections>
-                                            <action selector="selectStudyTime2:" destination="kWa-Qc-OSk" eventType="touchUpInside" id="k68-JM-GWm"/>
-                                        </connections>
-                                    </button>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="StudyTime" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Uum-jM-xsZ">
-                                        <rect key="frame" x="35" y="0.0" width="359" height="30"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                                    </textField>
-                                </subviews>
-                            </stackView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="0eP-ac-VE6" customClass="PlaceTextView" customModule="StudyTimeManageApp" customModuleProvider="target">
-                                <rect key="frame" x="10" y="208" width="394" height="465"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ltW-w2-qf0">
+                                <rect key="frame" x="0.0" y="88" width="414" height="625"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <color key="textColor" systemColor="labelColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BOd-hk-DYP">
-                                <rect key="frame" x="10" y="158" width="394" height="30"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Qd-RL-inq">
-                                        <rect key="frame" x="0.0" y="0.5" width="30" height="29"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="shW-cw-5SE"/>
-                                            <constraint firstAttribute="width" constant="30" id="x6g-mU-Xkb"/>
-                                        </constraints>
-                                        <state key="normal" backgroundImage="pencil.circle" catalog="system"/>
-                                    </button>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Category" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="a0d-uo-HHU">
-                                        <rect key="frame" x="30" y="0.0" width="364" height="30"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                </subviews>
-                            </stackView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="juh-5s-ZPL" customClass="GADBannerView">
-                                <rect key="frame" x="47" y="693" width="320" height="100"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="juh-5s-ZPL" customClass="GADBannerView">
+                                <rect key="frame" x="47" y="713" width="320" height="100"/>
+                                <color key="backgroundColor" systemColor="systemGray4Color"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="KjB-2l-rwo"/>
-                                    <constraint firstAttribute="width" constant="320" id="rYL-lM-VrW"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="CxW-ra-oMH"/>
-                        <color key="backgroundColor" systemColor="systemGray6Color"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="juh-5s-ZPL" firstAttribute="top" secondItem="0eP-ac-VE6" secondAttribute="bottom" constant="20" id="4nZ-9T-Nl5"/>
-                            <constraint firstItem="BOd-hk-DYP" firstAttribute="top" secondItem="7fK-Gz-J38" secondAttribute="bottom" constant="20" id="84k-1h-KAN"/>
-                            <constraint firstItem="CxW-ra-oMH" firstAttribute="trailing" secondItem="7fK-Gz-J38" secondAttribute="trailing" constant="10" id="9vr-jU-2GT"/>
-                            <constraint firstItem="CxW-ra-oMH" firstAttribute="trailing" secondItem="BOd-hk-DYP" secondAttribute="trailing" constant="10" id="JWV-If-z7l"/>
-                            <constraint firstItem="juh-5s-ZPL" firstAttribute="centerX" secondItem="dTH-A3-U9B" secondAttribute="centerX" id="LBP-xr-2wF"/>
-                            <constraint firstItem="7fK-Gz-J38" firstAttribute="leading" secondItem="CxW-ra-oMH" secondAttribute="leading" constant="10" id="NYG-Cc-k4z"/>
-                            <constraint firstItem="CxW-ra-oMH" firstAttribute="bottom" secondItem="juh-5s-ZPL" secondAttribute="bottom" constant="20" id="Vrb-iC-JRm"/>
-                            <constraint firstItem="0eP-ac-VE6" firstAttribute="top" secondItem="BOd-hk-DYP" secondAttribute="bottom" constant="20" id="XRW-fm-4hc"/>
-                            <constraint firstItem="BOd-hk-DYP" firstAttribute="leading" secondItem="CxW-ra-oMH" secondAttribute="leading" constant="10" id="b43-qa-rKe"/>
-                            <constraint firstItem="7fK-Gz-J38" firstAttribute="centerX" secondItem="dTH-A3-U9B" secondAttribute="centerX" id="cQX-6k-4fc"/>
-                            <constraint firstItem="CxW-ra-oMH" firstAttribute="trailing" secondItem="0eP-ac-VE6" secondAttribute="trailing" constant="10" id="grq-MO-dji"/>
-                            <constraint firstItem="0eP-ac-VE6" firstAttribute="leading" secondItem="CxW-ra-oMH" secondAttribute="leading" constant="10" id="hyO-hw-iXB"/>
-                            <constraint firstItem="0eP-ac-VE6" firstAttribute="centerX" secondItem="dTH-A3-U9B" secondAttribute="centerX" id="rDB-lD-a9c"/>
-                            <constraint firstItem="7fK-Gz-J38" firstAttribute="top" secondItem="CxW-ra-oMH" secondAttribute="top" constant="20" id="wXh-h4-HMc"/>
+                            <constraint firstItem="ltW-w2-qf0" firstAttribute="top" secondItem="CxW-ra-oMH" secondAttribute="top" id="IAb-aU-66k"/>
+                            <constraint firstItem="ltW-w2-qf0" firstAttribute="trailing" secondItem="CxW-ra-oMH" secondAttribute="trailing" id="YSe-9L-h49"/>
+                            <constraint firstItem="ltW-w2-qf0" firstAttribute="leading" secondItem="CxW-ra-oMH" secondAttribute="leading" id="bCN-UM-vHd"/>
+                            <constraint firstItem="juh-5s-ZPL" firstAttribute="centerX" secondItem="dTH-A3-U9B" secondAttribute="centerX" id="bhd-iT-pX2"/>
+                            <constraint firstAttribute="bottom" secondItem="juh-5s-ZPL" secondAttribute="bottom" constant="83" id="f6t-e6-pM8"/>
+                            <constraint firstItem="juh-5s-ZPL" firstAttribute="bottom" secondItem="CxW-ra-oMH" secondAttribute="bottom" id="hNd-nL-uSP"/>
+                            <constraint firstItem="juh-5s-ZPL" firstAttribute="top" secondItem="ltW-w2-qf0" secondAttribute="bottom" id="v2v-Zy-T3E"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Record." id="fBN-LX-GM7">
@@ -478,9 +426,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="bannerView" destination="juh-5s-ZPL" id="snA-q9-SSa"/>
-                        <outlet property="categoryTextField" destination="a0d-uo-HHU" id="UHt-pc-dUD"/>
-                        <outlet property="textField" destination="Uum-jM-xsZ" id="nhF-d1-8Pc"/>
-                        <outlet property="textView" destination="0eP-ac-VE6" id="DwD-tw-vsC"/>
+                        <outlet property="tableView" destination="ltW-w2-qf0" id="mEK-rk-SIP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wUR-Z2-zW3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1907,11 +1853,9 @@ mjKaN5o/mkKaR5pPAAAAAAAAAgEAAAAAAAAAjwAAAAAAAAAAAAAAAAAAmlI
         <image name="magnifyingglass.circle" catalog="system" width="128" height="121"/>
         <image name="magnifyingglass.circle.fill" catalog="system" width="128" height="121"/>
         <image name="multiply" catalog="system" width="128" height="111"/>
-        <image name="pencil.circle" catalog="system" width="128" height="121"/>
         <image name="person" catalog="system" width="128" height="117"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
         <image name="star" catalog="system" width="128" height="116"/>
-        <image name="stopwatch" catalog="system" width="121" height="128"/>
         <image name="text.justify" catalog="system" width="128" height="100"/>
         <image name="timer" catalog="system" width="128" height="121"/>
         <systemColor name="labelColor">
@@ -1922,6 +1866,9 @@ mjKaN5o/mkKaR5pPAAAAAAAAAgEAAAAAAAAAjwAAAAAAAAAAAAAAAAAAmlI
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray4Color">
+            <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGray5Color">
             <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

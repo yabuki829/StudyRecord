@@ -198,3 +198,31 @@ extension UIViewController {
         statusBarView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor).isActive = true
     }
 }
+
+
+
+extension UITextField {
+    func setUnderLine(color:UIColor) {
+        borderStyle = .none
+        let underline = UIView()
+        // heightにはアンダーラインの高さを入れる
+        underline.frame = CGRect(x: 0, y: frame.height, width: frame.width, height: 0.5)
+        // 枠線の色
+        underline.backgroundColor = color
+        addSubview(underline)
+        bringSubviewToFront(underline)
+    }
+}
+
+extension UITextView {
+    func setTopLine(color:UIColor) {
+       
+        let topline = UIView()
+        // heightにはアンダーラインの高さを入れる
+        topline.frame = CGRect(x: 0, y: 0, width: frame.width, height: 0.5)
+        // 枠線の色
+        topline.backgroundColor = color
+        addSubview(topline)
+        bringSubviewToFront(topline)
+    }
+}
