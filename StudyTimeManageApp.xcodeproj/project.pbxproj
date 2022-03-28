@@ -68,6 +68,9 @@
 		709CF2292793BFEB00C0C61F /* DetailViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 709CF2272793BFEB00C0C61F /* DetailViewCell.xib */; };
 		709F7F602771D93800C07A04 /* FriendStudyTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709F7F5F2771D93800C07A04 /* FriendStudyTimeViewController.swift */; };
 		70A2AC3227AA221600FB0550 /* barchart.json in Resources */ = {isa = PBXBuildFile; fileRef = 70A2AC3127AA221600FB0550 /* barchart.json */; };
+		70AA681527F14613007EB375 /* ChangeProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AA681327F14613007EB375 /* ChangeProfileCell.swift */; };
+		70AA681627F14613007EB375 /* ChangeProfileCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70AA681427F14613007EB375 /* ChangeProfileCell.xib */; };
+		70AA682427F1538E007EB375 /* SelectProfileImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AA682327F1538E007EB375 /* SelectProfileImageViewController.swift */; };
 		70AFD5D3276D752E004DB307 /* CommnentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AFD5D1276D752E004DB307 /* CommnentCell.swift */; };
 		70AFD5D4276D752E004DB307 /* CommnentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70AFD5D2276D752E004DB307 /* CommnentCell.xib */; };
 		70B03CF42793F769007E560B /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B03CF32793F769007E560B /* SplashViewController.swift */; };
@@ -164,6 +167,9 @@
 		709CF2272793BFEB00C0C61F /* DetailViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewCell.xib; sourceTree = "<group>"; };
 		709F7F5F2771D93800C07A04 /* FriendStudyTimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendStudyTimeViewController.swift; sourceTree = "<group>"; };
 		70A2AC3127AA221600FB0550 /* barchart.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = barchart.json; sourceTree = "<group>"; };
+		70AA681327F14613007EB375 /* ChangeProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeProfileCell.swift; sourceTree = "<group>"; };
+		70AA681427F14613007EB375 /* ChangeProfileCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChangeProfileCell.xib; sourceTree = "<group>"; };
+		70AA682327F1538E007EB375 /* SelectProfileImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectProfileImageViewController.swift; sourceTree = "<group>"; };
 		70AFD5D1276D752E004DB307 /* CommnentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommnentCell.swift; sourceTree = "<group>"; };
 		70AFD5D2276D752E004DB307 /* CommnentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommnentCell.xib; sourceTree = "<group>"; };
 		70B03CF32793F769007E560B /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
@@ -248,6 +254,8 @@
 				70B3F976279E58BD0001DA4E /* AdTableViewCell.xib */,
 				704D7B8E27EEDE520076A1BA /* RecordViewCell.swift */,
 				704D7B8F27EEDE520076A1BA /* RecordViewCell.xib */,
+				70AA681327F14613007EB375 /* ChangeProfileCell.swift */,
+				70AA681427F14613007EB375 /* ChangeProfileCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -278,6 +286,7 @@
 			children = (
 				70FA386A27C209EC0080ABC1 /* UserPageViewController.swift */,
 				704ED91D2768CC5A000F9F10 /* GoalPageViewController.swift */,
+				70AA682327F1538E007EB375 /* SelectProfileImageViewController.swift */,
 			);
 			path = UserPage;
 			sourceTree = "<group>";
@@ -562,6 +571,7 @@
 				706A2A562761CB6C0041B993 /* Assets.xcassets in Resources */,
 				70B3F978279E58BD0001DA4E /* AdTableViewCell.xib in Resources */,
 				7029D57B2764A854007EC795 /* PredictCell.xib in Resources */,
+				70AA681627F14613007EB375 /* ChangeProfileCell.xib in Resources */,
 				70692E99276D92BF007EC88B /* TextfieldViewCell.xib in Resources */,
 				704D7B9127EEDE520076A1BA /* RecordViewCell.xib in Resources */,
 				704ED92D2768CF38000F9F10 /* UserRecordCell.xib in Resources */,
@@ -772,12 +782,14 @@
 				706A2AAC2761CC200041B993 /* MainViewController.swift in Sources */,
 				7053E4B027C8D14F00E6504A /* LoginViewController.swift in Sources */,
 				7068C18D27854C7500A27642 /* Language.swift in Sources */,
+				70AA681527F14613007EB375 /* ChangeProfileCell.swift in Sources */,
 				704FE6782768372600CB9A71 /* MenuViewController.swift in Sources */,
 				707ACA2A2772C85900A8A158 /* UserProfileViewCell.swift in Sources */,
 				704AA7D62768D7C200A49FC3 /* Struct.swift in Sources */,
 				706A2A862761CBB40041B993 /* Database.swift in Sources */,
 				706A2A4F2761CB6B0041B993 /* SceneDelegate.swift in Sources */,
 				7053E4B827C8D39200E6504A /* AuthManager.swift in Sources */,
+				70AA682427F1538E007EB375 /* SelectProfileImageViewController.swift in Sources */,
 				704A33B02797AD2D00E28C34 /* ManageTabMenuController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

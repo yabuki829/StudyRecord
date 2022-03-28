@@ -57,7 +57,10 @@ class UserPageViewController: UIViewController {
         tableView.reloadData()
     }
 
-  
+    @IBAction func moveChangeProfile(_ sender: Any) {
+        
+    }
+    
 }
 
 extension UserPageViewController:UITableViewDelegate,UITableViewDataSource,tableViewUpDater{

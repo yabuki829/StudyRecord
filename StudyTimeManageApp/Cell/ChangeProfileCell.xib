@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="295" id="KGk-i7-Jjw" customClass="ChangeProfileCell" customModule="StudyTimeManageApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="481" height="295"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="481" height="295"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2gE-sk-0Ka">
+                        <rect key="frame" x="20" y="20" width="80" height="80"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="80" id="31p-Lk-9CR"/>
+                            <constraint firstAttribute="width" constant="80" id="cDK-Jm-Nyo"/>
+                        </constraints>
+                    </imageView>
+                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gI6-Qu-Naz">
+                        <rect key="frame" x="130" y="45" width="331" height="34"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits"/>
+                    </textField>
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="R2O-2g-h3g" customClass="PlaceTextView" customModule="StudyTimeManageApp" customModuleProvider="target">
+                        <rect key="frame" x="20" y="120" width="441" height="165"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                        <color key="textColor" systemColor="labelColor"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                    </textView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="gI6-Qu-Naz" firstAttribute="leading" secondItem="2gE-sk-0Ka" secondAttribute="trailing" constant="30" id="05D-T8-uRg"/>
+                    <constraint firstItem="R2O-2g-h3g" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="1rb-WO-PAb"/>
+                    <constraint firstAttribute="trailing" secondItem="R2O-2g-h3g" secondAttribute="trailing" constant="20" id="Atx-u5-813"/>
+                    <constraint firstItem="2gE-sk-0Ka" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="CvC-5z-fHO"/>
+                    <constraint firstItem="2gE-sk-0Ka" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="Ea5-cv-yVf"/>
+                    <constraint firstItem="R2O-2g-h3g" firstAttribute="top" secondItem="2gE-sk-0Ka" secondAttribute="bottom" constant="20" id="LJ1-Y5-n21"/>
+                    <constraint firstAttribute="bottom" secondItem="R2O-2g-h3g" secondAttribute="bottom" constant="10" id="eG4-yj-XRc"/>
+                    <constraint firstItem="gI6-Qu-Naz" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="45" id="ecC-zi-5Nn"/>
+                    <constraint firstAttribute="trailing" secondItem="gI6-Qu-Naz" secondAttribute="trailing" constant="20" id="hqa-L9-guu"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="profileImage" destination="2gE-sk-0Ka" id="o1C-F5-bew"/>
+                <outlet property="textField" destination="gI6-Qu-Naz" id="S5F-Ln-EQx"/>
+                <outlet property="textView" destination="R2O-2g-h3g" id="XZU-iq-eBd"/>
+            </connections>
+            <point key="canvasLocation" x="212.31884057971016" y="151.00446428571428"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
