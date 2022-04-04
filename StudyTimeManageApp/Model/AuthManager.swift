@@ -55,6 +55,7 @@ class AuthManager{
             }
             catch let signOutError as NSError {
                 print("SignOutに失敗しました")
+                print(signOutError)
                 
             }
         let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
@@ -121,6 +122,7 @@ class AuthManager{
         user?.delete { error in
           if let error = error {
             // An error happened.
+            print(error)
             print("アカウント削除に失敗しました")
           } else {
             // Account deleted.

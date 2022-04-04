@@ -38,12 +38,12 @@ class ManageTabMenuController: ButtonBarPagerTabStripViewController {
         let BVC   = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "mainHome") as! HomeViewController
         let CVC   = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "mainHome") as! HomeViewController
         let DVC   = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "mainHome") as! HomeViewController
-
+        
+      
         newVC.itemInfo = "新 着"
         AVC.itemInfo = "スキルアップ"
         BVC.itemInfo = "受験勉強"
         CVC.itemInfo = "資格取得"
-        DVC.itemInfo = "趣 味"
        
         
         let childViewControllers:[UIViewController] = [newVC, AVC,BVC,CVC,DVC]

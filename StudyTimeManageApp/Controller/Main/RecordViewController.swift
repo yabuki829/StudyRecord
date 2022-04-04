@@ -24,7 +24,6 @@ class RecordViewController: UIViewController {
         super.viewDidLoad()
         setAd()
         setStatusBarBackgroundColor(.link)
-        
         tableView.delegate = self
         tableView.dataSource = self
 
@@ -62,8 +61,8 @@ class RecordViewController: UIViewController {
     }
     func setAd(){
         let unitID = "ca-app-pub-9515239279115600/9215702391"
-        let testAd = "ca-app-pub-3940256099942544/2934735716"
-        bannerView.adUnitID = testAd
+//        let testAd = "ca-app-pub-3940256099942544/2934735716"
+        bannerView.adUnitID = unitID
         bannerView.rootViewController = self
         bannerView.load(GADRequest())
     }

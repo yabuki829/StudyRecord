@@ -21,17 +21,15 @@ class AdTableViewCell: UITableViewCell, NADViewDelegate {
         // Initialization code
         addAD()
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     func addAD(){
         //本番広告
-//        nadView.setNendID(1053038, apiKey: "fc3b84fd192213cd497ee5edfb5459e3597ff2b7")
+        nadView.setNendID(1053038, apiKey: "fc3b84fd192213cd497ee5edfb5459e3597ff2b7")
         //テスト広告
-        nadView.setNendID(70996, apiKey: "eb5ca11fa8e46315c2df1b8e283149049e8d235e")
+//        nadView.setNendID(70996, apiKey: "eb5ca11fa8e46315c2df1b8e283149049e8d235e")
            
       
             
@@ -41,10 +39,11 @@ class AdTableViewCell: UITableViewCell, NADViewDelegate {
     func nadViewDidFinishLoad(_ adView: NADView!) {
         print("ロード完了")
     }
-    func nadViewDidReceiveAd(_ adView: NADView!) {
+    func nadViewDidReceiveAd(_ adView: NADView!){
         print("受信をしました")
     }
     func nadViewDidFail(toReceiveAd adView: NADView!) {
+        
         // エラーごとに処理を分岐する場合
         let error: NSError = adView.error as NSError
 

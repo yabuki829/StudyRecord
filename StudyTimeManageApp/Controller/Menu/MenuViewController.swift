@@ -62,12 +62,12 @@ extension MenuViewController: UITableViewDelegate,UITableViewDataSource{
             UIApplication.shared.open(url!)
         }
         else if indexPath.row == 6{
-            let url = URL(string: "https://twitter.com/apptodojp")
+            let url = URL(string: "https://mobile.twitter.com/sdi2025")
             UIApplication.shared.open(url!)
         }
-
         
     }
+    
     func logoutAlert(){
         let alert = UIAlertController(title: "ログアウトしますか？" , message:"" ,preferredStyle: .alert)
            

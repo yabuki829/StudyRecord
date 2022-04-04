@@ -58,10 +58,10 @@ class GoalPageViewController: UIViewController {
     
     @IBAction func save(_ sender: Any) {
         selectImage = changeProfileCell.imageString
-        username = changeProfileCell.textField.text!
+        username = changeProfileCell.textField.text ?? "No Name"
         goal = changeProfileCell.textView.text
         
-        profileModel.saveProfile(username: username ?? "No Name", goal: goal, image:selectImage )
+        profileModel.saveProfile(username: username , goal: goal, image:selectImage )
         self.dismiss(animated: true, completion: nil)
         
     }
