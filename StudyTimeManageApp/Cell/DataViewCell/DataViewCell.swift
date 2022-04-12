@@ -19,11 +19,13 @@ class DataViewCell: UITableViewCell {
     
     @IBOutlet weak var totalLabel: UILabel!
     @IBOutlet weak var totalTitleLabel: UILabel!
+    @IBOutlet weak var totalStackView: UIStackView!
     
     var dayStudyTime = Double()
     var monthStudyTime = Double()
     var totalStudyTime = Double()
     
+    let studyTime = studyTimeClass()
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -86,6 +88,7 @@ class DataViewCell: UITableViewCell {
         }
        
     }
+
     func divideIntoDecimalsAndIntegers(num:Double) -> divide{
 //        少数部分と整数部分で分割する
         // 49.5  - > 49, 0.8
@@ -97,4 +100,5 @@ class DataViewCell: UITableViewCell {
         return divideNumber
         
     }
+    
 }

@@ -41,8 +41,8 @@ class FriendSearchViewController: UIViewController {
         present(alert.showFriendID(), animated: true)
     }
     func setNavBarBackgroundColor(){
-        setStatusBarBackgroundColor(.systemRed)
-        self.navigationController?.navigationBar.barTintColor = .systemRed
+        setStatusBarBackgroundColor(.link)
+        self.navigationController?.navigationBar.barTintColor = .link
         self.navigationController?.navigationBar.tintColor = .white
         // ナビゲーションバーのテキストを変更する
         self.navigationController?.navigationBar.titleTextAttributes = [

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		56B25F81B656E2283A2348C4 /* Pods_StudyTimeManageAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4887EE8516CF1EAD60EA57F /* Pods_StudyTimeManageAppTests.framework */; };
 		6147156BE7B0B7929CB0D84E /* Pods_StudyTimeManageApp_StudyTimeManageAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8235B9E5645F47E9AE83DB79 /* Pods_StudyTimeManageApp_StudyTimeManageAppUITests.framework */; };
+		7026CCB428051887008ED40C /* BarChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7026CCB328051887008ED40C /* BarChartViewController.swift */; };
 		7029D56D2764A831007EC795 /* BarChartCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7029D56C2764A831007EC795 /* BarChartCell.xib */; };
 		7029D5732764A843007EC795 /* DataViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7029D5712764A841007EC795 /* DataViewCell.swift */; };
 		7029D5742764A843007EC795 /* DataViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7029D5722764A842007EC795 /* DataViewCell.xib */; };
@@ -20,7 +21,7 @@
 		704AA7D62768D7C200A49FC3 /* Struct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704AA7D52768D7C200A49FC3 /* Struct.swift */; };
 		704AAC5C27818680001DBF6D /* Pods_StudyTimeManageApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 305C221D2734DE6E90AADD66 /* Pods_StudyTimeManageApp.framework */; };
 		704B9277277EC0F90012D321 /* PieChartViewDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704B9276277EC0F90012D321 /* PieChartViewDetailController.swift */; };
-		704B927C277EC1550012D321 /* BarChartViewDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704B927B277EC1550012D321 /* BarChartViewDetailController.swift */; };
+		704B927C277EC1550012D321 /* BarChartDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704B927B277EC1550012D321 /* BarChartDetailViewController.swift */; };
 		704C3628278B279C0000D17D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 704C3627278B279C0000D17D /* GoogleService-Info.plist */; };
 		704D7B8727EED4700076A1BA /* BarChartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704D7B8627EED4700076A1BA /* BarChartCell.swift */; };
 		704D7B9027EEDE520076A1BA /* RecordViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704D7B8E27EEDE520076A1BA /* RecordViewCell.swift */; };
@@ -36,6 +37,8 @@
 		7053E4B027C8D14F00E6504A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7053E4AF27C8D14E00E6504A /* LoginViewController.swift */; };
 		7053E4B827C8D39200E6504A /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7053E4B727C8D39200E6504A /* AuthManager.swift */; };
 		7055BA8D27C37F5000696BF7 /* BlockUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7055BA8C27C37F5000696BF7 /* BlockUserViewController.swift */; };
+		7057A35A2805664C00C4D689 /* AverageDataCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7057A3582805664C00C4D689 /* AverageDataCell.swift */; };
+		7057A35B2805664C00C4D689 /* AverageDataCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7057A3592805664C00C4D689 /* AverageDataCell.xib */; };
 		7057C4D0276AD87000DE8214 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7057C4CF276AD87000DE8214 /* DetailViewController.swift */; };
 		70584E1427ABF86E00C08B31 /* TermViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70584E1327ABF86E00C08B31 /* TermViewController.swift */; };
 		70584E1927ABF88900C08B31 /* PrivacyPolicyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70584E1827ABF88900C08B31 /* PrivacyPolicyViewController.swift */; };
@@ -102,6 +105,7 @@
 /* Begin PBXFileReference section */
 		305C221D2734DE6E90AADD66 /* Pods_StudyTimeManageApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StudyTimeManageApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		36D82F5E5900AF0A06B57FDB /* Pods-StudyTimeManageAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StudyTimeManageAppTests.debug.xcconfig"; path = "Target Support Files/Pods-StudyTimeManageAppTests/Pods-StudyTimeManageAppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		7026CCB328051887008ED40C /* BarChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarChartViewController.swift; sourceTree = "<group>"; };
 		7029D56C2764A831007EC795 /* BarChartCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BarChartCell.xib; sourceTree = "<group>"; };
 		7029D5712764A841007EC795 /* DataViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataViewCell.swift; sourceTree = "<group>"; };
 		7029D5722764A842007EC795 /* DataViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DataViewCell.xib; sourceTree = "<group>"; };
@@ -112,7 +116,7 @@
 		704A33AF2797AD2D00E28C34 /* ManageTabMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageTabMenuController.swift; sourceTree = "<group>"; };
 		704AA7D52768D7C200A49FC3 /* Struct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Struct.swift; sourceTree = "<group>"; };
 		704B9276277EC0F90012D321 /* PieChartViewDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChartViewDetailController.swift; sourceTree = "<group>"; };
-		704B927B277EC1550012D321 /* BarChartViewDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarChartViewDetailController.swift; sourceTree = "<group>"; };
+		704B927B277EC1550012D321 /* BarChartDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarChartDetailViewController.swift; sourceTree = "<group>"; };
 		704C3627278B279C0000D17D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		704D7B8627EED4700076A1BA /* BarChartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarChartCell.swift; sourceTree = "<group>"; };
 		704D7B8E27EEDE520076A1BA /* RecordViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordViewCell.swift; sourceTree = "<group>"; };
@@ -128,6 +132,8 @@
 		7053E4AF27C8D14E00E6504A /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		7053E4B727C8D39200E6504A /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		7055BA8C27C37F5000696BF7 /* BlockUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockUserViewController.swift; sourceTree = "<group>"; };
+		7057A3582805664C00C4D689 /* AverageDataCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AverageDataCell.swift; sourceTree = "<group>"; };
+		7057A3592805664C00C4D689 /* AverageDataCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AverageDataCell.xib; sourceTree = "<group>"; };
 		7057C4CF276AD87000DE8214 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		705832AE2790202600E01B87 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
 		70584E1327ABF86E00C08B31 /* TermViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermViewController.swift; sourceTree = "<group>"; };
@@ -232,30 +238,19 @@
 		7029D55D2764A7AD007EC795 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				704D7B8627EED4700076A1BA /* BarChartCell.swift */,
-				7029D56C2764A831007EC795 /* BarChartCell.xib */,
-				7029D5712764A841007EC795 /* DataViewCell.swift */,
-				7029D5722764A842007EC795 /* DataViewCell.xib */,
-				7029D5782764A852007EC795 /* PredictCell.swift */,
-				7029D5792764A854007EC795 /* PredictCell.xib */,
-				7029D5802764A85E007EC795 /* PieChartCell.swift */,
-				7029D57F2764A85C007EC795 /* PieChartCell.xib */,
-				704ED92A2768CF38000F9F10 /* UserRecordCell.swift */,
-				704ED92B2768CF38000F9F10 /* UserRecordCell.xib */,
-				70AFD5D1276D752E004DB307 /* CommnentCell.swift */,
-				70AFD5D2276D752E004DB307 /* CommnentCell.xib */,
-				70692E96276D92BF007EC88B /* TextfieldViewCell.swift */,
-				70692E97276D92BF007EC88B /* TextfieldViewCell.xib */,
-				707ACA282772C85900A8A158 /* UserProfileViewCell.swift */,
-				707ACA292772C85900A8A158 /* UserProfileViewCell.xib */,
-				709CF2262793BFEB00C0C61F /* DetailViewCell.swift */,
-				709CF2272793BFEB00C0C61F /* DetailViewCell.xib */,
-				70B3F975279E58BD0001DA4E /* AdTableViewCell.swift */,
-				70B3F976279E58BD0001DA4E /* AdTableViewCell.xib */,
-				704D7B8E27EEDE520076A1BA /* RecordViewCell.swift */,
-				704D7B8F27EEDE520076A1BA /* RecordViewCell.xib */,
-				70AA681327F14613007EB375 /* ChangeProfileCell.swift */,
-				70AA681427F14613007EB375 /* ChangeProfileCell.xib */,
+				7057A3572805661C00C4D689 /* AverageDataCell */,
+				7057A3562805660300C4D689 /* ChangeProfileCell */,
+				7057A355280565E100C4D689 /* RecordCell */,
+				7057A354280565A900C4D689 /* AdvertisingCell */,
+				7057A3532805658700C4D689 /* DetailCell */,
+				7057A3522805657100C4D689 /* UserProfileCell */,
+				7057A3512805655300C4D689 /* TextFieldCell */,
+				7057A34F2805652D00C4D689 /* CommnetCell */,
+				7057A34E2805651B00C4D689 /* UserRecordCell */,
+				7057A34D2805650000C4D689 /* PieChartCell */,
+				7057A34C280564EF00C4D689 /* PredictCell */,
+				7057A34B280564DB00C4D689 /* DataViewCell */,
+				7057A34A280564C200C4D689 /* BarChartCell */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -265,8 +260,9 @@
 			children = (
 				706A2AAB2761CC200041B993 /* MainViewController.swift */,
 				704B9276277EC0F90012D321 /* PieChartViewDetailController.swift */,
-				704B927B277EC1550012D321 /* BarChartViewDetailController.swift */,
+				704B927B277EC1550012D321 /* BarChartDetailViewController.swift */,
 				7065E96C278D455B0053BBF2 /* DataViewController.swift */,
+				7026CCB328051887008ED40C /* BarChartViewController.swift */,
 			);
 			path = DataView;
 			sourceTree = "<group>";
@@ -325,6 +321,123 @@
 				70FA385C27C1FCCA0080ABC1 /* ShowLicenseViewController.swift */,
 			);
 			path = Menu;
+			sourceTree = "<group>";
+		};
+		7057A34A280564C200C4D689 /* BarChartCell */ = {
+			isa = PBXGroup;
+			children = (
+				704D7B8627EED4700076A1BA /* BarChartCell.swift */,
+				7029D56C2764A831007EC795 /* BarChartCell.xib */,
+			);
+			path = BarChartCell;
+			sourceTree = "<group>";
+		};
+		7057A34B280564DB00C4D689 /* DataViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				7029D5712764A841007EC795 /* DataViewCell.swift */,
+				7029D5722764A842007EC795 /* DataViewCell.xib */,
+			);
+			path = DataViewCell;
+			sourceTree = "<group>";
+		};
+		7057A34C280564EF00C4D689 /* PredictCell */ = {
+			isa = PBXGroup;
+			children = (
+				7029D5782764A852007EC795 /* PredictCell.swift */,
+				7029D5792764A854007EC795 /* PredictCell.xib */,
+			);
+			path = PredictCell;
+			sourceTree = "<group>";
+		};
+		7057A34D2805650000C4D689 /* PieChartCell */ = {
+			isa = PBXGroup;
+			children = (
+				7029D5802764A85E007EC795 /* PieChartCell.swift */,
+				7029D57F2764A85C007EC795 /* PieChartCell.xib */,
+			);
+			path = PieChartCell;
+			sourceTree = "<group>";
+		};
+		7057A34E2805651B00C4D689 /* UserRecordCell */ = {
+			isa = PBXGroup;
+			children = (
+				704ED92A2768CF38000F9F10 /* UserRecordCell.swift */,
+				704ED92B2768CF38000F9F10 /* UserRecordCell.xib */,
+			);
+			path = UserRecordCell;
+			sourceTree = "<group>";
+		};
+		7057A34F2805652D00C4D689 /* CommnetCell */ = {
+			isa = PBXGroup;
+			children = (
+				70AFD5D1276D752E004DB307 /* CommnentCell.swift */,
+				70AFD5D2276D752E004DB307 /* CommnentCell.xib */,
+			);
+			path = CommnetCell;
+			sourceTree = "<group>";
+		};
+		7057A3512805655300C4D689 /* TextFieldCell */ = {
+			isa = PBXGroup;
+			children = (
+				70692E96276D92BF007EC88B /* TextfieldViewCell.swift */,
+				70692E97276D92BF007EC88B /* TextfieldViewCell.xib */,
+			);
+			path = TextFieldCell;
+			sourceTree = "<group>";
+		};
+		7057A3522805657100C4D689 /* UserProfileCell */ = {
+			isa = PBXGroup;
+			children = (
+				707ACA282772C85900A8A158 /* UserProfileViewCell.swift */,
+				707ACA292772C85900A8A158 /* UserProfileViewCell.xib */,
+			);
+			path = UserProfileCell;
+			sourceTree = "<group>";
+		};
+		7057A3532805658700C4D689 /* DetailCell */ = {
+			isa = PBXGroup;
+			children = (
+				709CF2262793BFEB00C0C61F /* DetailViewCell.swift */,
+				709CF2272793BFEB00C0C61F /* DetailViewCell.xib */,
+			);
+			path = DetailCell;
+			sourceTree = "<group>";
+		};
+		7057A354280565A900C4D689 /* AdvertisingCell */ = {
+			isa = PBXGroup;
+			children = (
+				70B3F975279E58BD0001DA4E /* AdTableViewCell.swift */,
+				70B3F976279E58BD0001DA4E /* AdTableViewCell.xib */,
+			);
+			path = AdvertisingCell;
+			sourceTree = "<group>";
+		};
+		7057A355280565E100C4D689 /* RecordCell */ = {
+			isa = PBXGroup;
+			children = (
+				704D7B8E27EEDE520076A1BA /* RecordViewCell.swift */,
+				704D7B8F27EEDE520076A1BA /* RecordViewCell.xib */,
+			);
+			path = RecordCell;
+			sourceTree = "<group>";
+		};
+		7057A3562805660300C4D689 /* ChangeProfileCell */ = {
+			isa = PBXGroup;
+			children = (
+				70AA681327F14613007EB375 /* ChangeProfileCell.swift */,
+				70AA681427F14613007EB375 /* ChangeProfileCell.xib */,
+			);
+			path = ChangeProfileCell;
+			sourceTree = "<group>";
+		};
+		7057A3572805661C00C4D689 /* AverageDataCell */ = {
+			isa = PBXGroup;
+			children = (
+				7057A3582805664C00C4D689 /* AverageDataCell.swift */,
+				7057A3592805664C00C4D689 /* AverageDataCell.xib */,
+			);
+			path = AverageDataCell;
 			sourceTree = "<group>";
 		};
 		70660F712769720F00120CF7 /* Home */ = {
@@ -563,6 +676,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				704C3628278B279C0000D17D /* GoogleService-Info.plist in Resources */,
+				7057A35B2805664C00C4D689 /* AverageDataCell.xib in Resources */,
 				709CF2292793BFEB00C0C61F /* DetailViewCell.xib in Resources */,
 				70A2AC3227AA221600FB0550 /* barchart.json in Resources */,
 				706A2A592761CB6C0041B993 /* LaunchScreen.storyboard in Resources */,
@@ -750,11 +864,12 @@
 				704F4FAC27E0B6FD00A19C50 /* Alert.swift in Sources */,
 				70B03CF42793F769007E560B /* SplashViewController.swift in Sources */,
 				70FA386B27C209EC0080ABC1 /* UserPageViewController.swift in Sources */,
+				7026CCB428051887008ED40C /* BarChartViewController.swift in Sources */,
 				70FA384D27C1EEEB0080ABC1 /* SelectLicenseViewController.swift in Sources */,
 				706A2A8B2761CBBA0041B993 /* Date.swift in Sources */,
 				70AFD5D3276D752E004DB307 /* CommnentCell.swift in Sources */,
 				7057C4D0276AD87000DE8214 /* DetailViewController.swift in Sources */,
-				704B927C277EC1550012D321 /* BarChartViewDetailController.swift in Sources */,
+				704B927C277EC1550012D321 /* BarChartDetailViewController.swift in Sources */,
 				70B3F977279E58BD0001DA4E /* AdTableViewCell.swift in Sources */,
 				7029D5732764A843007EC795 /* DataViewCell.swift in Sources */,
 				7055BA8D27C37F5000696BF7 /* BlockUserViewController.swift in Sources */,
@@ -777,6 +892,7 @@
 				704ED91E2768CC5A000F9F10 /* GoalPageViewController.swift in Sources */,
 				70FA385D27C1FCCA0080ABC1 /* ShowLicenseViewController.swift in Sources */,
 				70584E1927ABF88900C08B31 /* PrivacyPolicyViewController.swift in Sources */,
+				7057A35A2805664C00C4D689 /* AverageDataCell.swift in Sources */,
 				70587585276783D600A3D237 /* RecordViewController.swift in Sources */,
 				706A2A902761CBC00041B993 /* Extension.swift in Sources */,
 				706A2AAC2761CC200041B993 /* MainViewController.swift in Sources */,
@@ -986,7 +1102,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sho.StudyTimeManageApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -1008,7 +1124,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sho.StudyTimeManageApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

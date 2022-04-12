@@ -51,8 +51,9 @@ class LoginViewController: UIViewController ,UITextFieldDelegate{
                 enter.backgroundColor = UIColor.systemGreen
                 enter.layer.cornerRadius = 20
                 enter.setTitle("次へ", for: UIControl.State.normal)
+                enter.isHighlighted = true
                 enter.setTitleColor(UIColor.white, for: UIControl.State.normal)
-                enter.addTarget(self, action: #selector(tapNext), for: UIControl.Event.touchUpInside)
+                enter.addTarget(self, action: #selector(tapNext), for: UIControl.Event.touchDown)
 
                 // Make a cancel button.
               

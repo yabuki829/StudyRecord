@@ -9,6 +9,7 @@ import UIKit
 import Charts
 import SideMenu
 import GoogleMobileAds
+import FirebaseAuth
 
 class MainViewController: UIViewController, UITextFieldDelegate{
     
@@ -36,7 +37,8 @@ class MainViewController: UIViewController, UITextFieldDelegate{
         super.viewDidLoad()
         date.delegate = self
         navigationController?.navigationBar.prefersLargeTitles = false
-        
+       
+        print(Auth.auth().currentUser!.isAnonymous)
        
         //日付が変更されたか確認
         
@@ -254,16 +256,19 @@ extension MainViewController :UITableViewDelegate,UITableViewDataSource,tableVie
         else if indexPath.row == cellOrder.pieChart{
             let next = self.storyboard?.instantiateViewController(withIdentifier: "piedetail") as! PieChartViewDetailController
             next.totalStudyTime = studytime.getTotal()
+            
             self.navigationController?.pushViewController(next, animated: true)
         }
         else if indexPath.row == cellOrder.BarChart{
-            let next = self.storyboard?.instantiateViewController(withIdentifier: "bardetail") as! BarChartViewDetailController
+            let next = self.storyboard?.instantiateViewController(withIdentifier: "barChart") as! BarChartViewController
+            
             //動画広告を入れる
             if interstitial != nil {
                 interstitial!.present(fromRootViewController: self)
             } else {
               print("Ad wasn't ready")
             }
+            print("遷移しました")
             self.navigationController?.pushViewController(next, animated: true)
         }
         else if indexPath.row == cellOrder.goal{

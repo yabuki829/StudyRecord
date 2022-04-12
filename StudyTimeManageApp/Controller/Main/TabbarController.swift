@@ -17,20 +17,7 @@ class TabbarController: UITabBarController {
     }
     
     override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
-        if item.title == "10000hours"{
-            tabBar.tintColor = UIColor.link
-          
-        }
-        else if item.title == "Home"{
-            tabBar.tintColor = UIColor.systemGreen
-            
-        }
-        else if item.title == "Rival"{
-            tabBar.tintColor = UIColor.systemRed
-        }
-        else{
-            tabBar.tintColor = UIColor.darkGray
-        }
+        tabBar.tintColor = UIColor.link
 
     }
 

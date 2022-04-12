@@ -262,9 +262,10 @@
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="Ynz-hi-Qtg" id="dxw-Rr-vbc"/>
-                        <segue destination="PHk-bj-Bhg" kind="show" identifier="barChart" id="YOa-ON-F8k"/>
                         <segue destination="kWa-Qc-OSk" kind="show" id="cCK-CQ-F9e"/>
                         <segue destination="a0Q-4v-wmK" kind="show" id="xFO-ca-l1m"/>
+                        <segue destination="dij-PR-7nX" kind="show" id="rsz-c4-5xN"/>
+                        <segue destination="eBN-46-p2L" kind="show" id="Mmj-Vq-vYO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -352,33 +353,83 @@
         <!--Data-->
         <scene sceneID="HG6-51-86H">
             <objects>
-                <viewController storyboardIdentifier="data" id="eBN-46-p2L" customClass="DataViewController" customModule="StudyTimeManageApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="barChart" id="eBN-46-p2L" customClass="BarChartViewController" customModule="StudyTimeManageApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fsn-lI-RQo">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="EsO-k1-zxF">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" textLabel="Udh-vh-PmM" style="IBUITableViewCellStyleDefault" id="8Md-0s-DiG">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8Md-0s-DiG" id="I4g-v4-nny">
+                                            <rect key="frame" x="0.0" y="0.0" width="383" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Udh-vh-PmM">
+                                                    <rect key="frame" x="20" y="0.0" width="355" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="8Sh-w8-YRh"/>
-                        <color key="backgroundColor" systemColor="linkColor"/>
                         <constraints>
-                            <constraint firstItem="EsO-k1-zxF" firstAttribute="bottom" secondItem="8Sh-w8-YRh" secondAttribute="bottom" id="8Pm-7s-CG6"/>
+                            <constraint firstItem="EsO-k1-zxF" firstAttribute="top" secondItem="8Sh-w8-YRh" secondAttribute="top" id="AUh-RY-X1X"/>
+                            <constraint firstItem="8Sh-w8-YRh" firstAttribute="bottom" secondItem="EsO-k1-zxF" secondAttribute="bottom" id="JvO-Rj-CUb"/>
                             <constraint firstItem="EsO-k1-zxF" firstAttribute="leading" secondItem="8Sh-w8-YRh" secondAttribute="leading" id="mWT-Af-cNZ"/>
                             <constraint firstItem="EsO-k1-zxF" firstAttribute="trailing" secondItem="8Sh-w8-YRh" secondAttribute="trailing" id="oYY-Rz-7qv"/>
-                            <constraint firstItem="EsO-k1-zxF" firstAttribute="top" secondItem="8Sh-w8-YRh" secondAttribute="top" id="yb5-xb-0Vh"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Data" id="m4K-v8-ot0"/>
                     <connections>
-                        <outlet property="tableView" destination="EsO-k1-zxF" id="5Gd-Wf-Bkj"/>
+                        <outlet property="tableView" destination="EsO-k1-zxF" id="VTM-nv-Xuu"/>
+                        <segue destination="PHk-bj-Bhg" kind="show" id="0Cs-6Q-CjZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eXp-XT-qMd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5355" y="0.0"/>
+            <point key="canvasLocation" x="6519" y="796"/>
+        </scene>
+        <!--Data-->
+        <scene sceneID="wjX-ie-pRO">
+            <objects>
+                <viewController storyboardIdentifier="data" id="dij-PR-7nX" customClass="DataViewController" customModule="StudyTimeManageApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="a4N-Vf-zTt">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="GDI-GO-3SU">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="yOQ-HR-4S8"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="GDI-GO-3SU" firstAttribute="trailing" secondItem="yOQ-HR-4S8" secondAttribute="trailing" id="6QB-Vq-Y7i"/>
+                            <constraint firstItem="GDI-GO-3SU" firstAttribute="leading" secondItem="yOQ-HR-4S8" secondAttribute="leading" id="An6-W9-i6O"/>
+                            <constraint firstItem="GDI-GO-3SU" firstAttribute="top" secondItem="yOQ-HR-4S8" secondAttribute="top" id="YUy-as-S5b"/>
+                            <constraint firstItem="GDI-GO-3SU" firstAttribute="bottom" secondItem="yOQ-HR-4S8" secondAttribute="bottom" id="dkQ-Yd-BfM"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Data" id="HFs-eD-fLI"/>
+                    <connections>
+                        <outlet property="tableView" destination="GDI-GO-3SU" id="mFn-Nm-5yf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Q1W-8x-5Em" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4803" y="-1"/>
         </scene>
         <!--Record.-->
         <scene sceneID="Xwo-aE-rxF">
@@ -444,7 +495,7 @@
         <!--Bar Charts.-->
         <scene sceneID="TPk-ue-nYU">
             <objects>
-                <viewController storyboardIdentifier="bardetail" id="PHk-bj-Bhg" customClass="BarChartViewDetailController" customModule="StudyTimeManageApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="barDetail" id="PHk-bj-Bhg" customClass="BarChartDetailViewController" customModule="StudyTimeManageApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hPF-d0-qeF">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -522,7 +573,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FOq-9x-fYU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5642.0289855072469" y="839.73214285714278"/>
+            <point key="canvasLocation" x="7571" y="796"/>
         </scene>
         <!--Rival.-->
         <scene sceneID="wf7-FB-ay4">
@@ -580,7 +631,6 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ffy-V8-rYn"/>
-                        <color key="backgroundColor" systemColor="systemGray6Color"/>
                         <constraints>
                             <constraint firstItem="V85-zE-coa" firstAttribute="top" secondItem="ffy-V8-rYn" secondAttribute="top" id="2bG-My-NPC"/>
                             <constraint firstItem="tVg-Zn-5Mo" firstAttribute="trailing" secondItem="ffy-V8-rYn" secondAttribute="trailing" id="4LY-CO-q9b"/>
@@ -633,6 +683,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Profile." id="jlp-IK-sky">
                         <barButtonItem key="rightBarButtonItem" title="Edit" id="ETg-0p-TLn">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <segue destination="Mq7-mV-XEW" kind="presentation" modalPresentationStyle="fullScreen" id="YnQ-Al-10L"/>
                             </connections>
@@ -983,7 +1034,7 @@
             </objects>
             <point key="canvasLocation" x="530.43478260869574" y="1603.7946428571429"/>
         </scene>
-        <!--認証番号を入力してください。-->
+        <!--認証-->
         <scene sceneID="Ggv-Zf-sPI">
             <objects>
                 <viewController storyboardIdentifier="sms" id="YHw-7p-scy" customClass="SMSViewController" customModule="StudyTimeManageApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -1013,7 +1064,7 @@
                             <constraint firstItem="oMY-yz-Z95" firstAttribute="centerY" secondItem="1rZ-TK-H4r" secondAttribute="centerY" constant="-60" id="iTb-gz-1kS"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="認証番号を入力してください。" id="WFe-Qw-AHI"/>
+                    <navigationItem key="navigationItem" title="認証" id="WFe-Qw-AHI"/>
                     <connections>
                         <outlet property="numberLabel" destination="oMY-yz-Z95" id="4wm-8e-qf1"/>
                         <outlet property="textField" destination="kPm-vY-XD0" id="abF-Vb-Vbh"/>
@@ -1028,14 +1079,16 @@
         <scene sceneID="FbM-bm-Zuj">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="diq-Ja-M5O" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Rival" image="magnifyingglass.circle" catalog="system" selectedImage="magnifyingglass.circle.fill" id="GpB-qd-9eg"/>
+                    <tabBarItem key="tabBarItem" title="Rival" image="magnifyingglass.circle" catalog="system" selectedImage="magnifyingglass.circle.fill" id="GpB-qd-9eg">
+                        <color key="badgeColor" systemColor="linkColor"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Pom-rY-uMB">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" systemColor="systemRedColor"/>
+                        <color key="backgroundColor" systemColor="linkColor"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="barTintColor" systemColor="systemRedColor"/>
+                        <color key="barTintColor" systemColor="linkColor"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </textAttributes>
@@ -1061,14 +1114,25 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="olT-ey-xwa">
-                                <rect key="frame" x="0.0" y="104" width="414" height="655"/>
+                                <rect key="frame" x="0.0" y="126" width="414" height="649"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <viewLayoutGuide key="contentLayoutGuide" id="pNe-cc-mfN"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="Ik1-5c-ePd"/>
                             </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QhM-gz-yfT">
+                                <rect key="frame" x="354" y="713.5" width="50" height="49"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="RJo-nD-Tmb"/>
+                                    <constraint firstAttribute="height" constant="50" id="lNt-F7-VjH"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="pencil.circle.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="post:" destination="9PY-y8-QsV" eventType="touchUpInside" id="o7k-ye-IzB"/>
+                                </connections>
+                            </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="efW-O4-jW1" customClass="ButtonBarView" customModule="XLPagerTabStrip">
                                 <rect key="frame" x="0.0" y="88" width="414" height="30"/>
-                                <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                <color key="backgroundColor" systemColor="linkColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="6Iq-8E-HvO"/>
                                 </constraints>
@@ -1091,11 +1155,12 @@
                             </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="tfB-49-OJl"/>
-                        <color key="backgroundColor" systemColor="systemGreenColor"/>
                         <constraints>
+                            <constraint firstItem="tfB-49-OJl" firstAttribute="trailing" secondItem="QhM-gz-yfT" secondAttribute="trailing" constant="10" id="9Qm-zd-3iv"/>
                             <constraint firstItem="olT-ey-xwa" firstAttribute="leading" secondItem="tfB-49-OJl" secondAttribute="leading" id="BUK-FF-UaF"/>
                             <constraint firstItem="efW-O4-jW1" firstAttribute="leading" secondItem="tfB-49-OJl" secondAttribute="leading" id="F3c-zH-FBr"/>
                             <constraint firstItem="olT-ey-xwa" firstAttribute="bottom" secondItem="tfB-49-OJl" secondAttribute="bottom" id="Nru-JT-xlw"/>
+                            <constraint firstItem="tfB-49-OJl" firstAttribute="bottom" secondItem="QhM-gz-yfT" secondAttribute="bottom" constant="50" id="SYP-lx-wYi"/>
                             <constraint firstItem="efW-O4-jW1" firstAttribute="top" secondItem="tfB-49-OJl" secondAttribute="top" id="UuB-n9-cEq"/>
                             <constraint firstItem="efW-O4-jW1" firstAttribute="trailing" secondItem="tfB-49-OJl" secondAttribute="trailing" id="aPb-KA-Y5a"/>
                             <constraint firstItem="olT-ey-xwa" firstAttribute="trailing" secondItem="tfB-49-OJl" secondAttribute="trailing" id="oxm-a6-o7u"/>
@@ -1103,7 +1168,8 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Home" id="Zrj-RT-nmV">
-                        <barButtonItem key="rightBarButtonItem" image="text.justify" catalog="system" id="pWr-Ct-ewu">
+                        <barButtonItem key="leftBarButtonItem" image="text.justify" catalog="system" id="pWr-Ct-ewu">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <action selector="tapMenuButton:" destination="9PY-y8-QsV" id="Hdj-uK-Kh4"/>
                             </connections>
@@ -1129,6 +1195,14 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="VtP-0w-pZb">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" systemColor="linkColor"/>
+                        <color key="barTintColor" systemColor="linkColor"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -1167,7 +1241,9 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="zCR-b0-Ojk">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" cyan="0.5" magenta="0.0" yellow="0.99937819660000005" black="0.0" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
+                        <color key="backgroundColor" systemColor="linkColor"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" systemColor="linkColor"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="17"/>
                             <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1211,7 +1287,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="vse-JX-4tV"/>
+        <segue reference="1Wd-Vo-wEB"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="ellipsis" catalog="system" width="128" height="37"/>
@@ -1221,6 +1297,7 @@
         <image name="magnifyingglass.circle" catalog="system" width="128" height="121"/>
         <image name="magnifyingglass.circle.fill" catalog="system" width="128" height="121"/>
         <image name="multiply" catalog="system" width="128" height="111"/>
+        <image name="pencil.circle.fill" catalog="system" width="128" height="121"/>
         <image name="person" catalog="system" width="128" height="117"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
         <image name="star" catalog="system" width="128" height="116"/>

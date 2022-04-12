@@ -12,8 +12,10 @@ class RecordViewCell: UITableViewCell,UITextFieldDelegate {
 
     @IBOutlet weak var categoryStackView: UIStackView!
     @IBOutlet weak var StudyTimeStackView: UIStackView!
-    @IBOutlet weak var studyTimeTextField: UITextField!
-    @IBOutlet weak var categoryTextField: UITextField!
+
+    @IBOutlet weak var studyTimeTextField: CustomTextField!
+    @IBOutlet weak var categoryTextField: CustomTextField!
+    
     @IBOutlet weak var textView: PlaceTextView!
     
     var pickerView: UIPickerView = UIPickerView()
@@ -26,7 +28,7 @@ class RecordViewCell: UITableViewCell,UITextFieldDelegate {
     var hours = 0
     var minutes = 0
     
-    var categoeyJapanese = ["選択してください","スキルアップ","受験勉強","資格取得","趣 味","読書"]
+    var categoeyJapanese = ["選択してください","スキルアップ","受験勉強","資格取得","趣味","読書"]
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -212,7 +214,7 @@ extension RecordViewCell:UIPickerViewDelegate,UIPickerViewDataSource{
        
        
     }
-  
+ 
     
 }
 

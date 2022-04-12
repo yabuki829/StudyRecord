@@ -39,8 +39,8 @@ class FriendStudyTimeViewController: UIViewController {
         follow()
     }
     func setNavBarBackgroundColor(){
-        setStatusBarBackgroundColor(.systemRed)
-        self.navigationController?.navigationBar.barTintColor = .systemRed
+        setStatusBarBackgroundColor(.link)
+        self.navigationController?.navigationBar.barTintColor = .link
         self.navigationController?.navigationBar.tintColor = .white
         // ナビゲーションバーのテキストを変更する
         self.navigationController?.navigationBar.titleTextAttributes = [
@@ -174,7 +174,7 @@ extension FriendStudyTimeViewController:UITableViewDelegate,UITableViewDataSourc
         }
         else if indexPath.row == 1{
             let cell = tableView.dequeueReusableCell(withIdentifier: "DataViewCell", for: indexPath) as! DataViewCell
-            cell.setCell(day: friendStudyData.day, month: friendStudyData.month, total: friendStudyData.total, color: "red")
+            cell.setCell(day: friendStudyData.day, month: friendStudyData.month, total: friendStudyData.total, color: "link")
             return cell
         }
         else if indexPath.row  == 2{

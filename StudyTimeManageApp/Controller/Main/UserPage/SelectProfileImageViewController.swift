@@ -15,7 +15,7 @@ class SelectProfileImageViewController: UIViewController {
     var selectImage = String()
     var tentativeUserName = String()
     var tentativeGoal     = String()
-    
+    let profileModel = studyTimeClass()
     public let imageArray = [
         "centertestgirl","centertestmen","girlkimono","menkimono","studyLady","studyLedy2","StudyMen","studyMen2","お願い女性1","お願い男1","読書男1","読書男2","読書女1","読書男2","男性","女性","男性2","女性2","分かれ道","お笑い","女子拳","かえる","女性勇者","男性勇者","龍","神様","神様2"
         
@@ -25,7 +25,7 @@ class SelectProfileImageViewController: UIViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
         settingNavigation()
-        
+        profileImage.image = UIImage(named: profileModel.getProfileImage())
         profileImage.layer.borderColor = UIColor.darkGray.cgColor
         profileImage.layer.borderWidth = 1
         profileImage.layer.cornerRadius = profileImage.frame.size.width / 2

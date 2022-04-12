@@ -28,9 +28,8 @@ class UserPageViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        let id = UserDefaults.standard.object(forKey: "userid")
         if userid.isEmpty {
-            
-            let id = UserDefaults.standard.object(forKey: "userid")
             userid = id as! String
             navigationItem.title = "Profile."
             profileData = Profile(username:profileModel.getUserName() , goal: profileModel.getGoal(), image: profileModel.getProfileImage(), userid: userid)
@@ -38,36 +37,44 @@ class UserPageViewController: UIViewController {
         }else{
             
             navigationItem.title = userName
-            changeProfileButton.isEnabled = false
-            changeProfileButton.tintColor = .clear
+            if userid != id as! String{
+                changeProfileButton.isEnabled = false
+                changeProfileButton.tintColor = .clear
+            }
+            
+            
             getProfile(useid: userid)
             // profileDataをdatabaseから取得する
         }
         settingTableView()
-       
+        
         IQKeyboardManager.shared.enable = true 
-        tableView.layer.borderColor = UIColor.systemGray3.cgColor
-        tableView.layer.cornerRadius = 1
-        tableView.layer.borderWidth = 1
-    }
+
+            }
     override func viewWillAppear(_ animated: Bool) {
-        self.navigationController?.navigationBar.barTintColor = .white
+        setNavBarBackgroundColor()
         getData(userid:userid)
         profileData = Profile(username:profileModel.getUserName() , goal: profileModel.getGoal(), image: profileModel.getProfileImage(), userid: userid)
         tableView.reloadData()
     }
 
-    @IBAction func moveChangeProfile(_ sender: Any) {
-        
+    
+    func setNavBarBackgroundColor(){
+        setStatusBarBackgroundColor(.link)
+        self.navigationController?.navigationBar.barTintColor = .link
+        self.navigationController?.navigationBar.tintColor = .white
+        // ナビゲーションバーのテキストを変更する
+        self.navigationController?.navigationBar.titleTextAttributes = [
+        // 文字の色
+            .foregroundColor: UIColor.white
+        ]
     }
     
 }
 
 extension UserPageViewController:UITableViewDelegate,UITableViewDataSource,tableViewUpDater{
     func move() {}
-    
     func tapLike(isLike: Bool, index: Int, count: Int) {}
-    
     func sendtoProfile(userid: String, username: String) {}
     
     func updateTableView() {
@@ -122,7 +129,9 @@ extension UserPageViewController:UITableViewDelegate,UITableViewDataSource,table
         tableView.dataSource = self
       
         tableView.rowHeight = UITableView.automaticDimension
-        
+        tableView.layer.borderColor = UIColor.systemGray3.cgColor
+        tableView.layer.cornerRadius = 1
+        tableView.layer.borderWidth = 1
         let RecordCell = UINib(nibName: "UserRecordCell", bundle: nil )
         tableView.register(RecordCell, forCellReuseIdentifier: "UserRecordCell")
         

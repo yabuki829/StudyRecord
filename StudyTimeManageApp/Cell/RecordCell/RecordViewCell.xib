@@ -26,7 +26,7 @@
                                 </constraints>
                                 <state key="normal" backgroundImage="stopwatch" catalog="system"/>
                             </button>
-                            <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="勉強時間" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="D0n-C3-AbF">
+                            <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="勉強時間" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="D0n-C3-AbF" customClass="CustomTextField" customModule="StudyTimeManageApp" customModuleProvider="target">
                                 <rect key="frame" x="35" y="0.0" width="339" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -46,7 +46,7 @@
                                 </constraints>
                                 <state key="normal" backgroundImage="pencil.circle" catalog="system"/>
                             </button>
-                            <textField opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="カテゴリ" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qRj-1z-MBl">
+                            <textField opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="カテゴリ" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qRj-1z-MBl" customClass="CustomTextField" customModule="StudyTimeManageApp" customModuleProvider="target">
                                 <rect key="frame" x="35" y="0.0" width="339" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -80,8 +80,8 @@
             <connections>
                 <outlet property="StudyTimeStackView" destination="ipH-FX-fpp" id="gkL-4w-axI"/>
                 <outlet property="categoryStackView" destination="Ojz-Ei-Gz5" id="wKE-eW-958"/>
-                <outlet property="categoryTextField" destination="qRj-1z-MBl" id="Vym-HR-8M6"/>
-                <outlet property="studyTimeTextField" destination="D0n-C3-AbF" id="MPO-Ou-Hzr"/>
+                <outlet property="categoryTextField" destination="qRj-1z-MBl" id="mV9-T8-5BF"/>
+                <outlet property="studyTimeTextField" destination="D0n-C3-AbF" id="UCv-Pi-LIg"/>
                 <outlet property="textView" destination="qoE-G9-CL4" id="8Em-MZ-wCT"/>
             </connections>
             <point key="canvasLocation" x="137.68115942028987" y="-99.107142857142847"/>

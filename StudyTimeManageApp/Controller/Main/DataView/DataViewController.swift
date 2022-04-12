@@ -22,7 +22,6 @@ class DataViewController: UIViewController {
     var local = String()
     var isFinish:Bool = false{
         didSet{
-            print(MonthStudyData)
             
             tableView.reloadData()
         }
@@ -34,18 +33,27 @@ class DataViewController: UIViewController {
         getMonthlyStudyTime()
         getWeekDayStudyTime()
         getMonthlyTotalStudyTime()
-      
+        setNavBarBackgroundColor()
         
     }
     
-
+    func setNavBarBackgroundColor(){
+        setStatusBarBackgroundColor(.link)
+        self.navigationController?.navigationBar.barTintColor = .link
+        self.navigationController?.navigationBar.tintColor = .white
+        // ナビゲーションバーのテキストを変更する
+        self.navigationController?.navigationBar.titleTextAttributes = [
+        // 文字の色
+            .foregroundColor: UIColor.white
+        ]
+    }
 
 }
 
 
 extension DataViewController:UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return 5
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -54,7 +62,12 @@ extension DataViewController:UITableViewDelegate,UITableViewDataSource{
             cell.setCell(day: studyTime.getDay(), month: studyTime.getMonth(), total: studyTime.getTotal(), color: "link")
             return cell
         }
-        else if indexPath.row == 1 {
+        else if indexPath.row == 1{
+            let cell = tableView.dequeueReusableCell(withIdentifier: "AverageDataCell", for: indexPath) as! AverageDataCell
+            cell.setCell(total:studyTime.getTotal() , month: studyTime.getMonth())
+            return cell
+        }
+        else if indexPath.row == 2 {
             
             if local == "ja"{
                 let cell = tableView.dequeueReusableCell(withIdentifier: "BarChartCell", for: indexPath) as! BarChartCell
@@ -68,7 +81,7 @@ extension DataViewController:UITableViewDelegate,UITableViewDataSource{
             }
             
         }
-        else if indexPath.row == 2{
+        else if indexPath.row == 3{
             if local == "ja"{
                 let cell = tableView.dequeueReusableCell(withIdentifier: "BarChartCell", for: indexPath) as! BarChartCell
                 cell.setMonthCell(titleString: "( 月毎の累計勉強時間 )", data: monthlyTotalStudyTime)
@@ -81,7 +94,7 @@ extension DataViewController:UITableViewDelegate,UITableViewDataSource{
             }
             
         }
-        else if indexPath.row == 3{
+        else if indexPath.row == 4{
             if local == "ja"{
                 if MonthStudyData.isEmpty {
                     let cell = tableView.dequeueReusableCell(withIdentifier: "BarChartCell", for: indexPath) as! BarChartCell
@@ -116,11 +129,11 @@ extension DataViewController:UITableViewDelegate,UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.row == 0{
+        if indexPath.row == 0 || indexPath.row == 1{
             return 80
         }
         else{
-            return 200
+            return 250
         }
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -135,6 +148,11 @@ extension DataViewController:UITableViewDelegate,UITableViewDataSource{
         
         let DataViewCell = UINib(nibName: "DataViewCell", bundle: nil )
         tableView.register(DataViewCell, forCellReuseIdentifier: "DataViewCell")
+        
+        let AverageDataCell = UINib(nibName: "AverageDataCell", bundle: nil )
+        tableView.register(AverageDataCell, forCellReuseIdentifier: "AverageDataCell")
+        
+      
         
     }
 }

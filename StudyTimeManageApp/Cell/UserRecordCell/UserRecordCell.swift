@@ -47,9 +47,9 @@ class UserRecordCell: UITableViewCell {
     
     func setHomeCell(userid:String,username:String,studyTime: Double,comment:String,date:Date,postid:String,image:String){
         
-        profileImage.layer.cornerRadius = 35
+        profileImage.layer.cornerRadius = 25
         profileImage.clipsToBounds = true
-        profileImage.layer.borderColor = UIColor.darkGray.cgColor
+        profileImage.layer.borderColor = UIColor.systemGray3.cgColor
         profileImage.layer.borderWidth = 1
         postID = postid
         userID = userid

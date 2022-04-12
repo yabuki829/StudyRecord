@@ -9,7 +9,7 @@ import UIKit
 import Charts
 import FirebaseFirestore
 
-class BarChartViewDetailController: UIViewController {
+class BarChartDetailViewController: UIViewController {
 
     @IBOutlet weak var barChartView: BarChartView!
     @IBOutlet weak var dateLabel: UILabel!
@@ -26,22 +26,23 @@ class BarChartViewDetailController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        getData()
         nextButton.isHidden = true
         backButton.isHidden = true
-        
+        setNavBarBackgroundColor()
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [self] in
-            print("---------------------")
-            print(weekDataArray.count)
-            print(weekDataArray)
-            if weekDataArray.count >= 1{
-                setData()
-                if weekDataArray.count > 1{
-                    backButton.isHidden = false
-                    animationType(type: 0)
-                }
-            }
+         
             
+            if path == 0{
+                nextButton.isHidden = false
+            }
+            else if path == weekDataArray.count{
+                backButton.isHidden = false
+            }
+            else{
+                nextButton.isHidden = false
+                backButton.isHidden = false
+            }
+            animationType(type: 0)
           
         }
     }
@@ -82,6 +83,16 @@ class BarChartViewDetailController: UIViewController {
         }
        
        
+    }
+    func setNavBarBackgroundColor(){
+        setStatusBarBackgroundColor(.link)
+        self.navigationController?.navigationBar.barTintColor = .link
+        self.navigationController?.navigationBar.tintColor = .white
+        // ナビゲーションバーのテキストを変更する
+        self.navigationController?.navigationBar.titleTextAttributes = [
+        // 文字の色
+            .foregroundColor: UIColor.white
+        ]
     }
     func convertDateToString(date:Date) -> String{
         let dateFormatter = DateFormatter()
@@ -166,32 +177,6 @@ class BarChartViewDetailController: UIViewController {
         barChartView.leftAxis.granularityEnabled = true
 //        barChartView.rightAxis.granularity = 1.0
         barChartView.leftAxis.granularity = 1.0
-    }
-
-    func getData(){
-        print("取得します")
-        let database = Firestore.firestore()
-        let userid   = UserDefaults.standard.object(forKey: "userid")
-        weekDataArray = []
-        database.collection("Users").document(userid as! String).collection("StudyTime").order(by: "start", descending: true).getDocuments{
-            (querySnapshot, err) in
-            if err != nil {
-                return
-            } else {
-                for document in querySnapshot!.documents {
-                    let data = document.data()
-                    if let weekData = data["week"],
-                       let lastTimestamp   = data["last"],
-                       let startTimestamp     = data["start"]{
-                        let lastDate:Date = (lastTimestamp as AnyObject).dateValue()
-                        let startDate:Date = (startTimestamp as AnyObject).dateValue()
-                        let newData = studyWeekData(week: weekData as! [Double], last: lastDate, start: startDate)
-                        self.weekDataArray.append(newData)
-                    }
-                }
-            }
-        }
-        
     }
 
 }

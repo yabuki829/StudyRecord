@@ -137,7 +137,7 @@ class Database{
         )
     }
     func postFriendID(id:String){
-        let userid = UserDefaults.standard.object(forKey: "userid")
+        let userid:String = UserDefaults.standard.object(forKey: "userid") as! String
         database.collection("UserID").document(id).setData(
             ["userID":userid]
         )

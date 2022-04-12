@@ -31,6 +31,7 @@ class GoalPageViewController: UIViewController {
         settingTableView()
         settingNavigation()
         
+        
     }
     func settingNavigation(){
         self.navigationItem.hidesBackButton = true

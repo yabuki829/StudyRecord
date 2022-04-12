@@ -228,3 +228,13 @@ extension UITextView {
 }
 
 
+
+
+class CustomTextField: UITextField {
+
+    // コピー・ペースト・選択等のメニュー非表示
+    override func canPerformAction(_ action: Selector, withSender sender: Any?) -> Bool {
+        return false
+    }
+
+}

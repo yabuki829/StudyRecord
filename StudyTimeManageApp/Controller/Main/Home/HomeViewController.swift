@@ -18,18 +18,22 @@ class HomeViewController: UIViewController,IndicatorInfoProvider {
     
     //TODO- recordArrayをカテゴリーの数だけ作成する
     var recordArray:[Record] = []
+    var newArray:[Record] = []
+    var skilArray:[Record] = []
+    var hobbyArray:[Record] = []
+    var bookArray:[Record] = []
+    var examArray:[Record] = []
+    var qualArray:[Record] = []
     
-    var adCount:Int?
+    var adCount:Int = 0
     var isFinish:Bool = false {
         didSet{
-            print("取得完了")
-            print(recordArray)
             PKHUD.sharedHUD.hide()
             tableView.reloadData()
             isFinish = false
         }
     }
-    var isAD = false
+    var isAD = true
     
     
   
@@ -49,21 +53,42 @@ class HomeViewController: UIViewController,IndicatorInfoProvider {
         else{
             getRecordFilteringCategory()
         }
+        
+      
         // Do any additional setup after loading the view.
     }
     override func viewWillAppear(_ animated: Bool) {
-        setStatusBarBackgroundColor(.green)
+       setNavBarBackgroundColor()
+        if itemInfo.title == "スキルアップ"{
+            recordArray = skilArray
+           
+        }
+        else if itemInfo.title == "受験勉強"{
+            recordArray = examArray
+        }
+        else if itemInfo.title == "資格取得"{
+            recordArray = qualArray
+        }
+        else if itemInfo.title == "趣味"{
+            recordArray = hobbyArray
+        } else if itemInfo.title == "読書"{
+            recordArray = bookArray
+        }
+        else{
+            print("新着")
+            recordArray = newArray
+        }
         
     }
  
     func setNavBarBackgroundColor(){
-        setStatusBarBackgroundColor(.green)
-        self.navigationController?.navigationBar.barTintColor = .green
-        self.navigationController?.navigationBar.tintColor = .link
+        setStatusBarBackgroundColor(.link)
+        self.navigationController?.navigationBar.barTintColor = .link
+        self.navigationController?.navigationBar.tintColor = .white
         // ナビゲーションバーのテキストを変更する
         self.navigationController?.navigationBar.titleTextAttributes = [
         // 文字の色
-            .foregroundColor: UIColor.black
+            .foregroundColor: UIColor.white
         ]
     }
     //必須
@@ -118,13 +143,13 @@ extension HomeViewController:UITableViewDelegate,UITableViewDataSource,tableView
                 cell.textLabel?.text = nil
                 cell.profileImage.image = nil
                 cell.dateLabel.text = nil
-                cell.setHomeCell(userid:   self.recordArray[indexPath.row - adCount!].userid,
-                                 username: self.recordArray[indexPath.row - adCount!].username,
-                                 studyTime:self.recordArray[indexPath.row - adCount!].studyTime,
-                                 comment:  self.recordArray[indexPath.row - adCount!].comment,
-                                 date:     self.recordArray[indexPath.row - adCount!].date,
-                                 postid:   self.recordArray[indexPath.row - adCount!].postid,
-                                 image:    self.recordArray[indexPath.row - adCount!].image)
+                cell.setHomeCell(userid:   self.recordArray[indexPath.row - adCount].userid,
+                                 username: self.recordArray[indexPath.row - adCount].username,
+                                 studyTime:self.recordArray[indexPath.row - adCount].studyTime,
+                                 comment:  self.recordArray[indexPath.row - adCount].comment,
+                                 date:     self.recordArray[indexPath.row - adCount].date,
+                                 postid:   self.recordArray[indexPath.row - adCount].postid,
+                                 image:    self.recordArray[indexPath.row - adCount].image)
                 return cell
                 
                 
@@ -164,7 +189,21 @@ extension HomeViewController:UITableViewDelegate,UITableViewDataSource,tableView
         
         let AdTableViewCell = UINib(nibName: "AdTableViewCell", bundle: nil )
         tableView.register(AdTableViewCell, forCellReuseIdentifier: "AdTableViewCell")
+        tableView.refreshControl = UIRefreshControl()
+        tableView.refreshControl?.addTarget(self, action: #selector(refresh), for: .valueChanged)
         
+    }
+    @objc func refresh() {
+        
+
+        if itemInfo.title == "新 着"{
+            print("新着")
+            getRecord()
+        }
+        else{
+            getRecordFilteringCategory()
+        }
+        tableView.refreshControl?.endRefreshing()    //これを呼び出すとくるくるが止まる
     }
     func tableView(_ tableView: UITableView,heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.row % 10 == 0 && indexPath.row != 0{
@@ -244,7 +283,7 @@ extension HomeViewController{
                         if isFlag{
                             let newDate = Record(image: image as! String, username: username as! String, postid: postid as! String, userid: userID  as! String, studyTime: studyTime  as! Double, comment: comment as! String, date: date, category: category as! String)
                                 
-                                recordArray.append(newDate)
+                            newArray.append(newDate)
                         }
                        
                     }
@@ -254,15 +293,29 @@ extension HomeViewController{
                     
                     
                 }
+                recordArray = newArray
                 self.isFinish = true
             }
         }
     }
     func getRecordFilteringCategory(){
         let database = Firestore.firestore()
-        let category = String(itemInfo.title!)
-        recordArray.removeAll()
-        HUD.flash(.progress, delay: 5)
+        let category:String = String(itemInfo.title!)
+       
+        switch category {
+            case "スキルアップ":
+                skilArray.removeAll()
+            case "受験勉強":
+                examArray.removeAll()
+            case "資格取得":
+                qualArray.removeAll()
+            case "趣味":
+                hobbyArray.removeAll()
+            case "読書":
+                bookArray.removeAll()
+            default:
+                break
+        }
         
         database.collection("Records").whereField("category", isEqualTo: category).order(by:"date", descending: true).limit(to: 50).getDocuments{[self] (querySnapshot, err) in
             
@@ -294,8 +347,22 @@ extension HomeViewController{
                         }
                         if isFlag{
                             let newDate = Record(image: image as! String, username: username as! String, postid: postid as! String, userid: userID  as! String, studyTime: studyTime  as! Double, comment: comment as! String, date: date, category: category as! String)
-                                
-                                recordArray.append(newDate)
+                            
+                            
+                            switch category as! String {
+                                case "スキルアップ":
+                                    skilArray.append(newDate)
+                                case "受験勉強":
+                                    examArray.append(newDate)
+                                case "資格取得":
+                                    qualArray.append(newDate)
+                                case "趣味":
+                                    hobbyArray.append(newDate)
+                                case "読書":
+                                    bookArray.append(newDate)
+                                default:
+                                    break
+                            }
                             
                         }
                        
@@ -305,6 +372,21 @@ extension HomeViewController{
                         print("カテゴリーエラー")
                     }
                     
+                }
+               
+                switch category {
+                    case "スキルアップ":
+                        recordArray = skilArray
+                    case "受験勉強":
+                        recordArray = examArray
+                    case "資格取得":
+                        recordArray = qualArray
+                    case "趣味":
+                        recordArray = hobbyArray
+                    case "読書":
+                        recordArray = bookArray
+                    default:
+                        break
                 }
                 self.isFinish = true
             }

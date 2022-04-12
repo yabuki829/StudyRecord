@@ -22,6 +22,7 @@ class AuthManager{
             }
             self.verificationId = verificationId
             compleation(true)
+            
         }
     }
     

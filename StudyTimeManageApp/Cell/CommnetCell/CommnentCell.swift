@@ -13,7 +13,7 @@ class CommnentCell: UITableViewCell {
     
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
-    @IBOutlet weak var commentView: UITextView!
+    @IBOutlet weak var commentLabel: UILabel!
     @IBOutlet weak var profileImage: UIImageView!
     var postID = String()
     
@@ -21,12 +21,12 @@ class CommnentCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        profileImage.layer.cornerRadius = 30
+        profileImage.layer.cornerRadius = 15
         profileImage.clipsToBounds = true
-        profileImage.layer.borderColor = UIColor.darkGray.cgColor
+        profileImage.layer.borderColor = UIColor.systemGray6.cgColor
         profileImage.layer.borderWidth = 1
-        commentView.layer.borderWidth = 1.0
-        commentView.layer.borderColor =  UIColor.lightGray.cgColor
+        
+      
 
     }
 
@@ -36,7 +36,7 @@ class CommnentCell: UITableViewCell {
     func setCell(username:String,comment:String, date:Date, image:String){
         
         userNameLabel.text = username
-        commentView.text = comment
+        commentLabel.text = comment
         dateLabel.text = Date().secondAgo(createdAt: date)
         profileImage.image = UIImage(named: image)
     }

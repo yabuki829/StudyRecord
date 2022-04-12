@@ -27,7 +27,7 @@ class AdTableViewCell: UITableViewCell, NADViewDelegate {
     }
     func addAD(){
         //本番広告
-        nadView.setNendID(1053038, apiKey: "fc3b84fd192213cd497ee5edfb5459e3597ff2b7")
+        nadView.setNendID(1053076, apiKey: "a5219bb4c9374c4c2c892a51c6014691c9e5eb9c")
         //テスト広告
 //        nadView.setNendID(70996, apiKey: "eb5ca11fa8e46315c2df1b8e283149049e8d235e")
            

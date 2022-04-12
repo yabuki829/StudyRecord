@@ -92,6 +92,7 @@
                 <outlet property="todayLabel" destination="ek6-Ic-ugb" id="FXs-YT-Fsn"/>
                 <outlet property="todayTitleLabel" destination="dVb-uJ-3jL" id="S59-NE-UVJ"/>
                 <outlet property="totalLabel" destination="IDw-iS-qgZ" id="nD3-RG-k0N"/>
+                <outlet property="totalStackView" destination="YAt-M7-CJ4" id="BBS-3Y-6dG"/>
                 <outlet property="totalTitleLabel" destination="NMf-qe-37D" id="Z09-av-fkF"/>
             </connections>
             <point key="canvasLocation" x="137.68115942028987" y="80.691964285714278"/>
