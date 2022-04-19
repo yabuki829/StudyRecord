@@ -10,11 +10,74 @@ import Lottie
 import FirebaseAuth
 
 class SplashViewController: UIViewController {
+
    
-    var animationView: AnimationView!
-    let loginButton = UIButton()
+    var animationView: AnimationView = {
+        var view = AnimationView()
+        view = AnimationView(name:"barchart")
+        view.backgroundColor = .clear
+        view.isUserInteractionEnabled = true
+        view.contentMode = .scaleAspectFit
+        view.loopMode = .loop
+        view.play()
+        return view
+    }()
     
+    let phoneLoginButton:UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("電話でログイン", for: .normal)
+        button.backgroundColor = .link
+        button.setTitleColor(.white, for: .normal)
+        button.layer.masksToBounds = true
+        button.layer.cornerRadius = 10
+        return button
+    }()
     
+    let twitterLoginButton:UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("Twiiterアカウントでログイン", for: .normal)
+        button.backgroundColor = .systemTeal
+        button.setTitleColor(.white, for: .normal)
+        button.layer.masksToBounds = true
+        button.layer.cornerRadius = 10
+        return button
+    }()
+    
+    let appleLoginButton:UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("Appleアカウントでログイン", for: .normal)
+        button.backgroundColor = .systemGray5
+        button.setTitleColor(.darkGray, for: .normal)
+        button.layer.masksToBounds = true
+        button.layer.cornerRadius = 10
+        return button
+    }()
+    
+    let googleLoginButton:UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("Googleアカウントでログイン", for: .normal)
+        button.backgroundColor = .white
+        button.setTitleColor(.darkGray, for: .normal)
+        button.layer.masksToBounds = true
+        button.layer.cornerRadius = 10
+        button.layer.borderColor = UIColor.darkGray.cgColor
+        button.layer.borderWidth = 0.2
+        return button
+    }()
+
+    
+    let termButton:UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("利用規約", for: .normal)
+        button.setTitleColor(.black, for: .normal)
+        button.layer.masksToBounds = true
+        return button
+    }()
     override func viewDidLoad() {
         super.viewDidLoad()
 //
@@ -22,8 +85,7 @@ class SplashViewController: UIViewController {
             navigationController?.navigationBar.prefersLargeTitles = true
             navigationController?.setNavigationBarHidden(false, animated: false)
             setNavBarColor()
-            addAnimationView()
-            setLoginButtonAndTermButton()
+            setupViews()
             
         }
        
@@ -37,56 +99,53 @@ class SplashViewController: UIViewController {
         
     }
 
-    func addAnimationView() {
-
-            //アニメーションファイルの指定
-            animationView = AnimationView(name:  "barchart")
-
-            //アニメーションの位置指定（画面中央）
-            animationView.frame = CGRect(x: 0, y: -20, width: self.view.bounds.width, height: self.view.bounds.height)
-            animationView.backgroundColor = .clear
-            animationView.isUserInteractionEnabled = true
-            //アニメーションのアスペクト比を指定＆ループで開始
-            animationView.contentMode = .scaleAspectFit
-            animationView.loopMode = .loop
-            animationView.play()
-            //ViewControllerに配置
-            view.addSubview(animationView)
-        }
     
-    func setLoginButtonAndTermButton(){
-     
-        let bWidth: CGFloat = 200
-        let bHeight: CGFloat = 50
-        
-        // ボタンのX,Y座標.
-        let posX: CGFloat = self.view.frame.width/2 - bWidth/2
-        let posY: CGFloat = self.view.frame.height/2 + bHeight * 2
-        
-        loginButton.frame = CGRect(x: posX, y: posY, width: bWidth, height: bHeight)
-        loginButton.backgroundColor = .link
-        loginButton.tintColor = .white
-        loginButton.setTitle("電話番号でログイン", for: .normal)
-        loginButton.setTitleColor(UIColor.white, for: .normal)
-        loginButton.layer.masksToBounds = true
 
-        loginButton.layer.cornerRadius = 10
-        loginButton.tag = 1
-
-        loginButton.addTarget(self, action: #selector(SplashViewController.onClickLogin(sender:)), for: .touchUpInside)
-        self.view.addSubview(loginButton)
+    private func setupViews(){
+        view.addSubview(animationView)
+        view.addSubview(phoneLoginButton)
+        view.addSubview(appleLoginButton)
+        view.addSubview(googleLoginButton)
+        view.addSubview(twitterLoginButton)
+        view.addSubview(termButton)
         
-        let termButton = UIButton()
-        let termWidth:CGFloat = 200
-        let termHeight:CGFloat = 20
-        let termX:CGFloat = self.view.frame.width/2 - termWidth/2
-        let termY:CGFloat = self.view.frame.height/2 + bHeight * 3 + termHeight * 2
-        termButton.frame = CGRect(x: termX, y: termY, width: termWidth, height: termHeight)
-        termButton.setTitle("利用規約", for: .normal)
-        termButton.setTitleColor(UIColor.darkGray, for: .normal)
-        termButton.addTarget(self, action: #selector(SplashViewController.onClickTerm(sender:)), for: .touchUpInside)
-        self.view.addSubview(termButton)
+        addAnimationviewConstraint()
+        addButtonConstraint()
     }
+    func addAnimationviewConstraint(){
+        let guide = self.view.safeAreaLayoutGuide
+        animationView.translatesAutoresizingMaskIntoConstraints = false
+        animationView.topAnchor.constraint(equalTo:guide.topAnchor, constant: 0.0).isActive = true
+        animationView.heightAnchor.constraint(equalToConstant: view.frame.width).isActive = true
+        animationView.widthAnchor.constraint(equalToConstant: view.frame.width).isActive = true
+    }
+    func addButtonConstraint(){
+        let guide = self.view.safeAreaLayoutGuide
+        
+        phoneLoginButton.topAnchor.constraint(equalTo:animationView.bottomAnchor, constant: 0.0).isActive = true
+        phoneLoginButton.leftAnchor.constraint(equalTo: guide.leftAnchor, constant: 80.0).isActive = true
+        phoneLoginButton.rightAnchor.constraint(equalTo: guide.rightAnchor, constant:-80.0).isActive = true
+        
+        appleLoginButton.topAnchor.constraint(equalTo:phoneLoginButton.bottomAnchor, constant:8.0).isActive = true
+        appleLoginButton.leftAnchor.constraint(equalTo: guide.leftAnchor, constant: 80.0).isActive = true
+        appleLoginButton.rightAnchor.constraint(equalTo: guide.rightAnchor, constant:-80.0).isActive = true
+        
+        googleLoginButton.topAnchor.constraint(equalTo:appleLoginButton.bottomAnchor, constant: 8.0).isActive = true
+        googleLoginButton.leftAnchor.constraint(equalTo: guide.leftAnchor, constant: 80.0).isActive = true
+        googleLoginButton.rightAnchor.constraint(equalTo: guide.rightAnchor, constant:-80.0).isActive = true
+        
+        
+        twitterLoginButton.topAnchor.constraint(equalTo:googleLoginButton.bottomAnchor, constant: 8.0).isActive = true
+        twitterLoginButton.leftAnchor.constraint(equalTo: guide.leftAnchor, constant: 80.0).isActive = true
+        twitterLoginButton.rightAnchor.constraint(equalTo: guide.rightAnchor, constant:-80.0).isActive = true
+        
+        
+        termButton.topAnchor.constraint(equalTo:twitterLoginButton.bottomAnchor, constant: 32.0).isActive = true
+        termButton.widthAnchor.constraint(equalToConstant: view.frame.width).isActive = true
+        
+        
+    }
+   
     @objc internal func onClickTerm(sender:UIButton){
         let url = URL(string: "https://studyrecordjp.herokuapp.com/next.html")
         UIApplication.shared.open(url!)
@@ -109,5 +168,5 @@ class SplashViewController: UIViewController {
             .foregroundColor: UIColor.white
         ]
     }
-    
 }
+    

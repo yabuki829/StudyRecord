@@ -26,25 +26,27 @@ class BarChartDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        nextButton.isHidden = true
-        backButton.isHidden = true
         setNavBarBackgroundColor()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [self] in
-         
+        
+         print("path: ",path)
+                if path == 0{
+                    if path == weekDataArray.count - 1{
+                        
+                        nextButton.isHidden = true
+                        backButton.isHidden = true
+                    }
+                    else{
+                        nextButton.isHidden = true
+                    }
+                }
+                else if path == weekDataArray.count - 1{
+                    backButton.isHidden = true
+                }
             
-            if path == 0{
-                nextButton.isHidden = false
-            }
-            else if path == weekDataArray.count{
-                backButton.isHidden = false
-            }
-            else{
-                nextButton.isHidden = false
-                backButton.isHidden = false
-            }
             animationType(type: 0)
           
-        }
+        
+        setData()
     }
 
 //    左
@@ -188,4 +190,3 @@ struct studyWeekData {
     var last:Date
     var start:Date
 }
-

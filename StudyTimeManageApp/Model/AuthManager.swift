@@ -13,10 +13,13 @@ class AuthManager{
     static let shered = AuthManager()
     private let auth = Auth.auth()
     private var verificationId: String?
-    
+    let studyTime = studyTimeClass()
     public func startAuth(phoneNumber:String,compleation:@escaping (Bool) -> Void){
         PhoneAuthProvider.provider().verifyPhoneNumber( phoneNumber, uiDelegate: nil) { (verificationId, error) in
             guard let verificationId = verificationId,error == nil else{
+               print("------------------")
+                print(error)
+                print("------------------")
                 compleation(false)
                 return
             }
@@ -37,17 +40,58 @@ class AuthManager{
                 compleation(false)
                 return
             }
-            let initialDate = Date()
-            let math = Math()
-            let friendID = math.generator(30)
-            UserDefaults.standard.setValue(friendID, forKey: "friendid")
-            UserDefaults.standard.setValue(initialDate, forKey: "initialdate")
+
+            if self.studyTime.getUserName().isEmpty {
+                let initialDate = Date()
+                let math = Math()
+                let friendID = math.generator(30)
+                UserDefaults.standard.setValue(friendID, forKey: "friendid")
+                UserDefaults.standard.setValue(initialDate, forKey: "initialdate")
+              
+                Database.shered.postGoal(goal: "Goal", username: "No Name", image: "かえる")
+                Database.shered.postFriendID(id: friendID)
+            }
             UserDefaults.standard.set(Auth.auth().currentUser?.uid, forKey: "userid")
-            Database.shered.postGoal(goal: "Goal", username: "No Name", image: "かえる")
-            Database.shered.postFriendID(id: friendID)
             compleation(true)
         }
     }
+    
+    
+    
+    func apple(){
+        
+    }
+    
+    func facebook(token:String,compleation:@escaping (Bool) -> Void){
+        let credintial = FacebookAuthProvider.credential(withAccessToken:token)
+        auth.signIn(with: credintial) { (result, error) in
+            if let error = error{
+                compleation(false)
+                print(error)
+                return
+            }
+            
+            //保存されていないか確認する
+            if self.studyTime.getUserName().isEmpty {
+                let initialDate = Date()
+                let math = Math()
+                let friendID = math.generator(30)
+//                let profileimage = result?.user.photoURL?.absoluteURL
+                UserDefaults.standard.setValue(friendID, forKey: "friendid")
+                UserDefaults.standard.setValue(initialDate, forKey: "initialdate")
+                UserDefaults.standard.set(Auth.auth().currentUser?.uid, forKey: "userid")
+                Database.shered.postGoal(goal: "10000時間達成を目指しています", username: (result?.user.displayName)!, image: "かえる")
+                Database.shered.postFriendID(id: friendID)
+            }
+            UserDefaults.standard.set(Auth.auth().currentUser?.uid, forKey: "userid")
+            compleation(true)
+            
+        }
+    }
+    func Twitter(){}
+    
+    
+    
     func logout() -> UIViewController{
             let auth = Auth.auth()
         

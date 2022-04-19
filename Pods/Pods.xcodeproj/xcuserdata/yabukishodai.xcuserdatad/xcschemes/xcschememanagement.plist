@@ -109,6 +109,11 @@
 			<key>orderHint</key>
 			<integer>18</integer>
 		</dict>
+		<key>Libuv-gRPC.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>32</integer>
+		</dict>
 		<key>NendSDK_iOS.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -164,6 +169,11 @@
 			<false/>
 			<key>orderHint</key>
 			<integer>29</integer>
+		</dict>
+		<key>SwiftAlgorithms.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>33</integer>
 		</dict>
 		<key>XLPagerTabStrip-XLPagerTabStrip.xcscheme</key>
 		<dict>
