@@ -131,6 +131,7 @@
 		7051EF99279AC733005492D6 /* TabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarController.swift; sourceTree = "<group>"; };
 		7053E4AF27C8D14E00E6504A /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		7053E4B727C8D39200E6504A /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
+		70548B8D280FC33D005368E6 /* StudyTimeManageApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = StudyTimeManageApp.entitlements; sourceTree = "<group>"; };
 		7055BA8C27C37F5000696BF7 /* BlockUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockUserViewController.swift; sourceTree = "<group>"; };
 		7057A3582805664C00C4D689 /* AverageDataCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AverageDataCell.swift; sourceTree = "<group>"; };
 		7057A3592805664C00C4D689 /* AverageDataCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AverageDataCell.xib; sourceTree = "<group>"; };
@@ -476,6 +477,7 @@
 		706A2A4B2761CB6B0041B993 /* StudyTimeManageApp */ = {
 			isa = PBXGroup;
 			children = (
+				70548B8D280FC33D005368E6 /* StudyTimeManageApp.entitlements */,
 				704FE66E2768368400CB9A71 /* StoryBoard */,
 				7029D55D2764A7AD007EC795 /* Cell */,
 				706A2A842761CB8A0041B993 /* Controller */,
@@ -1094,6 +1096,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = StudyTimeManageApp/StudyTimeManageApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YA5HXFT63V;
 				INFOPLIST_FILE = StudyTimeManageApp/Info.plist;
@@ -1116,6 +1119,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = StudyTimeManageApp/StudyTimeManageApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YA5HXFT63V;
 				INFOPLIST_FILE = StudyTimeManageApp/Info.plist;

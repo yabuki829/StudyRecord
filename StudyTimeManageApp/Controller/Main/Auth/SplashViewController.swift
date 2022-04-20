@@ -8,14 +8,15 @@
 import UIKit
 import Lottie
 import FirebaseAuth
+import AuthenticationServices
 
 class SplashViewController: UIViewController {
 
-   
     var animationView: AnimationView = {
         var view = AnimationView()
         view = AnimationView(name:"barchart")
         view.backgroundColor = .clear
+        
         view.isUserInteractionEnabled = true
         view.contentMode = .scaleAspectFit
         view.loopMode = .loop
@@ -27,8 +28,10 @@ class SplashViewController: UIViewController {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("電話でログイン", for: .normal)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 12)
         button.backgroundColor = .link
         button.setTitleColor(.white, for: .normal)
+        button.setTitleColor(.systemGray4, for: .highlighted)
         button.layer.masksToBounds = true
         button.layer.cornerRadius = 10
         return button
@@ -38,20 +41,18 @@ class SplashViewController: UIViewController {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Twiiterアカウントでログイン", for: .normal)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 12)
         button.backgroundColor = .systemTeal
+        button.setTitleColor(.systemGray4, for: .highlighted)
         button.setTitleColor(.white, for: .normal)
         button.layer.masksToBounds = true
         button.layer.cornerRadius = 10
         return button
     }()
     
-    let appleLoginButton:UIButton = {
-        let button = UIButton()
+    let appleLoginButton:ASAuthorizationAppleIDButton = {
+        let button = ASAuthorizationAppleIDButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("Appleアカウントでログイン", for: .normal)
-        button.backgroundColor = .systemGray5
-        button.setTitleColor(.darkGray, for: .normal)
-        button.layer.masksToBounds = true
         button.layer.cornerRadius = 10
         return button
     }()
@@ -60,8 +61,12 @@ class SplashViewController: UIViewController {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Googleアカウントでログイン", for: .normal)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 12)
         button.backgroundColor = .white
+        
         button.setTitleColor(.darkGray, for: .normal)
+        button.setTitleColor(.systemGray4, for: .highlighted)
+        
         button.layer.masksToBounds = true
         button.layer.cornerRadius = 10
         button.layer.borderColor = UIColor.darkGray.cgColor
@@ -74,7 +79,10 @@ class SplashViewController: UIViewController {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("利用規約", for: .normal)
+        
         button.setTitleColor(.black, for: .normal)
+        button.setTitleColor(.systemGray4, for: .highlighted)
+        
         button.layer.masksToBounds = true
         return button
     }()
@@ -86,7 +94,6 @@ class SplashViewController: UIViewController {
             navigationController?.setNavigationBarHidden(false, animated: false)
             setNavBarColor()
             setupViews()
-            
         }
        
     }
